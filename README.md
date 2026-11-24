@@ -13,7 +13,7 @@
 
 <p align="center">
   <b>Built by Siddarth Valasubramanian</b> · B.Tech CSE (Data Science), UPES Dehradun<br>
-  🌐 <b>Live demo:</b> public link on Vercel coming soon
+  <b>Live demo:</b> public link on Vercel coming soon
 </p>
 
 ---
@@ -27,7 +27,7 @@ numbers.
 *may* apply, explains them in simple words, and walks you through what to do next. Every section it shows is quoted from
 the official Acts, and every section an AI writes into a reply is checked against them before you see it.
 
-## 💬 See it in action
+## See it in action
 
 > **You:** Someone has hit and run my car, what to do?
 
@@ -51,25 +51,25 @@ Follow-up questions are answered in the context of *your* situation, with the se
 Motor Vehicles Act route for hit-and-run compensation, and so on).
 
 <details>
-<summary><b>🌙 Dark mode and the home screen</b></summary>
+<summary><b>Dark mode and the home screen</b></summary>
 <br>
 <p align="center"><img src="docs/screenshots/dark-mode.png" alt="Dark mode" width="80%"></p>
 <p align="center"><img src="docs/screenshots/home.png" alt="Home screen with example situations" width="80%"></p>
 </details>
 
-## ✨ What it can do
+## What it can do
 
-| | Feature | Example |
-|---|---|---|
-| 🧭 | **Understands situations** in everyday English and maps them to one of 27 verified guides | "a guy on a bike snatched my chain" → theft and snatching guide |
-| 🛟 | **Safety first**: self-harm, emergencies and fires are recognised at any point in the chat | "my car is on fire" → move away, call 101 / 112 |
-| 🗣️ | **Remembers the conversation**: answers to its own questions, "section 75", "the first one", "it" | "explain the first one" → BNS 303 in plain words |
-| ❓ | **18 kinds of follow-up**: no witnesses, report online, which station, police refusal, delay, lawyer, insurance, arrest, compensation, workplace (POSH Act)… | "what if the police refuse?" → BNSS 173(4), 175(3) |
-| 🤖 | **Grounded AI replies** for anything else, with every cited section verified against the official text | "shall I take my belongings out?" → a short, checked answer |
-| ⚖️ | **Knows its limits**: civil matters, other Acts, and events before 1 July 2024 | rent deposit → civil court; "in 2022" → old IPC may apply |
-| 🔢 | **Old number lookup** | "IPC 420" → BNS 318 (Cheating) |
+| Feature | Example |
+|---|---|
+| **Understands situations** in everyday English and maps them to one of 27 verified guides | "a guy on a bike snatched my chain" → theft and snatching guide |
+| **Safety first**: self-harm, emergencies and fires are recognised at any point in the chat | "my car is on fire" → move away, call 101 / 112 |
+| **Remembers the conversation**: answers to its own questions, "section 75", "the first one", "it" | "explain the first one" → BNS 303 in plain words |
+| **18 kinds of follow-up**: no witnesses, report online, which station, police refusal, delay, lawyer, insurance, arrest, compensation, workplace (POSH Act)… | "what if the police refuse?" → BNSS 173(4), 175(3) |
+| **Grounded AI replies** for anything else, with every cited section verified against the official text | "shall I take my belongings out?" → a short, checked answer |
+| **Knows its limits**: civil matters, other Acts, and events before 1 July 2024 | rent deposit → civil court; "in 2022" → old IPC may apply |
+| **Old number lookup** | "IPC 420" → BNS 318 (Cheating) |
 
-## 🧠 How it works
+## How it works
 
 ```mermaid
 flowchart LR
@@ -101,16 +101,16 @@ flowchart LR
 | Conversation | dialogue state, coreference ("it", "the first one"), follow-up intent detection |
 | Answering open questions | retrieval-grounded generation with citation verification |
 
-## 🚀 How to run it
+## How to run it
 
 You need **Python 3.10+** ([python.org](https://www.python.org/downloads/)). The first start installs everything into a
 private `.venv` folder and downloads the embedding model (a few minutes, one time only).
 
 | System | Do this |
 |---|---|
-| 🍎 macOS | Double-click **`start.command`** (or run `./start.command` in Terminal) |
-| 🪟 Windows | Double-click **`start.bat`** |
-| 🐧 Any system | See the commands below |
+| macOS | Double-click **`start.command`** (or run `./start.command` in Terminal) |
+| Windows | Double-click **`start.bat`** |
+| Any system | See the commands below |
 
 ```bash
 python3 -m venv .venv
@@ -125,7 +125,7 @@ Then open **http://localhost:8000**.
 > AI model (gpt-oss-120b, falling back to gpt-oss-20b on rate limits) helps understand unusual messages and answers
 > open follow-up questions. Without it, PlainLaw runs fully offline on rules, search and its trained classifier.
 
-## 📊 Results
+## Results
 
 Measured on a **frozen held-out test** of 150 questions written after the system was fixed, and run once. The questions
 are synthetic (not real users) and the labels were not checked by a lawyer; see [EVALUATION.md](EVALUATION.md) for the full
@@ -145,7 +145,7 @@ method, confidence intervals and limitations.
 In a comparison on 48 questions, general AI models **without access to the law text** cited repealed IPC/CrPC sections in
 over 90% of their citations when asked naturally. That is the reason PlainLaw grounds every citation in the official Acts.
 
-## 🗂️ Project structure
+## Project structure
 
 ```
 PlainLaw/
@@ -170,7 +170,7 @@ PlainLaw/
 └── EVALUATION.md           audit, full results, error analysis, limitations
 ```
 
-## 🧪 Tests and evaluation
+## Tests and evaluation
 
 ```bash
 python3 tests/test_playbooks.py        # every cited section exists; 38 routing cases
@@ -203,7 +203,7 @@ python3 data_audit.py                  # corpus integrity and provenance (data/V
 
 </details>
 
-## ⚠️ Limitations
+## Limitations
 
 - English only. 27 situation guides; anything else falls back to retrieval and the AI.
 - Evaluation questions are synthetic and single-author; labels and guidance have not been reviewed by a lawyer.
