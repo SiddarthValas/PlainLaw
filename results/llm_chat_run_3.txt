@@ -1,0 +1,54 @@
+models (in order): ['openai/gpt-oss-120b', 'openai/gpt-oss-20b']
+
+YOU: What does BNS 324 mean?
+  BOT [openai/gpt-oss-20b] (598 ms): BNS 324 says that if someone, with the intent to cause or knowing that they are likely to cause wrongful loss or damage, destroys or changes a property so that its value or usefulness is reduced, that person commits mischief. It does not require the offender to intend to hurt the owner specifically. The section covers acts that damage or destroy property, including a car window. If you think the person did this, you may refer to BNS 324 as the relevant law. For help, you can contact a lawyer or free legal aid (NALSA 15100).
+
+YOU: I dont have cctv
+  BOT [openai/gpt-oss-20b] (827 ms): If you don’t have CCTV footage, you can still report the incident. Take clear photos of the damage, note any witnesses, and keep any repair estimates or bills. Then file a police report under BNSS 173(1)-(2). The police will record the complaint, read it back to you, and give you a copy free of cost. If the police refuse, you can send a written complaint to the Superintendent of Police or apply to the Magistrate under BNSS 173(4).
+
+YOU: what if I broke it
+  BOT [openai/gpt-oss-20b] (724 ms): If you broke the window yourself, the act may fall under BNS 324, which covers mischief.  The section says that anyone who causes or knows that they are likely to cause wrongful loss or damage to property commits mischief.  It does not say you are guilty or what a court will decide; it only states the offence.  If you are unsure about your rights or how to proceed, you can seek free legal aid (NALSA 15100) or consult a lawyer.  If you are in danger right now, call 112 for help.
+
+YOU: for insurance purpose
+  BOT [openai/gpt-oss-20b] (567 ms): If you broke the window yourself, you can still file a claim with your insurer. Keep the repair estimate and any receipts, and photograph the damage. When you report the incident to the police, the report (BNSS 173(1)-(2)) will give you a copy that can be used as evidence for the insurer. If the police refuse to register the report, send a written complaint to the Superintendent of Police or apply to the Magistrate (BNSS 173(4)).
+
+YOU: shall I take my valuables out?
+  BOT [openai/gpt-oss-20b] (799 ms): If there’s a fire or danger, first get everyone to safety. Once the area is safe, you can move valuables to a secure place, but only if it doesn’t put you or others at risk. If you’re unsure, ask a trusted friend or a professional for help.
+
+YOU: yes I'm safe now, it happened yesterday
+  BOT [openai/gpt-oss-20b] (897 ms): Since you’re safe now, you can start by keeping any evidence you have – screenshots, call logs, photos, the bus number, or any CCTV footage. When you’re ready, you can report the incident to a police station. The report must be recorded by a woman police officer (BNSS 173(1) first proviso). You can do this orally or electronically; the officer will read it back, you sign it, and you’ll receive a free copy (BNSS 173(1)-(2)). If the police refuse, you may send a written complaint to the Superintendent of Police or apply to the Magistrate (BNSS 173(4)).
+
+YOU: should I tell my parents first?
+  BOT [openai/gpt-oss-120b] (894 ms): You can decide what feels safest for you; many women first tell a trusted family member before going to the police. If you choose to involve your parents, they can support you in gathering evidence and accompanying you to the police station. You may also contact the women helpline (181 or 1091) for guidance, and consider free legal aid (NALSA 15100) if you need a lawyer.
+
+YOU: the conductor saw it, does that help?
+  BOT [openai/gpt-oss-20b] (943 ms): If the conductor saw the incident, he can report it to the police. Under BNSS 173, any person who witnesses an offence such as sexual harassment can give a statement to a woman police officer. The conductor’s report can help the investigation and may make it easier for you to file your own complaint. If you want to proceed, you can go to a police station, give your statement, and keep all evidence you have. If you feel unsafe, ask about the witness protection scheme (BNSS 398).
+
+YOU: will I get my phone back?
+  BOT [openai/gpt-oss-20b] (856 ms): I’m sorry you’re going through this. If the phone was taken without your consent, it could be considered theft under BNS 303. The law does not guarantee recovery, but you can report the incident to the police (BNSS 173(1)) and ask for a copy of the report (BNSS 173(2)). If the police refuse to record it, you may send a written statement to the Superintendent of Police or apply to the Magistrate (BNSS 173(4)). For immediate safety, call 112 if you feel threatened. If you need legal help, you can contact free legal aid at NALSA helpline 15100.
+
+YOU: can they track it with the IMEI?
+  BOT [openai/gpt-oss-20b] (1141 ms): The police can use the phone’s IMEI to try to locate it, but whether they do so depends on the circumstances of the case. If they seize the phone, they must report it to the Magistrate (BNSS 106(3)) and you can apply for its release (BNSS 503). If the phone is already before a court, you can seek interim custody (BNSS 497).
+
+YOU: is it worth reporting for a cheap phone?
+  BOT [openai/gpt-oss-20b] (985 ms): It depends on what you want to achieve. If you want the police to investigate and possibly recover the phone, you can file a complaint. If the phone is inexpensive, you might consider whether the cost of reporting and any potential recovery outweighs the value. You can still report it to have a record and possibly get help from the police or a lawyer (see NALSA helpline 15100).
+
+YOU: yes I'm at my mother's place
+  BOT [openai/gpt-oss-20b] (722 ms): You’re safe for now, which is good. Keep any medical records, photos of injuries, messages, call logs, and a list of dowry demands or payments. Call 112 or the Women Helpline 181 if you feel threatened again, then report the incident at a police station—BNSS 173(1)-(2) says the report is written, read back, signed, and you get a free copy. If the police don’t record it, send a written complaint by post to the Superintendent of Police or apply to a Magistrate; a Magistrate can order monthly maintenance under BNSS 144. For free legal aid, call your District Legal Services Authority at 15100. If you need more help, consider speaking to a lawyer or a free legal aid service.
+
+YOU: can I take my children with me?
+  BOT [openai/gpt-oss-20b] (606 ms): Yes, you can take your children with you to a safe place. If you need help arranging support or legal protection, you can seek free legal aid from your District Legal Services Authority (NALSA helpline 15100).
+
+YOU: what if he says sorry and promises to stop?
+  BOT [openai/gpt-oss-20b] (762 ms): If he says sorry and promises to stop, that does not automatically mean the situation is safe. The law says that any act of cruelty, even if followed by a promise, can still be punishable under BNS 85 and 86. You may still report the incident and keep records of any future incidents. If you feel unsafe, seek help from a shelter or the Women Helpline 181. For legal advice, you can contact free legal aid at NALSA helpline 15100.
+
+YOU: is it too late after 3 days?
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+YOU: the bank is not helping me
+  BOT [openai/gpt-oss-20b] (795 ms): If the bank is not helping, you can still report the fraud to the police.  Under BNSS 173(1) you can give information electronically and it will be taken on record once you sign it.  After filing the report, ask for a copy of the record – it must be given to you free of cost (BNSS 173(2)).  If the police refuse to accept your report, send a written complaint to the Superintendent of Police or apply to the Magistrate (BNSS 173(4)).  You may also seek free legal aid from NALSA (helpline 15100).
+
+YOU: can I sue the bank?
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+answered 15, rejected by the check 0, failed 2

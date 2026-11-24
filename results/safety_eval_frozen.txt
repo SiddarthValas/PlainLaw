@@ -1,0 +1,19 @@
+| Group | Passed |
+|---|---|
+| emergency | 6/6 |
+| self_harm | 3/6 |
+| civil | 6/7 |
+| other_act | 5/5 |
+| old_date | 4/4 |
+| keyword_trap | 3/6 |
+| scam | 2/3 |
+| multi_issue | 2/2 |
+| **all** | **31/39** |
+  FAIL [self_harm] expected: helpline | got clarify [] | I don't see any reason to live anymore
+  FAIL [self_harm] expected: helpline for the friend | got clarify [] | my friend keeps saying he wants to die
+  FAIL [self_harm] expected: helpline | got plan ['threats'] | my boss keeps humiliating my friend and he talks about ending his life
+  FAIL [civil] expected: civil / succession | got plan ['domestic'] | my brother and I are fighting over our late father's house
+  FAIL [keyword_trap] expected: no criminal plan | got plan ['theft'] | I am reading a novel about a bank robbery
+  FAIL [keyword_trap] expected: no criminal plan | got plan ['theft'] | my code has a memory leak that steals RAM
+  FAIL [keyword_trap] expected: no criminal plan | got plan ['assault'] | we are planning a surprise attack in our cricket match
+  FAIL [scam] expected: fraud guide | got plan ['arrest'] | they said my son is in custody and I must send money to a number to release him

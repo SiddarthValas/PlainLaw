@@ -1,0 +1,54 @@
+backend: openai/gpt-oss-120b
+
+YOU: What does BNS 324 mean?
+  BOT (654 ms): BNS 324 defines the offence of mischief. It says that anyone who intentionally or knowingly causes wrongful loss or damage to property – even if the property isn’t theirs – commits mischief. The law does not require the offender to intend harm to the owner, only that the act damages or diminishes the property's value or utility. This section can apply to acts like breaking a car window.
+
+YOU: I dont have cctv
+  BOT (634 ms): If you have no CCTV, still follow the steps: (1) call 112 if there is any immediate danger, (2) take photos and video of the damage yourself, (3) keep any repair estimates and insurance details, (4) report the incident to the police to get a free FIR as per BNSS 173, and (5) if the police do not register it, send a written complaint to the Superintendent of Police or apply to the Magistrate (BNSS 173).
+
+YOU: what if I broke it
+  BOT (807 ms): If you caused the damage yourself, BNS 324 on mischief could still apply because it covers anyone who knowingly causes wrongful loss or damage to property, even if it is their own. You should report the incident to the police so it is recorded (BNSS 173(1)-(2)) and keep any evidence such as photos or witness statements. If the police do not take the report, you can send it in writing to the Superintendent of Police or apply to a Magistrate (BNSS 173(4)).
+
+YOU: for insurance purpose
+  BOT (530 ms): For insurance, first take photos or video of the damage and note any witnesses or nearby CCTV (even if you don't have it). Then get repair estimates and keep all bills. Notify your insurer promptly and share the evidence and estimates. Finally, file a police report (BNSS 173) to have an official record, which the insurer may require.
+
+YOU: shall I take my valuables out?
+  BOT (734 ms): If you feel your valuables are at risk, move them to a safe place and lock them away. Also follow the steps: call 101 if there is fire, document any damage, inform your insurer, and report to police (BNSS 173).
+
+YOU: yes I'm safe now, it happened yesterday
+  BOT (782 ms): If you are safe now, you can still report the incident. Under BNS 74 and BNS 75 the conduct you described may be an offence, and BNSS 173 requires the report to be recorded by a woman police officer and you will receive a free copy. Keep all evidence (photos, messages, bus details) and go to any police station or use the online portal; ask for the report to be read back and signed. If the police do not act, you can write to the Superintendent of Police or approach a magistrate as per BNSS 173(4). If you feel threatened as a witness, you may request protection under BNSS 398.
+
+YOU: should I tell my parents first?
+  BOT (655 ms): You can decide what feels safest for you; many women first tell a trusted family member before going to the police. If you feel comfortable, sharing with your parents can give you support and help you gather evidence. You may then follow the reporting steps (BNSS 173) and consider the relevant BNS sections (BNS 74 or BNS 75). If you need immediate help, you can also call 112 or the women helpline 181/1091.
+
+YOU: the conductor saw it, does that help?
+  BOT (747 ms): Yes, the conductor’s observation can be useful as a witness. Keep a note of his name, badge number and what he saw, and ask him to give a statement if possible. You should still follow the reporting steps: keep any evidence, go to a police station where a woman officer will record your complaint (BNSS 173), and you can request witness protection if needed (BNSS 398).
+
+YOU: will I get my phone back?
+  BOT (3220 ms): Call 112 if you feel unsafe, then follow the steps: note the phone details, block the SIM and UPI, and report the theft at any police station (BNSS 173). Ask for a free copy of the report (BNSS 173). The police will investigate, but there is no guarantee you will get the phone back.
+
+YOU: can they track it with the IMEI?
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+YOU: is it worth reporting for a cheap phone?
+  BOT (2915 ms): You can still file a complaint even for a cheap phone; the police will record the FIR and may try to trace it via IMEI. Reporting creates a record and may help recover it or deter future theft. If you need help filing the complaint, you can call the police non‑emergency number or NALSA helpline 15100 for free legal aid.
+
+YOU: yes I'm at my mother's place
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+YOU: can I take my children with me?
+  BOT (3181 ms): Yes, you can take your children with you to a safe place. If you need financial support, a Magistrate can order monthly maintenance for you and your children under BNSS 144. Follow the steps to report the abuse (BNSS 173) and seek free legal aid (NALSA helpline 15100).
+
+YOU: what if he says sorry and promises to stop?
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+YOU: is it too late after 3 days?
+  BOT (660 ms): You can still report the scam; the law requires you to sign the report within three days of giving the information (BNSS 173(1)). If you missed that window, you should still file a complaint and ask for a copy of the record (BNSS 173(2)), and if the police do not act, you can write to the Superintendent of Police or approach a Magistrate (BNSS 173(4)).
+
+YOU: the bank is not helping me
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+YOU: can I sue the bank?
+  BOT (3938 ms): If the bank refuses to help you recover the money, that is usually a civil matter rather than a criminal one. You can approach the consumer court or file a complaint with the banking ombudsman, and you may also seek free legal aid through NALSA (helpline 15100).
+
+answered 13, rejected by the check 0, failed 4

@@ -1,0 +1,51 @@
+{"query": "the police station won't take my complaint, what can I do", "gold": ["BNSS-173", "BNSS-175"], "split": "dev"}
+{"query": "can I file a police complaint in a city other than where it happened", "gold": ["BNSS-173"], "split": "dev"}
+{"query": "can I report a crime by email or online instead of going to the station", "gold": ["BNSS-173"], "split": "test"}
+{"query": "police registered my FIR but never gave me a copy", "gold": ["BNSS-173"], "split": "test"}
+{"query": "someone abused me in public but police say it is a non-cognizable matter", "gold": ["BNSS-174"], "split": "dev"}
+{"query": "I want to approach the magistrate because the police did nothing on my complaint", "gold": ["BNSS-175", "BNSS-173"], "split": "test"}
+{"query": "police are dragging the investigation and not filing a chargesheet", "gold": ["BNSS-193", "BNSS-187"], "split": "dev"}
+{"query": "when can police arrest someone without a warrant", "gold": ["BNSS-35"], "split": "dev"}
+{"query": "police gave me a notice to appear instead of arresting me", "gold": ["BNSS-35"], "split": "test"}
+{"query": "I was arrested and nobody told me the reason", "gold": ["BNSS-47"], "split": "dev"}
+{"query": "police arrested my son, do they have to tell us", "gold": ["BNSS-48"], "split": "test"}
+{"query": "am I allowed to speak to my lawyer while the police question me", "gold": ["BNSS-38"], "split": "dev"}
+{"query": "how long can the police keep me before taking me to court", "gold": ["BNSS-58", "BNSS-57"], "split": "test"}
+{"query": "can police arrest a woman at night", "gold": ["BNSS-43"], "split": "test"}
+{"query": "police handcuffed me, is that allowed", "gold": ["BNSS-43", "BNSS-46"], "split": "dev"}
+{"query": "I was injured in police custody and want a medical examination", "gold": ["BNSS-53", "BNSS-56"], "split": "dev"}
+{"query": "police stopped me and asked my name and address and I refused", "gold": ["BNSS-39"], "split": "dev"}
+{"query": "can an ordinary person catch a thief and hand him to the police", "gold": ["BNSS-40"], "split": "test"}
+{"query": "police barged into my house looking for someone they wanted to arrest", "gold": ["BNSS-44"], "split": "test"}
+{"query": "how do I get bail when the offence is bailable", "gold": ["BNSS-478"], "split": "dev"}
+{"query": "can I get bail for a serious non-bailable offence", "gold": ["BNSS-480"], "split": "test"}
+{"query": "I think the police will arrest me, can I get bail in advance", "gold": ["BNSS-482"], "split": "dev"}
+{"query": "sessions court refused my bail, can I go to the high court", "gold": ["BNSS-483"], "split": "test"}
+{"query": "I have been in jail for years waiting for trial without being convicted", "gold": ["BNSS-479"], "split": "dev"}
+{"query": "police did not file the chargesheet within 90 days, can I get default bail", "gold": ["BNSS-187"], "split": "test"}
+{"query": "how much bond amount is fixed for bail and can it be reduced", "gold": ["BNSS-484"], "split": "test"}
+{"query": "my bail was cancelled by the court", "gold": ["BNSS-492", "BNSS-483"], "split": "dev"}
+{"query": "I received a court summons, how is it served on me", "gold": ["BNSS-64", "BNSS-63"], "split": "test"}
+{"query": "what is a warrant of arrest and how long does it stay valid", "gold": ["BNSS-72"], "split": "dev"}
+{"query": "the court declared me an absconder and attached my property", "gold": ["BNSS-84", "BNSS-85"], "split": "test"}
+{"query": "police want to search my house, do they need a warrant", "gold": ["BNSS-185", "BNSS-96"], "split": "dev"}
+{"query": "police are recording a video while searching my home", "gold": ["BNSS-105"], "split": "test"}
+{"query": "police took my phone and have not returned it", "gold": ["BNSS-106", "BNSS-497", "BNSS-503"], "split": "dev"}
+{"query": "how do I get back my vehicle that the police took in a case", "gold": ["BNSS-497", "BNSS-503"], "split": "test"}
+{"query": "can the police call a woman to the police station for questioning", "gold": ["BNSS-179"], "split": "dev"}
+{"query": "police forced me to sign a statement", "gold": ["BNSS-181", "BNSS-182"], "split": "test"}
+{"query": "the officer promised to go easy on me if I confessed", "gold": ["BNSS-182"], "split": "dev"}
+{"query": "my statement has to be recorded before a magistrate", "gold": ["BNSS-183"], "split": "test"}
+{"query": "what medical examination is done for a woman who was raped", "gold": ["BNSS-184"], "split": "test"}
+{"query": "my husband is not paying maintenance for me and the children", "gold": ["BNSS-144"], "split": "dev"}
+{"query": "how do I enforce the maintenance order if he does not pay", "gold": ["BNSS-147"], "split": "test"}
+{"query": "can I get compensation as a crime victim", "gold": ["BNSS-396", "BNSS-395"], "split": "dev"}
+{"query": "I cannot afford a lawyer for my trial, will the court give me one", "gold": ["BNSS-341"], "split": "test"}
+{"query": "protection for witnesses who are afraid of threats", "gold": ["BNSS-398"], "split": "dev"}
+{"query": "can we settle the case with the other party and withdraw it", "gold": ["BNSS-359"], "split": "test"}
+{"query": "can I plead guilty to get a lesser punishment", "gold": ["BNSS-290", "BNSS-289"], "split": "dev"}
+{"query": "I was arrested for no reason, can I claim compensation", "gold": ["BNSS-399"], "split": "test"}
+{"query": "can I complain directly to a magistrate without going to the police", "gold": ["BNSS-223"], "split": "test"}
+{"query": "police detained me saying they feared I would commit an offence", "gold": ["BNSS-170", "BNSS-168"], "split": "test"}
+{"query": "the magistrate has asked me to give security to keep the peace", "gold": ["BNSS-126"], "split": "dev"}
+{"query": "someone died in police custody, who investigates", "gold": ["BNSS-196"], "split": "test"}

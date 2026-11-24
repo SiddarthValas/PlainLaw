@@ -1,0 +1,41 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5188.94it/s]
+train: 115 playbook examples + 80 dev situations = 195 texts, 28 classes (incl. 'none': 8 texts) | test: 65 blind situations
+
+5-fold cross-validation on training data (logistic regression):
+  C=0.5  accuracy 77.4%  macro-F1 0.784
+  C=1    accuracy 78.5%  macro-F1 0.794
+  C=2    accuracy 80.8%  macro-F1 0.817
+  C=5    accuracy 87.6%  macro-F1 0.880
+  C=10   accuracy 90.4%  macro-F1 0.909
+  C=20   accuracy 91.0%  macro-F1 0.911
+  C=50   accuracy 91.0%  macro-F1 0.911
+  -> C=20
+
+| System | eval_situations3.jsonl | eval_situations4.jsonl | eval_situations5.jsonl | All 65: top-1 (95% CI) | top-3 | macro-F1 |
+|---|---|---|---|---|---|---|
+| 1-NN, examples only (current suggestions) | 10/20 | 14/20 | 8/25 | 32/65 49% (37%–61%) | 75% | 0.447 |
+| 1-NN, examples + dev | 14/20 | 17/20 | 10/25 | 41/65 63% (51%–74%) | 86% | 0.587 |
+| Logistic regression, examples only | 15/20 | 15/20 | 11/25 | 41/65 63% (51%–74%) | 78% | 0.578 |
+| Logistic regression, examples + dev | 16/20 | 17/20 | 16/25 | 49/65 75% (64%–84%) | 94% | 0.666 |
+| Rules alone (seen*) | 14/20 | 13/20 | 24/25 | 51/65 78% (67%–87%) | – | 0.810 |
+| Rules, then logistic regression (seen*) | 17/20 | 18/20 | 18/25 | 53/65 82% (70%–89%) | 91% | 0.779 |
+
+* rules were fixed after seeing sets 3-5; first-run rules scores were 11/20, 8/20, 14/25 (33/65 = 51%).
+
+Logistic-regression confidence on the test set (answer only when probability >= t):
+  t=0.0: answers 100% of messages, accuracy when answering 75%
+  t=0.2: answers 86% of messages, accuracy when answering 73%
+  t=0.3: answers 65% of messages, accuracy when answering 86%
+  t=0.4: answers 38% of messages, accuracy when answering 96%
+  t=0.5: answers 25% of messages, accuracy when answering 94%
+  t=0.6: answers 17% of messages, accuracy when answering 100%
+
+Cross-validated confidence on the training data (used to choose the app's threshold):
+  t=0.2: answers 94%, accuracy when answering 93%
+  t=0.3: answers 76%, accuracy when answering 97%
+  t=0.4: answers 55%, accuracy when answering 99%
+  t=0.5: answers 43%, accuracy when answering 100%
+  t=0.6: answers 24%, accuracy when answering 100%
+  -> threshold 0.3; on the blind test set it answers 65% with accuracy 86%
+
+saved models/situation_clf.npz

@@ -1,0 +1,50 @@
+{"query": "some guy on a scooter yanked my handbag and sped away", "expect": "theft", "split": "heldout"}
+{"query": "my wallet is gone, I think it was taken on the crowded bus", "expect": "theft", "split": "heldout"}
+{"query": "our flat was burgled while we were on holiday, jewellery is gone", "expect": "theft", "split": "heldout"}
+{"query": "the delivery boy walked off with my parcel and my phone", "expect": "theft", "split": "heldout"}
+{"query": "three men threatened me with a knife and took my bike", "expect": "theft", "split": "heldout"}
+{"query": "I sent money to an online seller for shoes and never got them", "expect": "fraud", "split": "heldout"}
+{"query": "someone called pretending to be from customer care and emptied my bank account", "expect": "fraud", "split": "heldout"}
+{"query": "a man promised my son a government job and took 3 lakh rupees", "expect": "fraud", "split": "heldout"}
+{"query": "my business partner forged my signature on a cheque", "expect": "fraud", "split": "heldout"}
+{"query": "I clicked a link in an sms and money was deducted from my card", "expect": "fraud", "split": "heldout"}
+{"query": "my neighbour punched me in the face over parking", "expect": "assault", "split": "heldout"}
+{"query": "some drunk men attacked my father with sticks", "expect": "assault", "split": "heldout"}
+{"query": "a classmate pushed me and I broke my wrist", "expect": "assault", "split": "heldout"}
+{"query": "my uncle keeps threatening that he will kill my family", "expect": "threats", "split": "heldout"}
+{"query": "someone is blackmailing me with my morphed photos", "expect": "threats", "split": "heldout"}
+{"query": "a local goon is demanding money every month from my shop or he will burn it", "expect": "threats", "split": "heldout"}
+{"query": "a stranger keeps sending me obscene pictures on instagram", "expect": "women_harassment", "split": "heldout"}
+{"query": "my senior at work makes sexual comments about me", "expect": "women_harassment", "split": "heldout"}
+{"query": "a boy follows my daughter to school every day", "expect": "women_harassment", "split": "heldout"}
+{"query": "a man groped me in the metro", "expect": "women_harassment", "split": "heldout"}
+{"query": "my husband slaps me and his parents taunt me for not bringing a car in dowry", "expect": "domestic", "split": "heldout"}
+{"query": "my in laws threw me out of the house and are harassing me for money", "expect": "domestic", "split": "heldout"}
+{"query": "the SHO refused to register my complaint about the theft", "expect": "fir_refused", "split": "heldout"}
+{"query": "I gave a complaint a month ago and the police have done nothing", "expect": "fir_refused", "split": "heldout"}
+{"query": "police took my husband from home at midnight without telling us why", "expect": "arrest", "split": "heldout"}
+{"query": "my friend has been in the lock-up for two days and hasn't seen a magistrate", "expect": "arrest", "split": "heldout"}
+{"query": "my brother is in jail, how can we get him out", "expect": "bail", "split": "heldout"}
+{"query": "can I get anticipatory bail", "expect": "bail", "split": "heldout"}
+{"query": "my employer locked me inside the factory and wouldn't let me go home", "expect": "confinement", "split": "heldout"}
+{"query": "someone burnt our car outside the house last night", "expect": "fire", "split": "heldout"}
+{"query": "my neighbour vandalised my shop", "expect": "fire", "split": "heldout"}
+{"query": "my friend was sexually assaulted at a party", "expect": "sexual_assault", "split": "heldout"}
+{"query": "how to lodge an fir", "expect": "fir_howto", "split": "heldout"}
+{"query": "the police inspector called and asked me to come and give a statement", "expect": "police_call", "split": "heldout"}
+{"query": "a truck hit my car on the highway and I am injured", "expect": "accident", "split": "heldout"}
+{"query": "a car knocked down my mother while she was crossing the road", "expect": "accident", "split": "heldout"}
+{"query": "my ex-wife has filed a fake domestic violence case against me", "expect": "accused", "split": "heldout"}
+{"query": "my neighbour filed a false FIR against me for assault", "expect": "accused", "split": "heldout"}
+{"query": "my 14 year old daughter hasn't come home from school", "expect": "missing", "split": "heldout"}
+{"query": "someone abducted my brother and is asking for ransom", "expect": "missing", "split": "heldout"}
+{"query": "the police beat my son badly at the station", "expect": "custodial", "split": "heldout"}
+{"query": "police seized my phone during the investigation, how do I get it back", "expect": "seized", "split": "heldout"}
+{"query": "my relative is spreading lies about me in the family whatsapp group", "expect": "defamation", "split": "heldout"}
+{"query": "my neighbour killed my cat", "expect": "animal", "split": "heldout"}
+{"query": "my landlord won't give back my deposit", "expect": "none", "split": "heldout"}
+{"query": "what does section 302 say", "expect": "none", "split": "heldout"}
+{"query": "is adultery a crime now", "expect": "none", "split": "heldout"}
+{"query": "my company fired me without notice", "expect": "none", "split": "heldout"}
+{"query": "what is the punishment for theft", "expect": "none", "split": "heldout"}
+{"query": "what is criminal breach of trust", "expect": "none", "split": "heldout"}

@@ -1,0 +1,20 @@
+{"query": "my purse was taken from my bag in the crowded market", "expect": ["theft"], "split": "blind4"}
+{"query": "a man on the street punched my brother for no reason", "expect": ["assault"], "split": "blind4"}
+{"query": "someone pretending to be a bank officer asked for my card pin and money vanished", "expect": ["fraud"], "split": "blind4"}
+{"query": "my cousin's husband burns her with cigarettes and his mother supports him", "expect": ["domestic"], "split": "blind4"}
+{"query": "a classmate keeps texting my sister vulgar stuff even after she blocked him", "expect": ["women_harassment"], "split": "blind4"}
+{"query": "the SHO told us to come back tomorrow and did not write our complaint", "expect": ["fir_refused"], "split": "blind4"}
+{"query": "my uncle was taken by the police at night and they won't say which station", "expect": ["arrest"], "split": "blind4"}
+{"query": "i am scared the police will arrest me in a fake case my neighbour is planning", "expect": ["accused", "bail"], "split": "blind4"}
+{"query": "our 10 year old didn't return from tuition", "expect": ["missing"], "split": "blind4"}
+{"query": "the inspector hit my brother with a stick in the lockup", "expect": ["custodial"], "split": "blind4"}
+{"query": "a goon is asking for weekly hafta from my stall", "expect": ["threats"], "split": "blind4"}
+{"query": "a tempo hit my mother's scooter and she has a fracture", "expect": ["accident"], "split": "blind4"}
+{"query": "my neighbour poured kerosene on my car and lit it", "expect": ["fire"], "split": "blind4"}
+{"query": "people are posting that I am a thief on our society group", "expect": ["defamation"], "split": "blind4"}
+{"query": "someone climbed over our wall at night and entered the house", "expect": ["trespass", "theft"], "split": "blind4"}
+{"query": "i got a whatsapp call from someone in police uniform saying i am under digital arrest and must transfer money", "expect": ["fraud"], "split": "blind4"}
+{"query": "my landlord kept my deposit", "expect": ["none"], "split": "blind4"}
+{"query": "what is the punishment for kidnapping a child", "expect": ["none"], "split": "blind4"}
+{"query": "my brother in law tried to touch my sister inappropriately", "expect": ["women_harassment", "sexual_assault"], "split": "blind4"}
+{"query": "a stranger was recording girls in the college washroom with his phone", "expect": ["women_harassment"], "split": "blind4"}

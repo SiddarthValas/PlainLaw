@@ -1,0 +1,6195 @@
+{
+ "frozen": "2026-11-24T21:52:22",
+ "n": 150,
+ "n_clean": 130,
+ "retrieval": {
+  "A  BM25": {
+   "hit1": 0.10084033613445378,
+   "hit3": 0.226890756302521,
+   "hit5": 0.2773109243697479,
+   "mrr10": 0.17566026410564226,
+   "recall5": 0.20588235294117646,
+   "median_ms": 0.9382490000007238
+  },
+  "B  Dense (bge-small)": {
+   "hit1": 0.25210084033613445,
+   "hit3": 0.453781512605042,
+   "hit5": 0.5042016806722689,
+   "mrr10": 0.371235160730959,
+   "recall5": 0.36834733893557425,
+   "median_ms": 23.375542999929166
+  },
+  "C  Hybrid BM25+dense (RRF)": {
+   "hit1": 0.23529411764705882,
+   "hit3": 0.40336134453781514,
+   "hit5": 0.48739495798319327,
+   "mrr10": 0.3408063225290116,
+   "recall5": 0.3851540616246499,
+   "median_ms": 22.871616999964317
+  },
+  "D  Hybrid + glossary expansion": {
+   "hit1": 0.35294117647058826,
+   "hit3": 0.5462184873949579,
+   "hit5": 0.5714285714285714,
+   "mrr10": 0.45816326530612245,
+   "recall5": 0.4677871148459384,
+   "median_ms": 24.41424099993128
+  }
+ },
+ "mcnemar_hit3_vs_D": {
+  "A  BM25": 3.243740565039843e-08,
+  "B  Dense (bge-small)": 0.09887174959294498,
+  "C  Hybrid BM25+dense (RRF)": 0.002315700054168701
+ },
+ "errors_correlation": {
+  "bm25_only_wrong": 23,
+  "dense_only_wrong": 24,
+  "both_wrong": 65,
+  "both_wrong_same_section": 8
+ },
+ "risk_coverage": {
+  "agreement rank (max of BM25/dense rank of top hit; lower = surer)": {
+   "risk_at": {
+    "0.25": 0.4,
+    "0.5": 0.4666666666666667,
+    "0.75": 0.5730337078651685,
+    "1": 0.6470588235294118
+   },
+   "aurc": 0.4768950200773056
+  },
+  "RRF score of top hit": {
+   "risk_at": {
+    "0.25": 0.4,
+    "0.5": 0.45,
+    "0.75": 0.5617977528089888,
+    "1": 0.6470588235294118
+   },
+   "aurc": 0.474309670055234
+  },
+  "RRF margin top1 - top2": {
+   "risk_at": {
+    "0.25": 0.7666666666666667,
+    "0.5": 0.6,
+    "0.75": 0.6179775280898876,
+    "1": 0.6470588235294118
+   },
+   "aurc": 0.6982735946845746
+  }
+ },
+ "system": {
+  "F1 Rules only (offline)": {
+   "all 150": {
+    "n": 150,
+    "correct": 101,
+    "abstained": 33,
+    "wrong": 16,
+    "coverage": 0.78,
+    "selective_acc": 0.8632478632478633,
+    "wrong_rate": 0.10666666666666667
+   },
+   "clean": {
+    "n": 130,
+    "correct": 83,
+    "abstained": 32,
+    "wrong": 15,
+    "coverage": 0.7538461538461538,
+    "selective_acc": 0.8469387755102041,
+    "wrong_rate": 0.11538461538461539
+   }
+  },
+  "F2 Rules + trained classifier (offline default)": {
+   "all 150": {
+    "n": 150,
+    "correct": 119,
+    "abstained": 16,
+    "wrong": 15,
+    "coverage": 0.8933333333333333,
+    "selective_acc": 0.8880597014925373,
+    "wrong_rate": 0.1
+   },
+   "clean": {
+    "n": 130,
+    "correct": 99,
+    "abstained": 16,
+    "wrong": 15,
+    "coverage": 0.8769230769230769,
+    "selective_acc": 0.868421052631579,
+    "wrong_rate": 0.11538461538461539
+   }
+  }
+ },
+ "by_category": {
+  "easy": {
+   "n": 30,
+   "correct": 27,
+   "abstained": 1,
+   "wrong": 2,
+   "coverage": 0.9666666666666667,
+   "selective_acc": 0.9310344827586207,
+   "wrong_rate": 0.06666666666666667
+  },
+  "medium": {
+   "n": 30,
+   "correct": 28,
+   "abstained": 0,
+   "wrong": 2,
+   "coverage": 1.0,
+   "selective_acc": 0.9333333333333333,
+   "wrong_rate": 0.06666666666666667
+  },
+  "hard": {
+   "n": 20,
+   "correct": 11,
+   "abstained": 6,
+   "wrong": 3,
+   "coverage": 0.7,
+   "selective_acc": 0.7857142857142857,
+   "wrong_rate": 0.15
+  },
+  "typo_informal": {
+   "n": 15,
+   "correct": 11,
+   "abstained": 3,
+   "wrong": 1,
+   "coverage": 0.8,
+   "selective_acc": 0.9166666666666666,
+   "wrong_rate": 0.06666666666666667
+  },
+  "ambiguous": {
+   "n": 12,
+   "correct": 11,
+   "abstained": 0,
+   "wrong": 1,
+   "coverage": 1.0,
+   "selective_acc": 0.9166666666666666,
+   "wrong_rate": 0.08333333333333333
+  },
+  "multi_issue": {
+   "n": 10,
+   "correct": 9,
+   "abstained": 0,
+   "wrong": 1,
+   "coverage": 1.0,
+   "selective_acc": 0.9,
+   "wrong_rate": 0.1
+  },
+  "uncovered": {
+   "n": 13,
+   "correct": 9,
+   "abstained": 2,
+   "wrong": 2,
+   "coverage": 0.8461538461538461,
+   "selective_acc": 0.8181818181818182,
+   "wrong_rate": 0.15384615384615385
+  },
+  "out_of_scope": {
+   "n": 15,
+   "correct": 8,
+   "abstained": 4,
+   "wrong": 3,
+   "coverage": 0.7333333333333333,
+   "selective_acc": 0.7272727272727273,
+   "wrong_rate": 0.2
+  },
+  "old_date": {
+   "n": 5,
+   "correct": 5,
+   "abstained": 0,
+   "wrong": 0,
+   "coverage": 1.0,
+   "selective_acc": 1.0,
+   "wrong_rate": 0.0
+  }
+ },
+ "shown": {
+  "any_gold": 0.7899159663865546,
+  "first_gold": 0.6638655462184874,
+  "none_shown": 12,
+  "avg_shown": 2.277310924369748,
+  "n": 119
+ },
+ "latency_ms": {
+  "mean": 22.078297733331357,
+  "median": 1.0990589998982614,
+  "p95": 90.15997699998479,
+  "max": 103.85737000001427,
+  "startup_s": 4.202939199999946,
+  "peak_rss_mb": 1055.734375
+ },
+ "rows": {
+  "F1 Rules only (offline)": [
+   {
+    "query": "my bike was stolen from outside my office",
+    "category": "easy",
+    "route": [
+     "theft"
+    ],
+    "gold": [
+     "BNS-303"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "correct",
+    "shown": [
+     "BNS-303",
+     "BNS-305"
+    ],
+    "old_law_note": false,
+    "ms": 1.6160380000656005
+   },
+   {
+    "query": "a man snatched my gold chain while I was walking",
+    "category": "easy",
+    "route": [
+     "theft"
+    ],
+    "gold": [
+     "BNS-304"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "correct",
+    "shown": [
+     "BNS-303",
+     "BNS-304"
+    ],
+    "old_law_note": false,
+    "ms": 0.7367260000137321
+   },
+   {
+    "query": "I paid online for a phone but the seller blocked me and never sent it",
+    "category": "easy",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318"
+    ],
+    "old_law_note": false,
+    "ms": 1.4357350000864244
+   },
+   {
+    "query": "my neighbour slapped me and punched my face",
+    "category": "easy",
+    "route": [
+     "assault"
+    ],
+    "gold": [
+     "BNS-115",
+     "BNS-131"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "assault",
+    "outcome": "correct",
+    "shown": [
+     "BNS-115",
+     "BNS-131"
+    ],
+    "old_law_note": false,
+    "ms": 1.0101569998823834
+   },
+   {
+    "query": "someone keeps sending me messages saying he will kill me",
+    "category": "easy",
+    "route": [
+     "threats"
+    ],
+    "gold": [
+     "BNS-351"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "threats",
+    "outcome": "correct",
+    "shown": [
+     "BNS-351"
+    ],
+    "old_law_note": false,
+    "ms": 0.7755649999126035
+   },
+   {
+    "query": "my husband beats me every night and his mother demands more dowry",
+    "category": "easy",
+    "route": [
+     "domestic"
+    ],
+    "gold": [
+     "BNS-85",
+     "BNS-86"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "domestic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-85",
+     "BNS-86",
+     "BNS-115"
+    ],
+    "old_law_note": false,
+    "ms": 0.9189780000724568
+   },
+   {
+    "query": "the police are refusing to write my FIR",
+    "category": "easy",
+    "route": [
+     "fir_refused"
+    ],
+    "gold": [
+     "BNSS-173"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "fir_refused",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-173",
+     "BNSS-175",
+     "BNSS-174"
+    ],
+    "old_law_note": false,
+    "ms": 0.5558079999445908
+   },
+   {
+    "query": "my son was arrested this morning, what are his rights",
+    "category": "easy",
+    "route": [
+     "arrest"
+    ],
+    "gold": [
+     "BNSS-47",
+     "BNSS-48",
+     "BNSS-58"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "arrest",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-47",
+     "BNSS-48",
+     "BNSS-38",
+     "BNSS-58",
+     "BNSS-53"
+    ],
+    "old_law_note": false,
+    "ms": 0.630487000080393
+   },
+   {
+    "query": "how do I get bail for my brother",
+    "category": "easy",
+    "route": [
+     "bail"
+    ],
+    "gold": [
+     "BNSS-478",
+     "BNSS-480"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "bail",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-478",
+     "BNSS-480",
+     "BNSS-482",
+     "BNSS-479"
+    ],
+    "old_law_note": false,
+    "ms": 0.556618000018716
+   },
+   {
+    "query": "my car was hit by a truck on the highway",
+    "category": "easy",
+    "route": [
+     "accident"
+    ],
+    "gold": [
+     "BNS-281"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "accident",
+    "outcome": "correct",
+    "shown": [
+     "BNS-281",
+     "BNS-125"
+    ],
+    "old_law_note": false,
+    "ms": 0.6049629998869932
+   },
+   {
+    "query": "someone set fire to our shop",
+    "category": "easy",
+    "route": [
+     "fire"
+    ],
+    "gold": [
+     "BNS-326"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fire",
+    "outcome": "correct",
+    "shown": [
+     "BNS-324",
+     "BNS-326"
+    ],
+    "old_law_note": false,
+    "ms": 0.4118750000543514
+   },
+   {
+    "query": "a man has been following me home from college every day",
+    "category": "easy",
+    "route": [
+     "followed",
+     "women_harassment"
+    ],
+    "gold": [
+     "BNS-78"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "women_harassment",
+    "outcome": "correct",
+    "shown": [
+     "BNS-78"
+    ],
+    "old_law_note": false,
+    "ms": 1.31975399995099
+   },
+   {
+    "query": "my daughter has been missing since yesterday evening",
+    "category": "easy",
+    "route": [
+     "missing"
+    ],
+    "gold": [
+     "BNSS-173",
+     "BNS-137"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "missing",
+    "outcome": "correct",
+    "shown": [
+     "BNS-137"
+    ],
+    "old_law_note": false,
+    "ms": 0.6742210000538762
+   },
+   {
+    "query": "the police beat my father in the lockup",
+    "category": "easy",
+    "route": [
+     "custodial"
+    ],
+    "gold": [
+     "BNS-120",
+     "BNS-115"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "custodial",
+    "outcome": "correct",
+    "shown": [
+     "BNS-120",
+     "BNSS-53",
+     "BNSS-58",
+     "BNSS-47",
+     "BNSS-48",
+     "BNSS-38"
+    ],
+    "old_law_note": false,
+    "ms": 0.5750190000526345
+   },
+   {
+    "query": "police took my laptop during a search and haven't returned it",
+    "category": "easy",
+    "route": [
+     "seized"
+    ],
+    "gold": [
+     "BNSS-106",
+     "BNSS-503"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "seized",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-106",
+     "BNSS-503",
+     "BNSS-497"
+    ],
+    "old_law_note": false,
+    "ms": 0.663181999925655
+   },
+   {
+    "query": "someone is spreading lies about me on facebook to ruin my reputation",
+    "category": "easy",
+    "route": [
+     "defamation"
+    ],
+    "gold": [
+     "BNS-356"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "defamation",
+    "outcome": "correct",
+    "shown": [
+     "BNS-356",
+     "BNSS-222",
+     "BNSS-174"
+    ],
+    "old_law_note": false,
+    "ms": 0.7932500000151776
+   },
+   {
+    "query": "my neighbour poisoned my dog",
+    "category": "easy",
+    "route": [
+     "animal"
+    ],
+    "gold": [
+     "BNS-325"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "animal",
+    "outcome": "correct",
+    "shown": [
+     "BNS-325"
+    ],
+    "old_law_note": false,
+    "ms": 0.28500100006567664
+   },
+   {
+    "query": "a stranger entered our house at night without permission",
+    "category": "easy",
+    "route": [
+     "trespass"
+    ],
+    "gold": [
+     "BNS-329",
+     "BNS-330",
+     "BNS-331"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "trespass",
+    "outcome": "correct",
+    "shown": [
+     "BNS-329",
+     "BNS-331"
+    ],
+    "old_law_note": false,
+    "ms": 0.6688280000162194
+   },
+   {
+    "query": "my husband married another woman without divorcing me",
+    "category": "easy",
+    "route": [
+     "marriage"
+    ],
+    "gold": [
+     "BNS-82"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "marriage",
+    "outcome": "correct",
+    "shown": [
+     "BNS-82",
+     "BNSS-219"
+    ],
+    "old_law_note": false,
+    "ms": 0.46374299995477486
+   },
+   {
+    "query": "the factory next door releases smoke all day and makes everyone sick",
+    "category": "easy",
+    "route": [
+     "nuisance"
+    ],
+    "gold": [
+     "BNS-270",
+     "BNS-292"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 65.76111300000775
+   },
+   {
+    "query": "I lent my car to a friend and he sold it",
+    "category": "easy",
+    "route": [
+     "not_returned"
+    ],
+    "gold": [
+     "BNS-316",
+     "BNS-314"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 59.25359200000457
+   },
+   {
+    "query": "the taxi driver locked the doors and demanded extra money",
+    "category": "easy",
+    "route": [
+     "transport"
+    ],
+    "gold": [
+     "BNS-308",
+     "BNS-126"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "transport",
+    "outcome": "correct",
+    "shown": [
+     "BNS-308",
+     "BNS-351",
+     "BNS-126"
+    ],
+    "old_law_note": false,
+    "ms": 1.4183329999468697
+   },
+   {
+    "query": "my boss touched me inappropriately in the office",
+    "category": "easy",
+    "route": [
+     "women_harassment"
+    ],
+    "gold": [
+     "BNS-75",
+     "BNS-74"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "women_harassment",
+    "outcome": "correct",
+    "shown": [
+     "BNS-75",
+     "BNS-74"
+    ],
+    "old_law_note": false,
+    "ms": 0.5552190000344126
+   },
+   {
+    "query": "I was raped by my neighbour",
+    "category": "easy",
+    "route": [
+     "sexual_assault"
+    ],
+    "gold": [
+     "BNS-63",
+     "BNS-64"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "sexual_assault",
+    "outcome": "correct",
+    "shown": [
+     "BNS-63",
+     "BNS-64"
+    ],
+    "old_law_note": false,
+    "ms": 0.888443000121697
+   },
+   {
+    "query": "how do I file an FIR",
+    "category": "easy",
+    "route": [
+     "fir_howto"
+    ],
+    "gold": [
+     "BNSS-173"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "fir_howto",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-173",
+     "BNSS-174"
+    ],
+    "old_law_note": false,
+    "ms": 0.5807239999739977
+   },
+   {
+    "query": "I got a call from the police asking me to come to the station",
+    "category": "easy",
+    "route": [
+     "police_call"
+    ],
+    "gold": [
+     "BNSS-179",
+     "BNSS-35"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "police_call",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-179",
+     "BNSS-35"
+    ],
+    "old_law_note": false,
+    "ms": 1.3778119998733018
+   },
+   {
+    "query": "my employer has falsely accused me of theft and I am scared of being arrested",
+    "category": "easy",
+    "route": [
+     "accused"
+    ],
+    "gold": [
+     "BNSS-482"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "accused",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-35",
+     "BNSS-482",
+     "BNSS-47",
+     "BNSS-528",
+     "BNS-248",
+     "BNSS-478",
+     "BNSS-480",
+     "BNSS-479"
+    ],
+    "old_law_note": false,
+    "ms": 1.3662799999565323
+   },
+   {
+    "query": "my landlord locked me inside the room and won't let me out",
+    "category": "easy",
+    "route": [
+     "confinement"
+    ],
+    "gold": [
+     "BNS-127"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "confinement",
+    "outcome": "correct",
+    "shown": [
+     "BNS-126",
+     "BNS-127"
+    ],
+    "old_law_note": false,
+    "ms": 1.2537860000065848
+   },
+   {
+    "query": "someone got into my UPI and took 20000 rupees",
+    "category": "easy",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-303"
+    ],
+    "old_law_note": false,
+    "ms": 0.9256289999939327
+   },
+   {
+    "query": "a man exposed himself to me on the bus",
+    "category": "easy",
+    "route": [
+     "women_harassment"
+    ],
+    "gold": [
+     "BNS-79",
+     "BNS-296",
+     "BNS-75"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "women_harassment",
+    "outcome": "correct",
+    "shown": [
+     "BNS-78"
+    ],
+    "old_law_note": false,
+    "ms": 0.7289220000075147
+   },
+   {
+    "query": "while i was asleep on the train someone took my bag",
+    "category": "medium",
+    "route": [
+     "theft"
+    ],
+    "gold": [
+     "BNS-303",
+     "BNS-305"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "correct",
+    "shown": [
+     "BNS-303",
+     "BNS-305"
+    ],
+    "old_law_note": false,
+    "ms": 1.1110990001270693
+   },
+   {
+    "query": "two guys on a bike grabbed my phone from my hand and sped off",
+    "category": "medium",
+    "route": [
+     "theft"
+    ],
+    "gold": [
+     "BNS-304"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "correct",
+    "shown": [
+     "BNS-303",
+     "BNS-304"
+    ],
+    "old_law_note": false,
+    "ms": 1.1852229999931296
+   },
+   {
+    "query": "a man called pretending to be from my bank and got my OTP, now the money is gone",
+    "category": "medium",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-318",
+     "BNS-319"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-303"
+    ],
+    "old_law_note": false,
+    "ms": 1.393418000134261
+   },
+   {
+    "query": "my wife's relatives came to my house and beat me with sticks",
+    "category": "medium",
+    "route": [
+     "assault"
+    ],
+    "gold": [
+     "BNS-118",
+     "BNS-115"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "assault",
+    "outcome": "correct",
+    "shown": [
+     "BNS-115"
+    ],
+    "old_law_note": false,
+    "ms": 1.0998479999670963
+   },
+   {
+    "query": "my ex says he will leak my private photos unless I pay him",
+    "category": "medium",
+    "route": [
+     "threats"
+    ],
+    "gold": [
+     "BNS-308",
+     "BNS-351",
+     "BNS-77"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "threats",
+    "outcome": "correct",
+    "shown": [
+     "BNS-351",
+     "BNS-308",
+     "BNS-77"
+    ],
+    "old_law_note": false,
+    "ms": 1.1072409999997035
+   },
+   {
+    "query": "my in-laws keep taunting my sister and don't give her food because the dowry was less",
+    "category": "medium",
+    "route": [
+     "domestic"
+    ],
+    "gold": [
+     "BNS-85",
+     "BNS-86"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "domestic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-85",
+     "BNS-86"
+    ],
+    "old_law_note": false,
+    "ms": 1.2198129998068907
+   },
+   {
+    "query": "the SHO told me to go away and come back with proof before he writes anything",
+    "category": "medium",
+    "route": [
+     "fir_refused"
+    ],
+    "gold": [
+     "BNSS-173"
+    ],
+    "clean": true,
+    "kind": "closest",
+    "plan": null,
+    "outcome": "wrong",
+    "shown": [
+     "BNSS-330"
+    ],
+    "old_law_note": false,
+    "ms": 69.59216500013099
+   },
+   {
+    "query": "cops picked up my uncle last night and won't tell us where he is",
+    "category": "medium",
+    "route": [
+     "arrest"
+    ],
+    "gold": [
+     "BNSS-48",
+     "BNSS-47",
+     "BNSS-58"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "arrest",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-47",
+     "BNSS-48",
+     "BNSS-38",
+     "BNSS-58",
+     "BNSS-53"
+    ],
+    "old_law_note": false,
+    "ms": 1.2795900001947302
+   },
+   {
+    "query": "my cousin is in jail, how can the family get him out",
+    "category": "medium",
+    "route": [
+     "bail"
+    ],
+    "gold": [
+     "BNSS-480",
+     "BNSS-478"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "bail",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-478",
+     "BNSS-480",
+     "BNSS-482",
+     "BNSS-479"
+    ],
+    "old_law_note": false,
+    "ms": 1.175550999960251
+   },
+   {
+    "query": "an auto hit my mother while she was crossing the road and she broke her leg",
+    "category": "medium",
+    "route": [
+     "accident"
+    ],
+    "gold": [
+     "BNS-281",
+     "BNS-125"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "accident",
+    "outcome": "correct",
+    "shown": [
+     "BNS-281",
+     "BNS-125"
+    ],
+    "old_law_note": false,
+    "ms": 1.179481000008309
+   },
+   {
+    "query": "some boys threw stones and broke all the windows of our car",
+    "category": "medium",
+    "route": [
+     "fire"
+    ],
+    "gold": [
+     "BNS-324"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fire",
+    "outcome": "correct",
+    "shown": [
+     "BNS-324",
+     "BNS-326"
+    ],
+    "old_law_note": false,
+    "ms": 1.1474809998617275
+   },
+   {
+    "query": "a guy from my gym keeps messaging me on insta even after I blocked him",
+    "category": "medium",
+    "route": [
+     "followed",
+     "women_harassment"
+    ],
+    "gold": [
+     "BNS-78"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "women_harassment",
+    "outcome": "correct",
+    "shown": [
+     "BNS-78"
+    ],
+    "old_law_note": false,
+    "ms": 1.1001430000305845
+   },
+   {
+    "query": "my 15 year old brother left home and his phone is switched off",
+    "category": "medium",
+    "route": [
+     "missing"
+    ],
+    "gold": [
+     "BNSS-173",
+     "BNS-137"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 109.25975899999685
+   },
+   {
+    "query": "the constable slapped my friend at the police station to make him confess",
+    "category": "medium",
+    "route": [
+     "custodial"
+    ],
+    "gold": [
+     "BNS-120"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "custodial",
+    "outcome": "correct",
+    "shown": [
+     "BNS-120",
+     "BNSS-53",
+     "BNSS-58"
+    ],
+    "old_law_note": false,
+    "ms": 1.458732000173768
+   },
+   {
+    "query": "the police seized my scooter after an accident, how do I get it back",
+    "category": "medium",
+    "route": [
+     "seized"
+    ],
+    "gold": [
+     "BNSS-503"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "seized",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-106",
+     "BNSS-503",
+     "BNSS-497",
+     "BNS-281",
+     "BNS-125"
+    ],
+    "old_law_note": false,
+    "ms": 1.4536549999775161
+   },
+   {
+    "query": "my relative is telling everyone in the village that I am a thief",
+    "category": "medium",
+    "route": [
+     "defamation"
+    ],
+    "gold": [
+     "BNS-356"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "defamation",
+    "outcome": "correct",
+    "shown": [
+     "BNS-356",
+     "BNSS-222",
+     "BNSS-174"
+    ],
+    "old_law_note": false,
+    "ms": 1.1529280000104336
+   },
+   {
+    "query": "my neighbour beats his cow with an iron rod every day",
+    "category": "medium",
+    "route": [
+     "animal"
+    ],
+    "gold": [
+     "BNS-325"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "animal",
+    "outcome": "correct",
+    "shown": [
+     "BNS-325"
+    ],
+    "old_law_note": false,
+    "ms": 0.9361140000692103
+   },
+   {
+    "query": "my ex-partner's brother entered my flat and refused to leave",
+    "category": "medium",
+    "route": [
+     "trespass"
+    ],
+    "gold": [
+     "BNS-329",
+     "BNS-330"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "trespass",
+    "outcome": "correct",
+    "shown": [
+     "BNS-329"
+    ],
+    "old_law_note": false,
+    "ms": 0.9423559999959252
+   },
+   {
+    "query": "a shop near my house plays loud music till 2 am every night",
+    "category": "medium",
+    "route": [
+     "nuisance"
+    ],
+    "gold": [
+     "BNS-270",
+     "BNS-292"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "nuisance",
+    "outcome": "correct",
+    "shown": [
+     "BNS-270",
+     "BNS-292",
+     "BNSS-152"
+    ],
+    "old_law_note": false,
+    "ms": 1.0121090001575794
+   },
+   {
+    "query": "my friend took 50000 from me for a business and now says he never got it",
+    "category": "medium",
+    "route": [
+     "not_returned",
+     "fraud"
+    ],
+    "gold": [
+     "BNS-316",
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 97.96471900017423
+   },
+   {
+    "query": "the cab driver left me in the middle of nowhere at night and drove off with my luggage",
+    "category": "medium",
+    "route": [
+     "transport"
+    ],
+    "gold": [
+     "BNS-303",
+     "BNS-316"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "transport",
+    "outcome": "correct",
+    "shown": [
+     "BNS-351",
+     "BNS-303",
+     "BNS-305"
+    ],
+    "old_law_note": false,
+    "ms": 1.9154409999373456
+   },
+   {
+    "query": "my teacher keeps making dirty jokes about my body",
+    "category": "medium",
+    "route": [
+     "women_harassment"
+    ],
+    "gold": [
+     "BNS-75",
+     "BNS-79"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 87.0647710000867
+   },
+   {
+    "query": "a man forced himself on me after a party",
+    "category": "medium",
+    "route": [
+     "sexual_assault"
+    ],
+    "gold": [
+     "BNS-63",
+     "BNS-64"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 86.95817900002112
+   },
+   {
+    "query": "where do I go to report a crime and what do I need to take",
+    "category": "medium",
+    "route": [
+     "fir_howto"
+    ],
+    "gold": [
+     "BNSS-173"
+    ],
+    "clean": true,
+    "kind": "answer",
+    "plan": null,
+    "outcome": "wrong",
+    "shown": [
+     "BNSS-176"
+    ],
+    "old_law_note": false,
+    "ms": 44.29948599999989
+   },
+   {
+    "query": "I got a notice from the police to appear for questioning about a fight",
+    "category": "medium",
+    "route": [
+     "police_call"
+    ],
+    "gold": [
+     "BNSS-35",
+     "BNSS-179"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "police_call",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-179",
+     "BNSS-35",
+     "BNSS-38"
+    ],
+    "old_law_note": false,
+    "ms": 1.312256999881356
+   },
+   {
+    "query": "a woman filed a false case against me and I fear arrest",
+    "category": "medium",
+    "route": [
+     "accused"
+    ],
+    "gold": [
+     "BNSS-482"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "accused",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-35",
+     "BNSS-482",
+     "BNSS-47",
+     "BNSS-528",
+     "BNS-248",
+     "BNSS-478",
+     "BNSS-480",
+     "BNSS-479"
+    ],
+    "old_law_note": false,
+    "ms": 1.263615999960166
+   },
+   {
+    "query": "my employer took my passport and won't let me leave the factory",
+    "category": "medium",
+    "route": [
+     "confinement",
+     "not_returned"
+    ],
+    "gold": [
+     "BNS-127",
+     "BNS-126"
+    ],
+    "clean": true,
+    "kind": "closest",
+    "plan": "generic",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-306"
+    ],
+    "old_law_note": false,
+    "ms": 55.805799000154366
+   },
+   {
+    "query": "someone made a fake profile with my photos and is asking people for money",
+    "category": "medium",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-319",
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318",
+     "BNS-319",
+     "BNS-336",
+     "BNS-340"
+    ],
+    "old_law_note": false,
+    "ms": 1.0485440000138624
+   },
+   {
+    "query": "my husband's family threw me out of the house and kept my jewellery",
+    "category": "medium",
+    "route": [
+     "domestic",
+     "not_returned"
+    ],
+    "gold": [
+     "BNS-85",
+     "BNS-316"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "domestic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-85",
+     "BNS-86",
+     "BNS-316",
+     "BNS-314"
+    ],
+    "old_law_note": false,
+    "ms": 1.2535650000700116
+   },
+   {
+    "query": "a group of men beat up a boy accusing him of stealing a goat",
+    "category": "medium",
+    "route": [
+     "assault"
+    ],
+    "gold": [
+     "BNS-115",
+     "BNS-117"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 63.97405699999581
+   },
+   {
+    "query": "he keeps standing outside my window at night and watching",
+    "category": "hard",
+    "route": [
+     "followed",
+     "women_harassment"
+    ],
+    "gold": [
+     "BNS-78",
+     "BNS-77"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 56.89191100009339
+   },
+   {
+    "query": "they said my son is in custody and I must send money to a number to release him",
+    "category": "hard",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-318",
+     "BNS-319"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "arrest",
+    "outcome": "wrong",
+    "shown": [
+     "BNSS-47",
+     "BNSS-48",
+     "BNSS-38",
+     "BNSS-58",
+     "BNSS-53"
+    ],
+    "old_law_note": false,
+    "ms": 1.0381679999227345
+   },
+   {
+    "query": "the man who bought my land paid with a cheque that bounced",
+    "category": "hard",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.5312630000844365
+   },
+   {
+    "query": "my father's signature was copied on property papers",
+    "category": "hard",
+    "route": [
+     "none",
+     "fraud"
+    ],
+    "gold": [
+     "BNS-336",
+     "BNS-335",
+     "BNS-340"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "generic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-335"
+    ],
+    "old_law_note": false,
+    "ms": 24.097863999941183
+   },
+   {
+    "query": "my brother came home with bruises after spending the night at the thana",
+    "category": "hard",
+    "route": [
+     "custodial"
+    ],
+    "gold": [
+     "BNS-120",
+     "BNS-115"
+    ],
+    "clean": true,
+    "kind": "closest",
+    "plan": null,
+    "outcome": "wrong",
+    "shown": [
+     "BNSS-220"
+    ],
+    "old_law_note": false,
+    "ms": 41.509496000117
+   },
+   {
+    "query": "the man at the ATM offered to help me and swapped my card",
+    "category": "hard",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-318",
+     "BNS-319"
+    ],
+    "clean": true,
+    "kind": "closest",
+    "plan": "generic",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-252"
+    ],
+    "old_law_note": false,
+    "ms": 44.969218999995064
+   },
+   {
+    "query": "the people next door keep dumping their construction waste in front of my gate",
+    "category": "hard",
+    "route": [
+     "nuisance"
+    ],
+    "gold": [
+     "BNS-270",
+     "BNS-292"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "nuisance",
+    "outcome": "correct",
+    "shown": [
+     "BNS-270",
+     "BNS-292",
+     "BNSS-152"
+    ],
+    "old_law_note": false,
+    "ms": 0.9643519999826822
+   },
+   {
+    "query": "my sister's husband doesn't hit her but controls all her money and won't let her meet us",
+    "category": "hard",
+    "route": [
+     "domestic"
+    ],
+    "gold": [
+     "BNS-85",
+     "BNS-86"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "domestic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-85",
+     "BNS-86",
+     "BNS-115"
+    ],
+    "old_law_note": false,
+    "ms": 0.9265179999147222
+   },
+   {
+    "query": "a car came very close at high speed, knocked me down and drove away",
+    "category": "hard",
+    "route": [
+     "accident"
+    ],
+    "gold": [
+     "BNS-281",
+     "BNS-125"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 61.195248000103675
+   },
+   {
+    "query": "someone keeps calling my wife from unknown numbers and breathing without speaking",
+    "category": "hard",
+    "route": [
+     "women_harassment",
+     "followed",
+     "threats"
+    ],
+    "gold": [
+     "BNS-78",
+     "BNS-79"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 59.45900500000789
+   },
+   {
+    "query": "the builder's men came at night and broke our compound wall",
+    "category": "hard",
+    "route": [
+     "fire",
+     "trespass"
+    ],
+    "gold": [
+     "BNS-324",
+     "BNS-329"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fire",
+    "outcome": "correct",
+    "shown": [
+     "BNS-324",
+     "BNS-326"
+    ],
+    "old_law_note": false,
+    "ms": 0.9475619999648188
+   },
+   {
+    "query": "a relative is keeping my mother at his house and won't let us meet her",
+    "category": "hard",
+    "route": [
+     "confinement"
+    ],
+    "gold": [
+     "BNS-127"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 64.47696500003985
+   },
+   {
+    "query": "my roommate used my ID card to take a loan in my name",
+    "category": "hard",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-319",
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "closest",
+    "plan": "generic",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-314",
+     "BNS-252",
+     "BNSS-39"
+    ],
+    "old_law_note": false,
+    "ms": 41.48177299998679
+   },
+   {
+    "query": "my friend's parents locked her in a room because she wants to marry someone they don't like",
+    "category": "hard",
+    "route": [
+     "confinement"
+    ],
+    "gold": [
+     "BNS-127"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "confinement",
+    "outcome": "correct",
+    "shown": [
+     "BNS-126",
+     "BNS-127"
+    ],
+    "old_law_note": false,
+    "ms": 1.1700490001658181
+   },
+   {
+    "query": "the hotel staff hid a camera in the bathroom",
+    "category": "hard",
+    "route": [
+     "women_harassment",
+     "sexual_assault"
+    ],
+    "gold": [
+     "BNS-77"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 58.134834999918894
+   },
+   {
+    "query": "a man at the temple is collecting money for a charity that doesn't exist",
+    "category": "hard",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 63.889886999959344
+   },
+   {
+    "query": "someone put sugar in my bike's petrol tank",
+    "category": "hard",
+    "route": [
+     "fire"
+    ],
+    "gold": [
+     "BNS-324"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 60.00100100004602
+   },
+   {
+    "query": "after I complained, the officer laughed and said such cases are not taken",
+    "category": "hard",
+    "route": [
+     "fir_refused"
+    ],
+    "gold": [
+     "BNSS-173"
+    ],
+    "clean": true,
+    "kind": "closest",
+    "plan": null,
+    "outcome": "wrong",
+    "shown": [
+     "BNSS-191",
+     "BNSS-223",
+     "BNSS-273"
+    ],
+    "old_law_note": false,
+    "ms": 42.23654600014015
+   },
+   {
+    "query": "my uncle has been in jail for 3 months and no charge sheet has been filed",
+    "category": "hard",
+    "route": [
+     "bail"
+    ],
+    "gold": [
+     "BNSS-187",
+     "BNSS-480"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 69.60101100003158
+   },
+   {
+    "query": "people in my colony are telling my landlord I run a brothel, which is a lie",
+    "category": "hard",
+    "route": [
+     "defamation"
+    ],
+    "gold": [
+     "BNS-356"
+    ],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "wrong",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 1.1222400000860944
+   },
+   {
+    "query": "sum1 stole my fone at metro stn",
+    "category": "typo_informal",
+    "route": [
+     "theft"
+    ],
+    "gold": [
+     "BNS-303"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "correct",
+    "shown": [
+     "BNS-303"
+    ],
+    "old_law_note": false,
+    "ms": 1.0543789999246655
+   },
+   {
+    "query": "polise not registring my complain wat to do",
+    "category": "typo_informal",
+    "route": [
+     "fir_refused"
+    ],
+    "gold": [
+     "BNSS-173"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 70.18281299997398
+   },
+   {
+    "query": "my hubby beats me daily n his family supports him",
+    "category": "typo_informal",
+    "route": [
+     "domestic"
+    ],
+    "gold": [
+     "BNS-85",
+     "BNS-115"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 65.25690400007989
+   },
+   {
+    "query": "ppl threaten 2 kill me over land dispute",
+    "category": "typo_informal",
+    "route": [
+     "threats"
+    ],
+    "gold": [
+     "BNS-351"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "threats",
+    "outcome": "correct",
+    "shown": [
+     "BNS-351"
+    ],
+    "old_law_note": false,
+    "ms": 0.7265149999966525
+   },
+   {
+    "query": "got scamed on olx, paid advance, no product",
+    "category": "typo_informal",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318",
+     "BNS-316"
+    ],
+    "old_law_note": false,
+    "ms": 0.6783369999538991
+   },
+   {
+    "query": "neighbr dog bit my kid what can i do",
+    "category": "typo_informal",
+    "route": [
+     "none"
+    ],
+    "gold": [
+     "BNS-291"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "assault",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-291"
+    ],
+    "old_law_note": false,
+    "ms": 0.4586339998695621
+   },
+   {
+    "query": "bro got arested last nite no info frm cops",
+    "category": "typo_informal",
+    "route": [
+     "arrest"
+    ],
+    "gold": [
+     "BNSS-48",
+     "BNSS-47"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 77.55082900007437
+   },
+   {
+    "query": "some guy keps folowing me evry day",
+    "category": "typo_informal",
+    "route": [
+     "followed",
+     "women_harassment"
+    ],
+    "gold": [
+     "BNS-78"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 62.84659799985093
+   },
+   {
+    "query": "car acident, other driver ran away",
+    "category": "typo_informal",
+    "route": [
+     "accident"
+    ],
+    "gold": [
+     "BNS-281"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 60.66126400014582
+   },
+   {
+    "query": "my bf is blackmailing me wid pics",
+    "category": "typo_informal",
+    "route": [
+     "threats"
+    ],
+    "gold": [
+     "BNS-308",
+     "BNS-351",
+     "BNS-77"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "threats",
+    "outcome": "correct",
+    "shown": [
+     "BNS-351"
+    ],
+    "old_law_note": false,
+    "ms": 0.8243040001616464
+   },
+   {
+    "query": "how to get bail fr my dad",
+    "category": "typo_informal",
+    "route": [
+     "bail"
+    ],
+    "gold": [
+     "BNSS-478",
+     "BNSS-480"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "bail",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-478",
+     "BNSS-480",
+     "BNSS-482",
+     "BNSS-479"
+    ],
+    "old_law_note": false,
+    "ms": 0.5825069999900734
+   },
+   {
+    "query": "they broke into our hous when we were out of town",
+    "category": "typo_informal",
+    "route": [
+     "trespass",
+     "theft"
+    ],
+    "gold": [
+     "BNS-331",
+     "BNS-305"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "correct",
+    "shown": [
+     "BNS-303",
+     "BNS-331"
+    ],
+    "old_law_note": false,
+    "ms": 0.6954790001145739
+   },
+   {
+    "query": "landlord thrw my stuff out n locked the room",
+    "category": "typo_informal",
+    "route": [
+     "none",
+     "not_returned",
+     "trespass"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.37040999995952006
+   },
+   {
+    "query": "cops wrote my statment wrong",
+    "category": "typo_informal",
+    "route": [
+     "none",
+     "police_call"
+    ],
+    "gold": [
+     "BNSS-180",
+     "BNSS-181"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 54.589643000099386
+   },
+   {
+    "query": "my daughter not come home from school yet",
+    "category": "typo_informal",
+    "route": [
+     "missing"
+    ],
+    "gold": [
+     "BNSS-173"
+    ],
+    "clean": false,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 62.28769499989539
+   },
+   {
+    "query": "something happened with my neighbour",
+    "category": "ambiguous",
+    "route": [
+     "clarify"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 63.52636800011169
+   },
+   {
+    "query": "i need help with a police matter",
+    "category": "ambiguous",
+    "route": [
+     "clarify",
+     "police_call",
+     "fir_howto"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 61.43652099990504
+   },
+   {
+    "query": "my friend is in trouble",
+    "category": "ambiguous",
+    "route": [
+     "clarify"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 55.7410459998664
+   },
+   {
+    "query": "someone did something to my car",
+    "category": "ambiguous",
+    "route": [
+     "clarify",
+     "fire",
+     "accident"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 53.839088000131596
+   },
+   {
+    "query": "what should i do",
+    "category": "ambiguous",
+    "route": [
+     "clarify"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 48.38545899997371
+   },
+   {
+    "query": "there is a problem at my workplace",
+    "category": "ambiguous",
+    "route": [
+     "clarify",
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 53.64910000002965
+   },
+   {
+    "query": "my family member is being harassed",
+    "category": "ambiguous",
+    "route": [
+     "clarify",
+     "women_harassment",
+     "domestic"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 51.57540400000471
+   },
+   {
+    "query": "i lost money",
+    "category": "ambiguous",
+    "route": [
+     "clarify",
+     "fraud",
+     "theft"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "answer",
+    "plan": null,
+    "outcome": "wrong",
+    "shown": [
+     "BNSS-471",
+     "BNSS-499",
+     "BNS-314"
+    ],
+    "old_law_note": false,
+    "ms": 17.643545000055383
+   },
+   {
+    "query": "they took him",
+    "category": "ambiguous",
+    "route": [
+     "clarify",
+     "missing",
+     "arrest"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 40.97844099987924
+   },
+   {
+    "query": "my case",
+    "category": "ambiguous",
+    "route": [
+     "clarify"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 42.22282399996402
+   },
+   {
+    "query": "a fight happened",
+    "category": "ambiguous",
+    "route": [
+     "clarify",
+     "assault"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 41.169461999970736
+   },
+   {
+    "query": "i want to complain",
+    "category": "ambiguous",
+    "route": [
+     "clarify",
+     "fir_howto"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "closest",
+    "plan": "generic",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-357",
+     "BNSS-272",
+     "BNSS-350"
+    ],
+    "old_law_note": false,
+    "ms": 29.44959100000233
+   },
+   {
+    "query": "my husband beat me and took away my phone so I can't call anyone",
+    "category": "multi_issue",
+    "route": [
+     "domestic",
+     "assault"
+    ],
+    "gold": [
+     "BNS-85",
+     "BNS-115"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "domestic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-85",
+     "BNS-86",
+     "BNS-115",
+     "BNS-303",
+     "BNS-309"
+    ],
+    "old_law_note": false,
+    "ms": 1.1573930000849941
+   },
+   {
+    "query": "a man robbed me at knifepoint and then the police refused to file the FIR",
+    "category": "multi_issue",
+    "route": [
+     "fir_refused",
+     "theft"
+    ],
+    "gold": [
+     "BNS-309",
+     "BNSS-173"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fir_refused",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-173",
+     "BNSS-175",
+     "BNSS-174",
+     "BNS-303",
+     "BNS-309"
+    ],
+    "old_law_note": false,
+    "ms": 1.0196059999998397
+   },
+   {
+    "query": "after the accident the other driver threatened to kill me if I complained",
+    "category": "multi_issue",
+    "route": [
+     "accident",
+     "threats"
+    ],
+    "gold": [
+     "BNS-281",
+     "BNS-351"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "accident",
+    "outcome": "correct",
+    "shown": [
+     "BNS-281",
+     "BNS-125",
+     "BNS-351"
+    ],
+    "old_law_note": false,
+    "ms": 0.7581100001061714
+   },
+   {
+    "query": "my neighbour broke into my house and hit my father",
+    "category": "multi_issue",
+    "route": [
+     "trespass",
+     "assault"
+    ],
+    "gold": [
+     "BNS-331",
+     "BNS-115"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-303",
+     "BNS-331",
+     "BNS-305",
+     "BNS-309"
+    ],
+    "old_law_note": false,
+    "ms": 0.6264690000534756
+   },
+   {
+    "query": "my brother was arrested and the police beat him in custody",
+    "category": "multi_issue",
+    "route": [
+     "custodial",
+     "arrest"
+    ],
+    "gold": [
+     "BNSS-47",
+     "BNS-120"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "custodial",
+    "outcome": "correct",
+    "shown": [
+     "BNS-120",
+     "BNSS-53",
+     "BNSS-58",
+     "BNSS-47",
+     "BNSS-48",
+     "BNSS-38"
+    ],
+    "old_law_note": false,
+    "ms": 0.6577419999302947
+   },
+   {
+    "query": "someone stole my wallet and then used my card to buy things online",
+    "category": "multi_issue",
+    "route": [
+     "theft",
+     "fraud"
+    ],
+    "gold": [
+     "BNS-303",
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "correct",
+    "shown": [
+     "BNS-303",
+     "BNS-317"
+    ],
+    "old_law_note": false,
+    "ms": 0.7052329999623907
+   },
+   {
+    "query": "my ex is following me and posting lies about me online",
+    "category": "multi_issue",
+    "route": [
+     "followed",
+     "women_harassment",
+     "defamation"
+    ],
+    "gold": [
+     "BNS-78",
+     "BNS-356"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "women_harassment",
+    "outcome": "correct",
+    "shown": [
+     "BNS-78",
+     "BNS-356",
+     "BNSS-222",
+     "BNSS-174"
+    ],
+    "old_law_note": false,
+    "ms": 0.7973920000949875
+   },
+   {
+    "query": "the seller cheated me and when I asked for a refund he threatened me",
+    "category": "multi_issue",
+    "route": [
+     "fraud",
+     "threats"
+    ],
+    "gold": [
+     "BNS-318",
+     "BNS-351"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318",
+     "BNS-351"
+    ],
+    "old_law_note": false,
+    "ms": 0.7613739999214886
+   },
+   {
+    "query": "my in-laws threw acid on my sister",
+    "category": "multi_issue",
+    "route": [
+     "domestic",
+     "assault"
+    ],
+    "gold": [
+     "BNS-124"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "generic",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-124",
+     "BNS-80"
+    ],
+    "old_law_note": false,
+    "ms": 24.059746999910203
+   },
+   {
+    "query": "my dog was killed by a speeding car and the driver abused me",
+    "category": "multi_issue",
+    "route": [
+     "animal",
+     "accident",
+     "threats"
+    ],
+    "gold": [
+     "BNS-325",
+     "BNS-281"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 55.50753300008182
+   },
+   {
+    "query": "someone forged my signature on a cheque and withdrew money",
+    "category": "uncovered",
+    "route": [
+     "none",
+     "fraud"
+    ],
+    "gold": [
+     "BNS-336",
+     "BNS-340",
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318",
+     "BNS-336",
+     "BNS-340"
+    ],
+    "old_law_note": false,
+    "ms": 0.8561189999909402
+   },
+   {
+    "query": "a shop sold me fake medicines that made my mother sick",
+    "category": "uncovered",
+    "route": [
+     "none",
+     "fraud"
+    ],
+    "gold": [
+     "BNS-276",
+     "BNS-277",
+     "BNS-278"
+    ],
+    "clean": true,
+    "kind": "closest",
+    "plan": "generic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-277",
+     "BNS-276",
+     "BNS-278"
+    ],
+    "old_law_note": false,
+    "ms": 37.14007500002481
+   },
+   {
+    "query": "my colleague is selling ganja in the office",
+    "category": "uncovered",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.46140800009197847
+   },
+   {
+    "query": "someone is printing fake 500 rupee notes",
+    "category": "uncovered",
+    "route": [
+     "none"
+    ],
+    "gold": [
+     "BNS-178",
+     "BNS-180"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "generic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-182",
+     "BNS-179"
+    ],
+    "old_law_note": false,
+    "ms": 19.184166999821173
+   },
+   {
+    "query": "a man insulted our god in a video to hurt my community's feelings",
+    "category": "uncovered",
+    "route": [
+     "none"
+    ],
+    "gold": [
+     "BNS-299"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "generic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-118",
+     "BNS-117"
+    ],
+    "old_law_note": false,
+    "ms": 24.930511000093247
+   },
+   {
+    "query": "a gang is forcing small shop owners to pay them money every month",
+    "category": "uncovered",
+    "route": [
+     "none",
+     "threats"
+    ],
+    "gold": [
+     "BNS-308",
+     "BNS-112"
+    ],
+    "clean": true,
+    "kind": "closest",
+    "plan": "generic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-313",
+     "BNS-193"
+    ],
+    "old_law_note": false,
+    "ms": 38.063021999960256
+   },
+   {
+    "query": "someone kidnapped my business partner and is asking for ransom",
+    "category": "uncovered",
+    "route": [
+     "none",
+     "missing"
+    ],
+    "gold": [
+     "BNS-140"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "missing",
+    "outcome": "correct",
+    "shown": [
+     "BNS-137",
+     "BNS-140",
+     "BNS-351",
+     "BNS-308"
+    ],
+    "old_law_note": false,
+    "ms": 0.8802110000942776
+   },
+   {
+    "query": "a restaurant mixed something harmful in the food and many people fell sick",
+    "category": "uncovered",
+    "route": [
+     "none"
+    ],
+    "gold": [
+     "BNS-274"
+    ],
+    "clean": true,
+    "kind": "closest",
+    "plan": "generic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-274",
+     "BNS-275"
+    ],
+    "old_law_note": false,
+    "ms": 38.06090600005518
+   },
+   {
+    "query": "a man gave false evidence against me in court",
+    "category": "uncovered",
+    "route": [
+     "none"
+    ],
+    "gold": [
+     "BNS-227",
+     "BNS-229"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 50.08704400006536
+   },
+   {
+    "query": "a government officer says he will cancel my licence unless I pay him",
+    "category": "uncovered",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 55.98961700002292
+   },
+   {
+    "query": "my nephew is being forced to beg on the street by a gang",
+    "category": "uncovered",
+    "route": [
+     "none",
+     "missing"
+    ],
+    "gold": [
+     "BNS-139"
+    ],
+    "clean": true,
+    "kind": "closest",
+    "plan": "generic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-139",
+     "BNS-313",
+     "BNS-112"
+    ],
+    "old_law_note": false,
+    "ms": 38.479434999999285
+   },
+   {
+    "query": "someone is pretending to be a police officer and collecting fines from drivers",
+    "category": "uncovered",
+    "route": [
+     "none",
+     "fraud"
+    ],
+    "gold": [
+     "BNS-204",
+     "BNS-319"
+    ],
+    "clean": true,
+    "kind": "closest",
+    "plan": "generic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-204",
+     "BNS-319"
+    ],
+    "old_law_note": false,
+    "ms": 45.669273999919824
+   },
+   {
+    "query": "my boss keeps humiliating my friend and he talks about ending his life because of it",
+    "category": "uncovered",
+    "route": [
+     "none"
+    ],
+    "gold": [
+     "BNS-108"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 79.61284800012436
+   },
+   {
+    "query": "my company hasn't paid my salary for 3 months",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 3.6357030000999657
+   },
+   {
+    "query": "my landlord won't return my security deposit",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": false,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.4353449999143777
+   },
+   {
+    "query": "the builder hasn't given possession of my flat for 4 years",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.47318800011453277
+   },
+   {
+    "query": "the electricity board sent a bill of 50000 for one month",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 74.13401300004807
+   },
+   {
+    "query": "I want to divorce my wife",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.5677740000464837
+   },
+   {
+    "query": "the bank isn't releasing my late father's savings to us",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 77.42383200002223
+   },
+   {
+    "query": "the online store won't refund my damaged product",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "plan",
+    "plan": "generic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-343",
+     "BNS-327"
+    ],
+    "old_law_note": false,
+    "ms": 31.143479000093066
+   },
+   {
+    "query": "my cheque bounced and the payee sent me a legal notice",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.7884119997925154
+   },
+   {
+    "query": "my housing society is charging illegal maintenance",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.5379609999636159
+   },
+   {
+    "query": "can I patent my app idea",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 64.11303000004409
+   },
+   {
+    "query": "my neighbour is building on part of my land",
+    "category": "out_of_scope",
+    "route": [
+     "none",
+     "trespass"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 68.98905900015961
+   },
+   {
+    "query": "how do I change my name legally",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 65.73805900006846
+   },
+   {
+    "query": "my employer fired me without notice",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": false,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.5425040001227899
+   },
+   {
+    "query": "the school is not giving my child's transfer certificate",
+    "category": "out_of_scope",
+    "route": [
+     "none",
+     "not_returned"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 73.8570629998776
+   },
+   {
+    "query": "i want custody of my kids after separation",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 84.08276900013334
+   },
+   {
+    "query": "my phone was stolen in March 2023 and the police never found it",
+    "category": "old_date",
+    "route": [
+     "theft"
+    ],
+    "gold": [
+     "BNS-303"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "correct",
+    "shown": [
+     "BNS-303"
+    ],
+    "old_law_note": true,
+    "ms": 1.2429609998889646
+   },
+   {
+    "query": "I was cheated by a property dealer in 2021",
+    "category": "old_date",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318"
+    ],
+    "old_law_note": true,
+    "ms": 0.9242700000413606
+   },
+   {
+    "query": "my husband has been beating me since 2020",
+    "category": "old_date",
+    "route": [
+     "domestic"
+    ],
+    "gold": [
+     "BNS-85"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "domestic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-85",
+     "BNS-86",
+     "BNS-115"
+    ],
+    "old_law_note": true,
+    "ms": 0.739292999924146
+   },
+   {
+    "query": "someone attacked me two years ago and the case is still pending",
+    "category": "old_date",
+    "route": [
+     "assault"
+    ],
+    "gold": [
+     "BNS-115"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "assault",
+    "outcome": "correct",
+    "shown": [
+     "BNS-115"
+    ],
+    "old_law_note": true,
+    "ms": 0.9951350000392267
+   },
+   {
+    "query": "the police registered an FIR against me in 2022, can I get anticipatory bail",
+    "category": "old_date",
+    "route": [
+     "accused",
+     "bail"
+    ],
+    "gold": [
+     "BNSS-482"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "accused",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-35",
+     "BNSS-482",
+     "BNSS-47",
+     "BNSS-528",
+     "BNS-248",
+     "BNSS-478",
+     "BNSS-480",
+     "BNSS-479"
+    ],
+    "old_law_note": true,
+    "ms": 1.1642950000805286
+   }
+  ],
+  "F2 Rules + trained classifier (offline default)": [
+   {
+    "query": "my bike was stolen from outside my office",
+    "category": "easy",
+    "route": [
+     "theft"
+    ],
+    "gold": [
+     "BNS-303"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "correct",
+    "shown": [
+     "BNS-303",
+     "BNS-305"
+    ],
+    "old_law_note": false,
+    "ms": 0.9100180000132241
+   },
+   {
+    "query": "a man snatched my gold chain while I was walking",
+    "category": "easy",
+    "route": [
+     "theft"
+    ],
+    "gold": [
+     "BNS-304"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "correct",
+    "shown": [
+     "BNS-303",
+     "BNS-304"
+    ],
+    "old_law_note": false,
+    "ms": 0.7279819999439496
+   },
+   {
+    "query": "I paid online for a phone but the seller blocked me and never sent it",
+    "category": "easy",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318"
+    ],
+    "old_law_note": false,
+    "ms": 0.7313749999866559
+   },
+   {
+    "query": "my neighbour slapped me and punched my face",
+    "category": "easy",
+    "route": [
+     "assault"
+    ],
+    "gold": [
+     "BNS-115",
+     "BNS-131"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "assault",
+    "outcome": "correct",
+    "shown": [
+     "BNS-115",
+     "BNS-131"
+    ],
+    "old_law_note": false,
+    "ms": 0.4823619999569928
+   },
+   {
+    "query": "someone keeps sending me messages saying he will kill me",
+    "category": "easy",
+    "route": [
+     "threats"
+    ],
+    "gold": [
+     "BNS-351"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "threats",
+    "outcome": "correct",
+    "shown": [
+     "BNS-351"
+    ],
+    "old_law_note": false,
+    "ms": 0.5034139999224863
+   },
+   {
+    "query": "my husband beats me every night and his mother demands more dowry",
+    "category": "easy",
+    "route": [
+     "domestic"
+    ],
+    "gold": [
+     "BNS-85",
+     "BNS-86"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "domestic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-85",
+     "BNS-86",
+     "BNS-115"
+    ],
+    "old_law_note": false,
+    "ms": 0.6330290000278183
+   },
+   {
+    "query": "the police are refusing to write my FIR",
+    "category": "easy",
+    "route": [
+     "fir_refused"
+    ],
+    "gold": [
+     "BNSS-173"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "fir_refused",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-173",
+     "BNSS-175",
+     "BNSS-174"
+    ],
+    "old_law_note": false,
+    "ms": 0.5066310000074736
+   },
+   {
+    "query": "my son was arrested this morning, what are his rights",
+    "category": "easy",
+    "route": [
+     "arrest"
+    ],
+    "gold": [
+     "BNSS-47",
+     "BNSS-48",
+     "BNSS-58"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "arrest",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-47",
+     "BNSS-48",
+     "BNSS-38",
+     "BNSS-58",
+     "BNSS-53"
+    ],
+    "old_law_note": false,
+    "ms": 0.5567440000504575
+   },
+   {
+    "query": "how do I get bail for my brother",
+    "category": "easy",
+    "route": [
+     "bail"
+    ],
+    "gold": [
+     "BNSS-478",
+     "BNSS-480"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "bail",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-478",
+     "BNSS-480",
+     "BNSS-482",
+     "BNSS-479"
+    ],
+    "old_law_note": false,
+    "ms": 0.6456109999817272
+   },
+   {
+    "query": "my car was hit by a truck on the highway",
+    "category": "easy",
+    "route": [
+     "accident"
+    ],
+    "gold": [
+     "BNS-281"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "accident",
+    "outcome": "correct",
+    "shown": [
+     "BNS-281",
+     "BNS-125"
+    ],
+    "old_law_note": false,
+    "ms": 0.48405200004708604
+   },
+   {
+    "query": "someone set fire to our shop",
+    "category": "easy",
+    "route": [
+     "fire"
+    ],
+    "gold": [
+     "BNS-326"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fire",
+    "outcome": "correct",
+    "shown": [
+     "BNS-324",
+     "BNS-326"
+    ],
+    "old_law_note": false,
+    "ms": 0.42364199998701224
+   },
+   {
+    "query": "a man has been following me home from college every day",
+    "category": "easy",
+    "route": [
+     "followed",
+     "women_harassment"
+    ],
+    "gold": [
+     "BNS-78"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "women_harassment",
+    "outcome": "correct",
+    "shown": [
+     "BNS-78"
+    ],
+    "old_law_note": false,
+    "ms": 0.5500920001395571
+   },
+   {
+    "query": "my daughter has been missing since yesterday evening",
+    "category": "easy",
+    "route": [
+     "missing"
+    ],
+    "gold": [
+     "BNSS-173",
+     "BNS-137"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "missing",
+    "outcome": "correct",
+    "shown": [
+     "BNS-137"
+    ],
+    "old_law_note": false,
+    "ms": 0.49422699999013275
+   },
+   {
+    "query": "the police beat my father in the lockup",
+    "category": "easy",
+    "route": [
+     "custodial"
+    ],
+    "gold": [
+     "BNS-120",
+     "BNS-115"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "custodial",
+    "outcome": "correct",
+    "shown": [
+     "BNS-120",
+     "BNSS-53",
+     "BNSS-58",
+     "BNSS-47",
+     "BNSS-48",
+     "BNSS-38"
+    ],
+    "old_law_note": false,
+    "ms": 0.5378329999530251
+   },
+   {
+    "query": "police took my laptop during a search and haven't returned it",
+    "category": "easy",
+    "route": [
+     "seized"
+    ],
+    "gold": [
+     "BNSS-106",
+     "BNSS-503"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "seized",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-106",
+     "BNSS-503",
+     "BNSS-497"
+    ],
+    "old_law_note": false,
+    "ms": 0.6463269999130716
+   },
+   {
+    "query": "someone is spreading lies about me on facebook to ruin my reputation",
+    "category": "easy",
+    "route": [
+     "defamation"
+    ],
+    "gold": [
+     "BNS-356"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "defamation",
+    "outcome": "correct",
+    "shown": [
+     "BNS-356",
+     "BNSS-222",
+     "BNSS-174"
+    ],
+    "old_law_note": false,
+    "ms": 0.80270900002688
+   },
+   {
+    "query": "my neighbour poisoned my dog",
+    "category": "easy",
+    "route": [
+     "animal"
+    ],
+    "gold": [
+     "BNS-325"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "animal",
+    "outcome": "correct",
+    "shown": [
+     "BNS-325"
+    ],
+    "old_law_note": false,
+    "ms": 0.284023999938654
+   },
+   {
+    "query": "a stranger entered our house at night without permission",
+    "category": "easy",
+    "route": [
+     "trespass"
+    ],
+    "gold": [
+     "BNS-329",
+     "BNS-330",
+     "BNS-331"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "trespass",
+    "outcome": "correct",
+    "shown": [
+     "BNS-329",
+     "BNS-331"
+    ],
+    "old_law_note": false,
+    "ms": 0.6215939999947295
+   },
+   {
+    "query": "my husband married another woman without divorcing me",
+    "category": "easy",
+    "route": [
+     "marriage"
+    ],
+    "gold": [
+     "BNS-82"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "marriage",
+    "outcome": "correct",
+    "shown": [
+     "BNS-82",
+     "BNSS-219"
+    ],
+    "old_law_note": false,
+    "ms": 0.4815400000097725
+   },
+   {
+    "query": "the factory next door releases smoke all day and makes everyone sick",
+    "category": "easy",
+    "route": [
+     "nuisance"
+    ],
+    "gold": [
+     "BNS-270",
+     "BNS-292"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fire",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-324",
+     "BNS-326"
+    ],
+    "old_law_note": false,
+    "ms": 23.724526000023616
+   },
+   {
+    "query": "I lent my car to a friend and he sold it",
+    "category": "easy",
+    "route": [
+     "not_returned"
+    ],
+    "gold": [
+     "BNS-316",
+     "BNS-314"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 86.33326199992553
+   },
+   {
+    "query": "the taxi driver locked the doors and demanded extra money",
+    "category": "easy",
+    "route": [
+     "transport"
+    ],
+    "gold": [
+     "BNS-308",
+     "BNS-126"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "transport",
+    "outcome": "correct",
+    "shown": [
+     "BNS-308",
+     "BNS-351",
+     "BNS-126"
+    ],
+    "old_law_note": false,
+    "ms": 0.95760500016695
+   },
+   {
+    "query": "my boss touched me inappropriately in the office",
+    "category": "easy",
+    "route": [
+     "women_harassment"
+    ],
+    "gold": [
+     "BNS-75",
+     "BNS-74"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "women_harassment",
+    "outcome": "correct",
+    "shown": [
+     "BNS-75",
+     "BNS-74"
+    ],
+    "old_law_note": false,
+    "ms": 0.5434720001176174
+   },
+   {
+    "query": "I was raped by my neighbour",
+    "category": "easy",
+    "route": [
+     "sexual_assault"
+    ],
+    "gold": [
+     "BNS-63",
+     "BNS-64"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "sexual_assault",
+    "outcome": "correct",
+    "shown": [
+     "BNS-63",
+     "BNS-64"
+    ],
+    "old_law_note": false,
+    "ms": 0.4176320001079148
+   },
+   {
+    "query": "how do I file an FIR",
+    "category": "easy",
+    "route": [
+     "fir_howto"
+    ],
+    "gold": [
+     "BNSS-173"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "fir_howto",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-173",
+     "BNSS-174"
+    ],
+    "old_law_note": false,
+    "ms": 0.35221100006310735
+   },
+   {
+    "query": "I got a call from the police asking me to come to the station",
+    "category": "easy",
+    "route": [
+     "police_call"
+    ],
+    "gold": [
+     "BNSS-179",
+     "BNSS-35"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "police_call",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-179",
+     "BNSS-35"
+    ],
+    "old_law_note": false,
+    "ms": 0.7709819999490719
+   },
+   {
+    "query": "my employer has falsely accused me of theft and I am scared of being arrested",
+    "category": "easy",
+    "route": [
+     "accused"
+    ],
+    "gold": [
+     "BNSS-482"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "accused",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-35",
+     "BNSS-482",
+     "BNSS-47",
+     "BNSS-528",
+     "BNS-248",
+     "BNSS-478",
+     "BNSS-480",
+     "BNSS-479"
+    ],
+    "old_law_note": false,
+    "ms": 0.7908640000096057
+   },
+   {
+    "query": "my landlord locked me inside the room and won't let me out",
+    "category": "easy",
+    "route": [
+     "confinement"
+    ],
+    "gold": [
+     "BNS-127"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "confinement",
+    "outcome": "correct",
+    "shown": [
+     "BNS-126",
+     "BNS-127"
+    ],
+    "old_law_note": false,
+    "ms": 0.6844839999757824
+   },
+   {
+    "query": "someone got into my UPI and took 20000 rupees",
+    "category": "easy",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-303"
+    ],
+    "old_law_note": false,
+    "ms": 0.5312169998887839
+   },
+   {
+    "query": "a man exposed himself to me on the bus",
+    "category": "easy",
+    "route": [
+     "women_harassment"
+    ],
+    "gold": [
+     "BNS-79",
+     "BNS-296",
+     "BNS-75"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "women_harassment",
+    "outcome": "correct",
+    "shown": [
+     "BNS-78"
+    ],
+    "old_law_note": false,
+    "ms": 0.4780409999511903
+   },
+   {
+    "query": "while i was asleep on the train someone took my bag",
+    "category": "medium",
+    "route": [
+     "theft"
+    ],
+    "gold": [
+     "BNS-303",
+     "BNS-305"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "correct",
+    "shown": [
+     "BNS-303",
+     "BNS-305"
+    ],
+    "old_law_note": false,
+    "ms": 0.7113389999631181
+   },
+   {
+    "query": "two guys on a bike grabbed my phone from my hand and sped off",
+    "category": "medium",
+    "route": [
+     "theft"
+    ],
+    "gold": [
+     "BNS-304"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "correct",
+    "shown": [
+     "BNS-303",
+     "BNS-304"
+    ],
+    "old_law_note": false,
+    "ms": 0.8018189998892922
+   },
+   {
+    "query": "a man called pretending to be from my bank and got my OTP, now the money is gone",
+    "category": "medium",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-318",
+     "BNS-319"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-303"
+    ],
+    "old_law_note": false,
+    "ms": 1.0129239999514539
+   },
+   {
+    "query": "my wife's relatives came to my house and beat me with sticks",
+    "category": "medium",
+    "route": [
+     "assault"
+    ],
+    "gold": [
+     "BNS-118",
+     "BNS-115"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "assault",
+    "outcome": "correct",
+    "shown": [
+     "BNS-115"
+    ],
+    "old_law_note": false,
+    "ms": 0.8338759998878231
+   },
+   {
+    "query": "my ex says he will leak my private photos unless I pay him",
+    "category": "medium",
+    "route": [
+     "threats"
+    ],
+    "gold": [
+     "BNS-308",
+     "BNS-351",
+     "BNS-77"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "threats",
+    "outcome": "correct",
+    "shown": [
+     "BNS-351",
+     "BNS-308",
+     "BNS-77"
+    ],
+    "old_law_note": false,
+    "ms": 0.7712879998962308
+   },
+   {
+    "query": "my in-laws keep taunting my sister and don't give her food because the dowry was less",
+    "category": "medium",
+    "route": [
+     "domestic"
+    ],
+    "gold": [
+     "BNS-85",
+     "BNS-86"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "domestic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-85",
+     "BNS-86"
+    ],
+    "old_law_note": false,
+    "ms": 0.870824999992692
+   },
+   {
+    "query": "the SHO told me to go away and come back with proof before he writes anything",
+    "category": "medium",
+    "route": [
+     "fir_refused"
+    ],
+    "gold": [
+     "BNSS-173"
+    ],
+    "clean": true,
+    "kind": "closest",
+    "plan": null,
+    "outcome": "wrong",
+    "shown": [
+     "BNSS-330"
+    ],
+    "old_law_note": false,
+    "ms": 78.50081500009765
+   },
+   {
+    "query": "cops picked up my uncle last night and won't tell us where he is",
+    "category": "medium",
+    "route": [
+     "arrest"
+    ],
+    "gold": [
+     "BNSS-48",
+     "BNSS-47",
+     "BNSS-58"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "arrest",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-47",
+     "BNSS-48",
+     "BNSS-38",
+     "BNSS-58",
+     "BNSS-53"
+    ],
+    "old_law_note": false,
+    "ms": 1.3412929999958578
+   },
+   {
+    "query": "my cousin is in jail, how can the family get him out",
+    "category": "medium",
+    "route": [
+     "bail"
+    ],
+    "gold": [
+     "BNSS-480",
+     "BNSS-478"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "bail",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-478",
+     "BNSS-480",
+     "BNSS-482",
+     "BNSS-479"
+    ],
+    "old_law_note": false,
+    "ms": 1.0007490000134567
+   },
+   {
+    "query": "an auto hit my mother while she was crossing the road and she broke her leg",
+    "category": "medium",
+    "route": [
+     "accident"
+    ],
+    "gold": [
+     "BNS-281",
+     "BNS-125"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "accident",
+    "outcome": "correct",
+    "shown": [
+     "BNS-281",
+     "BNS-125"
+    ],
+    "old_law_note": false,
+    "ms": 0.9284850000312872
+   },
+   {
+    "query": "some boys threw stones and broke all the windows of our car",
+    "category": "medium",
+    "route": [
+     "fire"
+    ],
+    "gold": [
+     "BNS-324"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fire",
+    "outcome": "correct",
+    "shown": [
+     "BNS-324",
+     "BNS-326"
+    ],
+    "old_law_note": false,
+    "ms": 0.9262800001579308
+   },
+   {
+    "query": "a guy from my gym keeps messaging me on insta even after I blocked him",
+    "category": "medium",
+    "route": [
+     "followed",
+     "women_harassment"
+    ],
+    "gold": [
+     "BNS-78"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "women_harassment",
+    "outcome": "correct",
+    "shown": [
+     "BNS-78"
+    ],
+    "old_law_note": false,
+    "ms": 1.1640120001175092
+   },
+   {
+    "query": "my 15 year old brother left home and his phone is switched off",
+    "category": "medium",
+    "route": [
+     "missing"
+    ],
+    "gold": [
+     "BNSS-173",
+     "BNS-137"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "missing",
+    "outcome": "correct",
+    "shown": [
+     "BNS-137"
+    ],
+    "old_law_note": false,
+    "ms": 27.579587999980504
+   },
+   {
+    "query": "the constable slapped my friend at the police station to make him confess",
+    "category": "medium",
+    "route": [
+     "custodial"
+    ],
+    "gold": [
+     "BNS-120"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "custodial",
+    "outcome": "correct",
+    "shown": [
+     "BNS-120",
+     "BNSS-53",
+     "BNSS-58"
+    ],
+    "old_law_note": false,
+    "ms": 1.0756169999694976
+   },
+   {
+    "query": "the police seized my scooter after an accident, how do I get it back",
+    "category": "medium",
+    "route": [
+     "seized"
+    ],
+    "gold": [
+     "BNSS-503"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "seized",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-106",
+     "BNSS-503",
+     "BNSS-497",
+     "BNS-281",
+     "BNS-125"
+    ],
+    "old_law_note": false,
+    "ms": 1.1136860000533488
+   },
+   {
+    "query": "my relative is telling everyone in the village that I am a thief",
+    "category": "medium",
+    "route": [
+     "defamation"
+    ],
+    "gold": [
+     "BNS-356"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "defamation",
+    "outcome": "correct",
+    "shown": [
+     "BNS-356",
+     "BNSS-222",
+     "BNSS-174"
+    ],
+    "old_law_note": false,
+    "ms": 1.0779760000332317
+   },
+   {
+    "query": "my neighbour beats his cow with an iron rod every day",
+    "category": "medium",
+    "route": [
+     "animal"
+    ],
+    "gold": [
+     "BNS-325"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "animal",
+    "outcome": "correct",
+    "shown": [
+     "BNS-325"
+    ],
+    "old_law_note": false,
+    "ms": 0.6823020000865654
+   },
+   {
+    "query": "my ex-partner's brother entered my flat and refused to leave",
+    "category": "medium",
+    "route": [
+     "trespass"
+    ],
+    "gold": [
+     "BNS-329",
+     "BNS-330"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "trespass",
+    "outcome": "correct",
+    "shown": [
+     "BNS-329"
+    ],
+    "old_law_note": false,
+    "ms": 0.7646260000910843
+   },
+   {
+    "query": "a shop near my house plays loud music till 2 am every night",
+    "category": "medium",
+    "route": [
+     "nuisance"
+    ],
+    "gold": [
+     "BNS-270",
+     "BNS-292"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "nuisance",
+    "outcome": "correct",
+    "shown": [
+     "BNS-270",
+     "BNS-292",
+     "BNSS-152"
+    ],
+    "old_law_note": false,
+    "ms": 0.9825119998367882
+   },
+   {
+    "query": "my friend took 50000 from me for a business and now says he never got it",
+    "category": "medium",
+    "route": [
+     "not_returned",
+     "fraud"
+    ],
+    "gold": [
+     "BNS-316",
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318"
+    ],
+    "old_law_note": false,
+    "ms": 27.441976000091017
+   },
+   {
+    "query": "the cab driver left me in the middle of nowhere at night and drove off with my luggage",
+    "category": "medium",
+    "route": [
+     "transport"
+    ],
+    "gold": [
+     "BNS-303",
+     "BNS-316"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "transport",
+    "outcome": "correct",
+    "shown": [
+     "BNS-351",
+     "BNS-303",
+     "BNS-305"
+    ],
+    "old_law_note": false,
+    "ms": 1.7174359998080035
+   },
+   {
+    "query": "my teacher keeps making dirty jokes about my body",
+    "category": "medium",
+    "route": [
+     "women_harassment"
+    ],
+    "gold": [
+     "BNS-75",
+     "BNS-79"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "women_harassment",
+    "outcome": "correct",
+    "shown": [
+     "BNS-78"
+    ],
+    "old_law_note": false,
+    "ms": 21.98586700001215
+   },
+   {
+    "query": "a man forced himself on me after a party",
+    "category": "medium",
+    "route": [
+     "sexual_assault"
+    ],
+    "gold": [
+     "BNS-63",
+     "BNS-64"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "sexual_assault",
+    "outcome": "correct",
+    "shown": [
+     "BNS-63",
+     "BNS-64"
+    ],
+    "old_law_note": false,
+    "ms": 23.551240000188045
+   },
+   {
+    "query": "where do I go to report a crime and what do I need to take",
+    "category": "medium",
+    "route": [
+     "fir_howto"
+    ],
+    "gold": [
+     "BNSS-173"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fir_howto",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-173",
+     "BNSS-174"
+    ],
+    "old_law_note": false,
+    "ms": 26.528325000072073
+   },
+   {
+    "query": "I got a notice from the police to appear for questioning about a fight",
+    "category": "medium",
+    "route": [
+     "police_call"
+    ],
+    "gold": [
+     "BNSS-35",
+     "BNSS-179"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "police_call",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-179",
+     "BNSS-35",
+     "BNSS-38"
+    ],
+    "old_law_note": false,
+    "ms": 1.2891920000583923
+   },
+   {
+    "query": "a woman filed a false case against me and I fear arrest",
+    "category": "medium",
+    "route": [
+     "accused"
+    ],
+    "gold": [
+     "BNSS-482"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "accused",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-35",
+     "BNSS-482",
+     "BNSS-47",
+     "BNSS-528",
+     "BNS-248",
+     "BNSS-478",
+     "BNSS-480",
+     "BNSS-479"
+    ],
+    "old_law_note": false,
+    "ms": 0.7535870001902367
+   },
+   {
+    "query": "my employer took my passport and won't let me leave the factory",
+    "category": "medium",
+    "route": [
+     "confinement",
+     "not_returned"
+    ],
+    "gold": [
+     "BNS-127",
+     "BNS-126"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "confinement",
+    "outcome": "correct",
+    "shown": [
+     "BNS-126",
+     "BNS-127"
+    ],
+    "old_law_note": false,
+    "ms": 28.424361999896064
+   },
+   {
+    "query": "someone made a fake profile with my photos and is asking people for money",
+    "category": "medium",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-319",
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318",
+     "BNS-319",
+     "BNS-336",
+     "BNS-340"
+    ],
+    "old_law_note": false,
+    "ms": 1.602675999947678
+   },
+   {
+    "query": "my husband's family threw me out of the house and kept my jewellery",
+    "category": "medium",
+    "route": [
+     "domestic",
+     "not_returned"
+    ],
+    "gold": [
+     "BNS-85",
+     "BNS-316"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "domestic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-85",
+     "BNS-86",
+     "BNS-316",
+     "BNS-314"
+    ],
+    "old_law_note": false,
+    "ms": 1.4625070000420237
+   },
+   {
+    "query": "a group of men beat up a boy accusing him of stealing a goat",
+    "category": "medium",
+    "route": [
+     "assault"
+    ],
+    "gold": [
+     "BNS-115",
+     "BNS-117"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "assault",
+    "outcome": "correct",
+    "shown": [
+     "BNS-115"
+    ],
+    "old_law_note": false,
+    "ms": 28.55266100004883
+   },
+   {
+    "query": "he keeps standing outside my window at night and watching",
+    "category": "hard",
+    "route": [
+     "followed",
+     "women_harassment"
+    ],
+    "gold": [
+     "BNS-78",
+     "BNS-77"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "women_harassment",
+    "outcome": "correct",
+    "shown": [
+     "BNS-78"
+    ],
+    "old_law_note": false,
+    "ms": 27.2555479998573
+   },
+   {
+    "query": "they said my son is in custody and I must send money to a number to release him",
+    "category": "hard",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-318",
+     "BNS-319"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "arrest",
+    "outcome": "wrong",
+    "shown": [
+     "BNSS-47",
+     "BNSS-48",
+     "BNSS-38",
+     "BNSS-58",
+     "BNSS-53"
+    ],
+    "old_law_note": false,
+    "ms": 1.1036899998089211
+   },
+   {
+    "query": "the man who bought my land paid with a cheque that bounced",
+    "category": "hard",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.6142030001683452
+   },
+   {
+    "query": "my father's signature was copied on property papers",
+    "category": "hard",
+    "route": [
+     "none",
+     "fraud"
+    ],
+    "gold": [
+     "BNS-336",
+     "BNS-335",
+     "BNS-340"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318",
+     "BNS-336",
+     "BNS-340"
+    ],
+    "old_law_note": false,
+    "ms": 21.612064000009923
+   },
+   {
+    "query": "my brother came home with bruises after spending the night at the thana",
+    "category": "hard",
+    "route": [
+     "custodial"
+    ],
+    "gold": [
+     "BNS-120",
+     "BNS-115"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "assault",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-115"
+    ],
+    "old_law_note": false,
+    "ms": 28.079481000077067
+   },
+   {
+    "query": "the man at the ATM offered to help me and swapped my card",
+    "category": "hard",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-318",
+     "BNS-319"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318"
+    ],
+    "old_law_note": false,
+    "ms": 23.28214600015599
+   },
+   {
+    "query": "the people next door keep dumping their construction waste in front of my gate",
+    "category": "hard",
+    "route": [
+     "nuisance"
+    ],
+    "gold": [
+     "BNS-270",
+     "BNS-292"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "nuisance",
+    "outcome": "correct",
+    "shown": [
+     "BNS-270",
+     "BNS-292",
+     "BNSS-152"
+    ],
+    "old_law_note": false,
+    "ms": 0.9114970000609901
+   },
+   {
+    "query": "my sister's husband doesn't hit her but controls all her money and won't let her meet us",
+    "category": "hard",
+    "route": [
+     "domestic"
+    ],
+    "gold": [
+     "BNS-85",
+     "BNS-86"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "domestic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-85",
+     "BNS-86",
+     "BNS-115"
+    ],
+    "old_law_note": false,
+    "ms": 0.8620369999334798
+   },
+   {
+    "query": "a car came very close at high speed, knocked me down and drove away",
+    "category": "hard",
+    "route": [
+     "accident"
+    ],
+    "gold": [
+     "BNS-281",
+     "BNS-125"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "accident",
+    "outcome": "correct",
+    "shown": [
+     "BNS-281",
+     "BNS-125"
+    ],
+    "old_law_note": false,
+    "ms": 25.77998799984016
+   },
+   {
+    "query": "someone keeps calling my wife from unknown numbers and breathing without speaking",
+    "category": "hard",
+    "route": [
+     "women_harassment",
+     "followed",
+     "threats"
+    ],
+    "gold": [
+     "BNS-78",
+     "BNS-79"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 86.85367999987648
+   },
+   {
+    "query": "the builder's men came at night and broke our compound wall",
+    "category": "hard",
+    "route": [
+     "fire",
+     "trespass"
+    ],
+    "gold": [
+     "BNS-324",
+     "BNS-329"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fire",
+    "outcome": "correct",
+    "shown": [
+     "BNS-324",
+     "BNS-326"
+    ],
+    "old_law_note": false,
+    "ms": 1.0036459998445935
+   },
+   {
+    "query": "a relative is keeping my mother at his house and won't let us meet her",
+    "category": "hard",
+    "route": [
+     "confinement"
+    ],
+    "gold": [
+     "BNS-127"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 92.08223799987536
+   },
+   {
+    "query": "my roommate used my ID card to take a loan in my name",
+    "category": "hard",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-319",
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318",
+     "BNS-319"
+    ],
+    "old_law_note": false,
+    "ms": 22.367604000010033
+   },
+   {
+    "query": "my friend's parents locked her in a room because she wants to marry someone they don't like",
+    "category": "hard",
+    "route": [
+     "confinement"
+    ],
+    "gold": [
+     "BNS-127"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "confinement",
+    "outcome": "correct",
+    "shown": [
+     "BNS-126",
+     "BNS-127"
+    ],
+    "old_law_note": false,
+    "ms": 1.1696560000018508
+   },
+   {
+    "query": "the hotel staff hid a camera in the bathroom",
+    "category": "hard",
+    "route": [
+     "women_harassment",
+     "sexual_assault"
+    ],
+    "gold": [
+     "BNS-77"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 85.00424800013207
+   },
+   {
+    "query": "a man at the temple is collecting money for a charity that doesn't exist",
+    "category": "hard",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 103.85737000001427
+   },
+   {
+    "query": "someone put sugar in my bike's petrol tank",
+    "category": "hard",
+    "route": [
+     "fire"
+    ],
+    "gold": [
+     "BNS-324"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 81.999112999938
+   },
+   {
+    "query": "after I complained, the officer laughed and said such cases are not taken",
+    "category": "hard",
+    "route": [
+     "fir_refused"
+    ],
+    "gold": [
+     "BNSS-173"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fir_refused",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-173",
+     "BNSS-175",
+     "BNSS-174"
+    ],
+    "old_law_note": false,
+    "ms": 20.430535000059535
+   },
+   {
+    "query": "my uncle has been in jail for 3 months and no charge sheet has been filed",
+    "category": "hard",
+    "route": [
+     "bail"
+    ],
+    "gold": [
+     "BNSS-187",
+     "BNSS-480"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 94.81659200014292
+   },
+   {
+    "query": "people in my colony are telling my landlord I run a brothel, which is a lie",
+    "category": "hard",
+    "route": [
+     "defamation"
+    ],
+    "gold": [
+     "BNS-356"
+    ],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "wrong",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.7055999999465712
+   },
+   {
+    "query": "sum1 stole my fone at metro stn",
+    "category": "typo_informal",
+    "route": [
+     "theft"
+    ],
+    "gold": [
+     "BNS-303"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "correct",
+    "shown": [
+     "BNS-303"
+    ],
+    "old_law_note": false,
+    "ms": 0.6444910000027448
+   },
+   {
+    "query": "polise not registring my complain wat to do",
+    "category": "typo_informal",
+    "route": [
+     "fir_refused"
+    ],
+    "gold": [
+     "BNSS-173"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 77.11830700009159
+   },
+   {
+    "query": "my hubby beats me daily n his family supports him",
+    "category": "typo_informal",
+    "route": [
+     "domestic"
+    ],
+    "gold": [
+     "BNS-85",
+     "BNS-115"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "domestic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-85",
+     "BNS-86",
+     "BNS-115"
+    ],
+    "old_law_note": false,
+    "ms": 19.12537699990935
+   },
+   {
+    "query": "ppl threaten 2 kill me over land dispute",
+    "category": "typo_informal",
+    "route": [
+     "threats"
+    ],
+    "gold": [
+     "BNS-351"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "threats",
+    "outcome": "correct",
+    "shown": [
+     "BNS-351"
+    ],
+    "old_law_note": false,
+    "ms": 0.7273969999914698
+   },
+   {
+    "query": "got scamed on olx, paid advance, no product",
+    "category": "typo_informal",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318",
+     "BNS-316"
+    ],
+    "old_law_note": false,
+    "ms": 0.6469549998655566
+   },
+   {
+    "query": "neighbr dog bit my kid what can i do",
+    "category": "typo_informal",
+    "route": [
+     "none"
+    ],
+    "gold": [
+     "BNS-291"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "assault",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-291"
+    ],
+    "old_law_note": false,
+    "ms": 0.4265930001565721
+   },
+   {
+    "query": "bro got arested last nite no info frm cops",
+    "category": "typo_informal",
+    "route": [
+     "arrest"
+    ],
+    "gold": [
+     "BNSS-48",
+     "BNSS-47"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 85.5541749999702
+   },
+   {
+    "query": "some guy keps folowing me evry day",
+    "category": "typo_informal",
+    "route": [
+     "followed",
+     "women_harassment"
+    ],
+    "gold": [
+     "BNS-78"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "women_harassment",
+    "outcome": "correct",
+    "shown": [
+     "BNS-78"
+    ],
+    "old_law_note": false,
+    "ms": 19.303610999941156
+   },
+   {
+    "query": "car acident, other driver ran away",
+    "category": "typo_informal",
+    "route": [
+     "accident"
+    ],
+    "gold": [
+     "BNS-281"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "accident",
+    "outcome": "correct",
+    "shown": [
+     "BNS-281",
+     "BNS-125"
+    ],
+    "old_law_note": false,
+    "ms": 20.85911299991494
+   },
+   {
+    "query": "my bf is blackmailing me wid pics",
+    "category": "typo_informal",
+    "route": [
+     "threats"
+    ],
+    "gold": [
+     "BNS-308",
+     "BNS-351",
+     "BNS-77"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "threats",
+    "outcome": "correct",
+    "shown": [
+     "BNS-351"
+    ],
+    "old_law_note": false,
+    "ms": 0.645808999934161
+   },
+   {
+    "query": "how to get bail fr my dad",
+    "category": "typo_informal",
+    "route": [
+     "bail"
+    ],
+    "gold": [
+     "BNSS-478",
+     "BNSS-480"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "bail",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-478",
+     "BNSS-480",
+     "BNSS-482",
+     "BNSS-479"
+    ],
+    "old_law_note": false,
+    "ms": 0.47817800009397615
+   },
+   {
+    "query": "they broke into our hous when we were out of town",
+    "category": "typo_informal",
+    "route": [
+     "trespass",
+     "theft"
+    ],
+    "gold": [
+     "BNS-331",
+     "BNS-305"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "correct",
+    "shown": [
+     "BNS-303",
+     "BNS-331"
+    ],
+    "old_law_note": false,
+    "ms": 0.6294729998899129
+   },
+   {
+    "query": "landlord thrw my stuff out n locked the room",
+    "category": "typo_informal",
+    "route": [
+     "none",
+     "not_returned",
+     "trespass"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.36261600007492234
+   },
+   {
+    "query": "cops wrote my statment wrong",
+    "category": "typo_informal",
+    "route": [
+     "none",
+     "police_call"
+    ],
+    "gold": [
+     "BNSS-180",
+     "BNSS-181"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 76.48885999992672
+   },
+   {
+    "query": "my daughter not come home from school yet",
+    "category": "typo_informal",
+    "route": [
+     "missing"
+    ],
+    "gold": [
+     "BNSS-173"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "missing",
+    "outcome": "correct",
+    "shown": [
+     "BNS-137"
+    ],
+    "old_law_note": false,
+    "ms": 18.402720000040063
+   },
+   {
+    "query": "something happened with my neighbour",
+    "category": "ambiguous",
+    "route": [
+     "clarify"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 90.15997699998479
+   },
+   {
+    "query": "i need help with a police matter",
+    "category": "ambiguous",
+    "route": [
+     "clarify",
+     "police_call",
+     "fir_howto"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 99.15212400005657
+   },
+   {
+    "query": "my friend is in trouble",
+    "category": "ambiguous",
+    "route": [
+     "clarify"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 93.25312800001484
+   },
+   {
+    "query": "someone did something to my car",
+    "category": "ambiguous",
+    "route": [
+     "clarify",
+     "fire",
+     "accident"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fire",
+    "outcome": "correct",
+    "shown": [
+     "BNS-324",
+     "BNS-326"
+    ],
+    "old_law_note": false,
+    "ms": 17.668404000005467
+   },
+   {
+    "query": "what should i do",
+    "category": "ambiguous",
+    "route": [
+     "clarify"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 75.34430100008649
+   },
+   {
+    "query": "there is a problem at my workplace",
+    "category": "ambiguous",
+    "route": [
+     "clarify",
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 99.13590499991187
+   },
+   {
+    "query": "my family member is being harassed",
+    "category": "ambiguous",
+    "route": [
+     "clarify",
+     "women_harassment",
+     "domestic"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 96.64318299996921
+   },
+   {
+    "query": "i lost money",
+    "category": "ambiguous",
+    "route": [
+     "clarify",
+     "fraud",
+     "theft"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318"
+    ],
+    "old_law_note": false,
+    "ms": 20.426545000191254
+   },
+   {
+    "query": "they took him",
+    "category": "ambiguous",
+    "route": [
+     "clarify",
+     "missing",
+     "arrest"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 68.84505699986221
+   },
+   {
+    "query": "my case",
+    "category": "ambiguous",
+    "route": [
+     "clarify"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 68.42476799988617
+   },
+   {
+    "query": "a fight happened",
+    "category": "ambiguous",
+    "route": [
+     "clarify",
+     "assault"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 63.2164029998421
+   },
+   {
+    "query": "i want to complain",
+    "category": "ambiguous",
+    "route": [
+     "clarify",
+     "fir_howto"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "closest",
+    "plan": "generic",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-357",
+     "BNSS-272",
+     "BNSS-350"
+    ],
+    "old_law_note": false,
+    "ms": 54.85646200008887
+   },
+   {
+    "query": "my husband beat me and took away my phone so I can't call anyone",
+    "category": "multi_issue",
+    "route": [
+     "domestic",
+     "assault"
+    ],
+    "gold": [
+     "BNS-85",
+     "BNS-115"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "domestic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-85",
+     "BNS-86",
+     "BNS-115",
+     "BNS-303",
+     "BNS-309"
+    ],
+    "old_law_note": false,
+    "ms": 1.18152300001384
+   },
+   {
+    "query": "a man robbed me at knifepoint and then the police refused to file the FIR",
+    "category": "multi_issue",
+    "route": [
+     "fir_refused",
+     "theft"
+    ],
+    "gold": [
+     "BNS-309",
+     "BNSS-173"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fir_refused",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-173",
+     "BNSS-175",
+     "BNSS-174",
+     "BNS-303",
+     "BNS-309"
+    ],
+    "old_law_note": false,
+    "ms": 1.0944279999876017
+   },
+   {
+    "query": "after the accident the other driver threatened to kill me if I complained",
+    "category": "multi_issue",
+    "route": [
+     "accident",
+     "threats"
+    ],
+    "gold": [
+     "BNS-281",
+     "BNS-351"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "accident",
+    "outcome": "correct",
+    "shown": [
+     "BNS-281",
+     "BNS-125",
+     "BNS-351"
+    ],
+    "old_law_note": false,
+    "ms": 0.7562240000424936
+   },
+   {
+    "query": "my neighbour broke into my house and hit my father",
+    "category": "multi_issue",
+    "route": [
+     "trespass",
+     "assault"
+    ],
+    "gold": [
+     "BNS-331",
+     "BNS-115"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-303",
+     "BNS-331",
+     "BNS-305",
+     "BNS-309"
+    ],
+    "old_law_note": false,
+    "ms": 0.6609450001633377
+   },
+   {
+    "query": "my brother was arrested and the police beat him in custody",
+    "category": "multi_issue",
+    "route": [
+     "custodial",
+     "arrest"
+    ],
+    "gold": [
+     "BNSS-47",
+     "BNS-120"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "custodial",
+    "outcome": "correct",
+    "shown": [
+     "BNS-120",
+     "BNSS-53",
+     "BNSS-58",
+     "BNSS-47",
+     "BNSS-48",
+     "BNSS-38"
+    ],
+    "old_law_note": false,
+    "ms": 0.7519969999520981
+   },
+   {
+    "query": "someone stole my wallet and then used my card to buy things online",
+    "category": "multi_issue",
+    "route": [
+     "theft",
+     "fraud"
+    ],
+    "gold": [
+     "BNS-303",
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "correct",
+    "shown": [
+     "BNS-303",
+     "BNS-317"
+    ],
+    "old_law_note": false,
+    "ms": 0.6967599999825325
+   },
+   {
+    "query": "my ex is following me and posting lies about me online",
+    "category": "multi_issue",
+    "route": [
+     "followed",
+     "women_harassment",
+     "defamation"
+    ],
+    "gold": [
+     "BNS-78",
+     "BNS-356"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "women_harassment",
+    "outcome": "correct",
+    "shown": [
+     "BNS-78",
+     "BNS-356",
+     "BNSS-222",
+     "BNSS-174"
+    ],
+    "old_law_note": false,
+    "ms": 0.8187220000763773
+   },
+   {
+    "query": "the seller cheated me and when I asked for a refund he threatened me",
+    "category": "multi_issue",
+    "route": [
+     "fraud",
+     "threats"
+    ],
+    "gold": [
+     "BNS-318",
+     "BNS-351"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318",
+     "BNS-351"
+    ],
+    "old_law_note": false,
+    "ms": 0.805840999873908
+   },
+   {
+    "query": "my in-laws threw acid on my sister",
+    "category": "multi_issue",
+    "route": [
+     "domestic",
+     "assault"
+    ],
+    "gold": [
+     "BNS-124"
+    ],
+    "clean": false,
+    "kind": "plan",
+    "plan": "assault",
+    "outcome": "correct",
+    "shown": [
+     "BNS-115",
+     "BNS-124",
+     "BNS-118",
+     "BNS-131"
+    ],
+    "old_law_note": false,
+    "ms": 18.668733999902543
+   },
+   {
+    "query": "my dog was killed by a speeding car and the driver abused me",
+    "category": "multi_issue",
+    "route": [
+     "animal",
+     "accident",
+     "threats"
+    ],
+    "gold": [
+     "BNS-325",
+     "BNS-281"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "animal",
+    "outcome": "correct",
+    "shown": [
+     "BNS-325"
+    ],
+    "old_law_note": false,
+    "ms": 21.68330899985449
+   },
+   {
+    "query": "someone forged my signature on a cheque and withdrew money",
+    "category": "uncovered",
+    "route": [
+     "none",
+     "fraud"
+    ],
+    "gold": [
+     "BNS-336",
+     "BNS-340",
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318",
+     "BNS-336",
+     "BNS-340"
+    ],
+    "old_law_note": false,
+    "ms": 0.9208260000832524
+   },
+   {
+    "query": "a shop sold me fake medicines that made my mother sick",
+    "category": "uncovered",
+    "route": [
+     "none",
+     "fraud"
+    ],
+    "gold": [
+     "BNS-276",
+     "BNS-277",
+     "BNS-278"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318",
+     "BNS-336",
+     "BNS-340"
+    ],
+    "old_law_note": false,
+    "ms": 21.557233000066844
+   },
+   {
+    "query": "my colleague is selling ganja in the office",
+    "category": "uncovered",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.4955770000378834
+   },
+   {
+    "query": "someone is printing fake 500 rupee notes",
+    "category": "uncovered",
+    "route": [
+     "none"
+    ],
+    "gold": [
+     "BNS-178",
+     "BNS-180"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-318",
+     "BNS-336",
+     "BNS-340"
+    ],
+    "old_law_note": false,
+    "ms": 21.445962999905532
+   },
+   {
+    "query": "a man insulted our god in a video to hurt my community's feelings",
+    "category": "uncovered",
+    "route": [
+     "none"
+    ],
+    "gold": [
+     "BNS-299"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "generic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-118",
+     "BNS-117"
+    ],
+    "old_law_note": false,
+    "ms": 50.2360159998716
+   },
+   {
+    "query": "a gang is forcing small shop owners to pay them money every month",
+    "category": "uncovered",
+    "route": [
+     "none",
+     "threats"
+    ],
+    "gold": [
+     "BNS-308",
+     "BNS-112"
+    ],
+    "clean": true,
+    "kind": "closest",
+    "plan": "generic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-313",
+     "BNS-193"
+    ],
+    "old_law_note": false,
+    "ms": 81.71969299996817
+   },
+   {
+    "query": "someone kidnapped my business partner and is asking for ransom",
+    "category": "uncovered",
+    "route": [
+     "none",
+     "missing"
+    ],
+    "gold": [
+     "BNS-140"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "missing",
+    "outcome": "correct",
+    "shown": [
+     "BNS-137",
+     "BNS-140",
+     "BNS-351",
+     "BNS-308"
+    ],
+    "old_law_note": false,
+    "ms": 1.3390609999532899
+   },
+   {
+    "query": "a restaurant mixed something harmful in the food and many people fell sick",
+    "category": "uncovered",
+    "route": [
+     "none"
+    ],
+    "gold": [
+     "BNS-274"
+    ],
+    "clean": true,
+    "kind": "closest",
+    "plan": "generic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-274",
+     "BNS-275"
+    ],
+    "old_law_note": false,
+    "ms": 79.77633099994819
+   },
+   {
+    "query": "a man gave false evidence against me in court",
+    "category": "uncovered",
+    "route": [
+     "none"
+    ],
+    "gold": [
+     "BNS-227",
+     "BNS-229"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "accused",
+    "outcome": "wrong",
+    "shown": [
+     "BNSS-35",
+     "BNSS-482",
+     "BNSS-47",
+     "BNSS-528",
+     "BNS-248"
+    ],
+    "old_law_note": false,
+    "ms": 23.23789900015072
+   },
+   {
+    "query": "a government officer says he will cancel my licence unless I pay him",
+    "category": "uncovered",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 89.27465700003268
+   },
+   {
+    "query": "my nephew is being forced to beg on the street by a gang",
+    "category": "uncovered",
+    "route": [
+     "none",
+     "missing"
+    ],
+    "gold": [
+     "BNS-139"
+    ],
+    "clean": true,
+    "kind": "closest",
+    "plan": "generic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-139",
+     "BNS-313",
+     "BNS-112"
+    ],
+    "old_law_note": false,
+    "ms": 57.12247400015258
+   },
+   {
+    "query": "someone is pretending to be a police officer and collecting fines from drivers",
+    "category": "uncovered",
+    "route": [
+     "none",
+     "fraud"
+    ],
+    "gold": [
+     "BNS-204",
+     "BNS-319"
+    ],
+    "clean": true,
+    "kind": "closest",
+    "plan": "generic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-204",
+     "BNS-319"
+    ],
+    "old_law_note": false,
+    "ms": 57.826530000056664
+   },
+   {
+    "query": "my boss keeps humiliating my friend and he talks about ending his life because of it",
+    "category": "uncovered",
+    "route": [
+     "none"
+    ],
+    "gold": [
+     "BNS-108"
+    ],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 78.36475899989637
+   },
+   {
+    "query": "my company hasn't paid my salary for 3 months",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.5838110000695451
+   },
+   {
+    "query": "my landlord won't return my security deposit",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": false,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.3770829998757108
+   },
+   {
+    "query": "the builder hasn't given possession of my flat for 4 years",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.5023440000968549
+   },
+   {
+    "query": "the electricity board sent a bill of 50000 for one month",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-318"
+    ],
+    "old_law_note": false,
+    "ms": 18.019893999962733
+   },
+   {
+    "query": "I want to divorce my wife",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.416691999816976
+   },
+   {
+    "query": "the bank isn't releasing my late father's savings to us",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 78.23480000001837
+   },
+   {
+    "query": "the online store won't refund my damaged product",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "plan",
+    "plan": "not_returned",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-314"
+    ],
+    "old_law_note": false,
+    "ms": 19.494134000069607
+   },
+   {
+    "query": "my cheque bounced and the payee sent me a legal notice",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.6201040000632929
+   },
+   {
+    "query": "my housing society is charging illegal maintenance",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.44140799991509994
+   },
+   {
+    "query": "can I patent my app idea",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "wrong",
+    "shown": [
+     "BNS-318"
+    ],
+    "old_law_note": false,
+    "ms": 16.178072999991855
+   },
+   {
+    "query": "my neighbour is building on part of my land",
+    "category": "out_of_scope",
+    "route": [
+     "none",
+     "trespass"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 77.39082900002359
+   },
+   {
+    "query": "how do I change my name legally",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 69.88556400006019
+   },
+   {
+    "query": "my employer fired me without notice",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": false,
+    "kind": "out_of_scope",
+    "plan": null,
+    "outcome": "correct",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 0.5555469999762863
+   },
+   {
+    "query": "the school is not giving my child's transfer certificate",
+    "category": "out_of_scope",
+    "route": [
+     "none",
+     "not_returned"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "plan",
+    "plan": "not_returned",
+    "outcome": "correct",
+    "shown": [
+     "BNS-314"
+    ],
+    "old_law_note": false,
+    "ms": 20.543524000004254
+   },
+   {
+    "query": "i want custody of my kids after separation",
+    "category": "out_of_scope",
+    "route": [
+     "none"
+    ],
+    "gold": [],
+    "clean": true,
+    "kind": "clarify",
+    "plan": null,
+    "outcome": "abstained",
+    "shown": [],
+    "old_law_note": false,
+    "ms": 92.57144299999709
+   },
+   {
+    "query": "my phone was stolen in March 2023 and the police never found it",
+    "category": "old_date",
+    "route": [
+     "theft"
+    ],
+    "gold": [
+     "BNS-303"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "theft",
+    "outcome": "correct",
+    "shown": [
+     "BNS-303"
+    ],
+    "old_law_note": true,
+    "ms": 1.2999169998693105
+   },
+   {
+    "query": "I was cheated by a property dealer in 2021",
+    "category": "old_date",
+    "route": [
+     "fraud"
+    ],
+    "gold": [
+     "BNS-318"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "fraud",
+    "outcome": "correct",
+    "shown": [
+     "BNS-318"
+    ],
+    "old_law_note": true,
+    "ms": 0.9163110000827146
+   },
+   {
+    "query": "my husband has been beating me since 2020",
+    "category": "old_date",
+    "route": [
+     "domestic"
+    ],
+    "gold": [
+     "BNS-85"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "domestic",
+    "outcome": "correct",
+    "shown": [
+     "BNS-85",
+     "BNS-86",
+     "BNS-115"
+    ],
+    "old_law_note": true,
+    "ms": 0.7395439999982045
+   },
+   {
+    "query": "someone attacked me two years ago and the case is still pending",
+    "category": "old_date",
+    "route": [
+     "assault"
+    ],
+    "gold": [
+     "BNS-115"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "assault",
+    "outcome": "correct",
+    "shown": [
+     "BNS-115"
+    ],
+    "old_law_note": true,
+    "ms": 0.9546209998916311
+   },
+   {
+    "query": "the police registered an FIR against me in 2022, can I get anticipatory bail",
+    "category": "old_date",
+    "route": [
+     "accused",
+     "bail"
+    ],
+    "gold": [
+     "BNSS-482"
+    ],
+    "clean": true,
+    "kind": "plan",
+    "plan": "accused",
+    "outcome": "correct",
+    "shown": [
+     "BNSS-35",
+     "BNSS-482",
+     "BNSS-47",
+     "BNSS-528",
+     "BNS-248",
+     "BNSS-478",
+     "BNSS-480",
+     "BNSS-479"
+    ],
+    "old_law_note": true,
+    "ms": 1.1953040000207693
+   }
+  ]
+ }
+}

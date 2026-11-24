@@ -1,0 +1,68 @@
+
+## faculty example
+  ok   Someone touched me inappropriately on a public bus.            -> plan
+  ok   Yes, I'm safe now. This happened yesterday.                    -> plan
+  ok   What does Section 75 actually mean?                            -> explain
+  ok   What if I don't have any witnesses?                            -> followup
+
+## theft, details added
+  ok   my laptop was stolen from my car last night                    -> plan
+  ok   can I report it online?                                        -> followup
+  ok   explain the first one                                          -> explain
+  FAIL and he broke the car window to take it                         -> plan (expected plan with 'BNS-324'; got: Thanks, that helps.)
+
+## domestic, not safe
+  ok   my husband hits me when he is drunk                            -> plan
+  ok   no, he is still at home                                        -> plan
+  ok   what does BNS 85 say                                           -> explain
+  ok   will my family find out if I complain?                         -> followup
+
+## stalking, interrupted safety question
+  ok   a man keeps following me to my office every day                -> plan
+  ok   what does the first one mean                                   -> explain
+  ok   yes I'm safe at home                                           -> plan
+  ok   can a woman officer take my complaint?                         -> followup
+
+## police refuse, then lawyer and delay
+  ok   the police are not registering my complaint about my stolen    -> plan
+  ok   do I need a lawyer for this?                                   -> followup
+  ok   it happened two weeks ago, is it too late?                     -> followup
+
+## topic switch
+  ok   someone cheated me of 30000 rupees on a fake job offer         -> plan
+  FAIL what happens after I file the complaint?                       -> followup (expected followup with 'BNSS 193'; got: You can report at any police station, orally or in writing. Tell them what happened, when )
+  ok   also my neighbour broke into my house yesterday                -> plan
+
+## law question then what-if
+  ok   what is the punishment for theft                               -> answer
+  FAIL what if it was from a house                                    -> answer (expected answer with 'BNS-305'; got: Here is the section that matches best, with two related ones.)
+  ok   explain the first one                                          -> explain
+
+## old number mid-conversation
+  ok   someone threatened to kill me over a land dispute              -> plan
+  ok   yes                                                            -> plan
+  ok   what was IPC 506                                               -> mapped
+  ok   what is the punishment for it                                  -> explain
+
+## accident, injury detail
+  ok   a bike hit me while I was crossing the road                    -> plan
+  ok   yes I'm okay but my leg is broken                              -> plan
+  ok   what evidence should I collect?                                -> followup
+  ok   how do I file the complaint?                                   -> followup
+
+## missing person
+  ok   my brother hasn't come home for two days                       -> plan
+  ok   no                                                             -> plan
+  ok   which police station should I go to?                           -> followup
+
+## civil inside a conversation
+  ok   my phone was snatched near the market                          -> plan
+  ok   my landlord is also refusing to return my deposit              -> out_of_scope
+
+## bare number and compensation
+  ok   a man attacked me with a rod and I needed stitches             -> plan
+  ok   yes I'm safe                                                   -> plan
+  FAIL 118                                                            -> plan (expected explain with 'BNS-118'; got: Thanks, that helps.)
+  ok   can I get compensation?                                        -> followup
+
+Turns handled correctly: 38/42 (90%); conversations fully correct: 8/12

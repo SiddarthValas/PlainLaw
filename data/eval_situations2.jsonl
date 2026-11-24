@@ -1,0 +1,30 @@
+{"query": "my scooty was stolen from the college parking", "expect": "theft", "split": "heldout2"}
+{"query": "pickpockets took my purse at the railway station", "expect": "theft", "split": "heldout2"}
+{"query": "a fraudster sold me a fake iphone on olx", "expect": "fraud", "split": "heldout2"}
+{"query": "I got a message that I won a lottery and paid tax money to claim it", "expect": "fraud", "split": "heldout2"}
+{"query": "a man hit my brother on the head with a bottle at a wedding", "expect": "assault", "split": "heldout2"}
+{"query": "someone is threatening me on phone that they will harm my kids", "expect": "threats", "split": "heldout2"}
+{"query": "a guy in my class sends my sister dirty messages every night", "expect": "women_harassment", "split": "heldout2"}
+{"query": "the auto driver touched my thigh and made comments", "expect": "women_harassment", "split": "heldout2"}
+{"query": "my sister's husband beats her and his family wants 5 lakh more", "expect": "domestic", "split": "heldout2"}
+{"query": "the police station refused to write an FIR for my stolen bike", "expect": "fir_refused", "split": "heldout2"}
+{"query": "my father has been detained by police since morning", "expect": "arrest", "split": "heldout2"}
+{"query": "my son got bail rejected, what next", "expect": "bail", "split": "heldout2"}
+{"query": "the hotel staff locked us in the room and demanded money", "expect": "confinement", "split": "heldout2"}
+{"query": "some boys smashed the windows of my car", "expect": "fire", "split": "heldout2"}
+{"query": "my cousin was raped by her tutor", "expect": "sexual_assault", "split": "heldout2"}
+{"query": "where can I file a complaint about a crime", "expect": "fir_howto", "split": "heldout2"}
+{"query": "I received a police notice to join the investigation", "expect": "police_call", "split": "heldout2"}
+{"query": "a speeding bike knocked me down and I hurt my leg", "expect": "accident", "split": "heldout2"}
+{"query": "my business rival got a false case filed against me for cheating", "expect": "accused", "split": "heldout2"}
+{"query": "our 8 year old son went missing from the market", "expect": "missing", "split": "heldout2"}
+{"query": "the constable slapped and kicked my brother in the lockup", "expect": "custodial", "split": "heldout2"}
+{"query": "police impounded my truck and it is still at the station after 3 months", "expect": "seized", "split": "heldout2"}
+{"query": "an ex colleague is posting lies about me on linkedin", "expect": "defamation", "split": "heldout2"}
+{"query": "someone poisoned the stray dogs in our lane", "expect": "animal", "split": "heldout2"}
+{"query": "my neighbour entered my house without permission and started shouting", "expect": "trespass", "split": "heldout2"}
+{"query": "my husband secretly married again", "expect": "marriage", "split": "heldout2"}
+{"query": "the wedding hall next door plays DJ till 2 am", "expect": "nuisance", "split": "heldout2"}
+{"query": "I gave my jewellery to a relative for safekeeping and she refuses to give it back", "expect": "not_returned", "split": "heldout2"}
+{"query": "what is the punishment for kidnapping", "expect": "none", "split": "heldout2"}
+{"query": "my employer has not paid my last two months salary", "expect": "none", "split": "heldout2"}

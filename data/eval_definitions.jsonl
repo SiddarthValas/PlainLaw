@@ -1,0 +1,20 @@
+{"query": "what is the punishment for murder", "gold": ["BNS-103"], "split": "def"}
+{"query": "what is the punishment for theft", "gold": ["BNS-303"], "split": "def"}
+{"query": "what is cheating", "gold": ["BNS-318"], "split": "def"}
+{"query": "what is the punishment for rape", "gold": ["BNS-64"], "split": "def"}
+{"query": "what is criminal breach of trust", "gold": ["BNS-316"], "split": "def"}
+{"query": "what is defamation", "gold": ["BNS-356"], "split": "def"}
+{"query": "define kidnapping", "gold": ["BNS-137"], "split": "def"}
+{"query": "punishment for dowry death", "gold": ["BNS-80"], "split": "def"}
+{"query": "what is extortion", "gold": ["BNS-308"], "split": "def"}
+{"query": "what counts as grievous hurt", "gold": ["BNS-116"], "split": "def"}
+{"query": "what is stalking under the new law", "gold": ["BNS-78"], "split": "def"}
+{"query": "what is anticipatory bail", "gold": ["BNSS-482"], "split": "def"}
+{"query": "what is a zero fir", "gold": ["BNSS-173"], "split": "def"}
+{"query": "what is house-breaking", "gold": ["BNS-330"], "split": "def"}
+{"query": "what is the punishment for robbery", "gold": ["BNS-309"], "split": "def"}
+{"query": "what is mob lynching punishment", "gold": ["BNS-103"], "split": "def"}
+{"query": "what is organised crime", "gold": ["BNS-111"], "split": "def"}
+{"query": "what is the punishment for drunk driving death", "gold": ["BNS-106"], "split": "def"}
+{"query": "what is criminal intimidation", "gold": ["BNS-351"], "split": "def"}
+{"query": "what does sexual harassment mean in law", "gold": ["BNS-75"], "split": "def"}

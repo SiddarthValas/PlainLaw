@@ -1,0 +1,21 @@
+{"query": "Someone hit my parked car, damaged it, and drove away without leaving their contact details. I don’t know who the driver was. Can I file a police complaint, and what action can be taken against them?", "gold": ["BNSS-173", "BNS-281", "BNS-324"], "split": "fresh"}
+{"query": "I witnessed someone being attacked, but the police told me they wouldn’t register a complaint because I’m not the victim. Is that correct?", "gold": ["BNSS-173"], "split": "fresh"}
+{"query": "My cousin was taken to a police station for questioning, and the officers aren’t telling us whether he’s been arrested. What rights does he have?", "gold": ["BNSS-48", "BNSS-36"], "split": "fresh"}
+{"query": "My brother was arrested yesterday, but the police haven’t allowed our family to contact him. What can we do?", "gold": ["BNSS-48"], "split": "fresh"}
+{"query": "I reported a serious crime, but the police haven’t taken any action for several weeks. Is there a way to escalate my complaint?", "gold": ["BNSS-173", "BNSS-175"], "split": "fresh"}
+{"query": "Someone borrowed my laptop for a week and has now stopped answering my calls or returning it. What can I do?", "gold": ["BNS-314", "BNS-316"], "split": "fresh"}
+{"query": "A shopkeeper accused me of stealing and forced me to stay inside his shop until I paid him. Is he allowed to do that?", "gold": ["BNS-127", "BNS-126"], "split": "fresh"}
+{"query": "A stranger photographed my sister without her permission and is threatening to post the pictures online. What can we do?", "gold": ["BNS-351", "BNS-77"], "split": "fresh"}
+{"query": "I paid someone in advance to repair my phone, but they disappeared with both my phone and money. Is this a police matter?", "gold": ["BNS-318", "BNS-316"], "split": "fresh"}
+{"query": "Someone created a fake social media account using my name and is messaging people pretending to be me. Is this illegal?", "gold": ["BNS-319"], "split": "fresh"}
+{"query": "A group of people surrounded my car and wouldn’t let me leave until I apologised to them. Can I report this?", "gold": ["BNS-126", "BNS-189"], "split": "fresh"}
+{"query": "A person deliberately pushed me down the stairs during an argument, and I fractured my arm. What can I do?", "gold": ["BNS-117", "BNS-116", "BNS-115"], "split": "fresh"}
+{"query": "Someone sold me a second-hand motorcycle and later I discovered that the registration documents were fake. What law applies?", "gold": ["BNS-318", "BNS-340"], "split": "fresh"}
+{"query": "My neighbour’s dog attacked me, and the owner knew it was aggressive but never restrained it. Can I file a complaint?", "gold": ["BNS-291"], "split": "fresh"}
+{"query": "A person is demanding money from me and threatening to reveal an embarrassing secret if I refuse. Is that a crime?", "gold": ["BNS-308", "BNS-351"], "split": "fresh"}
+{"query": "My roommate secretly took money from my wallet while I was sleeping. Can I report it even though we live together?", "gold": ["BNS-303"], "split": "fresh"}
+{"query": "A security guard searched my bag and physically prevented me from leaving a building without explaining why. Is that legal?", "gold": ["BNS-126", "BNS-127"], "split": "fresh"}
+{"query": "Someone deliberately set fire to a pile of materials stored outside my house, and the flames damaged my property. What offence is this?", "gold": ["BNS-326"], "split": "fresh"}
+{"query": "A person convinced my elderly grandfather to sign papers he couldn’t understand and transferred his property. Can we challenge this?", "gold": ["BNS-318"], "split": "fresh"}
+{"query": "I accidentally transferred money to the wrong person, and they are refusing to return it. Can I file a criminal complaint?", "gold": ["BNS-314"], "split": "fresh"}
+{"query": "A person is repeatedly coming to my workplace and threatening my colleagues because of a personal disagreement. Can I seek protection?", "gold": ["BNS-351"], "split": "fresh"}

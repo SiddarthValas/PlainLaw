@@ -1,0 +1,54 @@
+backend: openai/gpt-oss-120b
+
+YOU: What does BNS 324 mean?
+  BOT (643 ms): BNS 324 defines mischief as any act where a person, either intending or knowing it is likely, causes wrongful loss or damage to property, reducing its value or usefulness. The law does not require the offender to intend harm to the specific owner; it is enough that the act harms any person’s property. This section covers acts like burning, breaking, or otherwise damaging property, whether it belongs to the offender or someone else.
+
+YOU: I dont have cctv
+  BOT (988 ms): Even without CCTV, you can still follow the steps: take photos or video of the broken window, note any witnesses, inform your insurer and keep repair bills, and report the incident to the police as per BNSS 173. If the police do not take the report, you can send it in writing to the Superintendent of Police or apply to a Magistrate.
+
+YOU: what if I broke it
+  BOT (1629 ms): If you may have caused the damage yourself, you could be liable under BNS 324 for mischief. It would be wise to consult a lawyer or seek free legal aid (NALSA helpline 15100) to understand your position and any next steps.
+
+YOU: for insurance purpose
+  BOT (561 ms): For insurance claims, you should inform your insurer promptly, provide photos or videos of the damage, any repair estimates and bills, and share any evidence you have. If you need legal help, you can contact free legal aid (NALSA helpline 15100).
+
+YOU: shall I take my valuables out?
+  BOT (1100 ms): If you feel the valuables are at risk, it is wise to move them to a safe place while you arrange repairs and report the incident to the police and your insurer.
+
+YOU: yes I'm safe now, it happened yesterday
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+YOU: should I tell my parents first?
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+YOU: the conductor saw it, does that help?
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+YOU: will I get my phone back?
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+YOU: can they track it with the IMEI?
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+YOU: is it worth reporting for a cheap phone?
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+YOU: yes I'm at my mother's place
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+YOU: can I take my children with me?
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+YOU: what if he says sorry and promises to stop?
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+YOU: is it too late after 3 days?
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+YOU: the bank is not helping me
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+YOU: can I sue the bank?
+  FAILED: HTTPError: HTTP Error 429: Too Many Requests
+
+answered 5, rejected by the check 0, failed 12

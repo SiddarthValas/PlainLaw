@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f8f3e8" media="(prefers-color-scheme: light)">
+<title>PlainLaw</title>
+<meta name="description" content="Describe what happened in your own words. Get the sections of India's new criminal laws that may apply, and what to do next.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="config.js"></script>
+<style>
+:root {
+  --bg: #f8f3e8; --fg: #1c1a17; --muted: #67615a; --subtle: #8f877c;
+  --line: #e7decd; --line-strong: #d5c9b3; --card: #fffcf5; --hover: #efe7d6;
+  --user-bg: #0a0a0a; --user-fg: #ffffff;
+  --blue: #0068d6; --blue-bg: #e8f2ff;
+  --green: #1a7f37; --green-bg: #e6f6ea;
+  --red: #c50f1f; --red-bg: #fdecee;
+  --amber: #a35200; --amber-bg: #fff4e5;
+  --radius: 12px; --shadow: 0 1px 2px rgba(60,45,20,.05), 0 4px 16px rgba(60,45,20,.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a0a0a; --fg: #ededed; --muted: #a1a1a1; --subtle: #7a7a7a;
+    --line: #262626; --line-strong: #3a3a3a; --card: #111111; --hover: #1a1a1a;
+    --user-bg: #ededed; --user-fg: #0a0a0a;
+    --blue: #52a8ff; --blue-bg: #0d2440; --green: #4ec46a; --green-bg: #0f2a17;
+    --red: #ff6b74; --red-bg: #3a1216; --amber: #f5a524; --amber-bg: #2e2008;
+    --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0a0a0a; --fg: #ededed; --muted: #a1a1a1; --subtle: #7a7a7a;
+  --line: #262626; --line-strong: #3a3a3a; --card: #111111; --hover: #1a1a1a;
+  --user-bg: #ededed; --user-fg: #0a0a0a;
+  --blue: #52a8ff; --blue-bg: #0d2440; --green: #4ec46a; --green-bg: #0f2a17;
+  --red: #ff6b74; --red-bg: #3a1216; --amber: #f5a524; --amber-bg: #2e2008;
+  --shadow: none;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; background: var(--bg); color: var(--fg); }
+body { font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 15px;
+       line-height: 1.6; -webkit-font-smoothing: antialiased; }
+.mono { font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+button { font: inherit; color: inherit; cursor: pointer; }
+
+header { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 85%, transparent);
+         backdrop-filter: saturate(180%) blur(12px); -webkit-backdrop-filter: saturate(180%) blur(12px);
+         border-bottom: 1px solid var(--line); }
+.bar { max-width: 760px; margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; gap: 10px; }
+.logo { font-weight: 700; letter-spacing: -.02em; font-size: 17px; display: flex; align-items: center; gap: 8px; }
+.logo svg { width: 22px; height: 22px; }
+.badge { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 9px; }
+.spacer { flex: 1; }
+.icon-btn { background: none; border: 1px solid var(--line); border-radius: 8px; height: 32px; padding: 0 10px;
+            color: var(--muted); font-size: 13px; display: inline-flex; align-items: center; gap: 6px; }
+.icon-btn:hover { background: var(--hover); color: var(--fg); }
+
+main { max-width: 760px; margin: 0 auto; padding: 8px 16px 180px; }
+
+.hero { padding: 56px 0 8px; }
+.hero h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.1; letter-spacing: -.035em; margin: 0 0 12px; font-weight: 700; }
+.hero p { color: var(--muted); font-size: 17px; margin: 0 0 28px; max-width: 560px; }
+.examples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.example { text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+           padding: 12px 14px; font-size: 14px; transition: border-color .15s, background .15s; }
+.example:hover { border-color: var(--line-strong); background: var(--card); }
+.example small { display: block; color: var(--subtle); font-size: 12px; margin-bottom: 2px; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 28px; color: var(--muted); font-size: 13px; }
+.facts b { color: var(--fg); font-weight: 600; }
+
+.msg { margin: 26px 0; }
+.msg.user { display: flex; justify-content: flex-end; }
+.bubble { background: var(--user-bg); color: var(--user-fg); padding: 9px 14px; border-radius: 18px 18px 4px 18px;
+          max-width: 85%; white-space: pre-wrap; word-wrap: break-word; }
+.bot-text { font-size: 15.5px; }
+.understood { color: var(--subtle); font-size: 13px; margin-top: 2px; }
+.understood span { color: var(--muted); }
+
+.plan { margin-top: 14px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); background: var(--card); }
+.plan + .plan { margin-top: 16px; }
+.plan-head { padding: 18px 20px 14px; border-bottom: 1px solid var(--line); }
+.plan-head h2 { font-size: 19px; letter-spacing: -.02em; margin: 0 0 4px; }
+.plan-head p { margin: 0; color: var(--muted); }
+.alert { display: block; background: var(--red-bg); color: var(--red);
+         padding: 10px 20px; font-weight: 500; font-size: 14px; border-bottom: 1px solid var(--line); }
+.alert a { color: inherit; font-weight: 700; text-decoration: none; }
+.section { padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.section:last-child { border-bottom: none; }
+.label { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--subtle); font-weight: 600; margin-bottom: 10px; }
+ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+ol.steps li { counter-increment: s; position: relative; padding: 0 0 14px 38px; }
+ol.steps li:last-child { padding-bottom: 0; }
+ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 1px; width: 24px; height: 24px; border-radius: 50%;
+                      background: var(--fg); color: var(--bg); font-size: 12px; font-weight: 600; display: grid; place-items: center; }
+.tag { display: inline-block; font-size: 11.5px; border-radius: 6px; padding: 0 7px; margin-left: 6px; vertical-align: 1px; white-space: nowrap; }
+.say p { margin: 0 0 8px; } .say p:last-child { margin-bottom: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chip { font: inherit; font-size: 13.5px; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--line-strong);
+        background: var(--card); color: var(--fg); cursor: pointer; text-align: left; }
+.chip:hover { background: var(--hover); }
+.law.explain .label { margin-top: 10px; }
+.show-plan { margin-top: 10px; }
+.fine-print { font-size: 12.5px; color: var(--muted); margin: -2px 0 8px; line-height: 1.45; }
+.tag.cite { background: var(--green-bg); color: var(--green); font-family: "Geist Mono", ui-monospace, monospace; }
+.tag.tip { background: var(--hover); color: var(--muted); }
+
+.law { border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; background: var(--card); }
+.law + .law { margin-top: 10px; }
+.law-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.sec { font-family: "Geist Mono", ui-monospace, monospace; font-size: 12.5px; font-weight: 500; color: var(--fg);
+       border: 1px solid var(--line-strong); border-radius: 6px; padding: 0 7px; background: var(--bg); }
+.old { font-size: 12px; color: var(--blue); background: var(--blue-bg); border-radius: 6px; padding: 0 7px; }
+.law h3 { margin: 6px 0 2px; font-size: 16px; letter-spacing: -.01em; }
+.why { margin: 4px 0 0; }
+.excerpt { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+.more { background: none; border: none; color: var(--blue); padding: 0; margin-top: 6px; font-size: 13px; }
+ul.keep { margin: 0; padding-left: 18px; }
+ul.keep li { margin: 2px 0; }
+.note { border-left: 3px solid var(--amber); background: var(--amber-bg); padding: 10px 14px; border-radius: 0 10px 10px 0;
+        font-size: 14px; margin-top: 12px; }
+.plan .note { margin: 0; border-radius: 0; border-left: none; border-top: 1px solid var(--line); padding: 14px 20px; }
+.cards { margin-top: 12px; }
+.choices { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.choice { background: var(--bg); border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 14px; font-size: 14px; }
+.choice:hover { background: var(--hover); }
+.choice.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.choice:disabled { opacity: .45; cursor: default; }
+
+.typing { display: inline-flex; gap: 4px; padding: 6px 0; }
+.typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--subtle); animation: b 1s infinite ease-in-out; }
+.typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes b { 0%, 80%, 100% { opacity: .25; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-3px); } }
+
+.composer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6;
+            background: linear-gradient(to top, var(--bg) 70%, transparent); padding: 20px 16px calc(14px + env(safe-area-inset-bottom)); }
+.composer-inner { max-width: 760px; margin: 0 auto; }
+form { display: flex; align-items: flex-end; gap: 8px; border: 1px solid var(--line-strong); border-radius: 16px;
+       background: var(--card); padding: 8px 8px 8px 16px; box-shadow: 0 4px 24px rgba(0,0,0,.06); }
+form:focus-within { border-color: var(--fg); }
+textarea { flex: 1; border: none; outline: none; resize: none; background: transparent; color: var(--fg); font: inherit;
+           font-size: 15.5px; line-height: 1.5; max-height: 160px; padding: 6px 0; }
+textarea::placeholder { color: var(--subtle); }
+.send { width: 36px; height: 36px; border-radius: 10px; border: none; background: var(--fg); color: var(--bg);
+        display: grid; place-items: center; flex: none; }
+.send:disabled { opacity: .3; cursor: default; }
+.fine { text-align: center; color: var(--subtle); font-size: 12px; margin-top: 8px; }
+.fine a { color: inherit; }
+.error { color: var(--red); }
+
+@media (max-width: 560px) {
+  .examples { grid-template-columns: 1fr; }
+  .hero { padding-top: 32px; }
+  .plan-head, .section, .alert, .plan .note { padding-left: 16px; padding-right: 16px; }
+  .badge { display: none; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3v18M5 21h14M6 7h12M4 7l-2 6a3 3 0 0 0 6 0L6 7M20 7l-2 6a3 3 0 0 0 6 0l-2-6"/></svg>
+      PlainLaw
+    </div>
+    <span class="badge">BNS · BNSS 2023</span>
+    <div class="spacer"></div>
+    <button class="icon-btn" id="newq" hidden>New question</button>
+    <button class="icon-btn" id="theme" title="Switch light / dark" aria-label="Switch light or dark theme">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="hero">
+    <h1>Describe what happened.<br>Get the law and what to do next.</h1>
+    <p>Write in your own words. PlainLaw finds the sections of India's new criminal laws that may apply, with the exact
+       text and the old IPC / CrPC number, and tells you the steps to take.</p>
+    <div class="examples" id="examples"></div>
+    <div class="facts">
+      <span><b>889</b> sections of BNS and BNSS</span>
+      <span><b>27</b> situation guides</span>
+      <span>Section text quoted from the official Acts</span>
+    </div>
+  </section>
+  <div id="chat" aria-live="polite"></div>
+</main>
+
+<div class="composer">
+  <div class="composer-inner">
+    <form id="form">
+      <textarea id="input" rows="1" maxlength="2000" placeholder="Describe what happened…" aria-label="Describe what happened"></textarea>
+      <button class="send" id="send" type="submit" aria-label="Send" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </button>
+    </form>
+    <div class="fine" id="fine">General information from the text of BNS and BNSS, not legal advice. In danger? Call <a href="tel:112">112</a>.</div>
+  </div>
+</div>
+
+<script>
+(() => {
+  // backend address: ?api=https://... in the link (remembered in this browser), else config.js, else this server
+  let API = window.PLAINLAW_API || "";
+  try {
+    const q = new URLSearchParams(location.search).get("api");
+    if (q) { localStorage.setItem("pl-api", q); history.replaceState(null, "", location.pathname); }
+    API = q || localStorage.getItem("pl-api") || API;
+  } catch (e) {}
+  API = API.replace(/\/$/, "");
+  const CONTINUING = new Set(["clarify", "closest", "empty"]);
+  const EXAMPLES = [
+    ["Accident", "Someone rear-ended my car. What should I do?"],
+    ["Online fraud", "I lost money in a UPI scam after sharing an OTP"],
+    ["Police", "The police won't register my FIR"],
+    ["Arrest", "My brother was arrested last night"],
+    ["Harassment", "A man keeps following me and messaging me"],
+    ["The law", "What is the punishment for murder?"],
+  ];
+  const state = { turns: [], lastKind: null, acts: null, conv: {}, busy: false };
+  const $ = (id) => document.getElementById(id);
+  const chat = $("chat"), input = $("input"), send = $("send");
+
+  // ---- theme (remembered per browser) ----
+  try { const t = localStorage.getItem("pl-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  $("theme").onclick = () => {
+    const dark = document.documentElement.dataset.theme
+      ? document.documentElement.dataset.theme === "dark"
+      : matchMedia("(prefers-color-scheme: dark)").matches;
+    const next = dark ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem("pl-theme", next); } catch (e) {}
+  };
+
+  // ---- tiny DOM helper (textContent only: no HTML from the server is ever injected) ----
+  function el(tag, attrs = {}, ...kids) {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (k === "class") n.className = v; else if (k === "text") n.textContent = v;
+      else if (k.startsWith("on")) n.addEventListener(k.slice(2), v); else n.setAttribute(k, v);
+    }
+    for (const k of kids.flat()) if (k != null && k !== false) n.append(k.nodeType ? k : document.createTextNode(k));
+    return n;
+  }
+
+  for (const [tag, q] of EXAMPLES)
+    $("examples").append(el("button", { class: "example", type: "button", onclick: () => ask(q) }, el("small", { text: tag }), q));
+
+  function scrollEnd() { window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" }); }
+
+  function lawCard(h) {
+    const full = h.text ? h.text.replace(/\s+/g, " ").trim() : "";
+    const ex = el("p", { class: "excerpt", text: h.excerpt || "" });
+    const card = el("div", { class: "law" },
+      el("div", { class: "law-top" },
+        el("span", { class: "sec", text: `${h.act} ${h.section}` }),
+        h.replaces ? el("span", { class: "old", text: `Replaces ${h.replaces}` }) : null),
+      el("h3", { text: h.title }),
+      h.why ? el("p", { class: "why", text: h.why }) : null,
+      h.plain ? el("p", { class: "why", text: h.plain }) : null,
+      ex);
+    if (full && h.excerpt && full.length > h.excerpt.length) {
+      let open = false;
+      const b = el("button", { class: "more", type: "button", text: "Show full text" });
+      b.onclick = () => { open = !open; ex.textContent = open ? full : h.excerpt; b.textContent = open ? "Show less" : "Show full text"; };
+      card.append(b);
+    }
+    return card;
+  }
+
+  function planBox(p) {
+    const steps = el("ol", { class: "steps" }, p.steps.map((s) => el("li", {}, s.text,
+      s.src === "law" ? el("span", { class: "tag cite", title: "From the Act", text: s.ref })
+                      : el("span", { class: "tag tip", title: "Practical tip, not law", text: "General guidance" }))));
+    return el("div", { class: "plan" },
+      el("div", { class: "plan-head" }, el("h2", { text: p.title }), el("p", { text: p.intro })),
+      p.alert !== false ? el("div", { class: "alert" }, "If anyone is in danger or hurt, call ", el("a", { href: "tel:112", text: "112" }), " first.") : null,
+      el("div", { class: "section" }, el("div", { class: "label", text: "What to do now" }), steps),
+      el("div", { class: "section" }, el("div", { class: "label", text: "Laws that may apply" }),
+        el("div", { class: "fine-print", text: "Whether a section applies depends on facts such as intention, injury and what exactly was done. The steps are general guidance written for this app, not official text." }),
+        p.laws.map(lawCard)),
+      p.gather && p.gather.length ? el("div", { class: "section" }, el("div", { class: "label", text: "Keep ready" }),
+        el("ul", { class: "keep" }, p.gather.map((g) => el("li", { text: g })))) : null,
+      p.outside ? el("div", { class: "note", text: p.outside }) : null);
+  }
+
+  function explainCard(x) {
+    const full = x.text ? x.text.replace(/\s+/g, " ").trim() : "";
+    const exact = el("p", { class: "excerpt", text: full });
+    exact.hidden = true;
+    const b = el("button", { class: "more", type: "button", text: "Show the exact text" });
+    b.onclick = () => { exact.hidden = !exact.hidden; b.textContent = exact.hidden ? "Show the exact text" : "Hide the exact text"; };
+    return el("div", { class: "law explain" },
+      el("div", { class: "law-top" }, el("span", { class: "sec", text: `${x.act} ${x.section}` }),
+        x.replaces ? el("span", { class: "old", text: `Replaces ${x.replaces}` }) : null),
+      el("h3", { text: x.title }),
+      x.summary ? el("p", { class: "why", text: x.summary }) : null,
+      x.points && x.points.length ? el("div", { class: "label", text: "What it covers" }) : null,
+      x.points && x.points.length ? el("ul", { class: "keep" }, x.points.map((p) => el("li", { text: p }))) : null,
+      x.punishment && x.punishment.length ? el("div", { class: "label", text: "Punishment" }) : null,
+      x.punishment && x.punishment.length ? el("ul", { class: "keep" }, x.punishment.map((p) => el("li", { text: p }))) : null,
+      exact, b);
+  }
+
+  function botMsg(r) {
+    const said = r.say && r.say.length ? r.say : [r.text];
+    const wrap = el("div", { class: "msg bot" }, el("div", { class: "bot-text say" }, said.map((t) => el("p", { text: t }))));
+    if (r.explain) wrap.append(explainCard(r.explain));
+    if (r.understood && r.understood.length && ["plan", "answer", "closest"].includes(r.kind))
+      wrap.append(el("div", { class: "understood" }, "Understood as: ", el("span", { text: r.understood.join(", ") })));
+    if (r.collapsed && r.plans && r.plans.length) {
+      const box = el("div", {}, r.plans.map(planBox));
+      box.hidden = true;
+      const b = el("button", { class: "more show-plan", type: "button", text: "Show the steps and laws now" });
+      b.onclick = () => { box.hidden = !box.hidden; b.textContent = box.hidden ? "Show the steps and laws now" : "Hide the steps"; };
+      wrap.append(b, box);
+    } else for (const p of r.plans || []) wrap.append(planBox(p));
+    if (r.hits && r.hits.length) wrap.append(el("div", { class: "cards" }, r.hits.map(lawCard)));
+    for (const n of r.notes || []) wrap.append(el("div", { class: "note", text: n }));
+    if (r.choices && r.choices.length) {
+      const row = el("div", { class: "choices" });
+      r.choices.forEach((c, i) => row.append(el("button", {
+        class: "choice" + (c.label.startsWith("What should I do") ? " primary" : ""), type: "button", text: c.label,
+        onclick: () => { row.querySelectorAll("button").forEach((b) => (b.disabled = true)); press(c); } })));
+      wrap.append(row);
+    }
+    if (r.chips && r.chips.length) {
+      const row = el("div", { class: "chips" });
+      r.chips.forEach((c) => row.append(el("button", { class: "chip", type: "button", text: c, onclick: () => ask(c) })));
+      wrap.append(row);
+    }
+    return wrap;
+  }
+
+  async function call(body) {
+    const res = await fetch(API + "/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    return res.json();
+  }
+
+  async function run(body, userText) {
+    if (state.busy) return;
+    state.busy = true; send.disabled = true;
+    $("hero").hidden = true; $("newq").hidden = false;
+    if (userText) chat.append(el("div", { class: "msg user" }, el("div", { class: "bubble", text: userText })));
+    const typing = el("div", { class: "msg bot" }, el("div", { class: "typing" }, el("i"), el("i"), el("i")));
+    chat.append(typing); scrollEnd();
+    try {
+      const out = await call(body);
+      state.turns = out.turns; state.acts = out.acts; state.lastKind = out.reply.kind;
+      if (out.state) state.conv = out.state;
+      typing.replaceWith(botMsg(out.reply));
+    } catch (e) {
+      typing.replaceWith(el("div", { class: "msg bot" }, el("div", { class: "bot-text error",
+        text: "Couldn't reach PlainLaw right now. Check your connection and try again. If you are in danger, call 112." })));
+    }
+    state.busy = false; send.disabled = !input.value.trim(); scrollEnd();
+  }
+
+  function ask(text) {
+    text = text.trim(); if (!text) return;
+    input.value = ""; autosize();
+    run({ message: text, turns: state.turns, last_kind: state.lastKind, acts: state.acts, state: state.conv }, text);
+  }
+  function press(choice) {
+    run({ action: choice.action, turns: state.turns, last_kind: state.lastKind, acts: state.acts, state: state.conv }, choice.label);
+  }
+
+  $("newq").onclick = () => {
+    state.turns = []; state.lastKind = null; state.acts = null; state.conv = {};
+    chat.textContent = ""; $("hero").hidden = false; $("newq").hidden = true; input.focus();
+    window.scrollTo({ top: 0 });
+  };
+
+  function autosize() { input.style.height = "auto"; input.style.height = Math.min(input.scrollHeight, 160) + "px"; }
+  input.addEventListener("input", () => { autosize(); send.disabled = state.busy || !input.value.trim(); });
+  input.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); ask(input.value); } });
+  $("form").addEventListener("submit", (e) => { e.preventDefault(); ask(input.value); });
+
+  // privacy line when an online AI model reads messages
+  fetch(API + "/api/health").then((r) => r.json()).then((h) => {
+    if (h.online_ai) $("fine").prepend("Messages are read by an online AI model to pick the right guide. ");
+  }).catch(() => {});
+})();
+</script>
+</body>
+</html>

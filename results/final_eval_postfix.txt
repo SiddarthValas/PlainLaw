@@ -1,0 +1,61 @@
+Frozen at 2026-11-24T21:52:22 | 150 synthetic questions, 130 clean (no near-duplicate in older data)
+
+## 1. Retrieval: 119 questions with gold sections (any listed section counts as relevant)
+
+| System | Hit@1 (95% CI) | Hit@3 | Hit@5 | MRR@10 | Recall@5 | ms/query (median) |
+|---|---|---|---|---|---|---|
+| A  BM25 | 12/119 = 10% (6%–17%) | 23% | 28% | 0.176 | 21% | 1 |
+| B  Dense (bge-small) | 30/119 = 25% (18%–34%) | 45% | 50% | 0.371 | 37% | 27 |
+| C  Hybrid BM25+dense (RRF) | 28/119 = 24% (17%–32%) | 40% | 49% | 0.341 | 39% | 24 |
+| D  Hybrid + glossary expansion | 42/119 = 35% (27%–44%) | 55% | 57% | 0.458 | 47% | 27 |
+
+Paired exact McNemar tests on Hit@3 (vs D, the default for situations):
+  A  BM25 vs D: p = 0.000
+  B  Dense (bge-small) vs D: p = 0.099
+  C  Hybrid BM25+dense (RRF) vs D: p = 0.002
+
+## 2. Is the abstention gate (BM25 and dense agree in their top 3 + specific query) a good signal?
+
+  gate ON (answers): n= 48 | Hit@1 25/48 = 52% (38%–66%) | Hit@3 73%
+  gate OFF (asks)  : n= 71 | Hit@1 17/71 = 24% (16%–35%) | Hit@3 42%
+
+  Top-1 errors: BM25+expansion wrong and dense right 23, dense wrong and BM25 right 24, both wrong 65 (of which the SAME wrong section: 8).
+
+  Risk–coverage (Hit@1 error rate when answering only the most confident fraction):
+  | Signal | 25% | 50% | 75% | 100% | AURC (lower = better) |
+  |---|---|---|---|---|---|
+  | agreement rank (max of BM25/dense rank of top hit; lower = surer) | 40% | 47% | 57% | 65% | 0.477 |
+  | RRF score of top hit | 40% | 45% | 56% | 65% | 0.474 |
+  | RRF margin top1 - top2 | 77% | 60% | 62% | 65% | 0.698 |
+  (a useless signal would give 65% at every coverage)
+
+## 3. Full system: situation handling (routing) and the sections it actually shows
+
+| System | Subset | Correct | Asked instead (abstained) | Wrong | Coverage | Accuracy when answering |
+|---|---|---|---|---|---|---|
+| F1 Rules only (offline) | all 150 | 108/150 = 72% (64%–79%) | 27 | 15 (10%) | 82% | 88% |
+| F1 Rules only (offline) | clean | 90/130 = 69% (61%–77%) | 26 | 14 (11%) | 80% | 87% |
+| F2 Rules + trained classifier (offline default) | all 150 | 126/150 = 84% (77%–89%) | 12 | 12 (8%) | 92% | 91% |
+| F2 Rules + trained classifier (offline default) | clean | 106/130 = 82% (74%–87%) | 12 | 12 (9%) | 91% | 90% |
+
+By category (F2 Rules + trained classifier (offline default)):
+| Category | n | Correct | Asked | Wrong |
+|---|---|---|---|---|
+| easy | 30 | 27 (90%) | 1 | 2 |
+| medium | 30 | 28 (93%) | 0 | 2 |
+| hard | 20 | 12 (60%) | 6 | 2 |
+| typo_informal | 15 | 11 (73%) | 3 | 1 |
+| ambiguous | 12 | 11 (92%) | 0 | 1 |
+| multi_issue | 10 | 9 (90%) | 0 | 1 |
+| uncovered | 13 | 10 (77%) | 1 | 2 |
+| out_of_scope | 15 | 13 (87%) | 1 | 1 |
+| old_date | 5 | 5 (100%) | 0 | 0 |
+
+Out-of-scope rejection: strict (says 'civil / other law, go here') 12/15 = 80% (55%–93%); lenient (no criminal guide shown) 13/15 = 87% (62%–96%)
+Old-date notice shown for pre-July-2024 events: 5/5 = 100% (57%–100%); false notices on other questions: 0
+
+Sections shown by the full system (119 questions with gold): a gold section among those shown 95/119 = 80% (72%–86%); first shown is gold 80/119 = 67% (58%–75%); nothing shown (asked) 12; average shown 2.2
+
+Latency per message (F2, offline, CPU): mean 19 ms, median 1 ms, p95 83 ms, max 111 ms | start-up (corpus + model + embeddings) 4.1 s | peak memory 1056 MB
+
+wrote results/final_eval.json, results/risk_coverage.png

@@ -1,0 +1,20 @@
+{"query": "a guy on a bike snatched my mobile near the bus stop", "expect": ["theft"], "split": "blind3"}
+{"query": "my wife's brother keeps calling me and threatening me over a property issue", "expect": ["threats"], "split": "blind3"}
+{"query": "someone posted my sister's morphed photos on a whatsapp group", "expect": ["women_harassment", "defamation", "threats"], "split": "blind3"}
+{"query": "i paid 15000 for a flat rental advertised online and the owner vanished", "expect": ["fraud"], "split": "blind3"}
+{"query": "my old dad was slapped by a shopkeeper during an argument", "expect": ["assault"], "split": "blind3"}
+{"query": "the police aren't letting me meet my husband who was arrested this morning", "expect": ["arrest"], "split": "blind3"}
+{"query": "my ex boyfriend keeps showing up outside my hostel", "expect": ["women_harassment"], "split": "blind3"}
+{"query": "a car hit my son while he was cycling and he has a broken leg", "expect": ["accident"], "split": "blind3"}
+{"query": "what is the punishment for dowry harassment", "expect": ["none"], "split": "blind3"}
+{"query": "my neighbour has illegally built a wall blocking our way", "expect": ["nuisance"], "split": "blind3"}
+{"query": "some people threw stones at our house during a festival fight", "expect": ["fire", "assault"], "split": "blind3"}
+{"query": "the police took my statement but wrote something i never said", "expect": ["none", "police_call"], "split": "blind3"}
+{"query": "my colleague is spreading that I took bribes", "expect": ["defamation"], "split": "blind3"}
+{"query": "i think my maid stole my gold ring", "expect": ["theft"], "split": "blind3"}
+{"query": "my 16 year old daughter ran away with a boy", "expect": ["missing"], "split": "blind3"}
+{"query": "we got a call saying my son is in police custody and we must pay to release him", "expect": ["fraud"], "split": "blind3"}
+{"query": "my husband refuses to give money for our kids", "expect": ["domestic"], "split": "blind3"}
+{"query": "i got summons from court for a case i know nothing about", "expect": ["accused", "police_call"], "split": "blind3"}
+{"query": "someone used my aadhaar to take a loan", "expect": ["fraud"], "split": "blind3"}
+{"query": "can i record the police officer on my phone", "expect": ["none"], "split": "blind3"}

@@ -1,0 +1,21 @@
+# secrets: never upload
+groq_key.txt
+*.key
+.env
+
+# local environment and caches (recreated automatically)
+.venv/
+__pycache__/
+*.pyc
+.cache/
+emb_cache/
+models/bge-small-en-v1.5/
+
+# course submission documents (contain SAP IDs); keep them out of the public repo
+report/
+
+# tool and OS files
+.DS_Store
+.vercel/
+.claude/
+.agents/

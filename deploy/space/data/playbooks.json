@@ -1,0 +1,2170 @@
+{
+ "_note": "Hand-written, checked against data/sections.jsonl by src/playbooks.py. 'law' steps cite a section in the corpus; 'general' steps are common practical guidance, not from BNS/BNSS, and are labelled that way in the app. 'priority' orders playbooks when several fire: the more specific situation (police refusal, a false case, custody violence, rape, a missing person) is shown first. 'generic' is the fallback plan: steps true for any offence, attached to whatever sections retrieval finds when no playbook fits.",
+ "playbooks": [
+  {
+   "id": "accident",
+   "title": "Road accident or collision",
+   "triggers": [
+    "\\brear[- ]?end\\w*",
+    "\\b(?:road )?accident\\b",
+    "\\bcollid\\w*|\\bcollision\\b",
+    "\\bcrash\\w*",
+    "\\bbumped (?:into|my)\\b",
+    "\\bhit[- ]and[- ]run\\b",
+    "\\bran over\\b",
+    "\\bdashed (?:my|into)\\b",
+    "\\brash(?:ly)? driv\\w*",
+    "\\bdrunk(?:en)? driv\\w*",
+    "\\bhit (?:my|our)\\b.{0,20}\\b(?:car|bike|vehicle|scooter|auto|motorcycle)\\b",
+    "\\bdrove (?:away|off)\\b.{0,40}\\b(?:without|after)\\b",
+    "\\bhit (?:a|an|the) (?:pedestrian|person|man|woman|child|biker|cyclist|boy|girl|dog|cow)\\b",
+    "\\bmy (?:car|bike|vehicle|scooter)\\b.{0,30}\\b(?:hit|knocked|ran into|rammed)\\b",
+    "\\b(?:knocked (?:down|over)|ran into|rammed|hit by a (?:car|bus|truck|bike|vehicle|auto|lorry|tractor))\\b",
+    "\\b(?:car|bus|truck|lorry|bike|vehicle|auto|tractor|scooter)\\b.{0,30}\\b(?:hit|knocked|ran (?:over|into)|rammed|crashed)\\b",
+    "\\bhit\\b.{0,25}\\bwith (?:my|his|her|a|the|our) (?:car|bike|vehicle|scooter|truck|auto)\\b",
+    "\\b(?:my|our|his|her) (?:car|bike|vehicle|scooter|truck) hit\\b"
+   ],
+   "intro": "A collision can involve a criminal complaint, a medical record and an insurance claim. Which laws apply depends on whether anyone was hurt and how the other driver behaved.",
+   "laws": [
+    {
+     "id": "BNS-281",
+     "why": "If a driver drove so rashly or negligently that human life was endangered or hurt was likely."
+    },
+    {
+     "id": "BNS-125",
+     "why": "Any rash or negligent act that endangers life or others' safety. It carries a higher punishment if hurt or grievous hurt is caused."
+    },
+    {
+     "id": "BNS-106",
+     "why": "Only if someone died. Sub-section (2), on a driver who causes death by rash driving and escapes without reporting it, has not been brought into force yet (as of mid-2026).",
+     "when": "\\b(?:died|dead|death|killed|fatal|passed away)\\b"
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "Check yourself and others for injury. If anyone is hurt or there is danger, call 112 now (police and ambulance)."
+    },
+    {
+     "src": "general",
+     "text": "Stop. Do not leave the scene. Switch on hazard lights and, if the vehicle can move and nobody is badly hurt, move it out of the traffic."
+    },
+    {
+     "src": "general",
+     "text": "If you were the driver and someone is hurt, stop, help them and call 112. Leaving the scene makes your position much worse."
+    },
+    {
+     "src": "general",
+     "text": "Photograph both vehicles, the number plates, the damage, the road and the location. Note the time."
+    },
+    {
+     "src": "general",
+     "text": "Take the other driver's name, phone number, licence, registration and insurance details, and the names and numbers of witnesses. If they drive off, write down the plate number immediately."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)-(2)",
+     "text": "Tell the police. Information about an offence can be given orally or electronically at any police station. It must be written down, read back to you and signed by you, and you are entitled to a copy free of cost. Insurers usually ask for it."
+    },
+    {
+     "src": "general",
+     "text": "Get medical attention even for minor pain and keep the records and bills."
+    },
+    {
+     "src": "general",
+     "text": "Inform your insurer promptly and check the time limit in your policy."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "If the police refuse to record your information, send it in writing by post to the Superintendent of Police, who can investigate or direct an investigation. You can also apply to the Magistrate."
+    }
+   ],
+   "gather": [
+    "Photos and video",
+    "Other driver's details and vehicle number",
+    "Witness contacts",
+    "Medical records and bills",
+    "FIR copy and insurance claim number"
+   ],
+   "outside": "Insurance claims and compensation for accident victims fall under the Motor Vehicles Act, which is not part of this tool. A lawyer or your insurer can advise on that.",
+   "examples": [
+    "someone rear-ended my car in traffic",
+    "a car crashed into my bike",
+    "I was in a road accident and the other driver ran away",
+    "a drunk driver hit my father, he is in hospital",
+    "a bus hit my scooter from behind",
+    "I hit a pedestrian with my car"
+   ]
+  },
+  {
+   "id": "theft",
+   "title": "Theft, snatching or robbery",
+   "triggers": [
+    "\\b(?:stole|stolen|steal\\w*|theft|thie(?:f|ves)|pickpocket\\w*|snatch\\w*|shoplift\\w*)\\b",
+    "\\b(?:robbed|robbery|mugged|looted|dacoit\\w*)\\b",
+    "\\b(?:took|taken|taking|takes|stealing)\\b.{0,30}\\bfrom (?:my|our|the) (?:wallet|pocket|bag|purse|locker|drawer|cupboard|almirah|room|house|shop|car)",
+    "\\bpicked my pocket\\b",
+    "\\bbreak[- ]?in\\b|\\bbroke into\\b|\\bburglar\\w*",
+    "\\b(?:grabbed|yanked|pulled|snatched|ripped)\\b.{0,15}\\b(?:my|her|his|our)\\b.{0,15}\\b(?:purse|bag|handbag|phone|mobile|chain|necklace|wallet|earrings?|gold)\\b",
+    "\\b(?:phone|mobile|laptop|wallet|purse|bag|handbag|cash|money|jewel\\w*|gold|watch|bike|car|scooter|cycle|bicycle|ring|necklace|chain|parcel)\\b.{0,30}\\b(?:went missing|is missing|was missing|missing from|disappeared|is gone|was gone)\\b",
+    "\\b(?:walked|ran|drove|rode) (?:off|away) with (?:my|our)\\b",
+    "\\bat (?:knife|gun) ?point\\b",
+    "\\b(?:knife|gun|weapon|threat\\w*|forc\\w*|beat\\w*|hit me|attacked)\\b.{0,60}\\b(?:took|snatched|grabbed|robbed|stole)\\b|\\b(?:took|snatched|grabbed)\\b.{0,40}\\b(?:at knife|at gun|by force|forcibly)\\b",
+    "\\b(?:entered|came into|went into|got into|broke into)\\b.{0,40}\\b(?:took|taken|stole|stolen|took away)\\b",
+    "\\b(?:took|taken|took away|snatched|grabbed)\\b.{0,10}\\b(?:away )?(?:my|our)\\b.{0,10}\\b(?:belongings|bag|phone|mobile|wallet|purse|things|jewel\\w*|cash|money)\\b"
+   ],
+   "intro": "The law treats theft, snatching and robbery differently depending on force and where it happened.",
+   "laws": [
+    {
+     "id": "BNS-303",
+     "why": "Dishonestly taking movable property out of someone's possession without consent."
+    },
+    {
+     "id": "BNS-304",
+     "why": "If the thing was grabbed suddenly or by force, for example a phone or chain snatched on the street.",
+     "when": "\\b(?:snatch\\w*|grab\\w*|chain|pulled|yanked|from my hand|on (?:a |the )?(?:bike|scooter))\\b"
+    },
+    {
+     "id": "BNS-331",
+     "why": "If someone broke into or secretly entered a house to commit the theft (house-breaking). Higher punishment at night.",
+     "when": "\\b(?:broke into|break[- ]?in|broken into|burgl\\w*|house[- ]?break\\w*|broke the lock)\\b"
+    },
+    {
+     "id": "BNS-305",
+     "why": "If the theft was from a home, a vehicle or a place of worship.",
+     "when": "\\b(?:room|house|home|flat|shop|office|bus|train|car|vehicle|truck|temple|mandir|church|mosque|luggage|bag)\\b"
+    },
+    {
+     "id": "BNS-309",
+     "why": "If force, threat or fear was used. That makes it robbery, not theft.",
+     "when": "\\b(?:force\\w*|threat\\w*|knife|gun|weapon|beat|beaten|hit|robbed|robbery|mugged|held me up|pushed|hurt)\\b"
+    },
+    {
+     "id": "BNS-317",
+     "why": "For anyone who knowingly keeps or buys the stolen property.",
+     "when": "\\b(?:bought|buy|purchas\\w*|received|second[- ]?hand|found (?:with|in)|selling|sold)\\b"
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "If anyone is in danger or injured, call 112."
+    },
+    {
+     "src": "general",
+     "text": "Write down what was taken, when and where, and anything you remember about the person. Do not confront them."
+    },
+    {
+     "src": "general",
+     "text": "If a phone, cards or UPI access were taken, call your bank to block cards and UPI and ask your mobile operator to block the SIM. Note the phone's IMEI number from its box or bill."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)",
+     "text": "Report it at a police station. You can give the information at any police station, irrespective of where the offence happened, orally or electronically."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(2)",
+     "text": "Ask for the copy of your information. It must be given to you free of cost."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "If the police refuse to record it, send the substance in writing by post to the Superintendent of Police, or apply to the Magistrate."
+    }
+   ],
+   "gather": [
+    "Bill, IMEI or serial number of the item",
+    "Photos, CCTV locations, witness contacts",
+    "Bank and SIM block confirmations",
+    "FIR copy"
+   ],
+   "outside": null,
+   "excludes": [
+    "\\baccus\\w* (?:me|him|her|us|them|my \\w+) of\\b",
+    "\\b(?:false(?:ly)?|fake|wrong(?:ly|ful)?|bogus|fabricated|frivolous)\\b.{0,40}\\b(?:case|complaint|fir|f\\.i\\.r|charges?|accus\\w*|allegations?|implicat\\w*)\\b|\\baccus\\w* (?:me|him|her|us|them|my \\w+) of\\b|\\b(?:filed|lodged|registered)\\b.{0,25}\\b(?:case|complaint|fir)\\b.{0,15}\\bagainst (?:me|my|us|him|her)\\b|\\b(?:case|complaint|fir)\\b.{0,30}\\b(?:filed|lodged|registered)\\b.{0,15}\\bagainst (?:me|my|us)\\b",
+    "\\b(?:spreading|posting|posted|saying|telling (?:people|everyone|others)|claiming|calling me|accus\\w* me)\\b.{0,30}\\b(?:that )?(?:i|i'm|i am|me|we|my \\w+)\\b.{0,25}\\b(?:a )?(?:thief|cheat|fraud|liar|corrupt|took bribes?|bribe|stole|stealing|criminal|characterless)\\b",
+    "\\b(?:partner|joint account|company account|business account)\\b",
+    "\\b(?:not|never|n't|refus\\w*)\\b.{0,15}\\b(?:return\\w*|give (?:it|them)? ?back|giving (?:it|them)? ?back)\\b"
+   ],
+   "priority": 1,
+   "examples": [
+    "someone stole my phone",
+    "thieves broke into our house at night",
+    "my laptop went missing from my room",
+    "two men on a bike pulled my gold chain",
+    "my car was stolen from the parking lot",
+    "I got robbed at knifepoint",
+    "my maid has been taking cash from the cupboard"
+   ]
+  },
+  {
+   "id": "fraud",
+   "title": "Cheating or online fraud",
+   "triggers": [
+    "\\b(?:cheat\\w*|fraud\\w*|scam\\w*|conned|duped|swindl\\w*)\\b",
+    "\\bfake (?:job|offer|website|seller|app|scheme|call|agent)\\b|\\bfake\\b.{0,25}\\b(?:account|profile|id)\\b",
+    "\\b(?:upi|otp|phishing|online|bank) (?:fraud|scam)\\b",
+    "\\b(?:paid|invested|transferred|sent|gave)\\b.{0,60}\\b(?:disappeared|vanished|never (?:delivered|sent|returned|got|received|came)|ran away|blocked me|switched off|not (?:delivered|received))\\b",
+    "\\bpretend\\w* to be me\\b|\\bimperson\\w*",
+    "\\bfake\\b.{0,25}\\b(?:documents?|papers|registration|certificates?|signatures?)\\b|\\bforg(?:ed|ery|e)\\b",
+    "\\b(?:tricked|misled|convinced|persuaded|deceived|forced)\\b.{0,50}\\b(?:sign\\w*|thumb ?print\\w*)\\b",
+    "\\b(?:documents?|papers|registration|certificates?)\\b.{0,25}\\b(?:fake|forged|false)\\b",
+    "\\b(?:lost|debited|deducted|withdrawn|siphoned)\\b.{0,50}\\b(?:upi|account|bank|card|rupees|rs\\.?|₹)\\b",
+    "\\b(?:otp|kyc|account (?:is )?blocked|link)\\b.{0,60}\\b(?:call|message|sms|clicked|shared)\\b|\\b(?:call|message|sms)\\b.{0,60}\\b(?:otp|kyc|account (?:is )?blocked)\\b",
+    "\\b(?:double (?:the )?(?:returns?|money)|ponzi|chit ?fund|ran away with (?:my|our) money)\\b",
+    "\\btook (?:my|our) money\\b.{0,40}\\bnever\\b",
+    "\\b(?:promis\\w*)\\b.{0,40}\\b(?:job|returns?|visa|admission|loan)\\b.{0,60}\\b(?:took|paid|lakh|rupees|rs\\.?|money)\\b",
+    "\\bhack\\w*\\b",
+    "\\b(?:pretend\\w*|posing|posed|claimed|saying) (?:to be |as )?(?:he is |she is )?(?:from )?(?:the )?(?:bank|customer care|police|company|officer|income tax|courier)\\b",
+    "\\b(?:clicked|opened)\\b.{0,30}\\b(?:link|apk|app)\\b",
+    "\\b(?:lottery|lucky draw|won a (?:prize|car|lottery)|prize money|kbc)\\b",
+    "\\bdigital arrest\\b|\\b(?:call\\w*|message\\w*|whatsapp|video call|sms)\\b.{0,80}\\b(?:custody|arrest\\w*|jail|police|cbi|customs|court|parcel)\\b.{0,80}\\b(?:pay|money|transfer|send|deposit|rs\\.?|rupees|₹)\\b",
+    "\\b(?:used|misused|using|took|stole)\\b.{0,15}\\b(?:my|our)\\b.{0,10}\\b(?:aadhaa?r|pan(?: card)?|identity|id proof|kyc|documents?|photos?|name|details|signature)\\b.{0,60}\\b(?:sim|loan|account|card|profile|to get|to take|to open|without my)\\b|\\bidentity theft\\b",
+    "\\b(?:in (?:police )?custody|arrested|in jail|under arrest|lock-?up)\\b.{0,60}\\b(?:send|pay|transfer|deposit)\\w*\\b.{0,25}\\b(?:money|rs\\.?|rupees|₹|\\d{3,}|to (?:a|this|their|that) (?:number|account|upi))\\b"
+   ],
+   "intro": "Cheating and fraud can be reported to the police, and for online money fraud speed matters because banks can sometimes freeze the money.",
+   "laws": [
+    {
+     "id": "BNS-318",
+     "why": "Deceiving someone to make them hand over money or property, or to do something they would not otherwise do."
+    },
+    {
+     "id": "BNS-319",
+     "why": "If the person pretended to be someone else, including a fake online account in your name.",
+     "when": "\\b(?:aadhaa?r|pan|identity|kyc|sim|my name|my details|pretend\\w*|impersonat\\w*|posing|posed|fake (?:account|profile|id|identity)|in my name|call(?:ed)? (?:from|saying)|(?:from|calling from) (?:the )?(?:bank|company|police|office)|account (?:is )?blocked|kyc|otp)\\b"
+    },
+    {
+     "id": "BNS-316",
+     "why": "If you handed something over for safekeeping or a purpose and it was dishonestly used or kept.",
+     "when": "\\b(?:entrust\\w*|safe ?keeping|gave (?:him|her|them)|handed|lent|borrow\\w*|invest\\w*|deposit\\w*|advance)\\b"
+    },
+    {
+     "id": "BNS-336",
+     "why": "If fake documents were made.",
+     "when": "\\b(?:fake|forged|forgery|false|document\\w*|signature|signed|papers|registration|certificate\\w*)\\b"
+    },
+    {
+     "id": "BNS-340",
+     "why": "If a forged document or electronic record was used as genuine.",
+     "when": "\\b(?:fake|forged|forgery|false|document\\w*|signature|papers|registration|certificate\\w*)\\b"
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "If money left your account, call your bank at once and ask to freeze or reverse the transaction. For online financial fraud also call the national cyber-crime helpline 1930 or report at cybercrime.gov.in as soon as possible."
+    },
+    {
+     "src": "general",
+     "text": "If someone calls claiming a relative is in custody, or that you are under 'digital arrest', and asks for money: do not pay. Police never ask for money on a call. Hang up and call the police station or 112 yourself to check."
+    },
+    {
+     "src": "general",
+     "text": "Do not delete anything. Take screenshots of chats, profiles, payment receipts, transaction IDs, phone numbers and UPI IDs."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)",
+     "text": "Report it to the police. Information can be given by electronic communication. If you do, it is taken on record once you sign it within three days."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(2)",
+     "text": "Ask for a copy of what was recorded. It must be given to you free of cost."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "If the police refuse, send it in writing by post to the Superintendent of Police, or apply to the Magistrate."
+    }
+   ],
+   "gather": [
+    "Screenshots and chat exports",
+    "Transaction IDs, bank statements",
+    "Seller or account details, phone numbers, UPI IDs",
+    "Bills and advertisements"
+   ],
+   "outside": "Hacking and other online-specific offences are in the IT Act, which is not part of this tool. A pure money dispute with no deception from the start (a loan not repaid, say) may be a civil matter.",
+   "excludes": [
+    "\\baccus\\w* (?:me|him|her|us|them|my \\w+) of\\b",
+    "\\b(?:false(?:ly)?|fake|wrong(?:ly|ful)?|bogus|fabricated|frivolous)\\b.{0,40}\\b(?:case|complaint|fir|f\\.i\\.r|charges?|accus\\w*|allegations?|implicat\\w*)\\b|\\baccus\\w* (?:me|him|her|us|them|my \\w+) of\\b|\\b(?:filed|lodged|registered)\\b.{0,25}\\b(?:case|complaint|fir)\\b.{0,15}\\bagainst (?:me|my|us|him|her)\\b|\\b(?:case|complaint|fir)\\b.{0,30}\\b(?:filed|lodged|registered)\\b.{0,15}\\bagainst (?:me|my|us)\\b",
+    "\\b(?:spreading|posting|posted|saying|telling (?:people|everyone|others)|claiming|calling me|accus\\w* me)\\b.{0,30}\\b(?:that )?(?:i|i'm|i am|me|we|my \\w+)\\b.{0,25}\\b(?:a )?(?:thief|cheat|fraud|liar|corrupt|took bribes?|bribe|stole|stealing|criminal|characterless)\\b"
+   ],
+   "examples": [
+    "I was cheated by a fake seller online",
+    "I lost money in a UPI scam after sharing an OTP",
+    "a fake job offer asked me to pay a registration fee",
+    "I invested in a scheme promising double returns and they vanished",
+    "someone made a fake account using my photos",
+    "someone hacked my email and is asking my friends for money",
+    "the documents of the car I bought turned out to be forged",
+    "someone called saying my son is arrested and we must pay to release him"
+   ],
+   "priority": 2
+  },
+  {
+   "id": "assault",
+   "title": "Physical attack or injury",
+   "triggers": [
+    "\\b(?:beat|beaten|beating|beat up|slapp\\w*|punch\\w*|kick\\w*|attack\\w*|assault\\w*|stabb?\\w*|thrash\\w*|pushed me|fractur\\w*)\\b|\\bbroke (?:my|his|her) (?:arm|leg|nose|tooth|teeth|hand|jaw|ribs?|bones?|head|wrist|finger)\\b",
+    "\\bhit me\\b|\\bhurt me\\b|\\binjur\\w*",
+    "\\b(?:dog|bull|cow|horse|animal)\\b.{0,30}\\b(?:attack\\w*|bit(?:e|ten)?|bitten|charged)\\b",
+    "\\bacid\\b",
+    "\\bhit (?:me|him|her|them|my \\w+|his \\w+|her \\w+)\\b.{0,15}\\b(?:on|with|in|across)\\b",
+    "\\b(?:son|daughter|grandson|granddaughter|daughter-in-law|son-in-law|his wife|her husband)\\b.{0,50}\\b(?:beat\\w*|hit\\w*|abus\\w*|harass\\w*|tortur\\w*|starv\\w*|threw|throw\\w*)\\b.{0,40}\\b(?:my |our |his |her )?(?:old |elderly |aged )?(?:mother|father|parents?|grand(?:mother|father|parents?))\\b|\\b(?:old|elderly|aged|senior citizen)\\s+(?:mother|father|parents?|man|woman)\\b"
+   ],
+   "intro": "The law distinguishes between a simple hurt, a grievous hurt and the use of weapons. A fracture is grievous hurt.",
+   "laws": [
+    {
+     "id": "BNS-115",
+     "why": "Intentionally causing bodily pain, disease or infirmity.",
+     "unless": "^(?!.*\\b(?:he|she|they|man|woman|boy|girl|person|someone|neighbou?r|guy)\\b).*\\b(?:dog|bull|cow|horse|animal|monkey)\\b"
+    },
+    {
+     "id": "BNS-124",
+     "why": "If acid was thrown or used. This carries at least ten years' imprisonment, and the fine goes to the victim's treatment.",
+     "when": "\\bacid\\b"
+    },
+    {
+     "id": "BNS-116",
+     "why": "Defines grievous hurt, which includes a fracture or dislocation of a bone or tooth.",
+     "when": "\\b(?:fractur\\w*|broke\\w*|broken|bone|dislocat\\w*|tooth|teeth|eye|hospital|serious|severe|stitches)\\b"
+    },
+    {
+     "id": "BNS-117",
+     "why": "Intentionally causing grievous hurt.",
+     "when": "\\b(?:fractur\\w*|broke\\w*|broken|bone|dislocat\\w*|tooth|teeth|eye|hospital|serious|severe|stitches)\\b"
+    },
+    {
+     "id": "BNS-118",
+     "why": "If a weapon or a dangerous means was used.",
+     "when": "\\b(?:rod|knife|stick|weapon|gun|blade|bottle|acid|stone|brick|axe|sword|iron|bat)\\b"
+    },
+    {
+     "id": "BNS-131",
+     "why": "If you were hit or grabbed but not injured: assault or criminal force.",
+     "when": "\\b(?:slap\\w*|push\\w*|shov\\w*|grab\\w*|threw|no injur\\w*|not (?:hurt|injured))\\b"
+    },
+    {
+     "id": "BNS-291",
+     "why": "If an animal attacked you and its owner knew it was dangerous but did not take enough care to guard against the risk.",
+     "when": "\\b(?:dog|bull|cow|horse|animal|bit(?:e|ten)?)\\b"
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "Get to safety and call 112 if you are in danger or hurt. For an acid attack, wash the area with plenty of clean water and get to a hospital at once."
+    },
+    {
+     "src": "general",
+     "text": "Get medical treatment. Ask the doctor to record how the injury happened. Keep reports, bills and photos of the injuries."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)-(2)",
+     "text": "Report it to the police. They must write it down, read it back and have you sign it. You get a copy free of cost."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-174",
+     "ref": "BNSS 174",
+     "text": "Minor offences may be non-cognizable. In that case the police only record the information and refer you to the Magistrate, and they cannot investigate without the Magistrate's order."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "If the police refuse to record a cognizable offence, send it in writing by post to the Superintendent of Police, or apply to the Magistrate."
+    }
+   ],
+   "gather": [
+    "Medical report and bills",
+    "Photos of injuries and the place",
+    "Witness names",
+    "Messages or calls before or after the incident"
+   ],
+   "outside": null,
+   "excludes": [
+    "\\bmy (?:dog|pet|cow|bull|horse)\\b",
+    "\\bstray\\b",
+    "\\b(?:police|cops?|constables?|inspector|officers?|SHO)\\b.{0,40}\\b(?:beat\\w*|hit|tortur\\w*|slap\\w*|thrash\\w*|assault\\w*|kick\\w*|third[- ]degree)\\b|\\bcustodial (?:violence|torture|death)\\b",
+    "\\b(?:false(?:ly)?|fake|wrong(?:ly|ful)?|bogus|fabricated|frivolous)\\b.{0,40}\\b(?:case|complaint|fir|f\\.i\\.r|charges?|accus\\w*|allegations?|implicat\\w*)\\b|\\baccus\\w* (?:me|him|her|us|them|my \\w+) of\\b|\\b(?:filed|lodged|registered)\\b.{0,25}\\b(?:case|complaint|fir)\\b.{0,15}\\bagainst (?:me|my|us|him|her)\\b|\\b(?:case|complaint|fir)\\b.{0,30}\\b(?:filed|lodged|registered)\\b.{0,15}\\bagainst (?:me|my|us)\\b",
+    "\\b(?:car|bus|truck|bike|vehicle|auto|scooter|lorry|tractor)\\b.{0,25}\\bhit\\b",
+    "\\b(?:husband|in[- ]?laws?|dowry)\\b",
+    "\\b(?:construction site|factory|workplace|at work|safety (?:equipment|gear)|on the job)\\b"
+   ],
+   "examples": [
+    "my neighbour slapped me during an argument",
+    "a group of boys beat up my brother",
+    "he hit me with an iron rod and broke my arm",
+    "someone pushed me down the stairs and I fractured my hand",
+    "someone threw acid on my sister",
+    "my neighbour's dog attacked me and they knew it was aggressive"
+   ]
+  },
+  {
+   "id": "threats",
+   "title": "Threats or blackmail",
+   "triggers": [
+    "\\b(?:threat\\w*|blackmail\\w*|extort\\w*|intimidat\\w*|ransom)\\b",
+    "\\bdemanding money\\b.{0,60}\\b(?:or else|reveal|expose|leak|post|share)\\b",
+    "\\bwill (?:leak|expose|post|reveal)\\b",
+    "\\b(?:will|would|going to|gonna) (?:kill|hurt|harm|beat|finish|burn|destroy)\\b",
+    "\\bdemand\\w* money\\b.{0,40}\\b(?:or|else|every)\\b",
+    "\\brape threats?\\b|\\bthreat\\w*\\b.{0,30}\\brap(?:e|ed|ing)\\b|\\b(?:will|would|going to|gonna) rape\\b",
+    "\\b(?:hafta|protection money|extortion money|weekly money|monthly money)\\b"
+   ],
+   "intro": "Threats to hurt you, your family, your reputation or your property are covered, and demanding money under threat is a separate and more serious offence.",
+   "laws": [
+    {
+     "id": "BNS-351",
+     "why": "Threatening injury to your person, reputation or property to cause alarm or to make you do something."
+    },
+    {
+     "id": "BNS-308",
+     "why": "If the person is demanding money or something valuable and using the fear of injury or exposure to get it.",
+     "when": "\\b(?:money|pay|paid|rupees|rs\\.?|₹|cash|demand\\w*|ransom|extort\\w*)\\b"
+    },
+    {
+     "id": "BNS-77",
+     "why": "If private images are involved, for example pictures of a woman in a private act captured or shared without consent.",
+     "when": "\\b(?:photo\\w*|pictures?|images?|videos?|nude|private|intimate|leak\\w*|morph\\w*)\\b"
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "If you are in immediate danger, call 112."
+    },
+    {
+     "src": "general",
+     "text": "Do not pay and do not delete anything. Screenshot the messages, call logs, numbers, profiles and payment requests. Record calls only if you can do so lawfully."
+    },
+    {
+     "src": "general",
+     "text": "For online threats, also report the account to the platform and at cybercrime.gov.in."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)-(2)",
+     "text": "Report it to the police. It can be given orally or electronically, it is recorded and signed, and you get a copy free of cost."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "If the police do not record it, send it in writing by post to the Superintendent of Police, or apply to the Magistrate."
+    }
+   ],
+   "gather": [
+    "Screenshots with dates",
+    "Phone numbers, profile links, payment requests",
+    "Witnesses",
+    "Any earlier messages showing the relationship"
+   ],
+   "outside": "Online blackmail may also involve the IT Act, which is not part of this tool.",
+   "excludes": [
+    "\\bthreaten\\w* to (?:file|complain|report|sue|take legal|go to (?:the )?(?:police|court))\\b",
+    "\\b(?:false(?:ly)?|fake|wrong(?:ly|ful)?|bogus|fabricated|frivolous)\\b.{0,40}\\b(?:case|complaint|fir|f\\.i\\.r|charges?|accus\\w*|allegations?|implicat\\w*)\\b|\\baccus\\w* (?:me|him|her|us|them|my \\w+) of\\b|\\b(?:filed|lodged|registered)\\b.{0,25}\\b(?:case|complaint|fir)\\b.{0,15}\\bagainst (?:me|my|us|him|her)\\b|\\b(?:case|complaint|fir)\\b.{0,30}\\b(?:filed|lodged|registered)\\b.{0,15}\\bagainst (?:me|my|us)\\b"
+   ],
+   "examples": [
+    "someone is threatening to kill me",
+    "my ex is threatening to post my private photos unless I pay",
+    "a person is blackmailing me",
+    "a goon is demanding money from my shop or else",
+    "he says he will hurt my family"
+   ]
+  },
+  {
+   "id": "women_harassment",
+   "title": "Stalking or sexual harassment of a woman",
+   "triggers": [
+    "\\bstalk\\w*|\\bfollow(?:s|ed|ing)? me\\b|\\bkeeps? (?:calling|messaging|texting|following) me\\b",
+    "\\beve[- ]?teas\\w*|\\bcatcall\\w*|\\bmolest\\w*|\\bgrop\\w*|\\bsexual\\w* harass\\w*",
+    "\\btouch(?:es|ed|ing)? me (?:inappropriately|wrongly|badly|without)|\\binappropriately touch\\w*|\\bbad touch|\\boutrag\\w* (?:my |her )?modesty",
+    "\\b(?:photograph|film|record|click)\\w* (?:my|a) (?:sister|wife|daughter|friend|girl)\\b.{0,30}\\bwithout\\b",
+    "\\bsecretly (?:film\\w*|record\\w*|photograph\\w*)|\\bhidden camera|\\bspy ?cam",
+    "\\b(?:obscene|vulgar|dirty|indecent|abusive|lewd|sexual)\\b.{0,20}\\b(?:messages?|texts?|calls?|photos?|pictures?|videos?|comments?)\\b",
+    "\\bexpos\\w* (?:himself|his (?:private|genitals?))|\\bflash(?:ed|es|ing)? (?:at )?(?:me|her)\\b|\\bmasturbat\\w*",
+    "\\bsexual\\w* (?:comments?|remarks?|jokes?|advances?|favou?rs?)\\b|\\b(?:comments?|remarks?)\\b.{0,20}\\b(?:my body|sexual)\\b",
+    "\\b(?:follows?|followed|following|stalks?|stalked|stalking)\\b.{0,20}\\b(?:my|her) (?:daughter|sister|wife|mother|friend|girlfriend)\\b|\\b(?:my|her) (?:daughter|sister|wife|mother|friend)\\b.{0,30}\\b(?:stalk\\w*|follow\\w*)\\b",
+    "\\bharass\\w* (?:me|her) sexually\\b|\\bsexually harass\\w*",
+    "\\btouch(?:es|ed|ing)? (?:my|her) (?:thigh|thighs|breasts?|chest|body|waist|back|bottom|hips?|legs?|private)\\b",
+    "\\brape threats?\\b|\\bthreat\\w*\\b.{0,30}\\brap(?:e|ed|ing)\\b|\\b(?:will|would|going to|gonna) rape\\b",
+    "\\b(?:is|was|keeps?|kept|started) touching (?:me|her|my \\w+)\\b|\\btouch(?:es|ed|ing)? me\\b.{0,40}\\b(?:bus|train|metro|crowd|auto|cab|office|class|school|college|road|market)\\b",
+    "\\b(?:record\\w*|film\\w*|photograph\\w*|click\\w*|video\\w*)\\b.{0,40}\\b(?:girls|women|ladies|her|my (?:sister|daughter|wife))\\b.{0,40}\\b(?:washroom|bathroom|toilet|changing|trial room|hostel|shower)\\b"
+   ],
+   "intro": "These offences are specifically covered, and the law has special rules to make reporting easier for women.",
+   "laws": [
+    {
+     "id": "BNS-78",
+     "why": "Repeatedly following or contacting a woman despite a clear sign of disinterest, or monitoring her online activity.",
+     "when": "\\b(?:follow\\w*|stalk\\w*|messag\\w*|call\\w*|text\\w*|contact\\w*|monitor\\w*|watch\\w*|online|instagram|whatsapp|facebook|social media|keeps?)\\b"
+    },
+    {
+     "id": "BNS-75",
+     "why": "Unwelcome physical contact, demands for sexual favours, showing pornography or sexual remarks.",
+     "when": "\\b(?:touch\\w*|physical\\w*|favou?rs?|obscene|vulgar|sexual\\w*|porn\\w*|remarks?|harass\\w*)\\b"
+    },
+    {
+     "id": "BNS-74",
+     "why": "Assault or force on a woman intending to outrage her modesty.",
+     "when": "\\b(?:touch\\w*|grab\\w*|grop\\w*|molest\\w*|pull\\w*|hug\\w*|physical\\w*|force\\w*|modesty)\\b"
+    },
+    {
+     "id": "BNS-79",
+     "why": "Words, gestures or acts intended to insult a woman's modesty.",
+     "when": "\\b(?:rap(?:e|ing)|threat\\w*|word\\w*|comment\\w*|gestur\\w*|whistl\\w*|catcall\\w*|eve[- ]?teas\\w*|remarks?|abus\\w*|insult\\w*)\\b"
+    },
+    {
+     "id": "BNS-77",
+     "why": "Capturing or sharing images of a woman in a private act without consent.",
+     "when": "\\b(?:photo\\w*|pictures?|images?|videos?|film\\w*|record\\w*|camera|clicked|leak\\w*)\\b"
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "If you are in danger now, call 112. The Women Helpline numbers 181 and 1091 are also available in many states."
+    },
+    {
+     "src": "general",
+     "text": "Keep evidence: screenshots, call logs, photos, the person's number, profile and any CCTV locations. Do not delete anything."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1), first proviso",
+     "text": "When a woman reports offences such as sexual harassment, stalking or outraging her modesty, the information must be recorded by a woman police officer."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)-(2)",
+     "text": "You can report at any police station, orally or electronically. It is read back to you, you sign it, and you get a copy free of cost."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "If the police refuse, send it in writing by post to the Superintendent of Police, or apply to the Magistrate."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-398",
+     "ref": "BNSS 398",
+     "text": "If you fear for your safety as a witness, ask about the witness protection scheme."
+    }
+   ],
+   "gather": [
+    "Messages, call logs, screenshots",
+    "Dates and places of each incident",
+    "Witnesses or CCTV",
+    "A trusted person who can accompany you to the police station"
+   ],
+   "outside": null,
+   "excludes": [
+    "\\b(?:false(?:ly)?|fake|wrong(?:ly|ful)?|bogus|fabricated|frivolous)\\b.{0,40}\\b(?:case|complaint|fir|f\\.i\\.r|charges?|accus\\w*|allegations?|implicat\\w*)\\b|\\baccus\\w* (?:me|him|her|us|them|my \\w+) of\\b|\\b(?:filed|lodged|registered)\\b.{0,25}\\b(?:case|complaint|fir)\\b.{0,15}\\bagainst (?:me|my|us|him|her)\\b|\\b(?:case|complaint|fir)\\b.{0,30}\\b(?:filed|lodged|registered)\\b.{0,15}\\bagainst (?:me|my|us)\\b",
+    "\\b(?:car|bike|motorcycle|scooter|vehicle|auto|truck|van|jeep|suv)\\b.{0,40}\\bfollow\\w*|\\bfollow\\w*\\b.{0,30}\\b(?:car|bike|motorcycle|scooter|vehicle|auto|truck|van|jeep|suv)\\b"
+   ],
+   "examples": [
+    "a man keeps following me and messaging me",
+    "a man is sending me vulgar messages",
+    "my boss touches me inappropriately",
+    "someone secretly recorded me in a trial room",
+    "a man exposed himself to me on the bus",
+    "my senior makes sexual remarks about me",
+    "a boy keeps stalking my daughter"
+   ]
+  },
+  {
+   "id": "domestic",
+   "title": "Cruelty by husband or in-laws, or dowry harassment",
+   "triggers": [
+    "\\bdowry\\b",
+    "\\bin[- ]?laws?\\b.{0,40}\\b(?:harass|torture|beat|abuse|demand)\\w*",
+    "\\bhusband\\b.{0,30}\\b(?:beats?|beating|harass\\w*|tortur\\w*|abus\\w*|hits?)\\b",
+    "\\bdomestic violence\\b|\\bcruelty\\b",
+    "\\bhusband\\b.{0,40}\\b(?:slap\\w*|kick\\w*|punch\\w*|threw me out|throws me)\\b",
+    "\\bin[- ]?laws?\\b.{0,40}\\b(?:threw me out|thrown out|taunt\\w*|money)\\b",
+    "\\b(?:beats?|beating|hits?|abus\\w*|tortur\\w*) (?:his|her) (?:wife|husband)\\b|\\bwife[- ]beat\\w*",
+    "\\b(?:in[- ]?laws?|mother[- ]in[- ]law|father[- ]in[- ]law|sister[- ]in[- ]law|brother[- ]in[- ]law|husband'?s (?:family|parents|mother|father|sister|brother))\\b.{0,40}\\b(?:locked me out|threw me out|thrown out|kept my|took my|taken my|harass\\w*|beat\\w*|taunt\\w*|tortur\\w*|abus\\w*|hit|slap\\w*)",
+    "\\bhusband\\b.{0,60}\\b(?:refus\\w*|not (?:giv|provid|pay)\\w*|won'?t (?:give|provide|pay)|stopped (?:giving|paying))\\b.{0,40}\\b(?:money|maintenance|support|expenses|needs|fees)\\b"
+   ],
+   "intro": "Cruelty by a husband or his relatives, including dowry harassment, is a criminal offence. Your safety comes first.",
+   "laws": [
+    {
+     "id": "BNS-85",
+     "why": "A husband or his relative subjecting a woman to cruelty."
+    },
+    {
+     "id": "BNS-86",
+     "why": "Defines cruelty, including wilful conduct that risks serious harm, and harassment to force dowry or property demands."
+    },
+    {
+     "id": "BNS-80",
+     "why": "Dowry death: if a married woman dies within seven years of marriage in unnatural circumstances after dowry-related cruelty.",
+     "when": "\\b(?:died|dead|death|suicide|killed|burn\\w*)\\b"
+    },
+    {
+     "id": "BNS-115",
+     "why": "If you were physically hurt.",
+     "when": "\\b(?:beat\\w*|hit|hits|slap\\w*|hurt|injur\\w*|physical\\w*|violen\\w*)\\b"
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "If you are in danger, call 112 or the Women Helpline 181 and go to a safe place such as a relative's home or a shelter."
+    },
+    {
+     "src": "general",
+     "text": "Keep medical records, photos of injuries, messages, call records and a list of dowry demands and payments."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)-(2)",
+     "text": "Report it at any police station. It is written down, read back and signed by you, and you get a copy free of cost."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "If the police do not record it, send it in writing by post to the Superintendent of Police, or apply to the Magistrate."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-144",
+     "ref": "BNSS 144",
+     "text": "If you and your children are not being supported, a Magistrate can order monthly maintenance."
+    },
+    {
+     "src": "general",
+     "text": "Free legal aid is available from your District Legal Services Authority (NALSA helpline 15100)."
+    }
+   ],
+   "gather": [
+    "Medical and police records",
+    "Messages and recordings",
+    "Marriage proof and list of gifts or payments",
+    "Contacts of family or neighbours who saw it"
+   ],
+   "outside": "Protection orders and the right to stay in the shared home come under the Protection of Women from Domestic Violence Act, 2005, which is not part of this tool.",
+   "excludes": [
+    "\\b(?:false(?:ly)?|fake|wrong(?:ly|ful)?|bogus|fabricated|frivolous)\\b.{0,40}\\b(?:case|complaint|fir|f\\.i\\.r|charges?|accus\\w*|allegations?|implicat\\w*)\\b|\\baccus\\w* (?:me|him|her|us|them|my \\w+) of\\b|\\b(?:filed|lodged|registered)\\b.{0,25}\\b(?:case|complaint|fir)\\b.{0,15}\\bagainst (?:me|my|us|him|her)\\b|\\b(?:case|complaint|fir)\\b.{0,30}\\b(?:filed|lodged|registered)\\b.{0,15}\\bagainst (?:me|my|us)\\b",
+    "\\b(?:son|daughter|grandson|granddaughter|daughter-in-law|son-in-law|his wife|her husband)\\b.{0,50}\\b(?:beat\\w*|hit\\w*|abus\\w*|harass\\w*|tortur\\w*|starv\\w*|threw|throw\\w*)\\b.{0,40}\\b(?:my |our |his |her )?(?:old |elderly |aged )?(?:mother|father|parents?|grand(?:mother|father|parents?))\\b|\\b(?:old|elderly|aged|senior citizen)\\s+(?:mother|father|parents?|man|woman)\\b"
+   ],
+   "priority": 2,
+   "examples": [
+    "my husband beats me every day",
+    "my in-laws are demanding more dowry",
+    "my husband and his mother torture me",
+    "my husband threw me out of the house",
+    "the man next door beats his wife"
+   ]
+  },
+  {
+   "id": "fir_refused",
+   "title": "Police refusing to register a complaint or take action",
+   "triggers": [
+    "^(?=.*\\b(?:police|station|officer|officers|SHO|cops?|inspector)\\b).*?\\b(?:won'?t|refus\\w*|not|didn'?t|denied|ignor\\w*|declin\\w*)\\b.{0,30}\\b(?:register\\w*|fil(?:e|ing)|tak(?:e|ing)|accept\\w*|lodg\\w*|record\\w*|writ(?:e|ing))\\b.{0,25}\\b(?:complaint|fir|case|report)\\b",
+    "\\bpolice\\b.{0,60}\\b(?:no action|haven'?t taken any action|did nothing|not doing anything|ignoring)\\b",
+    "\\bescalate\\b.{0,30}\\bcomplaint\\b",
+    "\\bnot (?:the|a) victim\\b",
+    "^(?=.*\\b(?:police|station|officers?|SHO|cops?|inspector)\\b).*?\\b(?:sent me away|turned me away|chased me away|asked me to (?:leave|go away)|without (?:writing|registering|recording|taking|filing) (?:my|the|a) (?:complaint|fir|report))\\b",
+    "^(?=.*\\b(?:police|station|SHO|cops?)\\b).*?\\bcomplaint\\b.{0,60}\\b(?:done nothing|no action|nothing happened|no response|not investigat\\w*|not acted)\\b",
+    "\\b(?:police|officer|sho|cops?|constable|inspector)\\b.{0,40}\\b(?:ask\\w*|demand\\w*|want\\w*)\\b.{0,25}\\b(?:money|bribe|rs\\.?|rupees|₹|\\d{3,})\\b.{0,40}\\b(?:register|fil\\w*|writ\\w*|lodg\\w*|record\\w*)\\b.{0,15}\\b(?:fir|complaint|case|report)\\b"
+   ],
+   "intro": "The police must record information about a cognizable offence. The law gives you steps if they refuse or do nothing.",
+   "laws": [
+    {
+     "id": "BNSS-173",
+     "why": "Information about a cognizable offence can be given at any police station, orally or electronically, and must be recorded. Sub-section (4) is your remedy if they refuse."
+    },
+    {
+     "id": "BNSS-175",
+     "why": "Sub-section (3) lets a Magistrate order an investigation after considering your application supported by an affidavit."
+    },
+    {
+     "id": "BNSS-174",
+     "why": "For non-cognizable offences the police record the information and refer you to the Magistrate."
+    }
+   ],
+   "steps": [
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)",
+     "text": "Anyone can give the information, not only the victim, and at any police station, whichever area the offence happened in. Say you want it recorded and ask for the officer in charge."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)(ii)",
+     "text": "You can also send it electronically. It is taken on record once you sign it within three days."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(3)",
+     "text": "For offences punishable by three years or more but less than seven, the police may, with a Deputy Superintendent of Police's permission, do a preliminary enquiry within fourteen days before registering."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "If they still refuse, send the substance of your information in writing by post to the Superintendent of Police. If satisfied that it discloses a cognizable offence, the Superintendent shall investigate or direct an investigation."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-175",
+     "ref": "BNSS 175(3)",
+     "text": "You can apply to the Magistrate, with an affidavit, who may order an investigation after an inquiry."
+    },
+    {
+     "src": "general",
+     "text": "Keep a record of who you spoke to, when, and what you were told. Send the written complaint by registered post and keep the receipt."
+    }
+   ],
+   "gather": [
+    "Copy of your written complaint and the post receipt",
+    "Date, time and name or number of the officer",
+    "Any evidence of the original offence"
+   ],
+   "outside": "A lawyer or the District Legal Services Authority (NALSA helpline 15100) can help draft the affidavit and the application.",
+   "priority": 3,
+   "examples": [
+    "the police are refusing to file my FIR",
+    "I went to the police station but they sent me away",
+    "police are not taking any action on my complaint",
+    "the police said they won't register a complaint because I'm not the victim"
+   ],
+   "alert": false
+  },
+  {
+   "id": "arrest",
+   "title": "Arrest or custody (yours or a relative's)",
+   "triggers": [
+    "\\b(?:arrest\\w*|detain\\w*|picked up|taken (?:me |him |her |my \\w+ )?to (?:the )?police station|in custody|police custody|lock-?up|remand)\\b",
+    "\\bbrought to (?:the )?police station\\b",
+    "\\bpolice (?:are )?(?:question\\w*|interrogat\\w*)\\b",
+    "\\bpolice (?:took|took away|have taken|picked up|detained|is holding|are holding|has taken|came and took) (?:my|our) (?:son|daughter|brother|sister|father|dad|mother|mom|husband|wife|friend|cousin|uncle|nephew|boyfriend|girlfriend|relative|neighbou?r)\\b",
+    "\\btaken away by (?:the )?police\\b",
+    "\\bpolice (?:took|came and took|have taken) (?:my|our) (?:son|daughter|brother|sister|father|dad|husband|wife|friend|cousin|uncle|nephew)\\b.{0,40}\\bwithout\\b"
+   ],
+   "intro": "A person who is arrested has rights from the moment of arrest, and so does the family.",
+   "laws": [
+    {
+     "id": "BNSS-47",
+     "why": "The arrested person must be told the grounds of arrest and, if bailable, that they are entitled to bail."
+    },
+    {
+     "id": "BNSS-48",
+     "why": "The police must inform a relative, friend or person nominated by the arrested person, and record who was informed."
+    },
+    {
+     "id": "BNSS-38",
+     "why": "The arrested person may meet an advocate of their choice during interrogation."
+    },
+    {
+     "id": "BNSS-58",
+     "why": "No more than twenty-four hours in police custody without a Magistrate, excluding travel time."
+    },
+    {
+     "id": "BNSS-53",
+     "why": "The arrested person must be examined by a medical officer after arrest, and injuries must be recorded."
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "The arrested person should stay calm, not resist, note the officer's name and station, and not sign blank or unread papers."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-47",
+     "ref": "BNSS 47",
+     "text": "Ask for the grounds of arrest. For a bailable offence the person must also be told they can get bail."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-48",
+     "ref": "BNSS 48",
+     "text": "Ask the police to inform a family member or friend where the person is being held. Relatives can ask the station for the same information."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-36",
+     "ref": "BNSS 36",
+     "text": "The arresting officer must wear a clear name identification and prepare a memorandum of arrest, attested by a witness (a family member or a respectable person of the locality) and countersigned by the arrested person."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-38",
+     "ref": "BNSS 38",
+     "text": "The arrested person can ask to meet their lawyer during questioning. If they cannot afford one, ask for free legal aid."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-58",
+     "ref": "BNSS 58, 187",
+     "text": "They must be produced before a Magistrate within twenty-four hours (excluding travel time). Only a Magistrate can authorise longer custody."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-53",
+     "ref": "BNSS 53",
+     "text": "A medical examination must follow the arrest. Ask for it and tell the doctor about any injury. A copy of the report can go to the arrested person or someone they nominate."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-478",
+     "ref": "BNSS 478, 480",
+     "text": "Apply for bail. It is available as of right for bailable offences. For non-bailable offences the court decides."
+    }
+   ],
+   "gather": [
+    "Name and number of the officer, station name",
+    "Time and place of the arrest",
+    "Names of anyone informed",
+    "Lawyer's contact"
+   ],
+   "outside": null,
+   "excludes": [
+    "\\b(?:afraid|scared|fear\\w*|worried|might|may|could|will|apprehend\\w*)\\b.{0,25}\\b(?:get |be |being )?arrest\\w*",
+    "\\bhow (?:do|can) (?:i|we) get (?:him|her|them|my \\w+) out\\b",
+    "\\bdigital arrest\\b|\\b(?:call\\w*|message\\w*|whatsapp|video call|sms)\\b.{0,80}\\b(?:custody|arrest\\w*|jail|police|cbi|customs|court|parcel)\\b.{0,80}\\b(?:pay|money|transfer|send|deposit|rs\\.?|rupees|₹)\\b",
+    "\\b(?:in (?:police )?custody|arrested|in jail|under arrest|lock-?up)\\b.{0,60}\\b(?:send|pay|transfer|deposit)\\w*\\b.{0,25}\\b(?:money|rs\\.?|rupees|₹|\\d{3,}|to (?:a|this|their|that) (?:number|account|upi))\\b"
+   ],
+   "examples": [
+    "my father was arrested by the police yesterday",
+    "police picked up my son last night and won't tell us where he is",
+    "my brother has been in police custody for two days",
+    "the police detained my husband without telling us why"
+   ]
+  },
+  {
+   "id": "bail",
+   "title": "Bail, or fear of arrest",
+   "triggers": [
+    "\\bbail\\w*|\\banticipatory\\b|\\bget out of jail\\b|\\bsurety\\b",
+    "\\b(?:afraid|scared|fear\\w*|worried|might|may|could|will|apprehend\\w*)\\b.{0,25}\\b(?:get |be |being )?arrest\\w*",
+    "\\b(?:in|from) jail\\b.{0,40}\\b(?:get (?:him|her|them) out|release)\\b|\\bget (?:him|her|them|my \\w+) out\\b"
+   ],
+   "intro": "What kind of bail you can get depends on whether the offence is bailable and whether you have already been arrested.",
+   "laws": [
+    {
+     "id": "BNSS-478",
+     "why": "Bail for a bailable offence is a right once the person is ready to give bail."
+    },
+    {
+     "id": "BNSS-480",
+     "why": "When bail may be granted for a non-bailable offence, and when it may not."
+    },
+    {
+     "id": "BNSS-482",
+     "why": "Advance (anticipatory) bail if you expect to be arrested for a non-bailable offence. Apply to the High Court or Sessions Court."
+    },
+    {
+     "id": "BNSS-479",
+     "why": "A person who has already been detained for up to half the maximum sentence for the offence while under trial can be released on bail. Different rules apply to the most serious offences."
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "Speak to a criminal lawyer as early as you can. If you cannot afford one, free legal aid is available from the District Legal Services Authority (NALSA helpline 15100)."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-478",
+     "ref": "BNSS 478",
+     "text": "If the offence is bailable, you can ask for bail from the police or the court right away."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-480",
+     "ref": "BNSS 480",
+     "text": "If it is non-bailable, the court decides. Your lawyer applies to the Magistrate or Sessions Court."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-482",
+     "ref": "BNSS 482",
+     "text": "If you have not been arrested but expect to be, your lawyer can apply to the High Court or the Court of Session for a direction to release you on bail if you are arrested."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-479",
+     "ref": "BNSS 479",
+     "text": "If you have already spent a long time as an under-trial prisoner, ask your lawyer about the maximum detention period."
+    }
+   ],
+   "gather": [
+    "FIR copy and section numbers",
+    "ID and address proof",
+    "Details of surety or guarantor",
+    "Court order or arrest memo, if any"
+   ],
+   "outside": null,
+   "examples": [
+    "how do I get bail for my brother",
+    "I am afraid I will be arrested",
+    "can I get anticipatory bail",
+    "my son is in jail, how do we get him out"
+   ],
+   "alert": false
+  },
+  {
+   "id": "confinement",
+   "title": "Being held or stopped against your will",
+   "triggers": [
+    "\\b(?:locked (?:me|him|her|us)|confined|held (?:me )?against (?:my|his|her) will|wrongful(?:ly)? (?:confine\\w*|restrain\\w*))\\b",
+    "\\bwouldn'?t let me (?:leave|go|out)\\b|\\bnot let me (?:leave|go|out)\\b|\\bprevented me from leaving\\b|\\bsurrounded my car\\b|\\bforced me to stay\\b",
+    "\\blocked (?:me|him|her|us) (?:in|inside|up)\\b|\\bwouldn'?t let (?:me|him|her|us) (?:go|leave)\\b"
+   ],
+   "intro": "Stopping someone from going where they have a right to go is wrongful restraint, and holding them within limits is wrongful confinement.",
+   "laws": [
+    {
+     "id": "BNS-126",
+     "why": "Obstructing a person so they cannot go in a direction they have a right to go."
+    },
+    {
+     "id": "BNS-127",
+     "why": "Restraining a person so they cannot go beyond certain limits, for example locking them in a room or shop."
+    },
+    {
+     "id": "BNS-351",
+     "why": "If threats were made to make you do something.",
+     "when": "\\b(?:threat\\w*|scar\\w*|afraid|force\\w*)\\b"
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "If you feel unsafe, call 112, even from inside the place where you are held."
+    },
+    {
+     "src": "general",
+     "text": "Record names, numbers and the time. If you can, take photos or video, and note any CCTV."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)-(2)",
+     "text": "Report it at any police station. It is recorded, read back and signed by you, and you get a copy free of cost."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "If the police refuse, send the substance in writing by post to the Superintendent of Police, or apply to the Magistrate."
+    }
+   ],
+   "gather": [
+    "Time and place",
+    "Names of people involved",
+    "Messages or payments demanded",
+    "CCTV and witnesses"
+   ],
+   "outside": null,
+   "examples": [
+    "my shop owner locked me in the store room",
+    "they would not let me leave until I signed the paper",
+    "a group surrounded my car and wouldn't let me go",
+    "the security guard stopped me from leaving the building"
+   ],
+   "excludes": [
+    "\\blocked (?:me|him|her|us|them) out\\b"
+   ]
+  },
+  {
+   "id": "fire",
+   "title": "Fire, vandalism or damage to property",
+   "triggers": [
+    "\\b(?:set (?:fire|ablaze)|arson)\\b|\\bset\\b.{0,25}\\b(?:on fire|ablaze|alight)\\b|\\bburn(?:t|ed)? (?:down )?(?:my|our)\\b|\\bburn(?:t|ed)\\b.{0,20}\\b(?:car|bike|shop|house|vehicle|scooter|crops?)\\b",
+    "\\bvandal\\w*|\\b(?:broke(?! into)|damaged|scratched|destroyed|wrecked|smashed)\\b.{0,10}\\b(?:my|our)\\b.{0,15}\\b(?:car|window|windscreen|windshield|bike|scooter|shop|door|gate|property|house|wall|vehicle|crops?)\\b",
+    "\\b(?:broke|smashed|damaged|scratched|destroyed)\\b.{0,25}\\b(?:of|on) (?:my|our) (?:car|bike|scooter|shop|house|vehicle|home)\\b",
+    "\\b(?:kerosene|petrol|diesel)\\b.{0,40}\\b(?:lit|light\\w*|fire|burn\\w*)\\b|\\b(?:lit|set) (?:it|them) (?:on fire|ablaze)\\b"
+   ],
+   "intro": "Deliberately damaging or burning someone's property is mischief, and fire is treated more seriously.",
+   "laws": [
+    {
+     "id": "BNS-324",
+     "why": "Intentionally causing wrongful loss or damage by destroying or reducing the value of property."
+    },
+    {
+     "id": "BNS-326",
+     "why": "Mischief by fire or explosive substance, which carries a higher punishment."
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "If there is a fire or danger, call 101 (fire) or 112 and get everyone to safety."
+    },
+    {
+     "src": "general",
+     "text": "Photograph and video the damage and the area before anything is cleared. Note any CCTV or witnesses."
+    },
+    {
+     "src": "general",
+     "text": "Tell your insurer, if you have a policy, and keep repair estimates and bills."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)-(2)",
+     "text": "Report it to the police. It is recorded, read back and signed by you, and you get a copy free of cost."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "If the police refuse, send it in writing by post to the Superintendent of Police, or apply to the Magistrate."
+    }
+   ],
+   "gather": [
+    "Photos and video",
+    "Repair estimates and bills",
+    "Witnesses, CCTV",
+    "Insurance details"
+   ],
+   "outside": null,
+   "examples": [
+    "someone set my bike on fire",
+    "my neighbour broke my car window on purpose",
+    "someone vandalised my shop",
+    "they burnt our crops"
+   ]
+  },
+  {
+   "id": "sexual_assault",
+   "title": "Rape or sexual assault",
+   "triggers": [
+    "\\brap(?:e|ed|ist|ists|ing)\\b",
+    "\\bsexual\\w* (?:assault\\w*|abus\\w*)\\b",
+    "\\bforced (?:me |her )?(?:to )?(?:have )?sex\\b"
+   ],
+   "intro": "This is a serious crime and it is never the victim's fault. Your safety and medical care come first, and you do not have to decide everything today.",
+   "laws": [
+    {
+     "id": "BNS-63",
+     "why": "Defines rape."
+    },
+    {
+     "id": "BNS-64",
+     "why": "Punishment for rape: rigorous imprisonment of not less than ten years, which may extend to life, and fine."
+    },
+    {
+     "id": "BNS-65",
+     "why": "Higher punishment when the woman is under sixteen.",
+     "when": "\\b(?:girl|minor|child|kid|under (?:sixteen|16|eighteen|18|twelve|12)|(?:1[0-5]|[5-9]) ?(?:years?|yrs?)[- ]?old|school)\\b"
+    },
+    {
+     "id": "BNS-70",
+     "why": "If more than one person was involved (gang rape).",
+     "when": "\\b(?:gang|group|several|many|two|three|four|men|boys)\\b"
+    },
+    {
+     "id": "BNS-74",
+     "why": "If the offence was an assault or force intended to outrage her modesty rather than rape.",
+     "when": "\\b(?:touch\\w*|grab\\w*|molest\\w*|modesty|attempt\\w*)\\b"
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "If you or someone is in danger right now, call 112. Women Helpline 181 and 1091 also work in many states. Go to a safe place with someone you trust."
+    },
+    {
+     "src": "general",
+     "text": "If you can, avoid washing, changing clothes or cleaning up before a medical examination, because that can preserve evidence. If you already did, you can still report and be examined."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1), first proviso",
+     "text": "When a woman reports rape or an attempt, her information must be recorded by a woman police officer. You can ask for one."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)",
+     "text": "You can report at any police station, in any area, orally or electronically. It is read back to you and you sign it."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(2)",
+     "text": "You are entitled to a copy of the recorded information, free of cost."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-184",
+     "ref": "BNSS 184",
+     "text": "The medical examination is done by a registered medical practitioner, in a government hospital where possible, with your consent, and you must be sent for it within twenty-four hours of the information being received."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-396",
+     "ref": "BNSS 396",
+     "text": "Ask about the victim compensation scheme and about support for rehabilitation."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-398",
+     "ref": "BNSS 398",
+     "text": "If you fear threats, ask about the witness protection scheme."
+    },
+    {
+     "src": "general",
+     "text": "Free legal aid and a lawyer are available from the District Legal Services Authority (NALSA helpline 15100). Counselling is available through Tele-MANAS 14416."
+    }
+   ],
+   "gather": [
+    "A trusted person to go with you",
+    "Medical report",
+    "Clothes and items (do not wash)",
+    "Messages, call logs, photos of the place",
+    "Name or description of the person"
+   ],
+   "outside": "If the victim is under 18, the Protection of Children from Sexual Offences (POCSO) Act, 2012 also applies. It is not part of this tool. Childline 1098 can help.",
+   "excludes": [
+    "\\b(?:false(?:ly)?|fake|wrong(?:ly|ful)?|bogus|fabricated|frivolous)\\b.{0,40}\\b(?:case|complaint|fir|f\\.i\\.r|charges?|accus\\w*|allegations?|implicat\\w*)\\b|\\baccus\\w* (?:me|him|her|us|them|my \\w+) of\\b|\\b(?:filed|lodged|registered)\\b.{0,25}\\b(?:case|complaint|fir)\\b.{0,15}\\bagainst (?:me|my|us|him|her)\\b|\\b(?:case|complaint|fir)\\b.{0,30}\\b(?:filed|lodged|registered)\\b.{0,15}\\bagainst (?:me|my|us)\\b",
+    "\\brape threats?\\b|\\bthreat\\w*\\b.{0,30}\\brap(?:e|ed|ing)\\b|\\b(?:will|would|going to|gonna) rape\\b"
+   ],
+   "priority": 2,
+   "examples": [
+    "I was raped by someone I know",
+    "my friend was sexually assaulted",
+    "he forced himself on me"
+   ]
+  },
+  {
+   "id": "fir_howto",
+   "title": "Filing a police complaint (FIR)",
+   "triggers": [
+    "\\bhow (?:do|can|to|should) (?:i |we )?(?:file|lodge|register|make|give|report)\\b.{0,30}\\b(?:fir|complaint|report|crime)\\b",
+    "\\be-?fir\\b",
+    "\\bzero fir\\b",
+    "\\b(?:file|lodge) (?:an? )?(?:fir|police complaint)\\b",
+    "\\bwhere (?:do|can|should) i (?:file|report|complain|lodge)\\b",
+    "\\b(?:report|complain\\w*|file|lodge|send)\\b.{0,40}\\b(?:online|by e-?mail|e-?mail|electronically|whatsapp|website|portal)\\b"
+   ],
+   "intro": "Anyone can report a crime. The law lets you do it at any police station and even electronically.",
+   "laws": [
+    {
+     "id": "BNSS-173",
+     "why": "Information about a cognizable (serious) offence: how it is given, recorded and what you are entitled to."
+    },
+    {
+     "id": "BNSS-174",
+     "why": "For non-cognizable (usually minor) offences the police only record the information and refer you to the Magistrate."
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "Note down what happened, when, where, who was involved and any witnesses. Keep screenshots, bills and photos together."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)",
+     "text": "Go to any police station, whichever area the offence happened in, and give the information orally or by electronic communication."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)(i)",
+     "text": "If you give it orally, the police write it down, read it back to you, and you sign it."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)(ii)",
+     "text": "If you send it electronically, it is taken on record once you sign it within three days."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(2)",
+     "text": "Ask for a copy. It must be given to you free of cost. Keep the FIR number."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-174",
+     "ref": "BNSS 174",
+     "text": "If the offence is non-cognizable, the police record the information and refer you to the Magistrate, and cannot investigate without the Magistrate's order."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "If the police refuse to record a cognizable offence, send the substance in writing by post to the Superintendent of Police, or apply to the Magistrate."
+    }
+   ],
+   "gather": [
+    "Written timeline of what happened",
+    "ID proof",
+    "Evidence: photos, screenshots, bills",
+    "Witness names and numbers"
+   ],
+   "outside": null,
+   "examples": [
+    "how do I file an FIR",
+    "can I file a police complaint online",
+    "where should I report a crime that happened in another city",
+    "how to report a crime to the police"
+   ],
+   "alert": false
+  },
+  {
+   "id": "police_call",
+   "title": "Police asking you to come in or answer questions",
+   "triggers": [
+    "\\bpolice\\b.{0,50}\\b(?:asking|asked|called|calling|summon\\w*|want\\w*|told|ordered)\\b.{0,40}\\b(?:me|us|my \\w+)\\b.{0,40}\\b(?:station|questioning|statement|enquiry|inquiry|come|appear|attend)\\b",
+    "\\bnotice\\b.{0,30}\\b(?:from (?:the )?police|to appear)\\b",
+    "\\b(?:police|inspector|officer)\\b.{0,30}\\b(?:notice|summoned)\\b"
+   ],
+   "intro": "Being called to the police station is not the same as being arrested. What you must do depends on whether you are a witness or someone they suspect.",
+   "laws": [
+    {
+     "id": "BNSS-179",
+     "why": "The police can require a person who knows the facts to attend by an order in writing. Women, men under fifteen or over sixty, and disabled or acutely ill persons cannot be required to attend anywhere except their home."
+    },
+    {
+     "id": "BNSS-35",
+     "why": "For a suspect, the police must issue a notice to appear instead of arresting when arrest is not needed. If you comply, you are not to be arrested unless the officer records reasons."
+    },
+    {
+     "id": "BNSS-38",
+     "why": "If you are arrested and interrogated, you may meet an advocate of your choice during interrogation.",
+     "when": "\\b(?:arrest\\w*|interrogat\\w*|question\\w*)\\b"
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "Ask for the request in writing and ask whether you are being called as a witness or as a suspect. Note the officer's name and the case."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-179",
+     "ref": "BNSS 179(1)",
+     "text": "As a witness, you can be required to attend by a written order. If you are a woman, under fifteen, over sixty, disabled or acutely ill, you can ask to be questioned at your residence. You may also choose to go to the station."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-35",
+     "ref": "BNSS 35(3)-(5)",
+     "text": "As a suspect, you should get a written notice to appear. It is your duty to comply, and if you comply you are not to be arrested for that offence unless the officer records reasons."
+    },
+    {
+     "src": "general",
+     "text": "Speak to a lawyer before you go, and take a relative or friend with you. If you cannot afford a lawyer, free legal aid is available from the District Legal Services Authority (NALSA helpline 15100)."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-38",
+     "ref": "BNSS 38",
+     "text": "If you are arrested and interrogated, you are entitled to meet your advocate during interrogation."
+    },
+    {
+     "src": "general",
+     "text": "Do not sign anything you have not read. Keep a copy of the notice."
+    }
+   ],
+   "gather": [
+    "The written notice or order",
+    "Officer's name and station",
+    "A lawyer's number",
+    "A relative or friend who can come with you"
+   ],
+   "outside": null,
+   "examples": [
+    "police called me to the station for questioning",
+    "I got a notice from the police asking me to appear",
+    "the police want my statement as a witness"
+   ],
+   "alert": false,
+   "excludes": [
+    "\\b(?:police|officer|sho|cops?|constable|inspector)\\b.{0,40}\\b(?:ask\\w*|demand\\w*|want\\w*)\\b.{0,25}\\b(?:money|bribe|rs\\.?|rupees|₹|\\d{3,})\\b.{0,40}\\b(?:register|fil\\w*|writ\\w*|lodg\\w*|record\\w*)\\b.{0,15}\\b(?:fir|complaint|case|report)\\b"
+   ]
+  },
+  {
+   "id": "accused",
+   "title": "Falsely accused, or a case filed against you",
+   "intro": "Being accused is not the same as being guilty. The law gives you ways to avoid unnecessary arrest, to get bail and to challenge a case that has no basis.",
+   "triggers": [
+    "\\b(?:false(?:ly)?|fake|wrong(?:ly|ful)?|bogus|fabricated|frivolous)\\b.{0,40}\\b(?:case|complaint|fir|f\\.i\\.r|charges?|accus\\w*|allegations?|implicat\\w*)\\b|\\b(?:filed|lodged|registered)\\b.{0,25}\\b(?:case|complaint|fir)\\b.{0,15}\\bagainst (?:me|my|us|him|her)\\b|\\b(?:case|complaint|fir)\\b.{0,30}\\b(?:filed|lodged|registered)\\b.{0,15}\\bagainst (?:me|my|us)\\b",
+    "\\b(?:framed|implicat\\w*)\\b",
+    "\\b(?:case|complaint|fir)\\b.{0,20}\\bagainst (?:me|my (?:husband|son|brother|father|family))\\b",
+    "\\b(?:filed|lodged|gave|made|registered)\\b.{0,10}\\b(?:a |an )?(?:complaint|case|fir|report)\\b.{0,30}\\b(?:saying|claiming|alleging|that)\\b.{0,10}\\b(?:i|we|my \\w+|me)\\b",
+    "\\b(?:i|we) (?:was|were) not (?:even )?there\\b|\\b(?:i|we) (?:didn'?t|did not|never) (?:do|did) (?:it|that|anything)\\b|\\bi(?:'m| am) innocent\\b"
+   ],
+   "laws": [
+    {
+     "id": "BNSS-35",
+     "why": "If arrest is not necessary, the police must give you a notice to appear instead of arresting you."
+    },
+    {
+     "id": "BNSS-482",
+     "why": "Advance (anticipatory) bail if you expect to be arrested for a non-bailable offence."
+    },
+    {
+     "id": "BNSS-47",
+     "why": "If you are arrested, you must be told the grounds and, for a bailable offence, that you can get bail."
+    },
+    {
+     "id": "BNSS-528",
+     "why": "The High Court's inherent power to prevent abuse of the process of any court. Lawyers use it to ask for a baseless case to be quashed."
+    },
+    {
+     "id": "BNS-248",
+     "why": "Making a criminal charge you know to be false, with intent to injure someone, is itself an offence."
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "Stay calm. Do not threaten, pressure or contact the person who complained, because that can be treated as intimidation and hurt your case."
+    },
+    {
+     "src": "general",
+     "text": "Get a lawyer early. If you cannot afford one, free legal aid is available from the District Legal Services Authority (NALSA helpline 15100)."
+    },
+    {
+     "src": "general",
+     "text": "Collect evidence that supports you: messages, call records, bills, photos, CCTV locations and people who can confirm where you were."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-35",
+     "ref": "BNSS 35(3)-(6)",
+     "text": "If the police send a notice to appear, comply with it. If you comply, you are not to be arrested for that offence unless the officer records reasons."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-482",
+     "ref": "BNSS 482",
+     "text": "If you fear arrest for a non-bailable offence, your lawyer can apply to the High Court or Court of Session for anticipatory bail."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-47",
+     "ref": "BNSS 47",
+     "text": "If you are arrested, ask for the grounds of arrest. For a bailable offence you must be told you can get bail."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-528",
+     "ref": "BNSS 528",
+     "text": "If the case is plainly baseless, your lawyer can ask the High Court to quash it."
+    },
+    {
+     "src": "law",
+     "id": "BNS-248",
+     "ref": "BNS 248",
+     "text": "If the charge is shown to be knowingly false, the person who made it can be prosecuted."
+    }
+   ],
+   "gather": [
+    "Copy of the FIR or complaint (ask your lawyer to get it)",
+    "Any notice from the police",
+    "Your evidence: messages, call logs, bills, CCTV, witnesses",
+    "A timeline of events"
+   ],
+   "outside": "If the accusation is in a family dispute, related civil cases (divorce, maintenance, custody) are outside this tool.",
+   "priority": 3,
+   "examples": [
+    "my wife's family filed a false dowry case against me",
+    "I was falsely accused of theft by my employer",
+    "someone filed a fake FIR against me",
+    "I am being framed for a crime I didn't commit"
+   ],
+   "alert": false
+  },
+  {
+   "id": "missing",
+   "title": "Missing person or kidnapping",
+   "intro": "Report a missing person, especially a child, to the police at once. You do not have to wait before reporting.",
+   "triggers": [
+    "\\b(?:kidnap\\w*|abduct\\w*|ransom)\\b",
+    "\\bmissing\\b.{0,30}\\b(?:since|from|for)\\b|\\b(?:child|son|daughter|brother|sister|father|mother|husband|wife|friend|kid|boy|girl|person)\\b.{0,20}\\b(?:is|has been|went|gone|has gone) missing\\b",
+    "\\b(?:has(?:n'?t| not)|did(?:n'?t| not)|never) (?:come|came|returned|reached)\\b.{0,20}\\b(?:home|back|school)\\b",
+    "\\bcan'?t find (?:my|our) (?:child|son|daughter|kid|brother|sister|father|mother)\\b"
+   ],
+   "excludes": [
+    "\\b(?:phone|mobile|laptop|wallet|purse|bag|cash|money|jewel\\w*|gold|watch|bike|car|scooter|parcel|documents?)\\b.{0,20}\\bmissing\\b"
+   ],
+   "laws": [
+    {
+     "id": "BNS-137",
+     "why": "Taking or enticing a child (under eighteen) out of the keeping of the lawful guardian without consent is kidnapping."
+    },
+    {
+     "id": "BNS-138",
+     "why": "Abduction: forcing or deceiving any person into going from a place.",
+     "when": "\\b(?:forc\\w*|deceiv\\w*|trick\\w*|lured|dragged|bundled|taken away)\\b"
+    },
+    {
+     "id": "BNS-140",
+     "why": "Kidnapping or abduction for ransom, or to murder, carries a much higher punishment.",
+     "when": "\\b(?:ransom|money|demand\\w*|kill|murder)\\b"
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "Call 112 now. For a missing child you can also call Childline 1098. You do not need to wait 24 hours."
+    },
+    {
+     "src": "general",
+     "text": "Give the police a recent photo, what the person was wearing, where and when they were last seen, their phone number and any social media accounts."
+    },
+    {
+     "src": "general",
+     "text": "Check with friends, school or workplace, and nearby hospitals. Keep your phone on and note every call or message."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)-(2)",
+     "text": "Report at any police station, whichever area it happened in. The information is written down, read back and signed by you, and you get a copy free of cost."
+    },
+    {
+     "src": "general",
+     "text": "If someone demands ransom, tell the police before paying anything and keep every message and call record."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "If the police refuse to record it, send the substance in writing by post to the Superintendent of Police, or apply to the Magistrate."
+    }
+   ],
+   "gather": [
+    "Recent photo",
+    "Description, clothes, last seen time and place",
+    "Phone number, social media, friends' contacts",
+    "Any ransom messages or calls"
+   ],
+   "outside": null,
+   "priority": 2,
+   "examples": [
+    "my child has been missing since this morning",
+    "my cousin was kidnapped",
+    "my daughter hasn't come home from school",
+    "someone abducted my brother and wants ransom"
+   ]
+  },
+  {
+   "id": "custodial",
+   "title": "Police violence or misconduct in custody",
+   "intro": "Police are not allowed to hurt anyone to get a confession or information. The law requires a medical examination and production before a Magistrate.",
+   "triggers": [
+    "\\b(?:police|cops?|constables?|inspector|officers?|SHO)\\b.{0,40}\\b(?:beat\\w*|hit|tortur\\w*|slap\\w*|thrash\\w*|assault\\w*|kick\\w*|third[- ]degree)\\b|\\bcustodial (?:violence|torture|death)\\b",
+    "\\b(?:tortur\\w*|beat\\w*|hit|slap\\w*|hurt)\\b.{0,30}\\b(?:in (?:police )?custody|in (?:the )?lock-?up|at (?:the )?(?:police )?station)\\b"
+   ],
+   "laws": [
+    {
+     "id": "BNS-120",
+     "why": "Causing hurt to extort a confession or information. The section's own illustration is a police officer torturing someone to make them confess."
+    },
+    {
+     "id": "BNSS-53",
+     "why": "An arrested person must be medically examined and the injuries recorded. A copy of the report goes to the person or their nominee."
+    },
+    {
+     "id": "BNSS-58",
+     "why": "No one can be kept in police custody beyond twenty-four hours without being produced before a Magistrate."
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "Get medical treatment as soon as possible and photograph the injuries. Keep the reports."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-53",
+     "ref": "BNSS 53",
+     "text": "If the person is in custody, insist on the medical examination after arrest and ask for a copy of the report."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-58",
+     "ref": "BNSS 58",
+     "text": "When produced before the Magistrate, tell the Magistrate about the injuries and how they were caused."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "Send a written complaint by post to the Superintendent of Police."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-175",
+     "ref": "BNSS 175(3)",
+     "text": "You can also apply to the Magistrate with an affidavit for an investigation to be ordered."
+    },
+    {
+     "src": "general",
+     "text": "You can complain to the State Human Rights Commission or the National Human Rights Commission. Free legal aid: NALSA helpline 15100."
+    }
+   ],
+   "gather": [
+    "Medical reports and photos of injuries",
+    "Names or badge numbers of the officers, station, date and time",
+    "Witnesses",
+    "Arrest memo, if any"
+   ],
+   "outside": "Complaints to Human Rights Commissions are under the Protection of Human Rights Act, 1993, which is not part of this tool.",
+   "priority": 3,
+   "examples": [
+    "the cops beat me in custody",
+    "police tortured my brother at the station",
+    "the police hit my father during questioning"
+   ]
+  },
+  {
+   "id": "seized",
+   "title": "Police seized your property",
+   "intro": "Police can seize property connected with an offence, but they must report it and you can apply to get it back.",
+   "triggers": [
+    "^(?=.*\\b(?:police|officers?|cops?|constable|inspector|SHO)\\b).*?\\b(?:took|taken|seized|confiscated|kept|holding|withh?eld?|impounded)\\b.{0,25}\\b(?:my |our )?(?:licen[cs]e|dl|rc|passport|aadhaar|phone|mobile|laptop|car|vehicle|bike|scooter|jewel\\w*|cash|money|documents?|property|truck|goods)\\b",
+    "\\b(?:get|getting|take) (?:back )?(?:my|our) (?:licen[cs]e|dl|rc|passport|aadhaar|phone|mobile|laptop|car|vehicle|bike|scooter|jewel\\w*|cash|money|documents?|property)\\b.{0,40}\\b(?:police|seized|station|court)\\b|\\breleas\\w* of (?:my|the) (?:vehicle|car|bike|property|phone)\\b"
+   ],
+   "laws": [
+    {
+     "id": "BNSS-106",
+     "why": "Police may seize property suspected to be stolen or linked to an offence, and must report the seizure to the Magistrate."
+    },
+    {
+     "id": "BNSS-503",
+     "why": "When seized property is not produced in court, the Magistrate can order it delivered to the person entitled to it."
+    },
+    {
+     "id": "BNSS-497",
+     "why": "When property is before a court, the court can order its custody while the case goes on, for example handing it back on a bond."
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "Ask for the seizure memo (a list of what was taken) and the case or FIR number. Do not sign a list that is wrong."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-106",
+     "ref": "BNSS 106(3)",
+     "text": "The officer must report the seizure to the Magistrate. Property can be given to a person on a bond to produce it when required."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-503",
+     "ref": "BNSS 503",
+     "text": "Apply to the Magistrate for release, with proof that you own it."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-497",
+     "ref": "BNSS 497",
+     "text": "If the property is already before a court, apply to that court for interim custody."
+    },
+    {
+     "src": "general",
+     "text": "A lawyer can file the release application. Free legal aid: NALSA helpline 15100."
+    }
+   ],
+   "gather": [
+    "Seizure memo",
+    "Ownership proof: bill, RC, invoice",
+    "FIR or case number",
+    "ID proof"
+   ],
+   "outside": null,
+   "priority": 2,
+   "examples": [
+    "police seized my car and are not returning it",
+    "how do I get my phone back from the police",
+    "the police confiscated my documents"
+   ],
+   "alert": false
+  },
+  {
+   "id": "defamation",
+   "title": "Defamation or false rumours about you",
+   "intro": "Harming someone's reputation with false statements can be criminal defamation, but it is taken up on your complaint to a Magistrate, not as a regular police FIR.",
+   "triggers": [
+    "\\bdefam\\w*",
+    "\\b(?:spread\\w*|telling|posting|posted|saying)\\b.{0,30}\\b(?:lies|rumou?rs?|false (?:things|stories|information))\\b",
+    "\\bfalse rumou?rs?\\b|\\b(?:tarnish\\w*|ruin\\w*|damag\\w*|malign\\w*)\\b.{0,15}\\b(?:my|our|his|her) (?:name|reputation|image)\\b|\\bbad[- ]?mouth\\w*",
+    "\\bfalsely (?:claim\\w*|say\\w*|tell\\w*|telling|told|said|accus\\w*)\\b(?!.{0,40}\\b(?:case|complaint|fir|police)\\b)",
+    "\\b(?:spreading|posting|posted|saying|telling (?:people|everyone|others)|claiming|calling me|accus\\w* me)\\b.{0,30}\\b(?:that )?(?:i|i'm|i am|me|we|my \\w+)\\b.{0,25}\\b(?:a )?(?:thief|cheat|fraud|liar|corrupt|took bribes?|bribe|stole|stealing|criminal|characterless)\\b"
+   ],
+   "laws": [
+    {
+     "id": "BNS-356",
+     "why": "Making or publishing an imputation intending or knowing that it will harm a person's reputation. The section lists exceptions, such as true statements made for the public good."
+    },
+    {
+     "id": "BNSS-222",
+     "why": "A court takes up defamation only on a complaint by the person defamed (or, in some cases, someone on their behalf)."
+    },
+    {
+     "id": "BNSS-174",
+     "why": "Defamation is non-cognizable, so the police only record the information and refer you to the Magistrate."
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "Keep evidence: screenshots with date and time, links, the names of people who heard or saw it."
+    },
+    {
+     "src": "general",
+     "text": "For online posts, report the post to the platform as well."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-222",
+     "ref": "BNSS 222(1)",
+     "text": "File a complaint before the Magistrate yourself, as the person defamed. A lawyer usually drafts it."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-174",
+     "ref": "BNSS 174",
+     "text": "If you go to the police, they record it and refer you to the Magistrate. They cannot investigate without the Magistrate's order."
+    },
+    {
+     "src": "general",
+     "text": "Talk to a lawyer about whether a legal notice or a civil suit for damages suits you better."
+    }
+   ],
+   "gather": [
+    "Screenshots, links, recordings",
+    "Names of people who received the statements",
+    "Proof of harm (lost work, messages)"
+   ],
+   "outside": "A civil suit for damages is a separate option and is outside this tool.",
+   "examples": [
+    "someone is spreading false rumours about me",
+    "my relative is telling lies about me to everyone",
+    "someone posted false things about me online to ruin my reputation"
+   ],
+   "alert": false
+  },
+  {
+   "id": "animal",
+   "title": "Someone harmed or killed an animal",
+   "intro": "Killing, poisoning or maiming an animal is an offence, whether it is your pet or not.",
+   "triggers": [
+    "\\b(?:kill\\w*|poison\\w*|maim\\w*|injur\\w*|hurt|beat\\w*|tortur\\w*|stabb?\\w*|shot|ran over)\\b.{0,20}\\b(?:my |our |a |the |stray |street )?(?:dog|cat|cow|pet|puppy|kitten|goat|buffalo|horse|animal|bird|parrot)s?\\b"
+   ],
+   "laws": [
+    {
+     "id": "BNS-325",
+     "why": "Killing, poisoning, maiming or rendering useless any animal."
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "Take the animal to a vet at once. If it died, ask the vet for a post-mortem report: it is the main evidence."
+    },
+    {
+     "src": "general",
+     "text": "Photograph the animal, the place and anything left behind (food, poison). Note witnesses and CCTV."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)-(2)",
+     "text": "Report it at any police station, orally or electronically. It is written down, read back and signed by you, and you get a copy free of cost."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "If the police refuse to record it, send the substance in writing by post to the Superintendent of Police, or apply to the Magistrate."
+    }
+   ],
+   "gather": [
+    "Vet or post-mortem report",
+    "Photos and video",
+    "Witnesses, CCTV"
+   ],
+   "outside": "Cruelty that is not killing or maiming falls under the Prevention of Cruelty to Animals Act, 1960, which is not part of this tool. Animal welfare groups can help.",
+   "examples": [
+    "someone poisoned my dog",
+    "my neighbour killed my cat",
+    "someone beat a street dog to death"
+   ],
+   "alert": false
+  },
+  {
+   "id": "trespass",
+   "title": "Someone entered your home or property",
+   "intro": "Entering or staying on property in someone else's possession to intimidate, insult, annoy or commit an offence is criminal trespass. Entering a home is treated more seriously.",
+   "triggers": [
+    "\\btrespass\\w*",
+    "\\b(?:entered|came into|barged into|forced (?:his|their|her) way into|broke (?:the )?lock of)\\b.{0,15}\\b(?:my|our)\\b.{0,10}\\b(?:house|home|flat|room|shop|property|land|office|farm|field)\\b",
+    "\\b(?:climbed|jumped|scaled)\\b.{0,20}\\b(?:over|into|in)\\b.{0,30}\\b(?:wall|gate|fence|compound|house|terrace|balcony)\\b"
+   ],
+   "excludes": [
+    "\\b(?:stole|stolen|steal\\w*|theft|took)\\b"
+   ],
+   "laws": [
+    {
+     "id": "BNS-329",
+     "why": "Defines criminal trespass and house-trespass, and their punishment."
+    },
+    {
+     "id": "BNS-331",
+     "why": "Lurking house-trespass or house-breaking, punished more seriously at night.",
+     "when": "\\b(?:broke|break|lock|night|hid|hiding|secretly)\\b"
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "If the person is still there or you feel unsafe, call 112. Do not confront them alone."
+    },
+    {
+     "src": "general",
+     "text": "Note the date and time, photograph any damage, and keep CCTV and witness details."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)-(2)",
+     "text": "Report it at any police station, orally or electronically. It is written down, read back and signed by you, and you get a copy free of cost."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "If the police refuse to record it, send the substance in writing by post to the Superintendent of Police, or apply to the Magistrate."
+    }
+   ],
+   "gather": [
+    "Photos and CCTV",
+    "Witnesses",
+    "Proof that you live in or possess the property"
+   ],
+   "outside": "Disputes about who owns land or a house are civil matters and outside this tool.",
+   "examples": [
+    "someone entered my house without permission",
+    "my neighbour keeps entering my land",
+    "a man broke the lock and got into my flat"
+   ]
+  },
+  {
+   "id": "marriage",
+   "title": "Second marriage while still married",
+   "intro": "Marrying again while a husband or wife is alive, when that marriage is void, is an offence. It is taken up on a complaint by the person wronged.",
+   "triggers": [
+    "\\b(?:second (?:wife|husband|marriage)|bigam\\w*|married (?:again|another|someone else)|marry (?:again|another))\\b"
+   ],
+   "laws": [
+    {
+     "id": "BNS-82",
+     "why": "Marrying again while a husband or wife is living, where that second marriage is void for that reason."
+    },
+    {
+     "id": "BNSS-219",
+     "why": "A court takes up offences against marriage only on a complaint by the person aggrieved, such as the first spouse."
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "Collect proof of your marriage (certificate, photos, invitation) and of the second marriage."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-219",
+     "ref": "BNSS 219(1)",
+     "text": "File a complaint before the Magistrate as the aggrieved spouse. A lawyer usually drafts it."
+    },
+    {
+     "src": "general",
+     "text": "Free legal aid: District Legal Services Authority, NALSA helpline 15100."
+    }
+   ],
+   "gather": [
+    "Marriage certificate and photos",
+    "Evidence of the second marriage",
+    "Witnesses"
+   ],
+   "outside": "Divorce, maintenance and property claims are family-law matters outside this tool.",
+   "examples": [
+    "my husband married another woman without divorcing me",
+    "my wife married someone else while still married to me"
+   ],
+   "alert": false
+  },
+  {
+   "id": "nuisance",
+   "title": "Noise, garbage or another public nuisance",
+   "intro": "An act that causes common injury, danger or annoyance to people living nearby or using a public way is a public nuisance. A Magistrate can order it removed.",
+   "triggers": [
+    "\\b(?:loud (?:music|noise|speakers?)|loudspeakers?|\\bdj\\b|blaring|noise pollution|making noise)\\b",
+    "\\b(?:dump\\w*|throw\\w*|burn\\w*)\\b.{0,20}\\b(?:garbage|waste|trash|rubbish|debris)\\b|\\bgarbage\\b.{0,30}\\b(?:outside|in front|near|on the road)\\b",
+    "\\bblock\\w*\\b.{0,15}\\b(?:the |our )?(?:road|lane|street|way|gate|footpath|path|drain|entrance|entry|access)\\b|\\bencroach\\w*\\b.{0,20}\\b(?:road|footpath|lane|public)\\b",
+    "\\b(?:sewage|drain water|foul smell|smoke)\\b.{0,30}\\b(?:from|into|on|near)\\b"
+   ],
+   "excludes": [
+    "\\b(?:threat\\w*|beat\\w*|attack\\w*)\\b"
+   ],
+   "laws": [
+    {
+     "id": "BNS-270",
+     "why": "Defines public nuisance: an act causing common injury, danger or annoyance to people nearby or to those using a public right of way."
+    },
+    {
+     "id": "BNS-292",
+     "why": "Public nuisance not covered by any other section is punishable with a fine of up to one thousand rupees."
+    },
+    {
+     "id": "BNSS-152",
+     "why": "An Executive Magistrate (for example the SDM) can order an unlawful obstruction or nuisance removed from a public place or way."
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "If it is safe, ask the person to stop. Often that is enough."
+    },
+    {
+     "src": "general",
+     "text": "Keep a record: dates, times, short videos or audio, photos of garbage or the blocked way, and neighbours who are also affected."
+    },
+    {
+     "src": "general",
+     "text": "For loud noise at night, call the local police or 112. Loudspeakers are generally not allowed between 10 pm and 6 am."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-152",
+     "ref": "BNSS 152",
+     "text": "Apply to the Sub-Divisional Magistrate (an Executive Magistrate) to order the nuisance or obstruction removed from the public place or way."
+    },
+    {
+     "src": "general",
+     "text": "For garbage, sewage or drains, complain to your municipal corporation or panchayat as well."
+    }
+   ],
+   "gather": [
+    "Dates and times",
+    "Videos, audio, photos",
+    "Names of affected neighbours",
+    "Copies of complaints to the police or municipality"
+   ],
+   "outside": "Noise limits are set by the Noise Pollution (Regulation and Control) Rules, 2000, and garbage by municipal laws. Neither is part of this tool.",
+   "examples": [
+    "my neighbour plays loud music every night",
+    "someone dumps garbage outside my house",
+    "the shopkeeper has blocked the lane with his goods"
+   ],
+   "alert": false
+  },
+  {
+   "id": "not_returned",
+   "title": "Someone kept or misused your property or money",
+   "intro": "If someone was trusted with your property or money (lent, given for safekeeping, a business partner, a spouse's family holding your jewellery), or got it by mistake, and dishonestly keeps or uses it, that can be a criminal offence and not only a civil dispute.",
+   "triggers": [
+    "\\b(?:borrowed|took|kept|keeping|holding|has|have)\\b.{0,40}\\b(?:laptop|phone|mobile|car|bike|scooter|vehicle|jewel\\w*|gold|certificates?|documents?|passport|papers|belongings|things|stuff|items?|books?|camera|goods|it|them)\\b.{0,60}\\b(?:not|won'?t|refus\\w*|stopped|never|isn'?t)\\b.{0,25}\\b(?:return\\w*|giving (?:it |them )?back|give (?:it |them )?back|handing (?:it |them )?back)\\b",
+    "\\b(?:refus\\w*|won'?t|not|never)\\b.{0,15}\\b(?:return\\w*|give back|hand over|let me (?:collect|take))\\b.{0,25}\\b(?:my|our|the)\\b.{0,15}\\b(?:laptop|phone|mobile|car|bike|scooter|vehicle|jewel\\w*|gold|certificates?|documents?|passport|papers|belongings|things|stuff|items?|books?|camera|goods|it|them)\\b",
+    "\\b(?:transferred|sent|paid|credited)\\b.{0,40}\\b(?:wrong|another|different) (?:person|account|number|upi)\\b|\\bby mistake\\b.{0,40}\\b(?:transfer\\w*|sent|paid|credited)\\b",
+    "\\b(?:entrust\\w*|safe ?keeping|misappropriat\\w*|embezzl\\w*|breach of trust)\\b",
+    "\\b(?:kept|keeping|took|taken|holding|has|have)\\b.{0,10}\\b(?:my|our|her)\\b.{0,10}\\b(?:jewel\\w*|stridhan|gold|dowry (?:items|gifts)|wedding gifts|ornaments)\\b",
+    "\\b(?:taking|took|taken|siphon\\w*|divert\\w*|stealing|misus\\w*|withdr[ae]w\\w*)\\b.{0,15}\\b(?:money|funds|cash)\\b.{0,25}\\b(?:company|business|firm|partnership|joint|shop|society|trust)\\b"
+   ],
+   "excludes": [
+    "\\b(?:stole|stolen|theft|snatch\\w*|robbed)\\b(?!.{0,30}\\b(?:company|business|firm|partner)\\b)"
+   ],
+   "laws": [
+    {
+     "id": "BNS-316",
+     "why": "If you entrusted the property to them (lent it, gave it for repair or safekeeping, a business partner handling joint funds, in-laws holding a bride's jewellery) and they dishonestly keep or use it.",
+     "when": "\\b(?:jewel\\w*|stridhan|gold|partner\\w*|company|business|firm|funds|account|in[- ]?laws?|borrow\\w*|took|taken|lent|gave|given|handed|entrust\\w*|safe ?keeping|repair|employer|company|office|deposit\\w*|kept|keeping|holding)\\b"
+    },
+    {
+     "id": "BNS-314",
+     "why": "Dishonestly keeping or using someone's movable property, for example money credited to them by mistake that they refuse to return."
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "Ask for it back in writing (a message or email is fine) and give a clear date. Keep the reply, or the lack of one."
+    },
+    {
+     "src": "general",
+     "text": "Collect proof that it is yours and that they have it: bills, photos, chats, receipts, the transaction ID or a handover note."
+    },
+    {
+     "src": "general",
+     "text": "For money sent to the wrong account, tell your bank at once and ask it to contact the receiving bank."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)-(2)",
+     "text": "If they still refuse, report it at the police station. The information is written down, read back and signed by you, and you get a copy free of cost."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "If the police say it is only a civil matter and refuse to record it, send the substance in writing by post to the Superintendent of Police, or apply to the Magistrate."
+    }
+   ],
+   "gather": [
+    "Proof of ownership (bills, photos)",
+    "Chats or emails about handing it over",
+    "Your written request and their reply",
+    "Transaction ID and bank statement, if money"
+   ],
+   "outside": "Recovering money or property through a civil suit is a separate route and outside this tool. A lawyer can advise which suits your case.",
+   "examples": [
+    "someone borrowed my laptop and won't return it",
+    "I transferred money to the wrong person and they refuse to return it",
+    "my employer won't return my original certificates",
+    "I gave my car to a friend and he is not giving it back",
+    "my business partner has been taking money from our company account",
+    "my in-laws are keeping my jewellery"
+   ],
+   "alert": false
+  },
+  {
+   "id": "followed",
+   "title": "Someone is following you",
+   "priority": 2,
+   "intro": "If you are being followed right now, your safety comes first. Afterwards it can be reported, and repeated following of a woman is the offence of stalking.",
+   "triggers": [
+    "\\b(?:car|bike|motorcycle|scooter|vehicle|auto|truck|van|jeep|suv)\\b.{0,40}\\b(?:follow\\w*|tail\\w*|chas\\w*)\\b.{0,15}\\b(?:me|us|my|our)\\b|\\b(?:follow\\w*|tail\\w*|chas\\w*)\\b.{0,10}\\b(?:me|us|my car|our car|my bike)\\b.{0,40}(?:\\b(?:car|bike|motorcycle|scooter|vehicle|auto|truck|van|jeep|suv)\\b|\\b(?:since|for) (?:the last )?\\d+|\\bminutes?\\b|\\bmins?\\b|\\bright now\\b|\\ball the way\\b)",
+    "\\bsomeone (?:is|has been|keeps|was) following (?:me|us)\\b.{0,30}\\b(?:now|since|minutes?|mins?|home|road)\\b"
+   ],
+   "laws": [
+    {
+     "id": "BNS-78",
+     "why": "If a man repeatedly follows a woman, or tries to contact her despite clear disinterest, that is stalking."
+    },
+    {
+     "id": "BNS-126",
+     "why": "If they blocked your way or stopped you from going where you had a right to go.",
+     "when": "\\b(?:block\\w*|stopp?\\w*|cornered|wouldn'?t let|not let|overtook and)\\b"
+    },
+    {
+     "id": "BNS-351",
+     "why": "If they threatened you.",
+     "when": "\\bthreat\\w*|\\bshout\\w*|\\babus\\w*"
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "Call 112 now. Say where you are, which way you are going and the vehicle number if you can see it."
+    },
+    {
+     "src": "general",
+     "text": "Do not go home or to a quiet place. Keep moving towards a busy, well-lit area or straight to a police station. Keep doors locked and windows up."
+    },
+    {
+     "src": "general",
+     "text": "Do not stop to confront them. If someone is with you, ask them to note the number plate, colour and model, or record a video."
+    },
+    {
+     "src": "general",
+     "text": "Call a friend or family member and stay on the line until you are safe."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)-(2)",
+     "text": "Once you are safe, report it at any police station. It is written down, read back and signed by you, and you get a copy free of cost."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1), first proviso",
+     "text": "If a woman reports stalking, her information must be recorded by a woman police officer."
+    }
+   ],
+   "gather": [
+    "Number plate, colour and model",
+    "Time, place and route",
+    "Dashcam or phone video",
+    "Names of anyone who saw it"
+   ],
+   "outside": null,
+   "examples": [
+    "a car has been following me for 20 minutes",
+    "someone on a bike is following me home",
+    "a car kept chasing us on the highway"
+   ]
+  },
+  {
+   "id": "transport",
+   "title": "Problem with an auto, cab or taxi driver",
+   "priority": 1,
+   "intro": "Demanding extra money under pressure, refusing to take you where agreed, or leaving you somewhere unsafe can be an offence. Your safety comes first; the fare dispute can be settled later.",
+   "triggers": [
+    "\\b(?:auto|auto[- ]?rickshaw|rickshaw|cab|taxi|ola|uber|rapido|bike taxi|e-?rickshaw|tempo|bus conductor)\\b.{0,40}\\b(?:driver|wala|guy|man)?\\b.{0,60}\\b(?:demand\\w*|ask\\w* for|wants?|charg\\w*|overcharg\\w*|extra|more money|double|refus\\w*|drop\\w*|left me|leaving me|threat\\w*|misbehav\\w*|abus\\w*|wrong (?:route|way|place)|random place|won'?t (?:stop|go|take))",
+    "\\b(?:driver|auto ?wala|cabbie)\\b.{0,60}\\b(?:demand\\w*|more money|extra (?:money|fare)|overcharg\\w*|drop\\w* me|left me|random place|wrong (?:route|place)|threat\\w*|won'?t (?:stop|let me))"
+   ],
+   "excludes": [
+    "\\b(?:accident|crash\\w*|collid\\w*|hit (?:me|my)|ran over|rear[- ]?end\\w*)\\b"
+   ],
+   "laws": [
+    {
+     "id": "BNS-308",
+     "why": "If the driver puts you in fear (of being hurt, stranded or harmed) to make you pay more, that is extortion.",
+     "when": "\\b(?:demand\\w*|more money|extra|pay|money|double|charg\\w*)\\b"
+    },
+    {
+     "id": "BNS-351",
+     "why": "Threatening to harm you, your belongings or your reputation to make you do something.",
+     "when": "\\b(?:threat\\w*|scar\\w*|afraid|abus\\w*|shout\\w*|demand\\w*|forc\\w*|random place|left me|unsafe)\\b"
+    },
+    {
+     "id": "BNS-126",
+     "why": "If the driver stops you from getting out or going where you have a right to go.",
+     "when": "\\b(?:won'?t (?:stop|let me)|not let me|locked|refus\\w* to stop|wouldn'?t stop)\\b"
+    },
+    {
+     "id": "BNS-79",
+     "why": "If a woman passenger faces lewd words, gestures or remarks.",
+     "when": "\\b(?:comment\\w*|remarks?|vulgar|lewd|touch\\w*|stare\\w*|staring)\\b"
+    }
+   ],
+   "steps": [
+    {
+     "src": "general",
+     "text": "If you feel unsafe, call 112 now. Share your live location with someone you trust and stay on the phone."
+    },
+    {
+     "src": "general",
+     "text": "Get to a busy, well-lit place before arguing. If it is safe, pay the normal fare and settle the rest later. Your safety matters more than the money."
+    },
+    {
+     "src": "general",
+     "text": "Note the vehicle number, the driver's name and photo, the time and the route. Take a photo of the number plate if you can."
+    },
+    {
+     "src": "general",
+     "text": "If you booked through an app (Ola, Uber, Rapido and others), use its safety or SOS button and report the driver in the app."
+    },
+    {
+     "src": "general",
+     "text": "Overcharging and refusing a ride can also be reported to the traffic police or your state transport department."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(1)-(2)",
+     "text": "If you were threatened or forced to pay, report it at any police station. It is written down, read back and signed by you, and you get a copy free of cost."
+    },
+    {
+     "src": "law",
+     "id": "BNSS-173",
+     "ref": "BNSS 173(4)",
+     "text": "If the police refuse to record it, send it in writing by post to the Superintendent of Police, or apply to the Magistrate."
+    }
+   ],
+   "gather": [
+    "Vehicle number and photo of the number plate",
+    "App booking details and receipt",
+    "Time, place and route",
+    "Messages or call records, witnesses"
+   ],
+   "outside": "Fares and refusals to ply are set by the Motor Vehicles Act and state fare rules, which are not part of this tool.",
+   "examples": [
+    "auto driver is demanding more money to drop me",
+    "the cab driver left me at a random place",
+    "the taxi driver took a wrong route and is threatening me",
+    "an auto driver refused to stop and asked for double fare"
+   ]
+  }
+ ],
+ "generic": {
+  "id": "generic",
+  "title": "What to do after any offence",
+  "intro": "These steps apply to any crime. The sections below are the closest match to what you described, so read them to check they fit.",
+  "laws": [],
+  "alert": true,
+  "steps": [
+   {
+    "src": "general",
+    "text": "If anyone is in danger or hurt, call 112 first."
+   },
+   {
+    "src": "general",
+    "text": "Write down what happened: the date, time and place, who was involved and who saw it. Keep the evidence (photos, messages, documents, medical reports). Do not delete anything."
+   },
+   {
+    "src": "law",
+    "id": "BNSS-173",
+    "ref": "BNSS 173(1)",
+    "text": "Report it at any police station, whichever area it happened in, orally or electronically. If oral, it is written down, read back to you and signed by you."
+   },
+   {
+    "src": "law",
+    "id": "BNSS-173",
+    "ref": "BNSS 173(2)",
+    "text": "Ask for a copy of what was recorded. It must be given to you free of cost."
+   },
+   {
+    "src": "law",
+    "id": "BNSS-174",
+    "ref": "BNSS 174",
+    "text": "If the offence is non-cognizable (usually minor), the police record the information and refer you to the Magistrate. They cannot investigate without the Magistrate's order."
+   },
+   {
+    "src": "law",
+    "id": "BNSS-173",
+    "ref": "BNSS 173(4)",
+    "text": "If the police refuse to record a cognizable offence, send the substance in writing by post to the Superintendent of Police."
+   },
+   {
+    "src": "law",
+    "id": "BNSS-175",
+    "ref": "BNSS 175(3)",
+    "text": "You can also apply to the Magistrate, with an affidavit, who may order an investigation."
+   },
+   {
+    "src": "general",
+    "text": "Free legal aid is available from your District Legal Services Authority (NALSA helpline 15100)."
+   }
+  ],
+  "gather": [
+   "A written timeline of what happened",
+   "Photos, messages, documents, medical reports",
+   "Names and numbers of witnesses",
+   "ID proof and a copy of your complaint"
+  ],
+  "outside": null
+ }
+}

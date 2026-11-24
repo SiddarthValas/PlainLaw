@@ -1,0 +1,10 @@
+pdfplumber
+numpy
+scikit-learn
+rank_bm25
+nltk
+streamlit
+sentence-transformers
+fastapi
+uvicorn
+certifi

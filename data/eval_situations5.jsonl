@@ -1,0 +1,25 @@
+{"query": "My college is refusing to give back my original certificates even after I completed my course.", "expect": ["not_returned", "none"], "split": "ai_written_5"}
+{"query": "Someone has been dumping garbage right outside our house every morning.", "expect": ["nuisance"], "split": "ai_written_5"}
+{"query": "My friend’s father passed away, and the bank isn’t allowing his family to access his savings.", "expect": ["none"], "split": "ai_written_5"}
+{"query": "A hospital charged us for treatments that were never given to my mother.", "expect": ["fraud", "none"], "split": "ai_written_5"}
+{"query": "My neighbour built a wall that blocks the entrance to our property.", "expect": ["nuisance", "none"], "split": "ai_written_5"}
+{"query": "My brother bought a second-hand car and later found out it had fake documents.", "expect": ["fraud"], "split": "ai_written_5"}
+{"query": "A restaurant added extra charges to our bill without telling us beforehand.", "expect": ["none"], "split": "ai_written_5"}
+{"query": "My friend’s wedding was cancelled, but the marriage hall refuses to refund the advance.", "expect": ["none"], "split": "ai_written_5"}
+{"query": "A teacher slapped my younger brother in school for not completing his homework.", "expect": ["assault"], "split": "ai_written_5"}
+{"query": "Someone used my Aadhaar details to get a SIM card without my knowledge.", "expect": ["fraud"], "split": "ai_written_5"}
+{"query": "My uncle’s business partner took money from their joint account and disappeared.", "expect": ["not_returned", "fraud"], "split": "ai_written_5"}
+{"query": "A builder promised to hand over our flat last year, but construction is still incomplete.", "expect": ["none", "fraud"], "split": "ai_written_5"}
+{"query": "My friend was forced to work overtime every day without any extra payment.", "expect": ["none"], "split": "ai_written_5"}
+{"query": "A private hospital refused to release my father’s medical records.", "expect": ["none"], "split": "ai_written_5"}
+{"query": "My neighbour’s dog attacked my younger sister while she was walking home.", "expect": ["assault"], "split": "ai_written_5"}
+{"query": "Someone has been cutting down trees in our residential area without permission.", "expect": ["none", "nuisance"], "split": "ai_written_5"}
+{"query": "My electricity bill suddenly increased to ₹18,000 even though our usage hasn’t changed.", "expect": ["none"], "split": "ai_written_5"}
+{"query": "My friend paid a coaching centre for a full course, but they shut down after two weeks.", "expect": ["fraud", "none"], "split": "ai_written_5"}
+{"query": "A security guard at a mall searched my bag and took away my belongings.", "expect": ["theft", "not_returned", "confinement"], "split": "ai_written_5"}
+{"query": "My cousin’s husband is refusing to provide money for their child’s basic needs.", "expect": ["domestic"], "split": "ai_written_5"}
+{"query": "A travel agency cancelled our holiday package and isn’t returning the money.", "expect": ["none", "fraud"], "split": "ai_written_5"}
+{"query": "My grandfather gave land to a relative to use temporarily, but now they claim it belongs to them.", "expect": ["none", "not_returned"], "split": "ai_written_5"}
+{"query": "My friend was injured at a construction site because the company didn’t provide safety equipment.", "expect": ["generic", "none"], "split": "ai_written_5"}
+{"query": "Someone recorded me during a private conversation and shared the video without asking.", "expect": ["women_harassment", "defamation", "generic"], "split": "ai_written_5"}
+{"query": "My apartment association is charging me extra maintenance fees without explaining why.", "expect": ["none"], "split": "ai_written_5"}

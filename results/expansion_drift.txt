@@ -1,0 +1,17 @@
+Expansion fired on 57/119 questions: gold rank improved 31, worse 10, unchanged 16
+Examples where expansion helped (rank without -> with):
+  >10 -> 2 | ['theft or snatching'] | my bike was stolen from outside my office
+  5 -> 1 | ['filing an FIR'] | the police are refusing to write my FIR
+  3 -> 2 | ['damage to property'] | someone set fire to our shop
+  >10 -> 9 | ['physical assault or injury', 'how long police can hold someone'] | the police beat my father in the lockup
+  >10 -> 1 | ['seized property'] | police took my laptop during a search and haven't returned it
+  5 -> 1 | ['defamation'] | someone is spreading lies about me on facebook to ruin my reputation
+Examples where expansion hurt (semantic drift):
+  1 -> 2 | rule: ['theft or snatching'] | new top: BNS-303 | a man snatched my gold chain while I was walking
+  2 -> >10 | rule: ['physical assault or injury'] | new top: BNS-118 | my car was hit by a truck on the highway
+  5 -> >10 | rule: ['physical assault or injury'] | new top: BNS-118 | an auto hit my mother while she was crossing the road and she broke he
+  10 -> >10 | rule: ['summons or warrant'] | new top: BNSS-132 | I got a notice from the police to appear for questioning about a fight
+  1 -> >10 | rule: ['physical assault or injury'] | new top: BNS-118 | my sister's husband doesn't hit her but controls all her money and won
+  1 -> 7 | rule: ['killing or death'] | new top: BNS-92 | my dog was killed by a speeding car and the driver abused me
+  1 -> >10 | rule: ['physical assault or injury'] | new top: BNS-118 | a man insulted our god in a video to hurt my community's feelings
+  1 -> 2 | rule: ['threats or blackmail', 'kidnapping or abduction'] | new top: BNS-137 | someone kidnapped my business partner and is asking for ransom

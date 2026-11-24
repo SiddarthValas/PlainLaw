@@ -1,0 +1,22 @@
+{
+ "frozen_at": "2026-11-24T21:52:22",
+ "note": "System frozen before writing data/eval_final.jsonl. No rule, playbook, glossary, threshold or model change after this point is allowed to be evaluated on that set.",
+ "files": {
+  "src/__init__.py": "4491122b018f8351",
+  "src/chatbot.py": "71b4431138f48b50",
+  "src/dates.py": "1060b2d302b9be25",
+  "src/glossary.py": "39c08ab0118d74b9",
+  "src/intent.py": "8fcfbefb01ac6489",
+  "src/llm_router.py": "02d015a396731ffb",
+  "src/playbooks.py": "dc3d1cea1b50fc5e",
+  "src/retrieval.py": "3462ecffc7b08abf",
+  "src/safety.py": "49fc91cffa38ce69",
+  "data/playbooks.json": "f02f598eebe3b802",
+  "data/sections.jsonl": "ddcc18d7769bb608",
+  "models/situation_clf.npz": "2520ab27f92720de",
+  "api.py": "13c5a25569d5e054"
+ },
+ "dense_model": "BAAI/bge-small-en-v1.5",
+ "retrieval_default": "hybrid+rewrite (RRF k=60)",
+ "router": "rules -> LLM (if configured) -> trained classifier (offline, p>=0.3) -> suggestions"
+}

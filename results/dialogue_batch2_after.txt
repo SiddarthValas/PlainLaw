@@ -1,0 +1,155 @@
+
+########
+YOU: hi
+  [smalltalk] Hi. Tell me what happened in your own words, for example “someone rear-ended my car” or “the police won't register my FIR”. I'll show the laws that may apply and what to do next.
+YOU: I got a call from someone saying my KYC is expiring and I shared OTP, 45000 is gone
+  [plan] I'm sorry, losing money like that is really stressful. | Here is what you can do next, and the provisions that may apply depending on the exact facts.
+   plan: ['fraud']  ['BNS-318', 'BNS-319']
+YOU: what should I do first
+  [followup] Here is where to start: | 1. If money left your account, call your bank at once and ask to freeze or reverse the transaction. For online financial fraud also call the national cyber-crime helpline 1930 or report at cybercrime.gov.in as soon as possible. | 2. If someone calls claiming a relative is i
+YOU: can I get my money back?
+  [followup] Every state has a victim compensation scheme for people who suffered loss or injury from a crime and need rehabilitation; the District or State Legal Services Authority decides the amount (BNSS 396). | For money lost in a fraud, report it quickly (for cyber fraud: helpline 1930) so the bank can try 
+YOU: which section is this under
+  [followup] Based on what you've told me, these provisions may apply, depending on the exact facts: | BNS 318 (Cheating): Deceiving someone to make them hand over money or property, or to do something they would not otherwise do. | BNS 319 (Cheating by personation): If the person pretended to be someone else, i
+
+########
+YOU: my in laws are harassing my sister for dowry and they hit her last week
+  [plan] I'm sorry you're going through this. You deserve to be safe at home. | Are you safe right now? I can help you understand your options. | What you describe may fall under provisions of the BNS on cruelty by a husband or his relatives, and hurt, depending on the circumstances.
+   plan: ['domestic'] (folded) ['BNS-85', 'BNS-86', 'BNS-115']
+YOU: yes she is at our home now
+  [plan] Understood, I'm glad you're safe. Since it happened last week, you can still report it; it is best to do it soon, while things like CCTV footage are still available. | It may also help to note down: medical and police records; messages and recordings; marriage proof and list of gifts or payments; co
+   plan: ['domestic']  ['BNS-85', 'BNS-86', 'BNS-115']
+YOU: explain the first one
+  [explain] BNS 85 deals with husband or relative of husband of a woman subjecting her to cruelty. Here it is in simple language. | This explains what the section says. Whether it applies to a particular case depends on the facts, and only a court can decide that.
+   explain: BNS-85
+YOU: can she file the complaint herself or should we?
+  [followup] You can report at any police station, orally or in writing. Tell them what happened, when and where, who was involved (or a description), and what evidence you have. It is written down, read back to you, and you sign it (BNSS 173(1)). You are entitled to a free copy (BNSS 173(2)). | Anyone who knows
+YOU: will the police arrest them immediately?
+  [followup] Not always. For offences punishable with up to seven years, the police may arrest without a warrant only if certain conditions are met, for example to prevent further offences, for proper investigation, or to stop evidence being destroyed or witnesses being threatened (BNSS 35(1)(b)). | When arrest 
+
+########
+YOU: my manager keeps sending me vulgar messages at night
+  [plan] I'm sorry that happened. No one should have to deal with that. | Are you safe right now? I can help you understand your options. | What you describe may fall under provisions of the BNS on sexual harassment and outraging a woman's modesty, depending on the circumstances.
+   plan: ['women_harassment'] (folded) ['BNS-78', 'BNS-75']
+YOU: I'm fine, it's not happening right now
+  [plan] Understood, I'm glad you're safe. You can still report it; it is best to do it soon, while things like CCTV footage are still available. | It may also help to note down: messages, call logs, screenshots; dates and places of each incident; witnesses or CCTV; a trusted person who can accompany you to 
+   plan: ['women_harassment']  ['BNS-78', 'BNS-75']
+YOU: is there a separate law for workplace harassment?
+  [followup] Yes. Besides a police complaint under the BNS, sexual harassment at work is covered by the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 (the POSH Act). | Every employer with ten or more employees must have an Internal Committee; you can complain to it in 
+YOU: what if he deletes the messages?
+  [followup] Take screenshots now, with the date, time and the sender's number or profile visible, and keep a copy somewhere safe. Even if messages are deleted later, the police can ask the platform or telecom company for records. | You can still approach the police. Witnesses are not the only possible source of
+
+########
+YOU: a man hit me with a helmet after our cars brushed
+  [plan] I'm sorry you were hurt. | Are you safe right now? I can help you understand your options. | What you describe may fall under provisions of the BNS on hurt and assault, depending on the circumstances.
+   plan: ['assault'] (folded) ['BNS-115']
+YOU: I'm safe
+  [plan] Understood, I'm glad you're safe. You can still report it; it is best to do it soon, while things like CCTV footage are still available. | It may also help to note down: medical report and bills; photos of injuries and the place; witness names; messages or calls before or after the incident. | Let's
+   plan: ['assault']  ['BNS-115']
+YOU: I have a cut on my head and went to hospital
+  [plan] Thanks, I've added that. | Get the injury examined and ask the hospital for the medical report; it is important evidence, and the police can arrange a medical examination. | With that detail, these provisions may also be relevant: BNS 116 (Grievous hurt), BNS 117 (Voluntarily causing grievous hurt).
+   plan: ['assault']  ['BNS-115', 'BNS-116', 'BNS-117']
+YOU: what is the punishment for this
+  [explain] BNS 115 deals with voluntarily causing hurt. Here is the punishment it sets out. | This explains what the section says. Whether it applies to a particular case depends on the facts, and only a court can decide that.
+   explain: BNS-115
+
+########
+YOU: the police are asking me for 5000 to register my FIR
+  [plan] Here is what you can do next, and the provisions that may apply depending on the exact facts.
+   plan: ['fir_refused']  ['BNSS-173', 'BNSS-175', 'BNSS-174']
+YOU: what can I do?
+  [followup] Here is where to start: | 1. Anyone can give the information, not only the victim, and at any police station, whichever area the offence happened in. Say you want it recorded and ask for the officer in charge. | 2. You can also send it electronically. It is taken on record once you sign it within th
+
+########
+YOU: someone filed a false complaint against me saying I stole money
+  [plan] Here is what you can do next, and the provisions that may apply depending on the exact facts.
+   plan: ['accused', 'defamation']  ['BNSS-35', 'BNSS-482', 'BNSS-47', 'BNSS-528', 'BNS-248']
+YOU: can I get anticipatory bail?
+  [plan] That sounds like a separate matter, so let's look at it on its own. | Here is what you can do next, and the provisions that may apply depending on the exact facts.
+   plan: ['bail']  ['BNSS-478', 'BNSS-480', 'BNSS-482', 'BNSS-479']
+YOU: what does BNSS 482 mean
+  [explain] BNSS 482 deals with direction for grant of bail to person apprehending arrest. Here it is in simple language. | This explains what the section says. Whether it applies to a particular case depends on the facts, and only a court can decide that.
+   explain: BNSS-482
+YOU: thank you
+  [smalltalk] You're welcome. Take care. If you or anyone is in danger, call 112.
+
+########
+YOU: my son and his wife beat my old mother and took her pension
+  [plan] I'm sorry, that's a horrible thing to deal with. | Here is what you can do next, and the provisions that may apply depending on the exact facts.
+   plan: ['theft', 'assault']  ['BNS-303', 'BNS-309']
+YOU: no she is still living with them
+  [plan] Thanks, I've added that.
+   plan: ['theft', 'assault']  ['BNS-303', 'BNS-309']
+YOU: what can we do
+  [followup] Here is where to start: | 1. If anyone is in danger or injured, call 112. | 2. Write down what was taken, when and where, and anything you remember about the person. Do not confront them. | 3. If a phone, cards or UPI access were taken, call your bank to block cards and UPI and ask your mobile opera
+
+########
+YOU: someone on instagram says he will kill me and posted my address
+  [plan] That sounds frightening. I'm sorry you're dealing with it. | Are you safe right now? I can help you understand your options. | What you describe may fall under provisions of the BNS on criminal intimidation and extortion, depending on the circumstances.
+   plan: ['threats'] (folded) ['BNS-351']
+YOU: is it a crime?
+  [followup] Based on what you've told me, these provisions may apply, depending on the exact facts: | BNS 351 (Criminal intimidation): Threatening injury to your person, reputation or property to cause alarm or to make you do something. | Only the police and the courts can decide which one actually applies. You
+YOU: can I report it online?
+  [followup] Yes, information can be given orally or by electronic communication (for example email or a state police e-FIR portal). If you report electronically, it is taken on record once you sign it within three days (BNSS 173(1)(ii)). | Many states also have online portals for complaints such as lost items o
+
+########
+YOU: 2 guys on bike snachd my chain
+  [plan] I'm sorry, that's a horrible thing to deal with. | Here is what you can do next, and the provisions that may apply depending on the exact facts.
+   plan: ['theft']  ['BNS-303', 'BNS-304']
+YOU: i am ok now
+  [followup] Good to hear. What would you like to know next? I can explain any of the sections, or how to report it.
+YOU: wat is the sec
+  [followup] Based on what you've told me, these provisions may apply, depending on the exact facts: | BNS 303 (Theft): Dishonestly taking movable property out of someone's possession without consent. | BNS 304 (Snatching): If the thing was grabbed suddenly or by force, for example a phone or chain snatched on t
+YOU: polise not listening wat to do
+  [followup] If the police refuse to record it, you can send the substance of your complaint in writing and by post to the Superintendent of Police (BNSS 173(4)), who can investigate or order an investigation. | You can also apply to the Magistrate, who can order the police to investigate (BNSS 175(3)). | Keep a
+
+########
+YOU: my neighbour plays loud music every night till 3am
+  [plan] Here is what you can do next, and the provisions that may apply depending on the exact facts.
+   plan: ['nuisance']  ['BNS-270', 'BNS-292', 'BNSS-152']
+YOU: which law covers this?
+  [followup] Based on what you've told me, these provisions may apply, depending on the exact facts: | BNS 270 (Public nuisance): Defines public nuisance: an act causing common injury, danger or annoyance to people nearby or to those using a public right of way. | BNS 292 (Punishment for public nuisance in cases
+YOU: can I complain to the police
+  [followup] You can report at any police station, orally or in writing. Tell them what happened, when and where, who was involved (or a description), and what evidence you have. It is written down, read back to you, and you sign it (BNSS 173(1)). You are entitled to a free copy (BNSS 173(2)). | Anyone who knows
+
+########
+YOU: my husband threatens me every day
+  [plan] That sounds frightening. I'm sorry you're dealing with it. | Are you safe right now? I can help you understand your options. | What you describe may fall under provisions of the BNS on criminal intimidation and extortion, depending on the circumstances.
+   plan: ['threats'] (folded) ['BNS-351']
+YOU: yes
+  [plan] Understood, I'm glad you're safe. You can still report it; it is best to do it soon, while things like CCTV footage are still available. | It may also help to note down: screenshots with dates; phone numbers, profile links, payment requests; witnesses; any earlier messages showing the relationship. 
+   plan: ['threats']  ['BNS-351']
+YOU: I feel like ending my life
+  [crisis] I'm really sorry you're going through this. You don't have to face it alone. If it is someone else who is at risk, stay with them if you can and get help now. Please call Tele-MANAS on 14416 (free, 24x7) or 112 right now, or tell someone you trust where you are and how you feel. This tool only expla
+
+########
+YOU: what is stalking
+  [answer] Here is the section that matches best.
+   cards: ['BNS-78']
+YOU: what is the punishment
+  [explain] BNS 78 deals with stalking. Here is the punishment it sets out. | This explains what the section says. Whether it applies to a particular case depends on the facts, and only a court can decide that.
+   explain: BNS-78
+YOU: what if he does it again
+  [explain] BNS 78 deals with stalking. Here it is in simple language. | This explains what the section says. Whether it applies to a particular case depends on the facts, and only a court can decide that.
+   explain: BNS-78
+
+########
+YOU: mera phone chori ho gaya
+  [language] I can only read English for now. Please describe what happened in English, in a sentence or two. If it is an emergency, call 112.
+
+########
+YOU: my bike was stolen
+  [plan] I'm sorry, that's a horrible thing to deal with. | Here is what you can do next, and the provisions that may apply depending on the exact facts.
+   plan: ['theft']  ['BNS-303']
+YOU: also how do I get bail for my brother who was arrested yesterday
+  [plan] That sounds like a separate matter, so let's look at it on its own. | Here is what you can do next, and the provisions that may apply depending on the exact facts.
+   plan: ['arrest', 'bail']  ['BNSS-47', 'BNSS-48', 'BNSS-38', 'BNSS-58', 'BNSS-53']
+
+########
+YOU: I need help
+  [clarify] I'm here to help. Tell me in a sentence or two what happened: who did what, where and when. | If you or someone else is in danger right now, call 112.
+YOU: someone is troubling me
+  [clarify] I want to be sure I understood. Is your situation closest to one of these? You can also type a little more detail.
+YOU: he keeps calling and abusing me
+  [plan] I'm sorry that happened. No one should have to deal with that. | Are you safe right now? I can help you understand your options. | What you describe may fall under provisions of the BNS on sexual harassment and outraging a woman's modesty, depending on the circumstances.
+   plan: ['women_harassment'] (folded) ['BNS-78', 'BNS-79']

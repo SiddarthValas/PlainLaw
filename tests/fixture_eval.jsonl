@@ -1,0 +1,10 @@
+{"query": "someone stole my phone on the bus", "gold": ["TEST-1"], "split": "dev"}
+{"query": "a fake website took my money and never delivered", "gold": ["TEST-2"], "split": "dev"}
+{"query": "he beat me up and I have injuries", "gold": ["TEST-3"], "split": "dev"}
+{"query": "police won't register my complaint", "gold": ["TEST-7"], "split": "dev"}
+{"query": "she keeps threatening to ruin my reputation unless I pay", "gold": ["TEST-4"], "split": "test"}
+{"query": "a guy keeps following me and messaging me online", "gold": ["TEST-5"], "split": "test"}
+{"query": "a stranger broke into my house", "gold": ["TEST-6"], "split": "test"}
+{"query": "my brother was arrested, what are his rights", "gold": ["TEST-8"], "split": "test"}
+{"query": "how do I get out on bail", "gold": ["TEST-9"], "split": "test"}
+{"query": "my husband refuses to support me and our child", "gold": ["TEST-10"], "split": "test"}

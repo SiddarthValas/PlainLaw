@@ -1,0 +1,2074 @@
+{
+  "summary": [
+    {
+      "system": "PlainLaw (ours)",
+      "queries": 48,
+      "answered": "98%",
+      "gold cited (all queries)": "73%",
+      "gold cited (when answering)": "74%",
+      "citations": 146,
+      "old code": "0%",
+      "not in Act": "0%",
+      "old number": "0%",
+      "answers with an invalid citation": "0%"
+    },
+    {
+      "system": "llama3.2 (free)",
+      "queries": 48,
+      "answered": "73%",
+      "gold cited (all queries)": "0%",
+      "gold cited (when answering)": "0%",
+      "citations": 83,
+      "old code": "94%",
+      "not in Act": "0%",
+      "old number": "0%",
+      "answers with an invalid citation": "100%"
+    },
+    {
+      "system": "openai_gpt_oss_120b (free)",
+      "queries": 48,
+      "answered": "42%",
+      "gold cited (all queries)": "0%",
+      "gold cited (when answering)": "0%",
+      "citations": 63,
+      "old code": "92%",
+      "not in Act": "0%",
+      "old number": "0%",
+      "answers with an invalid citation": "100%"
+    }
+  ],
+  "stats": [
+    {
+      "system": "PlainLaw (ours)",
+      "n": 48,
+      "strict": 35,
+      "lenient": 42,
+      "mcnemar_p_vs_ours": "-"
+    },
+    {
+      "system": "llama3.2 (free)",
+      "n": 48,
+      "strict": 0,
+      "lenient": 0,
+      "mcnemar_p_vs_ours": "5.8e-11"
+    },
+    {
+      "system": "openai_gpt_oss_120b (free)",
+      "n": 48,
+      "strict": 0,
+      "lenient": 0,
+      "mcnemar_p_vs_ours": "5.8e-11"
+    }
+  ],
+  "rows": {
+    "PlainLaw (ours)": [
+      {
+        "query": "Someone hit my parked car, damaged it, and drove away without leaving their contact details. I don\u2019t know who the driver was. Can I file a police complaint, and what action can be taken against them?",
+        "gold": [
+          "BNSS-173",
+          "BNS-281",
+          "BNS-324"
+        ],
+        "cites": [
+          "BNS 281",
+          "BNS 125",
+          "BNSS 173",
+          "BNSS 174"
+        ],
+        "buckets": [
+          "correct",
+          "other",
+          "correct",
+          "other"
+        ]
+      },
+      {
+        "query": "I witnessed someone being attacked, but the police told me they wouldn\u2019t register a complaint because I\u2019m not the victim. Is that correct?",
+        "gold": [
+          "BNSS-173"
+        ],
+        "cites": [
+          "BNSS 173",
+          "BNSS 175",
+          "BNSS 174",
+          "BNS 115"
+        ],
+        "buckets": [
+          "correct",
+          "other",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "My cousin was taken to a police station for questioning, and the officers aren\u2019t telling us whether he\u2019s been arrested. What rights does he have?",
+        "gold": [
+          "BNSS-48",
+          "BNSS-36"
+        ],
+        "cites": [
+          "BNSS 47",
+          "BNSS 48",
+          "BNSS 38",
+          "BNSS 58",
+          "BNSS 53"
+        ],
+        "buckets": [
+          "other",
+          "correct",
+          "other",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "My brother was arrested yesterday, but the police haven\u2019t allowed our family to contact him. What can we do?",
+        "gold": [
+          "BNSS-48"
+        ],
+        "cites": [
+          "BNSS 47",
+          "BNSS 48",
+          "BNSS 38",
+          "BNSS 58",
+          "BNSS 53"
+        ],
+        "buckets": [
+          "other",
+          "correct",
+          "other",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "I reported a serious crime, but the police haven\u2019t taken any action for several weeks. Is there a way to escalate my complaint?",
+        "gold": [
+          "BNSS-173",
+          "BNSS-175"
+        ],
+        "cites": [
+          "BNSS 173",
+          "BNSS 175",
+          "BNSS 174"
+        ],
+        "buckets": [
+          "correct",
+          "correct",
+          "other"
+        ]
+      },
+      {
+        "query": "Someone borrowed my laptop for a week and has now stopped answering my calls or returning it. What can I do?",
+        "gold": [
+          "BNS-314",
+          "BNS-316"
+        ],
+        "cites": [
+          "BNS 316",
+          "BNS 314"
+        ],
+        "buckets": [
+          "correct",
+          "correct"
+        ]
+      },
+      {
+        "query": "A shopkeeper accused me of stealing and forced me to stay inside his shop until I paid him. Is he allowed to do that?",
+        "gold": [
+          "BNS-127",
+          "BNS-126"
+        ],
+        "cites": [
+          "BNS 126",
+          "BNS 127",
+          "BNS 351"
+        ],
+        "buckets": [
+          "correct",
+          "correct",
+          "other"
+        ]
+      },
+      {
+        "query": "A stranger photographed my sister without her permission and is threatening to post the pictures online. What can we do?",
+        "gold": [
+          "BNS-351",
+          "BNS-77"
+        ],
+        "cites": [
+          "BNS 351",
+          "BNS 77",
+          "BNS 78",
+          "BNS 79"
+        ],
+        "buckets": [
+          "correct",
+          "correct",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "I paid someone in advance to repair my phone, but they disappeared with both my phone and money. Is this a police matter?",
+        "gold": [
+          "BNS-318",
+          "BNS-316"
+        ],
+        "cites": [
+          "BNS 318",
+          "BNS 316",
+          "BNS 303"
+        ],
+        "buckets": [
+          "correct",
+          "correct",
+          "other"
+        ]
+      },
+      {
+        "query": "Someone created a fake social media account using my name and is messaging people pretending to be me. Is this illegal?",
+        "gold": [
+          "BNS-319"
+        ],
+        "cites": [
+          "BNS 318",
+          "BNS 319",
+          "BNS 336",
+          "BNS 340"
+        ],
+        "buckets": [
+          "other",
+          "correct",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "A group of people surrounded my car and wouldn\u2019t let me leave until I apologised to them. Can I report this?",
+        "gold": [
+          "BNS-126",
+          "BNS-189"
+        ],
+        "cites": [
+          "BNS 126",
+          "BNS 127"
+        ],
+        "buckets": [
+          "correct",
+          "other"
+        ]
+      },
+      {
+        "query": "A person deliberately pushed me down the stairs during an argument, and I fractured my arm. What can I do?",
+        "gold": [
+          "BNS-117",
+          "BNS-116",
+          "BNS-115"
+        ],
+        "cites": [
+          "BNS 115",
+          "BNS 116",
+          "BNS 117",
+          "BNS 131"
+        ],
+        "buckets": [
+          "correct",
+          "correct",
+          "correct",
+          "other"
+        ]
+      },
+      {
+        "query": "Someone sold me a second-hand motorcycle and later I discovered that the registration documents were fake. What law applies?",
+        "gold": [
+          "BNS-318",
+          "BNS-340"
+        ],
+        "cites": [
+          "BNS 318",
+          "BNS 336",
+          "BNS 340"
+        ],
+        "buckets": [
+          "correct",
+          "other",
+          "correct"
+        ]
+      },
+      {
+        "query": "My neighbour\u2019s dog attacked me, and the owner knew it was aggressive but never restrained it. Can I file a complaint?",
+        "gold": [
+          "BNS-291"
+        ],
+        "cites": [
+          "BNS 115",
+          "BNS 291"
+        ],
+        "buckets": [
+          "other",
+          "correct"
+        ]
+      },
+      {
+        "query": "A person is demanding money from me and threatening to reveal an embarrassing secret if I refuse. Is that a crime?",
+        "gold": [
+          "BNS-308",
+          "BNS-351"
+        ],
+        "cites": [
+          "BNS 351",
+          "BNS 308"
+        ],
+        "buckets": [
+          "correct",
+          "correct"
+        ]
+      },
+      {
+        "query": "My roommate secretly took money from my wallet while I was sleeping. Can I report it even though we live together?",
+        "gold": [
+          "BNS-303"
+        ],
+        "cites": [
+          "BNS 303"
+        ],
+        "buckets": [
+          "correct"
+        ]
+      },
+      {
+        "query": "A security guard searched my bag and physically prevented me from leaving a building without explaining why. Is that legal?",
+        "gold": [
+          "BNS-126",
+          "BNS-127"
+        ],
+        "cites": [
+          "BNS 126",
+          "BNS 127"
+        ],
+        "buckets": [
+          "correct",
+          "correct"
+        ]
+      },
+      {
+        "query": "Someone deliberately set fire to a pile of materials stored outside my house, and the flames damaged my property. What offence is this?",
+        "gold": [
+          "BNS-326"
+        ],
+        "cites": [
+          "BNS 324",
+          "BNS 326"
+        ],
+        "buckets": [
+          "other",
+          "correct"
+        ]
+      },
+      {
+        "query": "A person convinced my elderly grandfather to sign papers he couldn\u2019t understand and transferred his property. Can we challenge this?",
+        "gold": [
+          "BNS-318"
+        ],
+        "cites": [
+          "BNS 318",
+          "BNS 336",
+          "BNS 340"
+        ],
+        "buckets": [
+          "correct",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "I accidentally transferred money to the wrong person, and they are refusing to return it. Can I file a criminal complaint?",
+        "gold": [
+          "BNS-314"
+        ],
+        "cites": [
+          "BNS 314"
+        ],
+        "buckets": [
+          "correct"
+        ]
+      },
+      {
+        "query": "A person is repeatedly coming to my workplace and threatening my colleagues because of a personal disagreement. Can I seek protection?",
+        "gold": [
+          "BNS-351"
+        ],
+        "cites": [
+          "BNS 351"
+        ],
+        "buckets": [
+          "correct"
+        ]
+      },
+      {
+        "query": "can I report a crime by email or online instead of going to the station",
+        "gold": [
+          "BNSS-173"
+        ],
+        "cites": [
+          "BNSS 173",
+          "BNSS 174"
+        ],
+        "buckets": [
+          "correct",
+          "other"
+        ]
+      },
+      {
+        "query": "police registered my FIR but never gave me a copy",
+        "gold": [
+          "BNSS-173"
+        ],
+        "cites": [
+          "BNSS 174",
+          "BNSS 173",
+          "BNSS 230"
+        ],
+        "buckets": [
+          "other",
+          "correct",
+          "other"
+        ]
+      },
+      {
+        "query": "I want to approach the magistrate because the police did nothing on my complaint",
+        "gold": [
+          "BNSS-175",
+          "BNSS-173"
+        ],
+        "cites": [
+          "BNSS 173",
+          "BNSS 175",
+          "BNSS 174"
+        ],
+        "buckets": [
+          "correct",
+          "correct",
+          "other"
+        ]
+      },
+      {
+        "query": "police gave me a notice to appear instead of arresting me",
+        "gold": [
+          "BNSS-35"
+        ],
+        "cites": [
+          "BNSS 179",
+          "BNSS 35",
+          "BNSS 38",
+          "BNSS 47",
+          "BNSS 48"
+        ],
+        "buckets": [
+          "other",
+          "correct",
+          "other",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "police arrested my son, do they have to tell us",
+        "gold": [
+          "BNSS-48"
+        ],
+        "cites": [
+          "BNSS 47",
+          "BNSS 48",
+          "BNSS 38",
+          "BNSS 58",
+          "BNSS 53"
+        ],
+        "buckets": [
+          "other",
+          "correct",
+          "other",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "how long can the police keep me before taking me to court",
+        "gold": [
+          "BNSS-58",
+          "BNSS-57"
+        ],
+        "cites": [
+          "BNSS 58",
+          "BNSS 78",
+          "BNSS 170"
+        ],
+        "buckets": [
+          "correct",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "can police arrest a woman at night",
+        "gold": [
+          "BNSS-43"
+        ],
+        "cites": [
+          "BNSS 47",
+          "BNSS 48",
+          "BNSS 38",
+          "BNSS 58",
+          "BNSS 53"
+        ],
+        "buckets": [
+          "other",
+          "other",
+          "other",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "can an ordinary person catch a thief and hand him to the police",
+        "gold": [
+          "BNSS-40"
+        ],
+        "cites": [
+          "BNS 303"
+        ],
+        "buckets": [
+          "other"
+        ]
+      },
+      {
+        "query": "police barged into my house looking for someone they wanted to arrest",
+        "gold": [
+          "BNSS-44"
+        ],
+        "cites": [
+          "BNSS 47",
+          "BNSS 48",
+          "BNSS 38",
+          "BNSS 58",
+          "BNSS 53"
+        ],
+        "buckets": [
+          "other",
+          "other",
+          "other",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "can I get bail for a serious non-bailable offence",
+        "gold": [
+          "BNSS-480"
+        ],
+        "cites": [
+          "BNSS 478",
+          "BNSS 480",
+          "BNSS 482",
+          "BNSS 479"
+        ],
+        "buckets": [
+          "other",
+          "correct",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "sessions court refused my bail, can I go to the high court",
+        "gold": [
+          "BNSS-483"
+        ],
+        "cites": [
+          "BNSS 478",
+          "BNSS 480",
+          "BNSS 482",
+          "BNSS 479"
+        ],
+        "buckets": [
+          "other",
+          "other",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "police did not file the chargesheet within 90 days, can I get default bail",
+        "gold": [
+          "BNSS-187"
+        ],
+        "cites": [
+          "BNSS 478",
+          "BNSS 480",
+          "BNSS 482",
+          "BNSS 479"
+        ],
+        "buckets": [
+          "other",
+          "other",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "how much bond amount is fixed for bail and can it be reduced",
+        "gold": [
+          "BNSS-484"
+        ],
+        "cites": [
+          "BNSS 478",
+          "BNSS 480",
+          "BNSS 482",
+          "BNSS 479"
+        ],
+        "buckets": [
+          "other",
+          "other",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "I received a court summons, how is it served on me",
+        "gold": [
+          "BNSS-64",
+          "BNSS-63"
+        ],
+        "cites": [
+          "BNSS 64",
+          "BNSS 71",
+          "BNSS 69"
+        ],
+        "buckets": [
+          "correct",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "the court declared me an absconder and attached my property",
+        "gold": [
+          "BNSS-84",
+          "BNSS-85"
+        ],
+        "cites": [
+          "BNSS 88",
+          "BNSS 85",
+          "BNSS 86"
+        ],
+        "buckets": [
+          "other",
+          "correct",
+          "other"
+        ]
+      },
+      {
+        "query": "police are recording a video while searching my home",
+        "gold": [
+          "BNSS-105"
+        ],
+        "cites": [
+          "BNSS 105",
+          "BNSS 185"
+        ],
+        "buckets": [
+          "correct",
+          "other"
+        ]
+      },
+      {
+        "query": "how do I get back my vehicle that the police took in a case",
+        "gold": [
+          "BNSS-497",
+          "BNSS-503"
+        ],
+        "cites": [
+          "BNSS 106",
+          "BNSS 503",
+          "BNSS 497"
+        ],
+        "buckets": [
+          "other",
+          "correct",
+          "correct"
+        ]
+      },
+      {
+        "query": "police forced me to sign a statement",
+        "gold": [
+          "BNSS-181",
+          "BNSS-182"
+        ],
+        "cites": [
+          "BNS 318"
+        ],
+        "buckets": [
+          "other"
+        ]
+      },
+      {
+        "query": "my statement has to be recorded before a magistrate",
+        "gold": [
+          "BNSS-183"
+        ],
+        "cites": [
+          "BNSS 183"
+        ],
+        "buckets": [
+          "correct"
+        ]
+      },
+      {
+        "query": "what medical examination is done for a woman who was raped",
+        "gold": [
+          "BNSS-184"
+        ],
+        "cites": [
+          "BNS 63",
+          "BNS 64"
+        ],
+        "buckets": [
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "how do I enforce the maintenance order if he does not pay",
+        "gold": [
+          "BNSS-147"
+        ],
+        "cites": [
+          "BNSS 144",
+          "BNSS 146",
+          "BNSS 147"
+        ],
+        "buckets": [
+          "other",
+          "other",
+          "correct"
+        ]
+      },
+      {
+        "query": "I cannot afford a lawyer for my trial, will the court give me one",
+        "gold": [
+          "BNSS-341"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "can we settle the case with the other party and withdraw it",
+        "gold": [
+          "BNSS-359"
+        ],
+        "cites": [
+          "BNSS 280",
+          "BNSS 451",
+          "BNSS 360"
+        ],
+        "buckets": [
+          "other",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "I was arrested for no reason, can I claim compensation",
+        "gold": [
+          "BNSS-399"
+        ],
+        "cites": [
+          "BNSS 47",
+          "BNSS 48",
+          "BNSS 38",
+          "BNSS 58",
+          "BNSS 53"
+        ],
+        "buckets": [
+          "other",
+          "other",
+          "other",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "can I complain directly to a magistrate without going to the police",
+        "gold": [
+          "BNSS-223"
+        ],
+        "cites": [
+          "BNSS 191",
+          "BNSS 223"
+        ],
+        "buckets": [
+          "other",
+          "correct"
+        ]
+      },
+      {
+        "query": "police detained me saying they feared I would commit an offence",
+        "gold": [
+          "BNSS-170",
+          "BNSS-168"
+        ],
+        "cites": [
+          "BNSS 47",
+          "BNSS 48",
+          "BNSS 38",
+          "BNSS 58",
+          "BNSS 53"
+        ],
+        "buckets": [
+          "other",
+          "other",
+          "other",
+          "other",
+          "other"
+        ]
+      },
+      {
+        "query": "someone died in police custody, who investigates",
+        "gold": [
+          "BNSS-196"
+        ],
+        "cites": [
+          "BNSS 47",
+          "BNSS 48",
+          "BNSS 38",
+          "BNSS 58",
+          "BNSS 53"
+        ],
+        "buckets": [
+          "other",
+          "other",
+          "other",
+          "other",
+          "other"
+        ]
+      }
+    ],
+    "llama3.2 (free)": [
+      {
+        "query": "Someone hit my parked car, damaged it, and drove away without leaving their contact details. I don\u2019t know who the driver was. Can I file a police complaint, and what action can be taken against them?",
+        "gold": [
+          "BNSS-173",
+          "BNS-281",
+          "BNS-324"
+        ],
+        "cites": [
+          "OTHER 140",
+          "CrPC 443"
+        ],
+        "buckets": [
+          "other act",
+          "old code"
+        ]
+      },
+      {
+        "query": "I witnessed someone being attacked, but the police told me they wouldn\u2019t register a complaint because I\u2019m not the victim. Is that correct?",
+        "gold": [
+          "BNSS-173"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "My cousin was taken to a police station for questioning, and the officers aren\u2019t telling us whether he\u2019s been arrested. What rights does he have?",
+        "gold": [
+          "BNSS-48",
+          "BNSS-36"
+        ],
+        "cites": [
+          "CrPC 50",
+          "CrPC 53",
+          "CrPC 75",
+          "CrPC 150"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "My brother was arrested yesterday, but the police haven\u2019t allowed our family to contact him. What can we do?",
+        "gold": [
+          "BNSS-48"
+        ],
+        "cites": [
+          "CrPC 74",
+          "CrPC 176"
+        ],
+        "buckets": [
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "I reported a serious crime, but the police haven\u2019t taken any action for several weeks. Is there a way to escalate my complaint?",
+        "gold": [
+          "BNSS-173",
+          "BNSS-175"
+        ],
+        "cites": [
+          "CrPC 18",
+          "CrPC 32"
+        ],
+        "buckets": [
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "Someone borrowed my laptop for a week and has now stopped answering my calls or returning it. What can I do?",
+        "gold": [
+          "BNS-314",
+          "BNS-316"
+        ],
+        "cites": [
+          "IPC 420"
+        ],
+        "buckets": [
+          "old code"
+        ]
+      },
+      {
+        "query": "A shopkeeper accused me of stealing and forced me to stay inside his shop until I paid him. Is he allowed to do that?",
+        "gold": [
+          "BNS-127",
+          "BNS-126"
+        ],
+        "cites": [
+          "IPC 379"
+        ],
+        "buckets": [
+          "old code"
+        ]
+      },
+      {
+        "query": "A stranger photographed my sister without her permission and is threatening to post the pictures online. What can we do?",
+        "gold": [
+          "BNS-351",
+          "BNS-77"
+        ],
+        "cites": [
+          "OTHER 67",
+          "IPC 351",
+          "IPC 322"
+        ],
+        "buckets": [
+          "other act",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "I paid someone in advance to repair my phone, but they disappeared with both my phone and money. Is this a police matter?",
+        "gold": [
+          "BNS-318",
+          "BNS-316"
+        ],
+        "cites": [
+          "IPC 379"
+        ],
+        "buckets": [
+          "old code"
+        ]
+      },
+      {
+        "query": "Someone created a fake social media account using my name and is messaging people pretending to be me. Is this illegal?",
+        "gold": [
+          "BNS-319"
+        ],
+        "cites": [
+          "IPC 420",
+          "IPC 506"
+        ],
+        "buckets": [
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "A group of people surrounded my car and wouldn\u2019t let me leave until I apologised to them. Can I report this?",
+        "gold": [
+          "BNS-126",
+          "BNS-189"
+        ],
+        "cites": [
+          "IPC 506"
+        ],
+        "buckets": [
+          "old code"
+        ]
+      },
+      {
+        "query": "A person deliberately pushed me down the stairs during an argument, and I fractured my arm. What can I do?",
+        "gold": [
+          "BNS-117",
+          "BNS-116",
+          "BNS-115"
+        ],
+        "cites": [
+          "IPC 323",
+          "IPC 334",
+          "IPC 323A",
+          "IPC 338",
+          "IPC 452"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "Someone sold me a second-hand motorcycle and later I discovered that the registration documents were fake. What law applies?",
+        "gold": [
+          "BNS-318",
+          "BNS-340"
+        ],
+        "cites": [
+          "IPC 420"
+        ],
+        "buckets": [
+          "old code"
+        ]
+      },
+      {
+        "query": "My neighbour\u2019s dog attacked me, and the owner knew it was aggressive but never restrained it. Can I file a complaint?",
+        "gold": [
+          "BNS-291"
+        ],
+        "cites": [
+          "IPC 283",
+          "IPC 336"
+        ],
+        "buckets": [
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "A person is demanding money from me and threatening to reveal an embarrassing secret if I refuse. Is that a crime?",
+        "gold": [
+          "BNS-308",
+          "BNS-351"
+        ],
+        "cites": [
+          "IPC 506",
+          "IPC 506A",
+          "IPC 34"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "My roommate secretly took money from my wallet while I was sleeping. Can I report it even though we live together?",
+        "gold": [
+          "BNS-303"
+        ],
+        "cites": [
+          "IPC 379",
+          "IPC 406",
+          "IPC 420"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "A security guard searched my bag and physically prevented me from leaving a building without explaining why. Is that legal?",
+        "gold": [
+          "BNS-126",
+          "BNS-127"
+        ],
+        "cites": [
+          "IPC 506",
+          "IPC 341",
+          "CrPC 54"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "Someone deliberately set fire to a pile of materials stored outside my house, and the flames damaged my property. What offence is this?",
+        "gold": [
+          "BNS-326"
+        ],
+        "cites": [
+          "IPC 295"
+        ],
+        "buckets": [
+          "old code"
+        ]
+      },
+      {
+        "query": "A person convinced my elderly grandfather to sign papers he couldn\u2019t understand and transferred his property. Can we challenge this?",
+        "gold": [
+          "BNS-318"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "I accidentally transferred money to the wrong person, and they are refusing to return it. Can I file a criminal complaint?",
+        "gold": [
+          "BNS-314"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "A person is repeatedly coming to my workplace and threatening my colleagues because of a personal disagreement. Can I seek protection?",
+        "gold": [
+          "BNS-351"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "can I report a crime by email or online instead of going to the station",
+        "gold": [
+          "BNSS-173"
+        ],
+        "cites": [
+          "IPC 75",
+          "OTHER 54",
+          "OTHER 69"
+        ],
+        "buckets": [
+          "old code",
+          "other act",
+          "other act"
+        ]
+      },
+      {
+        "query": "police registered my FIR but never gave me a copy",
+        "gold": [
+          "BNSS-173"
+        ],
+        "cites": [
+          "CrPC 54",
+          "CrPC 27"
+        ],
+        "buckets": [
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "I want to approach the magistrate because the police did nothing on my complaint",
+        "gold": [
+          "BNSS-175",
+          "BNSS-173"
+        ],
+        "cites": [
+          "CrPC 150",
+          "CrPC 155"
+        ],
+        "buckets": [
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "police gave me a notice to appear instead of arresting me",
+        "gold": [
+          "BNSS-35"
+        ],
+        "cites": [
+          "CrPC 2",
+          "CrPC 56",
+          "CrPC 491"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "police arrested my son, do they have to tell us",
+        "gold": [
+          "BNSS-48"
+        ],
+        "cites": [
+          "CrPC 54",
+          "CrPC 305"
+        ],
+        "buckets": [
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "how long can the police keep me before taking me to court",
+        "gold": [
+          "BNSS-58",
+          "BNSS-57"
+        ],
+        "cites": [
+          "CrPC 50",
+          "CrPC 60",
+          "CrPC 169"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "can police arrest a woman at night",
+        "gold": [
+          "BNSS-43"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "can an ordinary person catch a thief and hand him to the police",
+        "gold": [
+          "BNSS-40"
+        ],
+        "cites": [
+          "IPC 79",
+          "IPC 107",
+          "CrPC 150"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "police barged into my house looking for someone they wanted to arrest",
+        "gold": [
+          "BNSS-44"
+        ],
+        "cites": [
+          "CrPC 92",
+          "CrPC 93",
+          "CrPC 176"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "can I get bail for a serious non-bailable offence",
+        "gold": [
+          "BNSS-480"
+        ],
+        "cites": [
+          "CrPC 37",
+          "CrPC 491",
+          "CrPC 176"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "sessions court refused my bail, can I go to the high court",
+        "gold": [
+          "BNSS-483"
+        ],
+        "cites": [
+          "CrPC 561",
+          "CrPC 482"
+        ],
+        "buckets": [
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "police did not file the chargesheet within 90 days, can I get default bail",
+        "gold": [
+          "BNSS-187"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "how much bond amount is fixed for bail and can it be reduced",
+        "gold": [
+          "BNSS-484"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "I received a court summons, how is it served on me",
+        "gold": [
+          "BNSS-64",
+          "BNSS-63"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "the court declared me an absconder and attached my property",
+        "gold": [
+          "BNSS-84",
+          "BNSS-85"
+        ],
+        "cites": [
+          "CrPC 20",
+          "IPC 138",
+          "CrPC 176"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "police are recording a video while searching my home",
+        "gold": [
+          "BNSS-105"
+        ],
+        "cites": [
+          "CrPC 53",
+          "CrPC 92",
+          "OTHER 17",
+          "IPC 35"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "other act",
+          "old code"
+        ]
+      },
+      {
+        "query": "how do I get back my vehicle that the police took in a case",
+        "gold": [
+          "BNSS-497",
+          "BNSS-503"
+        ],
+        "cites": [
+          "IPC 138",
+          "IPC 420"
+        ],
+        "buckets": [
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "police forced me to sign a statement",
+        "gold": [
+          "BNSS-181",
+          "BNSS-182"
+        ],
+        "cites": [
+          "CrPC 53",
+          "IPC 25"
+        ],
+        "buckets": [
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "my statement has to be recorded before a magistrate",
+        "gold": [
+          "BNSS-183"
+        ],
+        "cites": [
+          "CrPC 305",
+          "CrPC 306"
+        ],
+        "buckets": [
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "what medical examination is done for a woman who was raped",
+        "gold": [
+          "BNSS-184"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "how do I enforce the maintenance order if he does not pay",
+        "gold": [
+          "BNSS-147"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "I cannot afford a lawyer for my trial, will the court give me one",
+        "gold": [
+          "BNSS-341"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "can we settle the case with the other party and withdraw it",
+        "gold": [
+          "BNSS-359"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "I was arrested for no reason, can I claim compensation",
+        "gold": [
+          "BNSS-399"
+        ],
+        "cites": [
+          "CrPC 50",
+          "CrPC 69",
+          "CrPC 498A"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "can I complain directly to a magistrate without going to the police",
+        "gold": [
+          "BNSS-223"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "police detained me saying they feared I would commit an offence",
+        "gold": [
+          "BNSS-170",
+          "BNSS-168"
+        ],
+        "cites": [
+          "CrPC 50",
+          "CrPC 69",
+          "CrPC 176"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "someone died in police custody, who investigates",
+        "gold": [
+          "BNSS-196"
+        ],
+        "cites": [
+          "CrPC 176"
+        ],
+        "buckets": [
+          "old code"
+        ]
+      }
+    ],
+    "openai_gpt_oss_120b (free)": [
+      {
+        "query": "Someone hit my parked car, damaged it, and drove away without leaving their contact details. I don\u2019t know who the driver was. Can I file a police complaint, and what action can be taken against them?",
+        "gold": [
+          "BNSS-173",
+          "BNS-281",
+          "BNS-324"
+        ],
+        "cites": [
+          "CrPC 200"
+        ],
+        "buckets": [
+          "old code"
+        ]
+      },
+      {
+        "query": "I witnessed someone being attacked, but the police told me they wouldn\u2019t register a complaint because I\u2019m not the victim. Is that correct?",
+        "gold": [
+          "BNSS-173"
+        ],
+        "cites": [
+          "CrPC 154",
+          "CrPC 156",
+          "CrPC 200",
+          "CrPC 155",
+          "CrPC 166"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "My cousin was taken to a police station for questioning, and the officers aren\u2019t telling us whether he\u2019s been arrested. What rights does he have?",
+        "gold": [
+          "BNSS-48",
+          "BNSS-36"
+        ],
+        "cites": [
+          "CrPC 41",
+          "CrPC 50",
+          "CrPC 57",
+          "CrPC 439",
+          "CrPC 46"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "My brother was arrested yesterday, but the police haven\u2019t allowed our family to contact him. What can we do?",
+        "gold": [
+          "BNSS-48"
+        ],
+        "cites": [
+          "CrPC 50",
+          "CrPC 57",
+          "CrPC 151",
+          "CrPC 167"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "I reported a serious crime, but the police haven\u2019t taken any action for several weeks. Is there a way to escalate my complaint?",
+        "gold": [
+          "BNSS-173",
+          "BNSS-175"
+        ],
+        "cites": [
+          "CrPC 154"
+        ],
+        "buckets": [
+          "old code"
+        ]
+      },
+      {
+        "query": "Someone borrowed my laptop for a week and has now stopped answering my calls or returning it. What can I do?",
+        "gold": [
+          "BNS-314",
+          "BNS-316"
+        ],
+        "cites": [
+          "CrPC 154",
+          "IPC 405"
+        ],
+        "buckets": [
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "A shopkeeper accused me of stealing and forced me to stay inside his shop until I paid him. Is he allowed to do that?",
+        "gold": [
+          "BNS-127",
+          "BNS-126"
+        ],
+        "cites": [
+          "IPC 340",
+          "IPC 384",
+          "IPC 506",
+          "IPC 420",
+          "IPC 499"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "A stranger photographed my sister without her permission and is threatening to post the pictures online. What can we do?",
+        "gold": [
+          "BNS-351",
+          "BNS-77"
+        ],
+        "cites": [
+          "IPC 354C",
+          "IPC 506",
+          "OTHER 66E",
+          "IPC 500",
+          "IPC 509"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "other act",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "I paid someone in advance to repair my phone, but they disappeared with both my phone and money. Is this a police matter?",
+        "gold": [
+          "BNS-318",
+          "BNS-316"
+        ],
+        "cites": [
+          "CrPC 173",
+          "CrPC 357"
+        ],
+        "buckets": [
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "Someone created a fake social media account using my name and is messaging people pretending to be me. Is this illegal?",
+        "gold": [
+          "BNS-319"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "A group of people surrounded my car and wouldn\u2019t let me leave until I apologised to them. Can I report this?",
+        "gold": [
+          "BNS-126",
+          "BNS-189"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "A person deliberately pushed me down the stairs during an argument, and I fractured my arm. What can I do?",
+        "gold": [
+          "BNS-117",
+          "BNS-116",
+          "BNS-115"
+        ],
+        "cites": [
+          "CrPC 357",
+          "IPC 333",
+          "IPC 309"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "Someone sold me a second-hand motorcycle and later I discovered that the registration documents were fake. What law applies?",
+        "gold": [
+          "BNS-318",
+          "BNS-340"
+        ],
+        "cites": [
+          "IPC 420",
+          "IPC 467",
+          "IPC 471",
+          "IPC 120"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "My neighbour\u2019s dog attacked me, and the owner knew it was aggressive but never restrained it. Can I file a complaint?",
+        "gold": [
+          "BNS-291"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "A person is demanding money from me and threatening to reveal an embarrassing secret if I refuse. Is that a crime?",
+        "gold": [
+          "BNS-308",
+          "BNS-351"
+        ],
+        "cites": [
+          "OTHER 138",
+          "CrPC 144",
+          "OTHER 65B",
+          "CrPC 91",
+          "OTHER 69"
+        ],
+        "buckets": [
+          "other act",
+          "old code",
+          "other act",
+          "old code",
+          "other act"
+        ]
+      },
+      {
+        "query": "My roommate secretly took money from my wallet while I was sleeping. Can I report it even though we live together?",
+        "gold": [
+          "BNS-303"
+        ],
+        "cites": [
+          "CrPC 154",
+          "CrPC 156",
+          "OTHER 138"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "other act"
+        ]
+      },
+      {
+        "query": "A security guard searched my bag and physically prevented me from leaving a building without explaining why. Is that legal?",
+        "gold": [
+          "BNS-126",
+          "BNS-127"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "Someone deliberately set fire to a pile of materials stored outside my house, and the flames damaged my property. What offence is this?",
+        "gold": [
+          "BNS-326"
+        ],
+        "cites": [
+          "IPC 435",
+          "IPC 436",
+          "IPC 427"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "A person convinced my elderly grandfather to sign papers he couldn\u2019t understand and transferred his property. Can we challenge this?",
+        "gold": [
+          "BNS-318"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "I accidentally transferred money to the wrong person, and they are refusing to return it. Can I file a criminal complaint?",
+        "gold": [
+          "BNS-314"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "A person is repeatedly coming to my workplace and threatening my colleagues because of a personal disagreement. Can I seek protection?",
+        "gold": [
+          "BNS-351"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "can I report a crime by email or online instead of going to the station",
+        "gold": [
+          "BNSS-173"
+        ],
+        "cites": [
+          "CrPC 154",
+          "CrPC 156"
+        ],
+        "buckets": [
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "police registered my FIR but never gave me a copy",
+        "gold": [
+          "BNSS-173"
+        ],
+        "cites": [
+          "CrPC 154",
+          "CrPC 173",
+          "CrPC 138",
+          "CrPC 156"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "I want to approach the magistrate because the police did nothing on my complaint",
+        "gold": [
+          "BNSS-175",
+          "BNSS-173"
+        ],
+        "cites": [
+          "CrPC 154",
+          "CrPC 156",
+          "CrPC 173",
+          "CrPC 200",
+          "CrPC 197"
+        ],
+        "buckets": [
+          "old code",
+          "old code",
+          "old code",
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "police gave me a notice to appear instead of arresting me",
+        "gold": [
+          "BNSS-35"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "police arrested my son, do they have to tell us",
+        "gold": [
+          "BNSS-48"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "how long can the police keep me before taking me to court",
+        "gold": [
+          "BNSS-58",
+          "BNSS-57"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "can police arrest a woman at night",
+        "gold": [
+          "BNSS-43"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "can an ordinary person catch a thief and hand him to the police",
+        "gold": [
+          "BNSS-40"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "police barged into my house looking for someone they wanted to arrest",
+        "gold": [
+          "BNSS-44"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "can I get bail for a serious non-bailable offence",
+        "gold": [
+          "BNSS-480"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "sessions court refused my bail, can I go to the high court",
+        "gold": [
+          "BNSS-483"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "police did not file the chargesheet within 90 days, can I get default bail",
+        "gold": [
+          "BNSS-187"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "how much bond amount is fixed for bail and can it be reduced",
+        "gold": [
+          "BNSS-484"
+        ],
+        "cites": [
+          "CrPC 436",
+          "CrPC 439"
+        ],
+        "buckets": [
+          "old code",
+          "old code"
+        ]
+      },
+      {
+        "query": "I received a court summons, how is it served on me",
+        "gold": [
+          "BNSS-64",
+          "BNSS-63"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "the court declared me an absconder and attached my property",
+        "gold": [
+          "BNSS-84",
+          "BNSS-85"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "police are recording a video while searching my home",
+        "gold": [
+          "BNSS-105"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "how do I get back my vehicle that the police took in a case",
+        "gold": [
+          "BNSS-497",
+          "BNSS-503"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "police forced me to sign a statement",
+        "gold": [
+          "BNSS-181",
+          "BNSS-182"
+        ],
+        "cites": [
+          "CrPC 482"
+        ],
+        "buckets": [
+          "old code"
+        ]
+      },
+      {
+        "query": "my statement has to be recorded before a magistrate",
+        "gold": [
+          "BNSS-183"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "what medical examination is done for a woman who was raped",
+        "gold": [
+          "BNSS-184"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "how do I enforce the maintenance order if he does not pay",
+        "gold": [
+          "BNSS-147"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "I cannot afford a lawyer for my trial, will the court give me one",
+        "gold": [
+          "BNSS-341"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "can we settle the case with the other party and withdraw it",
+        "gold": [
+          "BNSS-359"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "I was arrested for no reason, can I claim compensation",
+        "gold": [
+          "BNSS-399"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "can I complain directly to a magistrate without going to the police",
+        "gold": [
+          "BNSS-223"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "police detained me saying they feared I would commit an offence",
+        "gold": [
+          "BNSS-170",
+          "BNSS-168"
+        ],
+        "cites": [],
+        "buckets": []
+      },
+      {
+        "query": "someone died in police custody, who investigates",
+        "gold": [
+          "BNSS-196"
+        ],
+        "cites": [
+          "CrPC 197"
+        ],
+        "buckets": [
+          "old code"
+        ]
+      }
+    ]
+  }
+}

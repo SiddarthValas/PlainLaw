@@ -1,0 +1,38 @@
+{
+  "built_from": {
+    "BNSS_Act46_2023.pdf": {
+      "sha256": "572c79880b9f8effc8fa6e39b864101835a0fb5d85b194b90a99d170121a0562"
+    },
+    "BNS_Act45_2023.pdf": {
+      "sha256": "ff92dcc72778944011807644b6033b1140ddbe6d7e9f82ac32fd419dae03aa86"
+    },
+    "comparison_BNSS_to_CrPC.pdf": {
+      "sha256": "aa3e49147cf88141a8471a614246270ab4730cd3a4099e06de7a69792d80d33b"
+    },
+    "comparison_BNS_to_IPC.pdf": {
+      "sha256": "3ad875b6162deb9d6a722244c537b1ffa72ee20e025f08a32d272f2612cf9a25"
+    }
+  },
+  "text_versions": {
+    "BNS": "Act 45 of 2023, India Code text as on 6 October 2025",
+    "BNSS": "Act 46 of 2023, as enacted"
+  },
+  "old_numbers_from": "CAPT Bhopal comparison tables (BNS-IPC, BNSS-CrPC)",
+  "in_force_from": "2024-07-01",
+  "counts": {
+    "BNS": 358,
+    "BNSS": 531
+  },
+  "sections_jsonl_sha256": "ddcc18d7769bb608ec11a4b53d5cdef90e1b390fc1e3dba153cd7a1587c5fc06",
+  "mapping": {
+    "new_sections_with_old_number": 870,
+    "new_sections_without_old_number": 19,
+    "new_sections_replacing_several_old": 54,
+    "old_sections_split_into_several_new": 5
+  },
+  "known_gaps": [
+    "BNS 106(2) (hit-and-run) not brought into force as of mid-2026; shown with a note",
+    "Amendments after the text dates above are not included",
+    "Mappings come from the comparison tables and are not one-to-one everywhere"
+  ]
+}

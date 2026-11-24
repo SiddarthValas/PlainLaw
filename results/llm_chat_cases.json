@@ -1,0 +1,540 @@
+[
+{
+"message": "What does BNS 324 mean?",
+"history": [
+{
+"u": "someone broke my cars window",
+"a": "I'm sorry about the damage. Here is what you can do next, and the provisions that may apply depending on the exact facts."
+}
+],
+"state": {
+"facts": {}
+},
+"material": "SITUATION: Fire, vandalism or damage to property. Deliberately damaging or burning someone's property is mischief, and fire is treated more seriously.\nSTEP 1: If there is a fire or danger, call 101 (fire) or 112 and get everyone to safety.\nSTEP 2: Photograph and video the damage and the area before anything is cleared. Note any CCTV or witnesses.\nSTEP 3: Tell your insurer, if you have a policy, and keep repair estimates and bills.\nSTEP 4: Report it to the police. It is recorded, read back and signed by you, and you get a copy free of cost. [BNSS 173(1)-(2)]\nSTEP 5: If the police refuse, send it in writing by post to the Superintendent of Police, or apply to the Magistrate. [BNSS 173(4)]\nKEEP READY: Photos and video; Repair estimates and bills; Witnesses, CCTV; Insurance details\nSECTION BNS 324 (Mischief; replaces IPC 425, IPC 426, IPC 427, IPC 440): (1) Whoever with intent to cause, or knowing that he is likely to cause, wrongful loss or damage to the public or to any person, causes the destruction of any property, or any such change in any property or in the situation thereof as destroys or diminishes its value or utility, or affects it injuriously, commits mischief. Explanation 1.\u2014It is not essential to the offence of mischief that the offender should intend to cause loss or damage to the owner of the property injured or destroyed. It is sufficient if he intends to cause, or knows that he is likely to cause, wrongful loss or damage to a\nSECTION BNS 326 (Mischief by injury, inundation, fire or explosive substance, etc; replaces IPC 430, IPC 431, IPC 432, IPC 433, IPC 434, IPC 435, IPC 436): Whoever commits mischief by,\u2014 (a) doing any act which causes, or which he knows to be likely to cause, a diminution of the supply of water for agricultural purposes, or for food or drink for human beings or for animals which are property, or for cleanliness or for carrying on any manufacture, shall be punished with imprisonment of either description for a term which may extend to five years, or with fine, or with both; (b) doing any act which renders or which he knows to be likely to render any public road, bridge, navigable river or navigable channel, natural or artificial, impassable or less",
+"allowed": [
+"BNS-324",
+"BNS-326",
+"BNSS-173"
+],
+"old": [
+"IPC-425",
+"IPC-426",
+"IPC-427",
+"IPC-430",
+"IPC-431",
+"IPC-432",
+"IPC-433",
+"IPC-434",
+"IPC-435",
+"IPC-436",
+"IPC-440"
+]
+},
+{
+"message": "I dont have cctv",
+"history": [
+{
+"u": "someone broke my cars window",
+"a": "I'm sorry about the damage. Here is what you can do next, and the provisions that may apply depending on the exact facts."
+},
+{
+"u": "What does BNS 324 mean?",
+"a": "BNS 324 deals with mischief. Here it is in simple language. This explains what the section says. Whether it applies to a particular case depends on the facts, and only a court can decide that."
+}
+],
+"state": {
+"facts": {}
+},
+"material": "SITUATION: Fire, vandalism or damage to property. Deliberately damaging or burning someone's property is mischief, and fire is treated more seriously.\nSTEP 1: If there is a fire or danger, call 101 (fire) or 112 and get everyone to safety.\nSTEP 2: Photograph and video the damage and the area before anything is cleared. Note any CCTV or witnesses.\nSTEP 3: Tell your insurer, if you have a policy, and keep repair estimates and bills.\nSTEP 4: Report it to the police. It is recorded, read back and signed by you, and you get a copy free of cost. [BNSS 173(1)-(2)]\nSTEP 5: If the police refuse, send it in writing by post to the Superintendent of Police, or apply to the Magistrate. [BNSS 173(4)]\nKEEP READY: Photos and video; Repair estimates and bills; Witnesses, CCTV; Insurance details\nSECTION BNS 324 (Mischief; replaces IPC 425, IPC 426, IPC 427, IPC 440): (1) Whoever with intent to cause, or knowing that he is likely to cause, wrongful loss or damage to the public or to any person, causes the destruction of any property, or any such change in any property or in the situation thereof as destroys or diminishes its value or utility, or affects it injuriously, commits mischief. Explanation 1.\u2014It is not essential to the offence of mischief that the offender should intend to cause loss or damage to the owner of the property injured or destroyed. It is sufficient if he intends to cause, or knows that he is likely to cause, wrongful loss or damage to a\nSECTION BNS 326 (Mischief by injury, inundation, fire or explosive substance, etc; replaces IPC 430, IPC 431, IPC 432, IPC 433, IPC 434, IPC 435, IPC 436): Whoever commits mischief by,\u2014 (a) doing any act which causes, or which he knows to be likely to cause, a diminution of the supply of water for agricultural purposes, or for food or drink for human beings or for animals which are property, or for cleanliness or for carrying on any manufacture, shall be punished with imprisonment of either description for a term which may extend to five years, or with fine, or with both; (b) doing any act which renders or which he knows to be likely to render any public road, bridge, navigable river or navigable channel, natural or artificial, impassable or less",
+"allowed": [
+"BNS-324",
+"BNS-326",
+"BNSS-173"
+],
+"old": [
+"IPC-425",
+"IPC-426",
+"IPC-427",
+"IPC-430",
+"IPC-431",
+"IPC-432",
+"IPC-433",
+"IPC-434",
+"IPC-435",
+"IPC-436",
+"IPC-440"
+]
+},
+{
+"message": "what if I broke it",
+"history": [
+{
+"u": "someone broke my cars window",
+"a": "I'm sorry about the damage. Here is what you can do next, and the provisions that may apply depending on the exact facts."
+},
+{
+"u": "What does BNS 324 mean?",
+"a": "BNS 324 deals with mischief. Here it is in simple language. This explains what the section says. Whether it applies to a particular case depends on the facts, and only a court can decide that."
+},
+{
+"u": "I dont have cctv",
+"a": "You can still approach the police. Witnesses are not the only possible source of evidence, and your own account is evidence: when you report, it is written down, read back to you and signed by you, and you get a free copy (BNSS 173(1)-(2)). Other things that can help: CCTV at the place or nearby shops and stations (ask quickly: footage is often overwritten within days); messages, photos, call logs or anything the person sent you; anyone you told soon afterwards, and any medical record if you were hurt. Do you have anything like that, for example CCTV nearby, messages, or someone you told?"
+}
+],
+"state": {
+"facts": {}
+},
+"material": "SITUATION: Fire, vandalism or damage to property. Deliberately damaging or burning someone's property is mischief, and fire is treated more seriously.\nSTEP 1: If there is a fire or danger, call 101 (fire) or 112 and get everyone to safety.\nSTEP 2: Photograph and video the damage and the area before anything is cleared. Note any CCTV or witnesses.\nSTEP 3: Tell your insurer, if you have a policy, and keep repair estimates and bills.\nSTEP 4: Report it to the police. It is recorded, read back and signed by you, and you get a copy free of cost. [BNSS 173(1)-(2)]\nSTEP 5: If the police refuse, send it in writing by post to the Superintendent of Police, or apply to the Magistrate. [BNSS 173(4)]\nKEEP READY: Photos and video; Repair estimates and bills; Witnesses, CCTV; Insurance details\nSECTION BNS 324 (Mischief; replaces IPC 425, IPC 426, IPC 427, IPC 440): (1) Whoever with intent to cause, or knowing that he is likely to cause, wrongful loss or damage to the public or to any person, causes the destruction of any property, or any such change in any property or in the situation thereof as destroys or diminishes its value or utility, or affects it injuriously, commits mischief. Explanation 1.\u2014It is not essential to the offence of mischief that the offender should intend to cause loss or damage to the owner of the property injured or destroyed. It is sufficient if he intends to cause, or knows that he is likely to cause, wrongful loss or damage to a\nSECTION BNS 326 (Mischief by injury, inundation, fire or explosive substance, etc; replaces IPC 430, IPC 431, IPC 432, IPC 433, IPC 434, IPC 435, IPC 436): Whoever commits mischief by,\u2014 (a) doing any act which causes, or which he knows to be likely to cause, a diminution of the supply of water for agricultural purposes, or for food or drink for human beings or for animals which are property, or for cleanliness or for carrying on any manufacture, shall be punished with imprisonment of either description for a term which may extend to five years, or with fine, or with both; (b) doing any act which renders or which he knows to be likely to render any public road, bridge, navigable river or navigable channel, natural or artificial, impassable or less",
+"allowed": [
+"BNS-324",
+"BNS-326",
+"BNSS-173"
+],
+"old": [
+"IPC-425",
+"IPC-426",
+"IPC-427",
+"IPC-430",
+"IPC-431",
+"IPC-432",
+"IPC-433",
+"IPC-434",
+"IPC-435",
+"IPC-436",
+"IPC-440"
+]
+},
+{
+"message": "for insurance purpose",
+"history": [
+{
+"u": "someone broke my cars window",
+"a": "I'm sorry about the damage. Here is what you can do next, and the provisions that may apply depending on the exact facts."
+},
+{
+"u": "What does BNS 324 mean?",
+"a": "BNS 324 deals with mischief. Here it is in simple language. This explains what the section says. Whether it applies to a particular case depends on the facts, and only a court can decide that."
+},
+{
+"u": "I dont have cctv",
+"a": "You can still approach the police. Witnesses are not the only possible source of evidence, and your own account is evidence: when you report, it is written down, read back to you and signed by you, and you get a free copy (BNSS 173(1)-(2)). Other things that can help: CCTV at the place or nearby shops and stations (ask quickly: footage is often overwritten within days); messages, photos, call logs or anything the person sent you; anyone you told soon afterwards, and any medical record if you were hurt. Do you have anything like that, for example CCTV nearby, messages, or someone you told?"
+},
+{
+"u": "what if I broke it",
+"a": "I'm not able to answer that one reliably from the law. I can explain any of the sections, how to report it, what evidence to keep, or what to do if the police refuse. If anyone is in danger, call 112."
+}
+],
+"state": {
+"facts": {}
+},
+"material": "SITUATION: Fire, vandalism or damage to property. Deliberately damaging or burning someone's property is mischief, and fire is treated more seriously.\nSTEP 1: If there is a fire or danger, call 101 (fire) or 112 and get everyone to safety.\nSTEP 2: Photograph and video the damage and the area before anything is cleared. Note any CCTV or witnesses.\nSTEP 3: Tell your insurer, if you have a policy, and keep repair estimates and bills.\nSTEP 4: Report it to the police. It is recorded, read back and signed by you, and you get a copy free of cost. [BNSS 173(1)-(2)]\nSTEP 5: If the police refuse, send it in writing by post to the Superintendent of Police, or apply to the Magistrate. [BNSS 173(4)]\nKEEP READY: Photos and video; Repair estimates and bills; Witnesses, CCTV; Insurance details\nSECTION BNS 326 (Mischief by injury, inundation, fire or explosive substance, etc; replaces IPC 430, IPC 431, IPC 432, IPC 433, IPC 434, IPC 435, IPC 436): Whoever commits mischief by,\u2014 (a) doing any act which causes, or which he knows to be likely to cause, a diminution of the supply of water for agricultural purposes, or for food or drink for human beings or for animals which are property, or for cleanliness or for carrying on any manufacture, shall be punished with imprisonment of either description for a term which may extend to five years, or with fine, or with both; (b) doing any act which renders or which he knows to be likely to render any public road, bridge, navigable river or navigable channel, natural or artificial, impassable or less\nSECTION BNS 324 (Mischief; replaces IPC 425, IPC 426, IPC 427, IPC 440): (1) Whoever with intent to cause, or knowing that he is likely to cause, wrongful loss or damage to the public or to any person, causes the destruction of any property, or any such change in any property or in the situation thereof as destroys or diminishes its value or utility, or affects it injuriously, commits mischief. Explanation 1.\u2014It is not essential to the offence of mischief that the offender should intend to cause loss or damage to the owner of the property injured or destroyed. It is sufficient if he intends to cause, or knows that he is likely to cause, wrongful loss or damage to a",
+"allowed": [
+"BNS-324",
+"BNS-326",
+"BNSS-173"
+],
+"old": [
+"IPC-425",
+"IPC-426",
+"IPC-427",
+"IPC-430",
+"IPC-431",
+"IPC-432",
+"IPC-433",
+"IPC-434",
+"IPC-435",
+"IPC-436",
+"IPC-440"
+]
+},
+{
+"message": "shall I take my valuables out?",
+"history": [
+{
+"u": "What does BNS 324 mean?",
+"a": "BNS 324 deals with mischief. Here it is in simple language. This explains what the section says. Whether it applies to a particular case depends on the facts, and only a court can decide that."
+},
+{
+"u": "I dont have cctv",
+"a": "You can still approach the police. Witnesses are not the only possible source of evidence, and your own account is evidence: when you report, it is written down, read back to you and signed by you, and you get a free copy (BNSS 173(1)-(2)). Other things that can help: CCTV at the place or nearby shops and stations (ask quickly: footage is often overwritten within days); messages, photos, call logs or anything the person sent you; anyone you told soon afterwards, and any medical record if you were hurt. Do you have anything like that, for example CCTV nearby, messages, or someone you told?"
+},
+{
+"u": "what if I broke it",
+"a": "I'm not able to answer that one reliably from the law. I can explain any of the sections, how to report it, what evidence to keep, or what to do if the police refuse. If anyone is in danger, call 112."
+},
+{
+"u": "for insurance purpose",
+"a": "Thanks, I've noted that. What would you like to know next?"
+}
+],
+"state": {
+"facts": {}
+},
+"material": "SITUATION: Fire, vandalism or damage to property. Deliberately damaging or burning someone's property is mischief, and fire is treated more seriously.\nSTEP 1: If there is a fire or danger, call 101 (fire) or 112 and get everyone to safety.\nSTEP 2: Photograph and video the damage and the area before anything is cleared. Note any CCTV or witnesses.\nSTEP 3: Tell your insurer, if you have a policy, and keep repair estimates and bills.\nSTEP 4: Report it to the police. It is recorded, read back and signed by you, and you get a copy free of cost. [BNSS 173(1)-(2)]\nSTEP 5: If the police refuse, send it in writing by post to the Superintendent of Police, or apply to the Magistrate. [BNSS 173(4)]\nKEEP READY: Photos and video; Repair estimates and bills; Witnesses, CCTV; Insurance details\nSECTION BNS 326 (Mischief by injury, inundation, fire or explosive substance, etc; replaces IPC 430, IPC 431, IPC 432, IPC 433, IPC 434, IPC 435, IPC 436): Whoever commits mischief by,\u2014 (a) doing any act which causes, or which he knows to be likely to cause, a diminution of the supply of water for agricultural purposes, or for food or drink for human beings or for animals which are property, or for cleanliness or for carrying on any manufacture, shall be punished with imprisonment of either description for a term which may extend to five years, or with fine, or with both; (b) doing any act which renders or which he knows to be likely to render any public road, bridge, navigable river or navigable channel, natural or artificial, impassable or less\nSECTION BNS 324 (Mischief; replaces IPC 425, IPC 426, IPC 427, IPC 440): (1) Whoever with intent to cause, or knowing that he is likely to cause, wrongful loss or damage to the public or to any person, causes the destruction of any property, or any such change in any property or in the situation thereof as destroys or diminishes its value or utility, or affects it injuriously, commits mischief. Explanation 1.\u2014It is not essential to the offence of mischief that the offender should intend to cause loss or damage to the owner of the property injured or destroyed. It is sufficient if he intends to cause, or knows that he is likely to cause, wrongful loss or damage to a",
+"allowed": [
+"BNS-324",
+"BNS-326",
+"BNSS-173"
+],
+"old": [
+"IPC-425",
+"IPC-426",
+"IPC-427",
+"IPC-430",
+"IPC-431",
+"IPC-432",
+"IPC-433",
+"IPC-434",
+"IPC-435",
+"IPC-436",
+"IPC-440"
+]
+},
+{
+"message": "yes I'm safe now, it happened yesterday",
+"history": [
+{
+"u": "someone touched me inappropriately on a public bus",
+"a": "I'm sorry that happened. No one should have to deal with that. Are you safe right now? I can help you understand your options. What you describe may fall under provisions of the BNS on sexual harassment and outraging a woman's modesty, depending on the circumstances."
+}
+],
+"state": {
+"facts": {
+"when": "yesterday",
+"safe": true
+}
+},
+"material": "SITUATION: Stalking or sexual harassment of a woman. These offences are specifically covered, and the law has special rules to make reporting easier for women.\nSTEP 1: If you are in danger now, call 112. The Women Helpline numbers 181 and 1091 are also available in many states.\nSTEP 2: Keep evidence: screenshots, call logs, photos, the person's number, profile and any CCTV locations. Do not delete anything.\nSTEP 3: When a woman reports offences such as sexual harassment, stalking or outraging her modesty, the information must be recorded by a woman police officer. [BNSS 173(1), first proviso]\nSTEP 4: You can report at any police station, orally or electronically. It is read back to you, you sign it, and you get a copy free of cost. [BNSS 173(1)-(2)]\nSTEP 5: If the police refuse, send it in writing by post to the Superintendent of Police, or apply to the Magistrate. [BNSS 173(4)]\nSTEP 6: If you fear for your safety as a witness, ask about the witness protection scheme. [BNSS 398]\nKEEP READY: Messages, call logs, screenshots; Dates and places of each incident; Witnesses or CCTV; A trusted person who can accompany you to the police station\nSECTION BNS 75 (Sexual harassment; replaces IPC 354A): (1) A man committing any of the following acts:\u2014 (i) physical contact and advances involving unwelcome and explicit sexual overtures; or (ii) a demand or request for sexual favours; or (iii) showing pornography against the will of a woman; or (iv) making sexually coloured remarks, shall be guilty of the offence of sexual harassment. (2) Any man who commits the offence specified in clause (i) or clause (ii) or clause (iii) of sub-section (1) shall be punished with rigorous imprisonment for a term which may extend to three years, or with fine, or with both. (3) Any man who commits the offence sp\nSECTION BNS 74 (Assault or use of criminal force to woman with intent to outrage her modesty; replaces IPC 354): Whoever assaults or uses criminal force to any woman, intending to outrage or knowing it to be likely that he will thereby outrage her modesty, shall be punished with imprisonment of either description for a term which shall not be less than one year but which may extend to five years, and shall also be liable to fine.",
+"allowed": [
+"BNS-74",
+"BNS-75",
+"BNSS-173",
+"BNSS-398"
+],
+"old": [
+"IPC-354",
+"IPC-354A"
+]
+},
+{
+"message": "should I tell my parents first?",
+"history": [
+{
+"u": "someone touched me inappropriately on a public bus",
+"a": "I'm sorry that happened. No one should have to deal with that. Are you safe right now? I can help you understand your options. What you describe may fall under provisions of the BNS on sexual harassment and outraging a woman's modesty, depending on the circumstances."
+},
+{
+"u": "yes I'm safe now, it happened yesterday",
+"a": "Understood, I'm glad you're safe. Since it happened yesterday, you can still report it; it is best to do it soon, while things like CCTV footage are still available. It may also help to note down: messages, call logs, screenshots; dates and places of each incident; witnesses or CCTV; a trusted person who can accompany you to the police station. Let's look at the steps and the provisions of the BNS that may apply. Whether they apply depends on the exact facts."
+}
+],
+"state": {
+"facts": {
+"when": "yesterday",
+"safe": true
+}
+},
+"material": "SITUATION: Stalking or sexual harassment of a woman. These offences are specifically covered, and the law has special rules to make reporting easier for women.\nSTEP 1: If you are in danger now, call 112. The Women Helpline numbers 181 and 1091 are also available in many states.\nSTEP 2: Keep evidence: screenshots, call logs, photos, the person's number, profile and any CCTV locations. Do not delete anything.\nSTEP 3: When a woman reports offences such as sexual harassment, stalking or outraging her modesty, the information must be recorded by a woman police officer. [BNSS 173(1), first proviso]\nSTEP 4: You can report at any police station, orally or electronically. It is read back to you, you sign it, and you get a copy free of cost. [BNSS 173(1)-(2)]\nSTEP 5: If the police refuse, send it in writing by post to the Superintendent of Police, or apply to the Magistrate. [BNSS 173(4)]\nSTEP 6: If you fear for your safety as a witness, ask about the witness protection scheme. [BNSS 398]\nKEEP READY: Messages, call logs, screenshots; Dates and places of each incident; Witnesses or CCTV; A trusted person who can accompany you to the police station\nSECTION BNS 75 (Sexual harassment; replaces IPC 354A): (1) A man committing any of the following acts:\u2014 (i) physical contact and advances involving unwelcome and explicit sexual overtures; or (ii) a demand or request for sexual favours; or (iii) showing pornography against the will of a woman; or (iv) making sexually coloured remarks, shall be guilty of the offence of sexual harassment. (2) Any man who commits the offence specified in clause (i) or clause (ii) or clause (iii) of sub-section (1) shall be punished with rigorous imprisonment for a term which may extend to three years, or with fine, or with both. (3) Any man who commits the offence sp\nSECTION BNS 74 (Assault or use of criminal force to woman with intent to outrage her modesty; replaces IPC 354): Whoever assaults or uses criminal force to any woman, intending to outrage or knowing it to be likely that he will thereby outrage her modesty, shall be punished with imprisonment of either description for a term which shall not be less than one year but which may extend to five years, and shall also be liable to fine.\nFACTS FROM THE USER: when: yesterday; safe: True",
+"allowed": [
+"BNS-74",
+"BNS-75",
+"BNSS-173",
+"BNSS-398"
+],
+"old": [
+"IPC-354",
+"IPC-354A"
+]
+},
+{
+"message": "the conductor saw it, does that help?",
+"history": [
+{
+"u": "someone touched me inappropriately on a public bus",
+"a": "I'm sorry that happened. No one should have to deal with that. Are you safe right now? I can help you understand your options. What you describe may fall under provisions of the BNS on sexual harassment and outraging a woman's modesty, depending on the circumstances."
+},
+{
+"u": "yes I'm safe now, it happened yesterday",
+"a": "Understood, I'm glad you're safe. Since it happened yesterday, you can still report it; it is best to do it soon, while things like CCTV footage are still available. It may also help to note down: messages, call logs, screenshots; dates and places of each incident; witnesses or CCTV; a trusted person who can accompany you to the police station. Let's look at the steps and the provisions of the BNS that may apply. Whether they apply depends on the exact facts."
+},
+{
+"u": "should I tell my parents first?",
+"a": "I'm not able to answer that one reliably from the law. I can explain any of the sections, how to report it, what evidence to keep, or what to do if the police refuse. If anyone is in danger, call 112."
+}
+],
+"state": {
+"facts": {
+"when": "yesterday",
+"safe": true
+}
+},
+"material": "SITUATION: Stalking or sexual harassment of a woman. These offences are specifically covered, and the law has special rules to make reporting easier for women.\nSTEP 1: If you are in danger now, call 112. The Women Helpline numbers 181 and 1091 are also available in many states.\nSTEP 2: Keep evidence: screenshots, call logs, photos, the person's number, profile and any CCTV locations. Do not delete anything.\nSTEP 3: When a woman reports offences such as sexual harassment, stalking or outraging her modesty, the information must be recorded by a woman police officer. [BNSS 173(1), first proviso]\nSTEP 4: You can report at any police station, orally or electronically. It is read back to you, you sign it, and you get a copy free of cost. [BNSS 173(1)-(2)]\nSTEP 5: If the police refuse, send it in writing by post to the Superintendent of Police, or apply to the Magistrate. [BNSS 173(4)]\nSTEP 6: If you fear for your safety as a witness, ask about the witness protection scheme. [BNSS 398]\nKEEP READY: Messages, call logs, screenshots; Dates and places of each incident; Witnesses or CCTV; A trusted person who can accompany you to the police station\nSECTION BNS 75 (Sexual harassment; replaces IPC 354A): (1) A man committing any of the following acts:\u2014 (i) physical contact and advances involving unwelcome and explicit sexual overtures; or (ii) a demand or request for sexual favours; or (iii) showing pornography against the will of a woman; or (iv) making sexually coloured remarks, shall be guilty of the offence of sexual harassment. (2) Any man who commits the offence specified in clause (i) or clause (ii) or clause (iii) of sub-section (1) shall be punished with rigorous imprisonment for a term which may extend to three years, or with fine, or with both. (3) Any man who commits the offence sp\nSECTION BNS 74 (Assault or use of criminal force to woman with intent to outrage her modesty; replaces IPC 354): Whoever assaults or uses criminal force to any woman, intending to outrage or knowing it to be likely that he will thereby outrage her modesty, shall be punished with imprisonment of either description for a term which shall not be less than one year but which may extend to five years, and shall also be liable to fine.\nFACTS FROM THE USER: when: yesterday; safe: True",
+"allowed": [
+"BNS-74",
+"BNS-75",
+"BNSS-173",
+"BNSS-398"
+],
+"old": [
+"IPC-354",
+"IPC-354A"
+]
+},
+{
+"message": "will I get my phone back?",
+"history": [
+{
+"u": "someone stole my phone at the bus stop yesterday",
+"a": "I'm sorry, that's a horrible thing to deal with. Here is what you can do next, and the provisions that may apply depending on the exact facts."
+}
+],
+"state": {
+"facts": {
+"when": "yesterday"
+}
+},
+"material": "SITUATION: Theft, snatching or robbery. The law treats theft, snatching and robbery differently depending on force and where it happened.\nSTEP 1: If anyone is in danger or injured, call 112.\nSTEP 2: Write down what was taken, when and where, and anything you remember about the person. Do not confront them.\nSTEP 3: If a phone, cards or UPI access were taken, call your bank to block cards and UPI and ask your mobile operator to block the SIM. Note the phone's IMEI number from its box or bill.\nSTEP 4: Report it at a police station. You can give the information at any police station, irrespective of where the offence happened, orally or electronically. [BNSS 173(1)]\nSTEP 5: Ask for the copy of your information. It must be given to you free of cost. [BNSS 173(2)]\nSTEP 6: If the police refuse to record it, send the substance in writing by post to the Superintendent of Police, or apply to the Magistrate. [BNSS 173(4)]\nKEEP READY: Bill, IMEI or serial number of the item; Photos, CCTV locations, witness contacts; Bank and SIM block confirmations; FIR copy\nSECTION BNS 303 (Theft; replaces IPC 378, IPC 379): (1) Whoever, intending to take dishonestly any movable property out of the possession of any person without that person\u2019s consent, moves that property in order to such taking, is said to commit theft. Explanation 1.\u2014A thing so long as it is attached to the earth, not being movable property, is not the subject of theft; but it becomes capable of being the subject of theft as soon as it is severed from the earth. Explanation 2.\u2014A moving effected by the same act which affects the severance may be a theft. Explanation 3.\u2014A person is said to cause a thing to move by removing an obstacle which preve\nSECTION BNS 305 (Theft in a dwelling house, or means of transportation or place of worship, etc; replaces IPC 380): Whoever commits theft\u2014 (a) in any building, tent or vessel used as a human dwelling or used for the custody of property; or (b) of any means of transport used for the transport of goods or passengers; or (c) of any article or goods from any means of transport used for the transport of goods or passengers; or (d) of idol or icon in any place of worship; or (e) of any property of the Government or of a local authority, shall be punished with imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine.\nFACTS FROM THE USER: when: yesterday",
+"allowed": [
+"BNS-303",
+"BNS-305",
+"BNSS-173"
+],
+"old": [
+"IPC-378",
+"IPC-379",
+"IPC-380"
+]
+},
+{
+"message": "can they track it with the IMEI?",
+"history": [
+{
+"u": "someone stole my phone at the bus stop yesterday",
+"a": "I'm sorry, that's a horrible thing to deal with. Here is what you can do next, and the provisions that may apply depending on the exact facts."
+},
+{
+"u": "will I get my phone back?",
+"a": "That sounds like a separate matter, so let's look at it on its own. Here is what you can do next, and the provisions that may apply depending on the exact facts."
+}
+],
+"state": {
+"facts": {}
+},
+"material": "SITUATION: Police seized your property. Police can seize property connected with an offence, but they must report it and you can apply to get it back.\nSTEP 1: Ask for the seizure memo (a list of what was taken) and the case or FIR number. Do not sign a list that is wrong.\nSTEP 2: The officer must report the seizure to the Magistrate. Property can be given to a person on a bond to produce it when required. [BNSS 106(3)]\nSTEP 3: Apply to the Magistrate for release, with proof that you own it. [BNSS 503]\nSTEP 4: If the property is already before a court, apply to that court for interim custody. [BNSS 497]\nSTEP 5: A lawyer can file the release application. Free legal aid: NALSA helpline 15100.\nKEEP READY: Seizure memo; Ownership proof: bill, RC, invoice; FIR or case number; ID proof\nSECTION BNSS 106 (Power of police officer to seize certain property; replaces CrPC 102): (1) Any police officer may seize any property which may be alleged or suspected to have been stolen, or which may be found under circumstances which create suspicion of the commission of any offence. (2) Such police officer, if subordinate to the officer in charge of a police station, shall forthwith report the seizure to that officer. (3) Every police officer acting under sub-section (1) shall forthwith report the seizure to the Magistrate having jurisdiction and where the property seized is such that it cannot be conveniently transported to the Court, or where there is difficulty in securing\nSECTION BNSS 503 (Procedure by police upon seizure of property; replaces CrPC 457): (1) Whenever the seizure of property by any police officer is reported to a Magistrate under the provisions of this Sanhita, and such property is not produced before a Criminal Court during an inquiry or trial, the Magistrate may make such order as he thinks fit respecting the disposal of such property or the delivery of such property to the person entitled to the possession thereof, or if such person cannot be ascertained, respecting the custody and production of such property. (2) If the person so entitled is known, the Magistrate may order the property to be delivered to him on such conditi\nSECTION BNSS 497 (Order for custody and disposal of property pending trial in certain cases; replaces CrPC 451): (1) When any property is produced before any Criminal Court or the Magistrate empowered to take cognizance or commit the case for trial during any investigation, inquiry or trial, the Court or the Magistrate may make such order as it thinks fit for the proper custody of such property pending the conclusion of the investigation, inquiry or trial, and, if the property is subject to speedy and natural decay, or if it is otherwise expedient so to do, the Court or the Magistrate may, after recording such evidence as it thinks necessary, order it to be sold or otherwise disposed of. Explanation.\u2014For",
+"allowed": [
+"BNSS-106",
+"BNSS-497",
+"BNSS-503"
+],
+"old": [
+"CRPC-102",
+"CRPC-451",
+"CRPC-457"
+]
+},
+{
+"message": "is it worth reporting for a cheap phone?",
+"history": [
+{
+"u": "someone stole my phone at the bus stop yesterday",
+"a": "I'm sorry, that's a horrible thing to deal with. Here is what you can do next, and the provisions that may apply depending on the exact facts."
+},
+{
+"u": "will I get my phone back?",
+"a": "That sounds like a separate matter, so let's look at it on its own. Here is what you can do next, and the provisions that may apply depending on the exact facts."
+},
+{
+"u": "can they track it with the IMEI?",
+"a": "I'm not able to answer that one reliably from the law. I can explain any of the sections, how to report it, what evidence to keep, or what to do if the police refuse. If anyone is in danger, call 112."
+}
+],
+"state": {
+"facts": {}
+},
+"material": "SITUATION: Police seized your property. Police can seize property connected with an offence, but they must report it and you can apply to get it back.\nSTEP 1: Ask for the seizure memo (a list of what was taken) and the case or FIR number. Do not sign a list that is wrong.\nSTEP 2: The officer must report the seizure to the Magistrate. Property can be given to a person on a bond to produce it when required. [BNSS 106(3)]\nSTEP 3: Apply to the Magistrate for release, with proof that you own it. [BNSS 503]\nSTEP 4: If the property is already before a court, apply to that court for interim custody. [BNSS 497]\nSTEP 5: A lawyer can file the release application. Free legal aid: NALSA helpline 15100.\nKEEP READY: Seizure memo; Ownership proof: bill, RC, invoice; FIR or case number; ID proof\nSECTION BNSS 106 (Power of police officer to seize certain property; replaces CrPC 102): (1) Any police officer may seize any property which may be alleged or suspected to have been stolen, or which may be found under circumstances which create suspicion of the commission of any offence. (2) Such police officer, if subordinate to the officer in charge of a police station, shall forthwith report the seizure to that officer. (3) Every police officer acting under sub-section (1) shall forthwith report the seizure to the Magistrate having jurisdiction and where the property seized is such that it cannot be conveniently transported to the Court, or where there is difficulty in securing\nSECTION BNSS 503 (Procedure by police upon seizure of property; replaces CrPC 457): (1) Whenever the seizure of property by any police officer is reported to a Magistrate under the provisions of this Sanhita, and such property is not produced before a Criminal Court during an inquiry or trial, the Magistrate may make such order as he thinks fit respecting the disposal of such property or the delivery of such property to the person entitled to the possession thereof, or if such person cannot be ascertained, respecting the custody and production of such property. (2) If the person so entitled is known, the Magistrate may order the property to be delivered to him on such conditi\nSECTION BNSS 497 (Order for custody and disposal of property pending trial in certain cases; replaces CrPC 451): (1) When any property is produced before any Criminal Court or the Magistrate empowered to take cognizance or commit the case for trial during any investigation, inquiry or trial, the Court or the Magistrate may make such order as it thinks fit for the proper custody of such property pending the conclusion of the investigation, inquiry or trial, and, if the property is subject to speedy and natural decay, or if it is otherwise expedient so to do, the Court or the Magistrate may, after recording such evidence as it thinks necessary, order it to be sold or otherwise disposed of. Explanation.\u2014For",
+"allowed": [
+"BNSS-106",
+"BNSS-497",
+"BNSS-503"
+],
+"old": [
+"CRPC-102",
+"CRPC-451",
+"CRPC-457"
+]
+},
+{
+"message": "yes I'm at my mother's place",
+"history": [
+{
+"u": "my husband hits me when he is drunk",
+"a": "I'm sorry you're going through this. You deserve to be safe at home. Are you safe right now? I can help you understand your options. What you describe may fall under provisions of the BNS on cruelty by a husband or his relatives, and hurt, depending on the circumstances."
+}
+],
+"state": {
+"facts": {
+"safe": true
+}
+},
+"material": "SITUATION: Cruelty by husband or in-laws, or dowry harassment. Cruelty by a husband or his relatives, including dowry harassment, is a criminal offence. Your safety comes first.\nSTEP 1: If you are in danger, call 112 or the Women Helpline 181 and go to a safe place such as a relative's home or a shelter.\nSTEP 2: Keep medical records, photos of injuries, messages, call records and a list of dowry demands and payments.\nSTEP 3: Report it at any police station. It is written down, read back and signed by you, and you get a copy free of cost. [BNSS 173(1)-(2)]\nSTEP 4: If the police do not record it, send it in writing by post to the Superintendent of Police, or apply to the Magistrate. [BNSS 173(4)]\nSTEP 5: If you and your children are not being supported, a Magistrate can order monthly maintenance. [BNSS 144]\nSTEP 6: Free legal aid is available from your District Legal Services Authority (NALSA helpline 15100).\nKEEP READY: Medical and police records; Messages and recordings; Marriage proof and list of gifts or payments; Contacts of family or neighbours who saw it\nOTHER LAWS: Protection orders and the right to stay in the shared home come under the Protection of Women from Domestic Violence Act, 2005, which is not part of this tool.\nSECTION BNS 85 (Husband or relative of husband of a woman subjecting her to cruelty; replaces IPC 498A): Whoever, being the husband or the relative of the husband of a woman, subjects such woman to cruelty shall be punished with imprisonment for a term which may extend to three years and shall also be liable to fine.\nSECTION BNS 86 (Cruelty defined; replaces IPC 498A): For the purposes of section 85, \u201ccruelty\u201d means\u2014 (a) any wilful conduct which is of such a nature as is likely to drive the woman to commit suicide or to cause grave injury or danger to life, limb or health (whether mental or physical) of the woman; or (b) harassment of the woman where such harassment is with a view to coercing her or any person related to her to meet any unlawful demand for any property or valuable security or is on account of failure by her or any person related to her to meet such demand.\nSECTION BNS 115 (Voluntarily causing hurt; replaces IPC 321, IPC 323): (1) Whoever does any act with the intention of thereby causing hurt to any person, or with the knowledge that he is likely thereby to cause hurt to any person, and does thereby cause hurt to any person, is said \u201cvoluntarily to cause hurt\u201d. (2) Whoever, except in the case provided for by sub-section (1) of section 122 voluntarily causes hurt, shall be punished with imprisonment of either description for a term which may extend to one year, or with fine which may extend to ten thousand rupees, or with both.",
+"allowed": [
+"BNS-115",
+"BNS-85",
+"BNS-86",
+"BNSS-144",
+"BNSS-173"
+],
+"old": [
+"IPC-321",
+"IPC-323",
+"IPC-498A"
+]
+},
+{
+"message": "can I take my children with me?",
+"history": [
+{
+"u": "my husband hits me when he is drunk",
+"a": "I'm sorry you're going through this. You deserve to be safe at home. Are you safe right now? I can help you understand your options. What you describe may fall under provisions of the BNS on cruelty by a husband or his relatives, and hurt, depending on the circumstances."
+},
+{
+"u": "yes I'm at my mother's place",
+"a": "Understood, I'm glad you're safe. You can still report it; it is best to do it soon, while things like CCTV footage are still available. It may also help to note down: medical and police records; messages and recordings; marriage proof and list of gifts or payments; contacts of family or neighbours who saw it. Let's look at the steps and the provisions of the BNS that may apply. Whether they apply depends on the exact facts."
+}
+],
+"state": {
+"facts": {
+"safe": true
+}
+},
+"material": "SITUATION: Cruelty by husband or in-laws, or dowry harassment. Cruelty by a husband or his relatives, including dowry harassment, is a criminal offence. Your safety comes first.\nSTEP 1: If you are in danger, call 112 or the Women Helpline 181 and go to a safe place such as a relative's home or a shelter.\nSTEP 2: Keep medical records, photos of injuries, messages, call records and a list of dowry demands and payments.\nSTEP 3: Report it at any police station. It is written down, read back and signed by you, and you get a copy free of cost. [BNSS 173(1)-(2)]\nSTEP 4: If the police do not record it, send it in writing by post to the Superintendent of Police, or apply to the Magistrate. [BNSS 173(4)]\nSTEP 5: If you and your children are not being supported, a Magistrate can order monthly maintenance. [BNSS 144]\nSTEP 6: Free legal aid is available from your District Legal Services Authority (NALSA helpline 15100).\nKEEP READY: Medical and police records; Messages and recordings; Marriage proof and list of gifts or payments; Contacts of family or neighbours who saw it\nOTHER LAWS: Protection orders and the right to stay in the shared home come under the Protection of Women from Domestic Violence Act, 2005, which is not part of this tool.\nSECTION BNS 85 (Husband or relative of husband of a woman subjecting her to cruelty; replaces IPC 498A): Whoever, being the husband or the relative of the husband of a woman, subjects such woman to cruelty shall be punished with imprisonment for a term which may extend to three years and shall also be liable to fine.\nSECTION BNS 86 (Cruelty defined; replaces IPC 498A): For the purposes of section 85, \u201ccruelty\u201d means\u2014 (a) any wilful conduct which is of such a nature as is likely to drive the woman to commit suicide or to cause grave injury or danger to life, limb or health (whether mental or physical) of the woman; or (b) harassment of the woman where such harassment is with a view to coercing her or any person related to her to meet any unlawful demand for any property or valuable security or is on account of failure by her or any person related to her to meet such demand.\nSECTION BNS 115 (Voluntarily causing hurt; replaces IPC 321, IPC 323): (1) Whoever does any act with the intention of thereby causing hurt to any person, or with the knowledge that he is likely thereby to cause hurt to any person, and does thereby cause hurt to any person, is said \u201cvoluntarily to cause hurt\u201d. (2) Whoever, except in the case provided for by sub-section (1) of section 122 voluntarily causes hurt, shall be punished with imprisonment of either description for a term which may extend to one year, or with fine which may extend to ten thousand rupees, or with both.\nFACTS FROM THE USER: safe: True",
+"allowed": [
+"BNS-115",
+"BNS-85",
+"BNS-86",
+"BNSS-144",
+"BNSS-173"
+],
+"old": [
+"IPC-321",
+"IPC-323",
+"IPC-498A"
+]
+},
+{
+"message": "what if he says sorry and promises to stop?",
+"history": [
+{
+"u": "my husband hits me when he is drunk",
+"a": "I'm sorry you're going through this. You deserve to be safe at home. Are you safe right now? I can help you understand your options. What you describe may fall under provisions of the BNS on cruelty by a husband or his relatives, and hurt, depending on the circumstances."
+},
+{
+"u": "yes I'm at my mother's place",
+"a": "Understood, I'm glad you're safe. You can still report it; it is best to do it soon, while things like CCTV footage are still available. It may also help to note down: medical and police records; messages and recordings; marriage proof and list of gifts or payments; contacts of family or neighbours who saw it. Let's look at the steps and the provisions of the BNS that may apply. Whether they apply depends on the exact facts."
+},
+{
+"u": "can I take my children with me?",
+"a": "I'm not able to answer that one reliably from the law. I can explain any of the sections, how to report it, what evidence to keep, or what to do if the police refuse. If anyone is in danger, call 112."
+}
+],
+"state": {
+"facts": {
+"safe": true
+}
+},
+"material": "SITUATION: Cruelty by husband or in-laws, or dowry harassment. Cruelty by a husband or his relatives, including dowry harassment, is a criminal offence. Your safety comes first.\nSTEP 1: If you are in danger, call 112 or the Women Helpline 181 and go to a safe place such as a relative's home or a shelter.\nSTEP 2: Keep medical records, photos of injuries, messages, call records and a list of dowry demands and payments.\nSTEP 3: Report it at any police station. It is written down, read back and signed by you, and you get a copy free of cost. [BNSS 173(1)-(2)]\nSTEP 4: If the police do not record it, send it in writing by post to the Superintendent of Police, or apply to the Magistrate. [BNSS 173(4)]\nSTEP 5: If you and your children are not being supported, a Magistrate can order monthly maintenance. [BNSS 144]\nSTEP 6: Free legal aid is available from your District Legal Services Authority (NALSA helpline 15100).\nKEEP READY: Medical and police records; Messages and recordings; Marriage proof and list of gifts or payments; Contacts of family or neighbours who saw it\nOTHER LAWS: Protection orders and the right to stay in the shared home come under the Protection of Women from Domestic Violence Act, 2005, which is not part of this tool.\nSECTION BNS 85 (Husband or relative of husband of a woman subjecting her to cruelty; replaces IPC 498A): Whoever, being the husband or the relative of the husband of a woman, subjects such woman to cruelty shall be punished with imprisonment for a term which may extend to three years and shall also be liable to fine.\nSECTION BNS 86 (Cruelty defined; replaces IPC 498A): For the purposes of section 85, \u201ccruelty\u201d means\u2014 (a) any wilful conduct which is of such a nature as is likely to drive the woman to commit suicide or to cause grave injury or danger to life, limb or health (whether mental or physical) of the woman; or (b) harassment of the woman where such harassment is with a view to coercing her or any person related to her to meet any unlawful demand for any property or valuable security or is on account of failure by her or any person related to her to meet such demand.\nSECTION BNS 115 (Voluntarily causing hurt; replaces IPC 321, IPC 323): (1) Whoever does any act with the intention of thereby causing hurt to any person, or with the knowledge that he is likely thereby to cause hurt to any person, and does thereby cause hurt to any person, is said \u201cvoluntarily to cause hurt\u201d. (2) Whoever, except in the case provided for by sub-section (1) of section 122 voluntarily causes hurt, shall be punished with imprisonment of either description for a term which may extend to one year, or with fine which may extend to ten thousand rupees, or with both.\nFACTS FROM THE USER: safe: True",
+"allowed": [
+"BNS-115",
+"BNS-85",
+"BNS-86",
+"BNSS-144",
+"BNSS-173"
+],
+"old": [
+"IPC-321",
+"IPC-323",
+"IPC-498A"
+]
+},
+{
+"message": "is it too late after 3 days?",
+"history": [
+{
+"u": "I lost 45000 in a UPI scam",
+"a": "I'm sorry, losing money like that is really stressful. Here is what you can do next, and the provisions that may apply depending on the exact facts."
+}
+],
+"state": {
+"facts": {}
+},
+"material": "SITUATION: Cheating or online fraud. Cheating and fraud can be reported to the police, and for online money fraud speed matters because banks can sometimes freeze the money.\nSTEP 1: If money left your account, call your bank at once and ask to freeze or reverse the transaction. For online financial fraud also call the national cyber-crime helpline 1930 or report at cybercrime.gov.in as soon as possible.\nSTEP 2: If someone calls claiming a relative is in custody, or that you are under 'digital arrest', and asks for money: do not pay. Police never ask for money on a call. Hang up and call the police station or 112 yourself to check.\nSTEP 3: Do not delete anything. Take screenshots of chats, profiles, payment receipts, transaction IDs, phone numbers and UPI IDs.\nSTEP 4: Report it to the police. Information can be given by electronic communication. If you do, it is taken on record once you sign it within three days. [BNSS 173(1)]\nSTEP 5: Ask for a copy of what was recorded. It must be given to you free of cost. [BNSS 173(2)]\nSTEP 6: If the police refuse, send it in writing by post to the Superintendent of Police, or apply to the Magistrate. [BNSS 173(4)]\nKEEP READY: Screenshots and chat exports; Transaction IDs, bank statements; Seller or account details, phone numbers, UPI IDs; Bills and advertisements\nOTHER LAWS: Hacking and other online-specific offences are in the IT Act, which is not part of this tool. A pure money dispute with no deception from the start (a loan not repaid, say) may be a civil matter.\nSECTION BNS 318 (Cheating; replaces IPC 415, IPC 417, IPC 418, IPC 420): (1) Whoever, by deceiving any person, fraudulently or dishonestly induces the person so deceived to deliver any property to any person, or to consent that any person shall retain any property, or intentionally induces the person so deceived to do or omit to do anything which he would not do or omit if he were not so deceived, and which act or omission causes or is likely to cause damage or harm to that person in body, mind, reputation or property, is said to cheat. Explanation.\u2014A dishonest concealment of facts is a deception within the meaning of this section. Illustrations. (a) A, by falsely ",
+"allowed": [
+"BNS-318",
+"BNSS-173"
+],
+"old": [
+"IPC-415",
+"IPC-417",
+"IPC-418",
+"IPC-420"
+]
+},
+{
+"message": "the bank is not helping me",
+"history": [
+{
+"u": "I lost 45000 in a UPI scam",
+"a": "I'm sorry, losing money like that is really stressful. Here is what you can do next, and the provisions that may apply depending on the exact facts."
+},
+{
+"u": "is it too late after 3 days?",
+"a": "It is best to report as soon as you reasonably can, because evidence like CCTV may disappear, but a delay does not stop you from reporting. Explain the reason for the delay when you report. For less serious offences there is a time limit for a court to take up the case: six months if the punishment is only a fine, one year if it is up to one year in prison, three years if it is up to three years (BNSS 514, which has some exceptions). There is no such limit for more serious offences."
+}
+],
+"state": {
+"facts": {}
+},
+"material": "SITUATION: Cheating or online fraud. Cheating and fraud can be reported to the police, and for online money fraud speed matters because banks can sometimes freeze the money.\nSTEP 1: If money left your account, call your bank at once and ask to freeze or reverse the transaction. For online financial fraud also call the national cyber-crime helpline 1930 or report at cybercrime.gov.in as soon as possible.\nSTEP 2: If someone calls claiming a relative is in custody, or that you are under 'digital arrest', and asks for money: do not pay. Police never ask for money on a call. Hang up and call the police station or 112 yourself to check.\nSTEP 3: Do not delete anything. Take screenshots of chats, profiles, payment receipts, transaction IDs, phone numbers and UPI IDs.\nSTEP 4: Report it to the police. Information can be given by electronic communication. If you do, it is taken on record once you sign it within three days. [BNSS 173(1)]\nSTEP 5: Ask for a copy of what was recorded. It must be given to you free of cost. [BNSS 173(2)]\nSTEP 6: If the police refuse, send it in writing by post to the Superintendent of Police, or apply to the Magistrate. [BNSS 173(4)]\nKEEP READY: Screenshots and chat exports; Transaction IDs, bank statements; Seller or account details, phone numbers, UPI IDs; Bills and advertisements\nOTHER LAWS: Hacking and other online-specific offences are in the IT Act, which is not part of this tool. A pure money dispute with no deception from the start (a loan not repaid, say) may be a civil matter.\nSECTION BNS 318 (Cheating; replaces IPC 415, IPC 417, IPC 418, IPC 420): (1) Whoever, by deceiving any person, fraudulently or dishonestly induces the person so deceived to deliver any property to any person, or to consent that any person shall retain any property, or intentionally induces the person so deceived to do or omit to do anything which he would not do or omit if he were not so deceived, and which act or omission causes or is likely to cause damage or harm to that person in body, mind, reputation or property, is said to cheat. Explanation.\u2014A dishonest concealment of facts is a deception within the meaning of this section. Illustrations. (a) A, by falsely ",
+"allowed": [
+"BNS-318",
+"BNSS-173"
+],
+"old": [
+"IPC-415",
+"IPC-417",
+"IPC-418",
+"IPC-420"
+]
+},
+{
+"message": "can I sue the bank?",
+"history": [
+{
+"u": "I lost 45000 in a UPI scam",
+"a": "I'm sorry, losing money like that is really stressful. Here is what you can do next, and the provisions that may apply depending on the exact facts."
+},
+{
+"u": "is it too late after 3 days?",
+"a": "It is best to report as soon as you reasonably can, because evidence like CCTV may disappear, but a delay does not stop you from reporting. Explain the reason for the delay when you report. For less serious offences there is a time limit for a court to take up the case: six months if the punishment is only a fine, one year if it is up to one year in prison, three years if it is up to three years (BNSS 514, which has some exceptions). There is no such limit for more serious offences."
+},
+{
+"u": "the bank is not helping me",
+"a": "Thanks, I've noted that. What would you like to know next?"
+}
+],
+"state": {
+"facts": {}
+},
+"material": "SITUATION: Cheating or online fraud. Cheating and fraud can be reported to the police, and for online money fraud speed matters because banks can sometimes freeze the money.\nSTEP 1: If money left your account, call your bank at once and ask to freeze or reverse the transaction. For online financial fraud also call the national cyber-crime helpline 1930 or report at cybercrime.gov.in as soon as possible.\nSTEP 2: If someone calls claiming a relative is in custody, or that you are under 'digital arrest', and asks for money: do not pay. Police never ask for money on a call. Hang up and call the police station or 112 yourself to check.\nSTEP 3: Do not delete anything. Take screenshots of chats, profiles, payment receipts, transaction IDs, phone numbers and UPI IDs.\nSTEP 4: Report it to the police. Information can be given by electronic communication. If you do, it is taken on record once you sign it within three days. [BNSS 173(1)]\nSTEP 5: Ask for a copy of what was recorded. It must be given to you free of cost. [BNSS 173(2)]\nSTEP 6: If the police refuse, send it in writing by post to the Superintendent of Police, or apply to the Magistrate. [BNSS 173(4)]\nKEEP READY: Screenshots and chat exports; Transaction IDs, bank statements; Seller or account details, phone numbers, UPI IDs; Bills and advertisements\nOTHER LAWS: Hacking and other online-specific offences are in the IT Act, which is not part of this tool. A pure money dispute with no deception from the start (a loan not repaid, say) may be a civil matter.\nSECTION BNS 318 (Cheating; replaces IPC 415, IPC 417, IPC 418, IPC 420): (1) Whoever, by deceiving any person, fraudulently or dishonestly induces the person so deceived to deliver any property to any person, or to consent that any person shall retain any property, or intentionally induces the person so deceived to do or omit to do anything which he would not do or omit if he were not so deceived, and which act or omission causes or is likely to cause damage or harm to that person in body, mind, reputation or property, is said to cheat. Explanation.\u2014A dishonest concealment of facts is a deception within the meaning of this section. Illustrations. (a) A, by falsely ",
+"allowed": [
+"BNS-318",
+"BNSS-173"
+],
+"old": [
+"IPC-415",
+"IPC-417",
+"IPC-418",
+"IPC-420"
+]
+}
+]
