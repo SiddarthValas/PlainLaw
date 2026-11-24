@@ -1,174 +1,220 @@
-# PlainLaw
+<p align="center">
+  <img src="docs/banner.png" alt="PlainLaw: describe what happened, get the law and what to do next" width="100%">
+</p>
 
-**Author:** Siddarth Valasubramanian · B.Tech CSE (Data Science), UPES Dehradun
+<p align="center">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white">
+  <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-backend-009688?logo=fastapi&logoColor=white">
+  <img alt="Embeddings" src="https://img.shields.io/badge/embeddings-bge--small--en--v1.5-6f42c1">
+  <img alt="LLM" src="https://img.shields.io/badge/LLM-gpt--oss%20via%20Groq-f55036">
+  <img alt="Tests" src="https://img.shields.io/badge/tests-8%20suites%20passing-2ea44f">
+  <img alt="Law" src="https://img.shields.io/badge/law-BNS%20%2B%20BNSS%202023-b08d57">
+</p>
 
-**Live demo:** public link on Vercel coming soon.
+<p align="center">
+  <b>Built by Siddarth Valasubramanian</b> · B.Tech CSE (Data Science), UPES Dehradun<br>
+  🌐 <b>Live demo:</b> public link on Vercel coming soon
+</p>
 
-## How to run it
+---
 
-You need Python 3.10 or newer ([python.org](https://www.python.org/downloads/)). The first start installs everything
-PlainLaw needs into a private `.venv` folder and downloads the embedding model (a few minutes, one time only).
+On **1 July 2024** India replaced the Indian Penal Code and the Code of Criminal Procedure with the **Bharatiya Nyaya
+Sanhita (BNS)** and the **Bharatiya Nagarik Suraksha Sanhita (BNSS)**. Every section number changed ("Section 420" is now
+**BNS 318**), people describe their problems in everyday words, and general AI chatbots still quote the old, repealed
+numbers.
 
-**macOS:** double-click `start.command` (or run `./start.command` in Terminal). The chat opens at http://localhost:8000.
+**PlainLaw** is a chat assistant that understands a situation in plain English, tells you which sections of the new laws
+*may* apply, explains them in simple words, and walks you through what to do next. Every section it shows is quoted from
+the official Acts, and every section an AI writes into a reply is checked against them before you see it.
 
-**Windows:** double-click `start.bat`. The chat opens at http://localhost:8000.
+## 💬 See it in action
 
-**Any system, manually:**
+> **You:** Someone has hit and run my car, what to do?
+
+<p align="center"><img src="docs/screenshots/chat-1-safety-check.png" alt="PlainLaw checks the user is safe before giving the steps" width="85%"></p>
+
+It starts with empathy and a safety check, says which area of law may be involved, and keeps the full plan one click
+away. Once you're safe, you get the steps, what to note down, and the provisions that may apply.
+
+> **You:** What does BNS 281 mean?
+
+<p align="center"><img src="docs/screenshots/chat-2-explain-section.png" alt="A section explained in simple language" width="85%"></p>
+
+It knows which section you mean from the conversation and explains it from the section's own text: what it covers, the
+punishment in plain words, and the old IPC number it replaced.
+
+> **You:** What if I don't have any witnesses? · Can I claim insurance?
+
+<p align="center"><img src="docs/screenshots/chat-3-follow-ups.png" alt="Follow-up questions answered in context" width="85%"></p>
+
+Follow-up questions are answered in the context of *your* situation, with the sections they rely on (BNSS 173, the
+Motor Vehicles Act route for hit-and-run compensation, and so on).
+
+<details>
+<summary><b>🌙 Dark mode and the home screen</b></summary>
+<br>
+<p align="center"><img src="docs/screenshots/dark-mode.png" alt="Dark mode" width="80%"></p>
+<p align="center"><img src="docs/screenshots/home.png" alt="Home screen with example situations" width="80%"></p>
+</details>
+
+## ✨ What it can do
+
+| | Feature | Example |
+|---|---|---|
+| 🧭 | **Understands situations** in everyday English and maps them to one of 27 verified guides | "a guy on a bike snatched my chain" → theft and snatching guide |
+| 🛟 | **Safety first**: self-harm, emergencies and fires are recognised at any point in the chat | "my car is on fire" → move away, call 101 / 112 |
+| 🗣️ | **Remembers the conversation**: answers to its own questions, "section 75", "the first one", "it" | "explain the first one" → BNS 303 in plain words |
+| ❓ | **18 kinds of follow-up**: no witnesses, report online, which station, police refusal, delay, lawyer, insurance, arrest, compensation, workplace (POSH Act)… | "what if the police refuse?" → BNSS 173(4), 175(3) |
+| 🤖 | **Grounded AI replies** for anything else, with every cited section verified against the official text | "shall I take my belongings out?" → a short, checked answer |
+| ⚖️ | **Knows its limits**: civil matters, other Acts, and events before 1 July 2024 | rent deposit → civil court; "in 2022" → old IPC may apply |
+| 🔢 | **Old number lookup** | "IPC 420" → BNS 318 (Cheating) |
+
+## 🧠 How it works
+
+```mermaid
+flowchart LR
+    A([User message]) --> B[Normalise and<br>safety checks]
+    B --> C{Conversation<br>state}
+    C -->|answer to our question| D[Continue the situation]
+    C -->|section question| E[Explain section<br>from its own text]
+    C -->|follow-up| F[18 checked<br>follow-up answers]
+    C -->|new situation| G[Situation routing]
+    G --> G1[Rules] --> G2[LLM router<br>picks a guide] --> G3[Trained classifier<br>offline]
+    G3 --> H[Hybrid retrieval<br>BM25 + bge-small + RRF<br>+ query expansion]
+    C -->|anything else| I[Grounded LLM reply]
+    I --> J{Citation<br>check}
+    J -->|passes| K([Reply])
+    J -->|fails| L[Honest fallback] --> K
+    D --> K
+    E --> K
+    F --> K
+    H --> K
 ```
+
+| Stage | NLP technique |
+|---|---|
+| Building the corpus | PDF extraction, regex segmentation, validation against the Acts' tables of contents (889 sections) |
+| Understanding the message | normalisation, tokenisation, Porter stemming, intent detection, language and safety detection |
+| Bridging everyday and legal words | query expansion with a plain-language glossary and legal-name synonyms |
+| Finding the law | BM25 + dense embeddings (bge-small-en-v1.5) fused with Reciprocal Rank Fusion, with an abstention gate |
+| Picking the situation | rules, LLM zero-shot classification (constrained to 27 ids), logistic regression on embeddings |
+| Conversation | dialogue state, coreference ("it", "the first one"), follow-up intent detection |
+| Answering open questions | retrieval-grounded generation with citation verification |
+
+## 🚀 How to run it
+
+You need **Python 3.10+** ([python.org](https://www.python.org/downloads/)). The first start installs everything into a
+private `.venv` folder and downloads the embedding model (a few minutes, one time only).
+
+| System | Do this |
+|---|---|
+| 🍎 macOS | Double-click **`start.command`** (or run `./start.command` in Terminal) |
+| 🪟 Windows | Double-click **`start.bat`** |
+| 🐧 Any system | See the commands below |
+
+```bash
 python3 -m venv .venv
-.venv/bin/pip install -r requirements-run.txt        # Windows: .venv\Scripts\pip install -r requirements-run.txt
-.venv/bin/python -m uvicorn api:app --port 8000      # Windows: .venv\Scripts\python -m uvicorn api:app --port 8000
+.venv/bin/pip install -r requirements-run.txt          # Windows: .venv\Scripts\pip install -r requirements-run.txt
+.venv/bin/python -m uvicorn api:app --port 8000        # Windows: .venv\Scripts\python -m uvicorn api:app --port 8000
 ```
-Then open http://localhost:8000.
 
-**Optional, AI features:** create a free API key at [console.groq.com](https://console.groq.com) and save it as a
-single line in a file named `groq_key.txt` in the project folder (it is in `.gitignore`, so it is never uploaded).
-With the key, an AI model helps understand unusual messages and answers open-ended follow-up questions, and every
-section it cites is checked against the official text. Without it, PlainLaw runs fully offline on its rules,
-search and trained classifier.
+Then open **http://localhost:8000**.
 
-Run the tests: `.venv/bin/python tests/test_playbooks.py` (see "Tests and evaluation" below for the full list).
+> **Optional AI features.** Create a free key at [console.groq.com](https://console.groq.com) and save it as one line in
+> a file called `groq_key.txt` in the project folder. It is in `.gitignore`, so it is never uploaded. With the key, an
+> AI model (gpt-oss-120b, falling back to gpt-oss-20b on rate limits) helps understand unusual messages and answers
+> open follow-up questions. Without it, PlainLaw runs fully offline on rules, search and its trained classifier.
 
-Describe a problem in everyday words and get the laws of India's new criminal codes that may apply, what to do next, and
-the exact statute text with the old IPC / CrPC number. Covers the Bharatiya Nyaya Sanhita (BNS, offences) and the Bharatiya
-Nagarik Suraksha Sanhita (BNSS, police and court procedure), 2023. Built for CSEG4134.
+## 📊 Results
 
-## A conversation, not a one-off report
-PlainLaw keeps the context of the conversation (`src/dialogue.py`). The browser holds a small state (the situation being
-discussed, the sections already shown, the last section explained, a question the assistant asked, facts such as
-"safe" and "when") and sends it back with each message. Example:
+Measured on a **frozen held-out test** of 150 questions written after the system was fixed, and run once. The questions
+are synthetic (not real users) and the labels were not checked by a lawyer; see [EVALUATION.md](EVALUATION.md) for the full
+method, confidence intervals and limitations.
 
-| You | PlainLaw |
+| What | Result |
 |---|---|
-| Someone touched me inappropriately on a public bus. | I'm sorry that happened. Are you safe right now? ... may fall under provisions of the BNS on sexual harassment, depending on the circumstances. *(buttons: "Yes, I'm safe now" / "No, it's happening now"; the steps are available folded)* |
-| Yes, I'm safe now. This happened yesterday. | Understood, I'm glad you're safe. Since it happened yesterday, you can still report it... *(steps, what to note down, sections that may apply)* |
-| What does Section 75 actually mean? | BNS 75 in simple language: what it covers (its four clauses) and the punishment, from the section's own text |
-| What if I don't have any witnesses? | You can still approach the police; your own account is evidence (BNSS 173); bus route, ticket/UPI payment, CCTV... |
+| Full system (offline): right guide, or the right non-answer | **79%** (95% CI 72–85%) · wrong 10% · asked a clarifying question 11% |
+| Trained classifier vs rules alone | **+12 points** (67% → 79%) |
+| A relevant section among those shown | **79%** |
+| Retrieval alone (hybrid + expansion): relevant section first / in top 3 | 35% / 55% |
+| Conversation handling (12 scripted conversations, 42 turns) | 38/42 first run → 40/42 |
+| Safety cases (emergencies, self-harm, scams, civil matters, word traps) | 49/51 |
+| Live AI chat test (17 open questions) | 15 answered, **0 blocked** by the citation check |
+| Speed (CPU) | median 1 ms per message, p95 90 ms |
 
-Questions no pattern covers ("shall I take my valuables out?") are answered by the LLM (`src/llm_chat.py`) from the
-conversation, the current guide and the official text of the sections on screen; a checker rejects the reply if it cites
-any section it was not given, an old IPC/CrPC number, or an unknown phone number, and the user then gets an honest "I
-can't answer that reliably". Later turns never repeat the whole plan. "On fire", "trapped" and similar trigger safety
-advice at any point. Test the live model with `.venv/bin/python eval_llm_chat.py "$PWD" results/llm_chat_cases.json`.
+In a comparison on 48 questions, general AI models **without access to the law text** cited repealed IPC/CrPC sections in
+over 90% of their citations when asked naturally. That is the reason PlainLaw grounds every citation in the official Acts.
 
-It understands: answers to its own question, "section 75" / "the first one" / "it" / a bare "118", follow-ups about
-the same situation (no witnesses, online report, which station, woman officer, police refusal, delay, lawyer and cost,
-privacy, what happens next, compensation, safety), extra details added to the story ("he also had a knife" adds
-robbery and intimidation), "what if" refinements of a law question, and a switch to a new matter. Multi-turn check
-(`eval_dialogue.py`, 12 scripted conversations, 42 turns): 38/42 on the first run, 40/42 after two bug fixes.
+## 🗂️ Project structure
 
-## What the user gets
-| The user types | The bot replies with |
-|---|---|
-| A situation: "someone rear-ended my car, what should I do?" | A **plan** from one of 27 scenario playbooks: numbered steps (green tag = cites a BNSS/BNS section, grey tag = general practical guidance), the laws that may apply with the reason each applies, what to keep ready, and which other law covers the rest (e.g. Motor Vehicles Act). Laws that depend on a circumstance (a death, a weapon, a forged document) only show when the user mentions it. |
-| A question about the law: "what is the punishment for murder?" | The matching **sections** (BNS 103 first), plus a "What should I do next?" button when a playbook covers that law. |
-| An exact reference: "IPC 420", "BNS 318", "section 302" | The section itself, with the old-to-new mapping. |
-| Something unclear | "Is your situation closest to one of these?" with the 3 nearest scenarios as buttons, or plain "closest matches" when it is not sure. |
-| A civil matter or another Act (rent, salary, cheque bounce, drugs, bribery, caste abuse) | Says which law covers it and where to go, instead of showing an unrelated criminal section. |
-| Self-harm, an emergency in progress, small talk, Hindi/Hinglish | A dedicated reply (Tele-MANAS 14416, 112, ask for English). |
-
-## How it works (NLP pipeline)
-1. **Normalisation and guards** (`src/safety.py`, `src/chatbot.py`): curly quotes and spacing normalised; crisis, urgency,
-   greetings and non-English input detected with patterns and a Devanagari/Hinglish ratio.
-2. **Intent detection** (`src/intent.py`): is this a definition question ("what is X", no personal story) or a situation?
-3. **Scenario routing** (`src/playbooks.py`, `data/playbooks.json`): trigger patterns with exclusions and priorities pick
-   up to two playbooks. If none fires, sentence embeddings (bge-small) compare the message with 115 example situations
-   (nearest neighbour, cosine similarity) and offer the closest 3 as buttons instead of guessing.
-4. **Retrieval** (`src/retrieval.py`): Porter-stemmed tokens, BM25 + dense embeddings (BAAI/bge-small-en-v1.5) fused with
-   Reciprocal Rank Fusion. Situations use the plain-language bridge (`src/glossary.py`, everyday words -> statute vocabulary);
-   definition questions add a third ranked list, BM25 over section titles, plus a table of common legal names
-   ("anticipatory bail", "zero FIR", "mob lynching") mapped to the statute's own words.
-5. **Grounding and abstention**: section numbers and section text come only from the curated corpus of the official
-   Acts (a test checks every cited number exists), so a number outside BNS/BNSS cannot be displayed. That does **not**
-   mean a shown section applies to the user's facts: replies say sections *may* apply depending on the facts, and the
-   steps are hand-written guidance, not official text. The bot answers directly only when BM25 and the dense model
-   agree and the query is specific (validated in EVALUATION.md: Hit@1 52% when it answers vs 24% when it asks).
-6. **Trained situation classifier** (`train_router.py`): logistic regression on bge-small embeddings, used offline or
-   when the LLM is unreachable (75% vs 49% top-1 for nearest-neighbour on 65 blind situations).
-7. **Old dates** (`src/dates.py`): events before 1 July 2024 get a notice that the IPC/CrPC generally apply
-   (BNS s.358, BNSS s.531).
-8. Optional (`USE_LLM=1`, local Ollama): one plain-words line per card, dropped unless every number in it is in the section.
-
-## Run
 ```
-pip install -r requirements.txt
-uvicorn api:app --port 8000          # new web UI + API at http://localhost:8000
-streamlit run app.py                 # the earlier Streamlit UI (same logic)
-```
-Deployment: `deploy/space/` is a Hugging Face Docker Space (API + UI), `deploy/vercel/` is the same UI as a static
-site on Vercel, pointed at the Space through `config.js`.
-The embedding model loads from `models/bge-small-en-v1.5` if that folder exists (no internet needed), otherwise it downloads
-from Hugging Face on first start (it is not in this repository: 129 MB). Optional AI features need a Groq API key in a
-file `groq_key.txt` in the project folder (never commit it; it is in `.gitignore`). To create the local copy once:
-`python3 -c "from sentence_transformers import SentenceTransformer as S; S('BAAI/bge-small-en-v1.5').save('models/bge-small-en-v1.5')"`.
-The first start builds the section embeddings (about a minute) and caches them in `.cache/`. `DENSE_MODEL=lsa` forces an
-offline TF-IDF + LSA fallback (no suggestions in that mode).
-
-Tests and evaluation:
-```
-python3 data_audit.py                                # corpus integrity + data/VERSION.json
-python3 train_router.py                              # trains models/situation_clf.npz and compares it on blind sets
-python3 eval_final.py [--llm]                        # frozen 150-question test: baselines, abstention, full system
-python3 eval_grounded_llm.py                         # baseline E: LLM given the same retrieved sections (needs LLM_KEY)
-python3 eval_safety.py                               # 51 safety cases
-python3 eval_dialogue.py                             # 12 multi-turn conversations (context handling)
-python3 tests/test_dates.py; python3 tests/test_safety.py
-python3 tests/test_playbooks.py                      # every cited section exists; 38 routing cases
-DENSE_MODEL=lsa python3 tests/test_bot_qa.py         # 23 end-to-end behaviour checks
-DENSE_MODEL=lsa python3 tests/test_conditional_laws.py
-DENSE_MODEL=lsa python3 tests/smoke_test.py          # synthetic fixture
-python3 eval.py --split test                         # retrieval systems compared (also --split dev, or the fresh file)
-python3 eval_situations.py --queries data/eval_situations2.jsonl   # scenario routing
-python3 vocab_gap.py                                 # how many query words appear in the gold sections
+PlainLaw/
+├── api.py                  FastAPI backend: /api/chat, /api/health, serves the web UI
+├── web/index.html          the chat interface (no framework, light and dark themes)
+├── src/
+│   ├── dialogue.py         conversation manager: state, safety check-in, follow-ups, explanations
+│   ├── chatbot.py          situation routing, retrieval answers, lookups, scope checks
+│   ├── retrieval.py        BM25, dense embeddings, RRF fusion, abstention gate
+│   ├── glossary.py         plain-language → legal vocabulary, civil and other-Act rules
+│   ├── playbooks.py        27 situation guides, embedding suggestions, trained classifier
+│   ├── llm_router.py       LLM that picks a guide (choice only)
+│   ├── llm_chat.py         grounded LLM replies + citation check
+│   ├── safety.py · dates.py · intent.py
+├── data/
+│   ├── sections.jsonl      889 sections of BNS + BNSS with old IPC/CrPC numbers
+│   ├── playbooks.json      the 27 situation guides
+│   └── eval_*.jsonl        evaluation sets (see data/README.md)
+├── tests/                  8 test suites
+├── eval_*.py · train_router.py · data_audit.py
+├── deploy/                 Vercel (static UI) and Docker (API) setups
+└── EVALUATION.md           audit, full results, error analysis, limitations
 ```
 
-## Evaluation summary (full details, contamination ledger and limitations: [EVALUATION.md](EVALUATION.md))
-Frozen held-out test (`data/eval_final.jsonl`, 150 **synthetic** questions written after the system was frozen; not
-real users, not lawyer-checked), run once:
+## 🧪 Tests and evaluation
 
-| Measure | Result (95% CI) |
-|---|---|
-| Retrieval, hybrid + expansion (119 with gold): Hit@1 / Hit@3 / MRR | 35% (27–44%) / 55% / 0.458 |
-| Full system offline (rules + trained classifier): right guide or right non-answer | 79% (72–85%); wrong 10%; asked 11% |
-| Same, 130 questions with no near-duplicate in older data | 76% (68–83%) |
-| A gold section among the sections shown | 79% (71–85%) |
-| Old-date notice | 5/5, no false notices |
-| Safety cases (emergency, self-harm, civil, other Acts, scams, word traps) | 31/39 frozen → 49/51 after fixes (12 written after the fixes: 8/12 first run) |
-| Latency (CPU) | median 1 ms, p95 90 ms; API p95 342 ms at 10 concurrent requests |
+```bash
+python3 tests/test_playbooks.py        # every cited section exists; 38 routing cases
+python3 tests/test_dialogue.py         # the conversation keeps context; follow-up citations exist
+python3 tests/test_safety.py           # self-harm (any person), scams, story/game/code word traps
+python3 tests/test_llm_chat.py         # the citation check rejects invented sections, old numbers, fake phone numbers
+python3 tests/test_dates.py            # the pre-July-2024 notice
+python3 eval_final.py [--llm]          # frozen 150-question test: baselines A-D, abstention, full system, latency
+python3 eval_dialogue.py               # 12 multi-turn conversations
+python3 eval_safety.py                 # 51 safety cases
+python3 train_router.py                # trains and compares the situation classifier
+python3 data_audit.py                  # corpus integrity and provenance (data/VERSION.json)
+```
 
-The earlier figures below come from development sets that were used while building the system, so they are optimistic.
+<details>
+<summary><b>More technical detail</b></summary>
 
-## Results on development sets (bge-small, 889 sections)
-Retrieval on plain-language queries (Hit@3 / MRR@10):
+- **Data:** section text comes only from the official Act PDFs in `data/source/` (BNS as on 6 Oct 2025 from India Code;
+  BNSS as enacted). Old numbers come from the CAPT Bhopal comparison tables. 54 new sections replace several old ones and
+  5 old sections split into two; all are shown.
+- **Embedding model:** loads from `models/bge-small-en-v1.5` if present, otherwise downloads from Hugging Face on first
+  start (129 MB, not in this repository). Section embeddings are cached in `.cache/`. `DENSE_MODEL=lsa` forces an offline
+  TF-IDF + LSA fallback.
+- **Environment variables:** `LLM_BASE` / `LLM_KEY` (set automatically from `groq_key.txt` by the start scripts),
+  `LLM_CHAT_MODELS` (default `openai/gpt-oss-120b,openai/gpt-oss-20b`), `LLM_ROUTER=off` to disable the AI,
+  `LOCAL_LLM_MODEL` for a local Ollama model.
+- **Deployment:** `deploy/vercel/` hosts the web UI as a static site pointed at the API via `config.js`;
+  `deploy/space/` is a Docker image of the API.
+- **Development-set results**, the LLM comparison and the contamination ledger are in [EVALUATION.md](EVALUATION.md).
 
-| System | dev (24) | test (27) | fresh (21) |
-|---|---|---|---|
-| BM25 | 37.5% / 0.334 | 70.4% / 0.574 | 28.6% / 0.218 |
-| Dense (bge-small) | 58.3% / 0.539 | 81.5% / 0.713 | 19.0% / 0.220 |
-| Hybrid (RRF) | 70.8% / 0.481 | 74.1% / 0.686 | 23.8% / 0.279 |
-| Hybrid + rewriting (app default for situations) | 87.5% / 0.751 | 63.0% / 0.529 | 38.1% / 0.344 |
-| Hybrid + passages + rewriting | 83.3% / 0.741 | 63.0% / 0.549 | 38.1% / 0.310 |
+</details>
 
-Reading it honestly: rewriting rules were written on dev, so dev is optimistic. On test (mostly procedure questions that already
-use statute words) dense alone is best and rewriting hurts; on fresh (everyday offence descriptions with a large vocabulary
-gap) rewriting is what helps. The abstain gate matters most: when the bot answers directly, Hit@3 rises to 78.9% on test
-(coverage 70%) and 66.7% on fresh (coverage 29%).
+## ⚠️ Limitations
 
-Definition questions (`data/eval_definitions.jsonl`, 20): hybrid + title match + legal-name table puts the gold section in the
-cards for 20/20, first for 18/20 (hybrid alone: top 3 for 17/20). A section whose whole title the user typed is put first.
+- English only. 27 situation guides; anything else falls back to retrieval and the AI.
+- Evaluation questions are synthetic and single-author; labels and guidance have not been reviewed by a lawyer.
+- A valid section number does not mean the section applies: PlainLaw cannot check facts such as intention, consent or
+  the value involved, so it says sections *may* apply and asks when unsure.
+- BNS 106(2) (hit-and-run causing death) is shown as not yet in force (it had not been notified as of mid-2026).
+- With the optional AI on, your message is sent to an external API (the interface says so).
 
-Scenario routing: on a held-out list of 30 situations written after the rules, the right playbook came first for 25/30 (83%)
-with patterns alone, and the 3 embedding suggestions contained the right playbook for all 28 situations that should have one. Those misses were then fixed, so
-both situation lists are now development data.
+---
 
-## Data
-`data/sections.jsonl`: one JSON object per section: `id` (e.g. `BNS-303`), `act`, `section`, `title`, `text`, `replaces`
-(e.g. `IPC 378`). Text from the official Act PDFs (BNS as on 6 Oct 2025 from India Code; BNSS as enacted); old numbers
-from the CAPT Bhopal comparison tables. See `data/README.md` for every file. `tests/fixture_sections.jsonl` is synthetic.
-
-## Limits
-Hand-written playbooks cover 27 common situations; anything else falls back to retrieval. English only. BNS 106(2)
-(hit-and-run) is shown as not yet in force (it had not been notified as of mid-2026). Other Acts (Motor Vehicles, IT, POCSO,
-NDPS, Domestic Violence) are only pointed to, not searched. Helpline numbers can change.
-
-Not legal advice. In danger? Call 112.
+<p align="center">
+  <b>PlainLaw gives general legal information, not legal advice.</b><br>
+  In an emergency, call <b>112</b> · Free legal aid: <b>NALSA 15100</b> · Women's helpline: <b>181</b>
+</p>

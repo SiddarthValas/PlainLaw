@@ -88,6 +88,7 @@ _PUNISH = re.compile(r"\b(?:punish\w*|sentence|jail|prison|how (?:many|much) (?:
 
 # ---- follow-up questions about the current situation ----
 FOLLOW = [
+    ("insurance", r"\binsur\w*|\bclaim (?:for|from) (?:the )?(?:damage|repair|accident)\b|\bmotor accident claims?\b"),
     ("workplace", r"\b(?:workplace|office|at work|colleague|co-?worker|manager|boss|employer|company)\b.{0,60}\b(?:law|act|committee|posh|separate|complain\w*|hr)\b|\b(?:law|act|committee|complain\w*|rule)\b.{0,40}\b(?:workplace|at work|office|job)\b|\bposh\b|\binternal (?:complaints? )?committee\b"),
     ("arrest_q", r"\b(?:will|would|can|do|does|should|must) (?:the )?(?:police|they|cops?)\b.{0,15}\barrest\b|\bget (?:him|her|them) arrested\b|\bwill (?:he|she|they) be arrested\b|\barrest (?:him|her|them) (?:immediately|now|right away|at once)\b"),
     ("which_law", r"\b(?:wh?at|which|under)\b.{0,25}\b(?:sec(?:tion)?s?|laws?|acts?|provisions?|ipc|bns)\b(?!\s*\d)|\bis (?:it|this|that) (?:a )?(?:crime|illegal|an offen[cs]e|punishable|legal)\b|\bwhat (?:crime|offen[cs]e)\b"),
@@ -363,10 +364,21 @@ class Conversation:
                     "record statements (BNSS 176, 180), and at the end they send a report to the Magistrate (BNSS 193).",
                     "For offences punishable with three to seven years, the police may first do a preliminary enquiry of up to "
                     "fourteen days, with a senior officer's permission, to see if there is a case (BNSS 173(3))."], ["BNSS-176", "BNSS-193"]
+        if kind == "insurance":
+            say = ["Insurance is outside criminal law, but the police complaint helps: insurers usually ask for a copy of the "
+                   "FIR, which you get free of cost (BNSS 173(2)), along with photos, repair estimates and bills.",
+                   "Tell your insurer as soon as you can; most policies have a time limit for informing them."]
+            if topic in ("accident", "transport") or re.search(r"\b(?:car|bike|scooter|vehicle|accident|hit)\b", st.get("story") or "", re.I):
+                say.append("For a road accident, claims for injury or death go to the Motor Accident Claims Tribunal under the "
+                           "Motor Vehicles Act, 1988, and in hit-and-run cases where the vehicle is never traced there is a "
+                           "government compensation scheme under that Act for death or grievous hurt.")
+            return say, ["BNSS-173"]
         if kind == "compensation":
-            return ["Every state has a victim compensation scheme for people who suffered loss or injury from a crime and need "
-                    "rehabilitation; the District or State Legal Services Authority decides the amount (BNSS 396).",
-                    "For money lost in a fraud, report it quickly (for cyber fraud: helpline 1930) so the bank can try to freeze it."], ["BNSS-396"]
+            say = ["Every state has a victim compensation scheme for people who suffered loss or injury from a crime and need "
+                   "rehabilitation; the District or State Legal Services Authority decides the amount (BNSS 396)."]
+            if topic == "fraud":
+                say.append("For money lost in a fraud, report it quickly (for cyber fraud: helpline 1930) so the bank can try to freeze it.")
+            return say, ["BNSS-396"]
         if kind == "safety":
             return ["If you are in danger at any point, call 112. Women can also call 181 or 1091 in many states.",
                     "If someone threatens you for reporting, tell the police: threatening someone is itself an offence (BNS 351), "
